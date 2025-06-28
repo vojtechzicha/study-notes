@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Finanční řízení podniku - Studijní poznámky</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Load our local stylesheet and custom loader script -->
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="katex-loader.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="index.html" class="back-button">← Zpět</a>
+        <a href="index.html" class="home-link">Univerzitní studium</a>
+        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
+        <span class="breadcrumb-item">Newton University
+(bakalářský)</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-item-active">Finanční řízení
+podniku</span>
+      </div>
+    </header>
+
+    <div class="page-container">
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Finanční řízení podniku</h1>
+        </header>
+        <p>Pro uvedení do finančního řízení podniku je potřeba mít
+        orientaci v následujících základních pojmech:</p>
+        <ul>
+        <li><p><strong>Rozvaha</strong> – soupis hodnot aktiva a pasiv
+        společnosti; platí bilanční rovnice</p>
+        <ul>
+        <li><p>Aktiva – majetek v držení společnosti, stálá aktiva (s
+        dobou držení více než jeden rok) a oběžná aktiva</p>
+        <ul>
+        <li><p>Dlouhodobý hmotný majetek, dlouhodobý nehmotný majetek,
+        <u>dlouhodobý finanční majetek</u> (pořizovaný pouze v době, kdy
+        je uspokojena poptávka po primární činnosti podniku)</p></li>
+        <li><p>Oběžná aktiva naplňují cyklus oběžných aktiv, důležitým
+        pojmem je <u>likvidita</u> (jak rychle je podnik schopen uhradit
+        své závazky), pohledávky jsou likvidnější než zásoby</p></li>
+        </ul></li>
+        <li><p>Pasiva – způsob krytí majetku, krátkodobý a dlouhodobý
+        cizí kapitál, vlastní kapitál</p>
+        <ul>
+        <li><p>Vlastní kapitál – základní kapitál, nerozdělený
+        hospodářský výsledek, zákonný rezervní fond (na pokrytí případné
+        ztráty), kapitálové fondy (emisní ážio), ostatní fondy</p></li>
+        <li><p>Dlouhodobý cizí kapitál – úvěry, závazky, zákonné
+        rezervy, ostatní rezervy (rezervy jsou zde proto, že kryjí
+        případné možné budoucí závazky)</p></li>
+        <li><p>Krátkodobý cizí kapitál – úvěry, závazky</p></li>
+        </ul></li>
+        </ul></li>
+        <li><p><strong>Výkaz zisků a ztrát</strong> – přehled nákladů a
+        výnosů (nejčastěji tržby)</p></li>
+        <li><p><strong>Výkaz cash flow</strong> – reálné peněžní toky,
+        příjmy a výdaje</p></li>
+        </ul>
+        <h1 id="finanční-analýza-podniku">Finanční analýza podniku</h1>
+        <p>Pomocí finanční analýzy hodnotíme <strong>finanční zdraví
+        podniku</strong>. Finanční rozhodnutí by mělo vycházet z hotové
+        finanční analýzy a lze pomocí ní eliminovat finanční rizika
+        z podnikání. Podkladový materiálem pro analýzu jsou základní
+        výkazy.</p>
+        <p>Základním krokem je sestavení <strong>poměrových
+        ukazatelů</strong>, které informují naše rozhodnutí. Používáme
+        data nejlépe za 3 až 4 minulá období. Ukazatele dělíme na
+        následující skupiny:</p>
+        <ul>
+        <li><p>Ukazatele rentability</p></li>
+        <li><p>Ukazatele aktivity</p></li>
+        <li><p>Ukazatele likvidity</p></li>
+        <li><p>Ukazatele zadluženosti</p></li>
+        </ul>
+        <p>Definujeme i následující pojmy</p>
+        <ul>
+        <li><p><strong>Pracovní kapitál</strong> – celkový objem
+        oběžných aktiv.</p></li>
+        </ul>
+        <p><span class="math display">PK = OA</span></p>
+        <ul>
+        <li><p><strong>Čistý pracovní kapitál</strong> – kapitál
+        dostupný pro pracovní činnosti, vzniká odečtením krátkodobého
+        cizíko kapitálu od oběžných aktiv</p></li>
+        </ul>
+        <p><span class="math display">ČPK = OA - KCK</span></p>
+        <ul>
+        <li><p><strong>Nefinanční pracovní kapitál</strong> – celkový
+        objem zásob a pohledávek</p></li>
+        </ul>
+        <p><span class="math display">NPC = KP + DP + zásoby</span></p>
+        <h2 id="ukazatele-rentability">Ukazatele rentability</h2>
+        <p>Ukazatele rentability ukazují výnosnost podniku. Vycházíme
+        z hospodářského výsledku – ukazujeme vztah mezi hospodářským
+        výsledkem a vloženými zdroji. Pro vyčíslení potřebujeme výkaz
+        zisků a ztrát (pro hospodářský výsledek) a rozvahu (pro vložené
+        zdroje).</p>
+        <ul>
+        <li><p><strong>Rentabilita celkového kapitálu</strong> – poměr
+        mezi hospodářským výsledek a celkovou úrovní pasiv.</p></li>
+        </ul>
+        <p><span class="math display">RCK = \frac{HV}{VK +
+        CK}</span></p>
+        <ul>
+        <li><p><strong>Rentabilita vlastního kapitálu</strong> (ROE) –
+        poměr mezi hospodářským výsledkem a vlastním kapitálem.</p></li>
+        </ul>
+        <p><span class="math display">ROE = \frac{HV}{VK}</span></p>
+        <ul>
+        <li><p><strong>Rentabilita celkových aktiv</strong> (ROA) –
+        poměr mezi hospodářským výsledkem a celkovými aktivy. (stejná
+        hodnota jako rentabilita celkového kapitálu)</p></li>
+        </ul>
+        <p><span class="math display">ROA = \frac{HV}{SA +
+        OA}</span></p>
+        <ul>
+        <li><p><strong>Rentabilita tržeb</strong> – poměr mezi
+        hospodářským výsledkem a celkovými tržbami. (kolik tvoří zisk z
+        jedné koruny tržeb)</p></li>
+        </ul>
+        <p><span class="math display">RT = \frac{HV}{T}</span></p>
+        <h2 id="ukazatele-aktivity">Ukazatele aktivity</h2>
+        <p>Ukazatele aktivity ukazují, jak efektivně pro naší
+        podnikatelskou aktivitu využíváme majetku. Vycházíme
+        z tržeb.</p>
+        <ul>
+        <li><p><strong>Obrat stálých aktiv</strong> – kolikrát se stála
+        aktiva obrátí v tržbách, očekávaná hodnota je <span
+        class="math inline">\approx 5</span>.</p></li>
+        </ul>
+        <p><span class="math display">OSA = \frac{T}{SA}</span></p>
+        <ul>
+        <li><p><strong>Obrat celkových aktiv</strong> – kolikrát se
+        aktiva obrátí v tržbách.</p></li>
+        </ul>
+        <p><span class="math display">OCA = \frac{T}{SA + OA}</span></p>
+        <ul>
+        <li><p><strong>Obrat pohledávek ve dnech</strong> – průměrná
+        doba splatnosti faktur.</p></li>
+        </ul>
+        <p><span class="math display">OP_{d} = \frac{KP \cdot
+        365}{T}</span></p>
+        <ul>
+        <li><p><strong>Obrat zásob ve dnech</strong> – průměrná doba od
+        naskladnění po peněžní příjem.</p></li>
+        </ul>
+        <p><span class="math display">OP_{Z} = \frac{Z \cdot
+        365}{T}</span></p>
+        <h2 id="ukazatele-likvidity">Ukazatele likvidity</h2>
+        <p>Ukazatele likvidity ukazují, jak rychle je podnik schopen
+        uhradit své závazky.</p>
+        <ul>
+        <li><p><strong>Běžná likvidita</strong> (likvidita 3. stupně) –
+        poměr oběžných aktiv a krátkodobých závazků, očekávaná hodnota
+        mezi <span class="math inline">1,5</span> až <span
+        class="math inline">2,5</span>.</p></li>
+        </ul>
+        <p><span class="math display">LIQ_{3} =
+        \frac{OA}{KCK}</span></p>
+        <ul>
+        <li><p><strong>Rychlá likvidita</strong> (likvidita 2. stupně) –
+        poměr oběžných aktiv bez zásob a krátkodobých závazků, očekávaná
+        hodnota mezi <span class="math inline">1</span> až <span
+        class="math inline">1,5</span>.</p></li>
+        </ul>
+        <p><span class="math display">LIQ_{2} = \frac{OA -
+        zásoby}{KCK}</span></p>
+        <ul>
+        <li><p><strong>Okamžitá likvidita</strong> (likvidita 1. stupně)
+        – poměr krátkodobého finančního majetku a krátkodobých závazků,
+        očekávaná hodnota okolo <span
+        class="math inline">0,5</span>.</p></li>
+        </ul>
+        <p><span class="math display">LIQ_{1} = \frac{pen.prostředky\
+        (KFM)}{KCK}</span></p>
+        <h2 id="ukazatele-zadluženosti">Ukazatele zadluženosti</h2>
+        <p>Ukazatele zadluženosti ukazují, jakou mírou podnik spoléhá na
+        cizí kapitál.</p>
+        <ul>
+        <li><p><strong>Celková zadluženost</strong> – podíl cizího
+        kapitálu na celkových pasivech.</p></li>
+        </ul>
+        <p><span class="math display">CZ = \frac{CK}{VK + CK},CZ = DZ +
+        BZ</span></p>
+        <ul>
+        <li><p><strong>Dlouhodobá zadluženost</strong> – podíl
+        dlouhodobých závazků na celkových pasivech.</p></li>
+        </ul>
+        <p><span class="math display">DZ = \frac{DCK}{VK +
+        CK}</span></p>
+        <ul>
+        <li><p><strong>Běžná zadluženost</strong> – podíl krátkodobých
+        závazků na celkových pasivech.</p></li>
+        </ul>
+        <p><span class="math display">BZ = \frac{KCK}{VK +
+        CK}</span></p>
+        <h2 id="příklady">Příklady</h2>
+        <ul>
+        <li><p>Příklad 1</p>
+        <ul>
+        <li><p>Z následujícího zadání sestavte rozvahu a stanovte
+        vybrané poměrné ukazatele – obrat celkových aktiv, všechny
+        likvidity, rentabilita celkového kapitálu, obrat pohledávek ve
+        dnech, celková zadluženost, běžná zadluženost.</p></li>
+        <li><p>Výrobní hala 2,5M, základní kapitál 560T, licence 850T,
+        nerozdělený HV běžného období 560T, výrobní zařízení 2,8M,
+        zákonný rezervní fond 450T, ostatní fondy 205T, pozemky 2,2M,
+        bankovní účty 1890T, pokladna 125T, fond zam. výhod 250T,
+        krátkodobý překlenovací úvěr 980T, materiál 1,45M, krátkodobý
+        kontokorentní úvěr 480T, polotovary vlastní výroby 700T, zásoba
+        hotových výrobků 1,3M, dlouhodobý úvěr ČS 3,35M, krátkodobé
+        pohledávky 625T, dlouhodobý úvěr SB 4,5M, dlouhodobé pohledávky
+        230T, krátkodobé závazky 1,56M, dlouhodobé závazky 980T, zákonné
+        rezervy 405T, ostatní rezervy 390T</p></li>
+        <li><p>Tržby 2,45M</p></li>
+        </ul></li>
+        <li><p>Řešení 1</p>
+        <ul>
+        <li><p>Výrobní podnik, splňuje zlaté pravidlo financování, avšak
+        nesplňuje zlaté pravidlo vyvážení rizika (spoléhá na cizí
+        kapitál)</p></li>
+        <li><p>SA – 8.350.000 Kč, OA – 6.320.000 Kč, VK – 2.025.000 Kč,
+        DCK – 9.625.000 Kč, KCK – 3.020.000 Kč</p></li>
+        <li><p>OCA = 0,167, OSA = 0,293, L1 = 0,667, L2 = 0,950, L3 =
+        2,093, RCK = 0,038, OPd = 93,112, CZ = 0,862, BZ =
+        0,206</p></li>
+        </ul></li>
+        <li><p>Příklad 2</p>
+        <ul>
+        <li><p>Sestavte rozvahu a vypočítejte pracovní kapitál, čistý
+        pracovní kapitál, nefinanční pracovní kapitál, ukazatele
+        likvidity a zadluženosti</p></li>
+        <li><p>Automobil 2,8M, zásoby 15M, pozemek 25M, software 0,2M,
+        pohledávky k odběratelům 6M, vratka DPH 1M, peníze na BU 3M,
+        úvěr od banky 30M, budovy a sklady 35M, stroje 12M, základní
+        kapitál 40M, závazky vůči zaměstnancům 5M, krátkodobý úvěr 20M,
+        závazky dodavatelům 5M</p></li>
+        <li><p>SA – 75.000.000 Kč, OA – 25.000.000 Kč, VK – 40.000.000
+        Kč, DCK – 30.000.000 Kč, KCK – 30.000.000 Kč</p></li>
+        <li><p>Pracovní kapitál – 25M, Čistý pracovní kapitál - -5M,
+        Nefinanční pracovní kapitál – 22M</p></li>
+        <li><p>L1 = 0,1, L2 = 0,33, L3 = 0,83, CZ = 0,6, BZ = 0,3, DZ =
+        0,3</p></li>
+        </ul></li>
+        </ul>
+        <h1 id="úročení-odúročení-a-diskontování">Úročení, odúročení a
+        diskontování</h1>
+        <p>Rozlišujeme <strong>úrok</strong> (peněžní vyjádření nákladu)
+        a <strong>úrokovou sazbou</strong> <span
+        class="math inline">i</span> (procentní vyjádření ceny peněz -
+        p.a. za rok, p.s. za půlrok, p.q. za čtvrtletí a p.m. za
+        měsíc).</p>
+        <h2 id="jednoduché-úročení">Jednoduché úročení</h2>
+        <p>Základní metoda, kde se nepočítají úroky z úroků. Využívá se
+        u produktů, kde není více než jedno úrokové období. <span
+        class="math inline">n</span> značí délku úrokového období. Cílem
+        je zjistit výsledný kapitál <span
+        class="math inline">K_{n}</span>.</p>
+        <p><span class="math display">K_{n} = K_{0} \cdot (1 + i \cdot
+        n)</span></p>
+        <ul>
+        <li><p>Příklad 1 - starý</p>
+        <ul>
+        <li><p>Jaká bude výše vkladu 30T za pět měsíců při úrokové sazbě
+        2 % pa?</p></li>
+        <li><p>Řešení – 30.250 Kč</p></li>
+        </ul></li>
+        <li><p>Příklad 1 – nový</p>
+        <ul>
+        <li><p>Jaká bude výše vkladu 130.000 Kč za pět měsíců při
+        úrokové sazbě 2 % p.s.?</p></li>
+        <li><p>Řešení – 132.166,67 Kč (130.000 * (1 + 0,02 *
+        5/6))</p></li>
+        </ul></li>
+        <li><p>Příklad 2</p>
+        <ul>
+        <li><p>Jakou částku musíte vrátit, jestliže jste si půjčili 35T
+        na 3 měsíce při úrokové sazbě</p></li>
+        <li><p>A) 8 % pa, B) 8 % ps, C) 8 % pq</p></li>
+        <li><p>Řešení – A) 35.700 Kč (35.000 * (1 + 0.08 *
+        3/12))</p></li>
+        <li><p>Řešení – B) 36.400 Kč (35.000 * (1 + 0.08 *
+        3/6))</p></li>
+        <li><p>Řešení – C) 37.800 Kč (35.000 * (1 + 0.08 * 1))</p></li>
+        </ul></li>
+        </ul>
+        <h2 id="složené-úročení">Složené úročení</h2>
+        <p>Metoda využita při dlouhodobých záležitostech – doba úročení
+        přesahuje jedno úrokové období. Počítáme s úroky z úroků. <span
+        class="math inline">n</span> značí počet úrokových období. Cílem
+        je zjistit výsledný kapitál <span
+        class="math inline">K_{n}</span>.</p>
+        <p><span class="math display">K_{n} = K_{0} \cdot (1 +
+        i)^{n}</span></p>
+        <ul>
+        <li><p>Příklad 2</p>
+        <ul>
+        <li><p>Jakou částku musíte vrátit, jestliže jste si půjčili 35T
+        na 3 měsíce při úrokové sazbě</p></li>
+        <li><p>D) 8 % p.m.</p></li>
+        <li><p>Řešení – D) 44.098,92 Kč (35.000 * (1 + 0.08)^3)</p></li>
+        </ul></li>
+        <li><p>Příklad 4 – starý</p>
+        <ul>
+        <li><p>Jaká bude hodnota kapitálu ve výši 150T při složeném
+        úročení za 10 let, pokud úrokové období je roční a úroková sazba
+        činí 5 % p.a.?</p></li>
+        <li><p>Řešení – 244.334,19 Kč</p></li>
+        </ul></li>
+        <li><p>Příklad 4 – nový</p>
+        <ul>
+        <li><p>Jaká bude hodnota kapitálu ve výši 250T při složeném
+        úročení za 8 let, pokud úrokové období je roční a úroková sazba
+        činí 7 % p.a.?</p></li>
+        <li><p>Řešení – 429.546,54 Kč (250.000 * (1 + 0.07)^8)</p></li>
+        </ul></li>
+        </ul>
+        <h2 id="odúročení">Odúročení</h2>
+        <p>Stanovujeme počáteční hodnotu kapitálu.</p>
+        <p>U jednoduchého se pohybujeme v rámci jednoho úrokového
+        období.</p>
+        <p><span class="math display">K_{0} = \frac{K_{n}}{(1 + i \cdot
+        n)}</span></p>
+        <p>U složeného přesahujeme délku jednoho období.</p>
+        <p><span class="math display">K_{0} = \frac{K_{n}}{(1 +
+        i)^{n}}</span></p>
+        <ul>
+        <li><p>Příklad 3 – starý</p>
+        <ul>
+        <li><p>Jaký počáteční vklad uložíte na účet v bance, případě že
+        bude úročen úrokovou sazbou a za tři měsíce budete potřebovat
+        kapitál ve výši 10T?</p></li>
+        <li><p>A) 4,5 % p.s., B) 9 % p.a.</p></li>
+        <li><p>Řešení – A) 9.779,96 Kč</p></li>
+        <li><p>Řešení - B) 9.779,96 Kč</p></li>
+        </ul></li>
+        <li><p>Příklad 3 – nový</p>
+        <ul>
+        <li><p>Jaký počáteční vklad uložíte na účet v bance, případě že
+        bude úročen úrokovou sazbou a za šest měsíců budete potřebovat
+        kapitál ve výši 100T?</p></li>
+        <li><p>A) 6 % p.s., B) 12 % p.a.</p></li>
+        <li><p>Řešení – A) 94.339,62 Kč (100.000 / (1 + 0.06 *
+        1))</p></li>
+        <li><p>Řešení - B) 94.339,62 Kč (100.000 / (1 + 0.12 *
+        6/12))</p></li>
+        </ul></li>
+        <li><p>Příklad 5 – starý</p>
+        <ul>
+        <li><p>Kolik musíme uložit na termínový vklad, abychom na konci
+        pátého roku měli naspořeno 20T při složeném úročení 4 %
+        p.a.?</p></li>
+        <li><p>A) pololetní úroky, B) čtvrtletní úroky, C) měsíční
+        úroky</p></li>
+        <li><p>Řešení – A) 16.406,97 Kč, B) 16.390,89 Kč, C) 16.380,06
+        Kč</p></li>
+        </ul></li>
+        <li><p>Příklad 5 – nový</p>
+        <ul>
+        <li><p>Kolik musíme uložit na termínový vklad, abychom na konci
+        pátého roku měli naspořeno 200T při složeném úročení 18 %
+        p.a.?</p></li>
+        <li><p>A) pololetní úroky, B) čtvrtletní úroky, C) měsíční
+        úroky</p></li>
+        <li><p>Řešení – A) 84.482,16 Kč (200.000 / (1 +
+        0,18/2)^(5*2))</p></li>
+        <li><p>Řešení – B) 82.928,57 Kč (200.000 / (1 +
+        0,18/4)^(5*4))</p></li>
+        <li><p>Řešení – C) 81.859,19 Kč (200.000 / (1 +
+        0,18/12)^(5*12))</p></li>
+        </ul></li>
+        </ul>
+        <h2 id="diskontování">Diskontování</h2>
+        <p>Diskontování zohledňuje časovou hodnotu peněz. Bereme v potaz
+        <strong>diskontní sazbu</strong> <span
+        class="math inline">i</span>, kterou stanovujeme jako součet
+        ukazatele WACC plus rizikových přirážek.</p>
+        <h1 id="spoření">Spoření</h1>
+        <p><strong>Spoření</strong> jsou pravidelné vklady s cílem
+        naspořit finální cílovou částku. Jednotlivé vklady jsou
+        realizovány <strong>předlhůtní formou</strong> (peníze jsou
+        vkládány na začátku úrokového období), <strong>polhůtní
+        formou</strong> (peníze jsou vkládány na konci úrokového období)
+        nebo <strong>pravidelnou formou</strong> (peníze jsou vkládány
+        v průběhu úrokového období).</p>
+        <p><strong>Předlhůtní krátkodobé spoření</strong></p>
+        <p><span class="math display">FV = m \cdot a \cdot \left( 1 +
+        \frac{m + 1}{2 \cdot m} \cdot r \right)</span></p>
+        <p>kde <span class="math inline">m</span> je počet úložek za
+        úrokové období, <span class="math inline">a</span> je výše
+        úložky a <span class="math inline">r</span> je úroková sazba ve
+        tvaru.</p>
+        <p><strong>Polhůtní krátkodobé spoření</strong></p>
+        <p><span class="math display">FV = m \cdot a \cdot \left( 1 +
+        \frac{m - 1}{2 \cdot m} \cdot r \right)</span></p>
+        <p>kde <span class="math inline">m</span> je počet úložek za
+        úrokové období, <span class="math inline">a</span> je výše
+        úložky a <span class="math inline">r</span> je úroková sazba ve
+        tvaru indexu.</p>
+        <p><strong>Předlhůtní dlouhodobé spoření</strong></p>
+        <p><span class="math display">FV = a \cdot (1 + r) \cdot
+        \frac{(1 + r)^{n} - 1}{r}</span></p>
+        <p>kde <span class="math inline">a</span> je výše úložky, <span
+        class="math inline">r</span> je úroková sazba ve tvaru indexu a
+        <span class="math inline">n</span> je počet úrokových
+        období.</p>
+        <p><strong>Polhůtní dlouhodobé spoření</strong></p>
+        <p><span class="math display">FV = a \cdot \frac{(1 + r)^{n} -
+        1}{r}</span></p>
+        <p>kde <span class="math inline">a</span> je výše úložky, <span
+        class="math inline">r</span> je úroková sazba ve tvaru indexu a
+        <span class="math inline">n</span> je počet úrokových
+        období.</p>
+        <p><strong>Kombinované předlhůtní spoření</strong></p>
+        <p><span class="math display">FV = m \cdot a \cdot \left( 1 +
+        \frac{m + 1}{2 \cdot m} \cdot r \right) \cdot \frac{(1 + r)^{n}
+        - 1}{r}</span></p>
+        <p>kde <span class="math inline">m</span> je počet úložek za
+        úrokové období, <span class="math inline">a</span> je výše
+        úložky, <span class="math inline">r</span> je úroková sazba ve
+        tvaru indexu a <span class="math inline">n</span> je počet
+        úrokových období.</p>
+        <p><strong>Kombinované polhůtní spoření</strong></p>
+        <p><span class="math display">FV = m \cdot a \cdot \left( 1 +
+        \frac{m - 1}{2 \cdot m} \cdot r \right) \cdot \frac{(1 + r)^{n}
+        - 1}{r}</span></p>
+        <p>kde <span class="math inline">m</span> je počet úložek za
+        úrokové období, <span class="math inline">a</span> je výše
+        úložky, <span class="math inline">r</span> je úroková sazba ve
+        tvaru indexu a <span class="math inline">n</span> je počet
+        úrokových období.</p>
+        <ul>
+        <li><p>Příklad 1</p>
+        <ul>
+        <li><p>Kolik uspoříme za jeden rok, ukládáme-li vždy na počátku
+        měsíce částku 35.000 Kč, při úrokové sazbě 6,5 % p.a. a ročním
+        připisováním úroků?</p></li>
+        <li><p>434.787,50 Kč (12 * 35.000 * (1 + (12 + 1)/(2 * 12) *
+        0,065) * ((1 + 0,065)^1 - 1)/0,065)</p></li>
+        </ul></li>
+        <li><p>Příklad 2</p>
+        <ul>
+        <li><p>Kolik uspoříme za jeden rok při ročním připisování úroků,
+        ukládáme-li vždy na konci měsíce částku 17.000 Kč, při úrokové
+        sazbě 4,5 % p.a.?</p></li>
+        <li><p>208.207,50 Kč (12 * 17.000 * (1 + (12 - 1)/(2 * 12) *
+        0,045) * ((1 + 0,045)^1 - 1)/0,045)</p></li>
+        </ul></li>
+        <li><p>Příklad 3</p>
+        <ul>
+        <li><p>Kolik musíme uložit na počátku každého měsíce, abychom za
+        rok našetřili 50.000 Kč při roční úrokové sazbě 3 % a ročním
+        připisování úroků?</p></li>
+        <li><p>4.100,04 Kč (50.000 / (12 * (1 +
+        (12+1)/(2*12)*0,03))</p></li>
+        </ul></li>
+        <li><p>Příklad 4</p>
+        <ul>
+        <li><p>Kolik uspoříme za čtyři roky, budeme-li ukládat na
+        počátku každého z nich 20.000 Kč, při roční úrokové sazbě 3,5 %?
+        Uvažujme o ročním připisováním úroků.</p></li>
+        <li><p>87.249,32 Kč (1 * 20.000 * (1 + (1+1)/(2*1)*0,035) * ((1
+        + 0,035)^4 – 1)/0,035))</p></li>
+        </ul></li>
+        <li><p>Příklad 5</p>
+        <ul>
+        <li><p>Kolik korun musíte na konci každého roku uložit, abyste
+        za pět let měli naspořeno 27.628 Kč při 5 % roční úrokové
+        sazbě.</p></li>
+        <li><p>5000 Kč (27.628 / ((1 * (1 +
+        (1-1)/(2*1)*0,05))*(((1+0,05)^5-1)/0,05))</p></li>
+        </ul></li>
+        <li><p>Příklad 7</p>
+        <ul>
+        <li><p>Kolik uspoříme za 5 let, spoříme-li každý měsíc 2.000 Kč
+        vždy na konci měsíce? Předpokládáme neměnnou úrokovou sazbu 5 %
+        p.a. a roční připisování úroků.</p></li>
+        <li><p>135.654,25 Kč (12 * 2.000 * (1+(12-1)/(2*12)*0,05) *
+        ((1+0,05)^5-1)/0,05))</p></li>
+        </ul></li>
+        <li><p>Příklad 7 rozšíření</p>
+        <ul>
+        <li><p>Kolik uspoříme za 5 let, spoříme-li každý měsíc 2.000 Kč
+        vždy na konci měsíce? Předpokládáme neměnnou úrokovou sazbu 5 %
+        p.a. a kvartální připisování úroků.</p></li>
+        <li><p>135.941,95 Kč (3 * 2.000 * (1+(3-1)/(2*3)*0,05/4) *
+        (((1+0,05/4)^(5*4))-1)/0,05/4))</p></li>
+        </ul></li>
+        </ul>
+        <h1 id="investiční-rozhodování">Investiční rozhodování</h1>
+        <p><strong>Investice</strong> je jednorázový výdaj, který má
+        generovat budoucí příjmy. Budoucí příjmy musíme převést do
+        hodnoty stávajícího roku – využijeme diskontní sazbu. V praxi
+        pro evaluaci jednotlivých metod využíváme parametry vstupní
+        investice <span class="math inline">IN</span>, doby životnosti
+        <span class="math inline">t</span>, jednotlivých předpokládaných
+        hodnot cash flow <span class="math inline">CF_{i}</span> a
+        diskontní sazby <span class="math inline">i</span>.</p>
+        <p><span class="math display">SHFC = \sum_{k =
+        1}^{n}\frac{CF_{k}}{(1 + i)^{k}}</span></p>
+        <p>Čistá současná hodnota <span class="math inline">ČSH</span> -
+        od současné hodnoty cash flow <span
+        class="math inline">SHCF</span> odečteme počáteční náklady
+        investice. Současnou hodnotu získáme odečtením diskontní sazby
+        od jednotlivých hodnot cash flow v čase.</p>
+        <p><span class="math display">ČSH = SHCF - IN</span></p>
+        <ul>
+        <li><p>Příklad 1</p>
+        <ul>
+        <li><p>Podnik se rozhoduje při výběru investiční varianty.
+        Podniková diskontní sazba je 9 % p.a., přičemž očekávaný roční
+        CF je zachycen v následující tabulce:</p>
+        <ul>
+        <li><p>0 / -1.100.000, 1 / 100.000, 2 / 550.000, 3 / 450.000, 4
+        / 425.000</p></li>
+        </ul></li>
+        <li><p>Řešení, IN = 1.100.000, SHFC = 100.000 / (1+0.09)^1 +
+        550.000 / (1+0.09)^2 + 450.000 / (1+0.09)^3 + 425.000 /
+        (1+0.09)^4 = 1.203.230,40, ČSH = 1.203.230,4 – 1.100.000 =
+        103.230,4</p></li>
+        </ul></li>
+        </ul>
+        <p>Index rentability <span class="math inline">I_{R}</span> je
+        poměrový ukazatel – kolik vydělá každá jedna koruna vložená do
+        investice na začátku.</p>
+        <p><span class="math display">I_{R} = \frac{SFCF}{IN}</span></p>
+        <p>Pokud <span class="math inline">I_{r} &gt; 1</span>,
+        investice je výnosná. Jinak investice ztrácí prostředky.</p>
+        <ul>
+        <li><p>Příklad 2</p>
+        <ul>
+        <li><p>Firma chce co nejlépe zhodnotit během následujících 5 let
+        prostředky ve výši 10.000 tis. Kč. Vedení firmy navrhlo jeden
+        investičních projektů, s nimiž jsou spojeny následující příjmy a
+        výdaje. Diskontní sazba je 10 %. Předpokládejme</p>
+        <ul>
+        <li><p>Investiční výdaj (Kč) 10.000.000; Roční příjem
+        (2.800.000)</p></li>
+        </ul></li>
+        <li><p>Řešení, IN = 10.000.000, SHFC = 2.800.000 / (1+0,1)^1 +
+        2.800.000 / (1+0,1)^2 +2.800.000 / (1+0,1)^3 +2.800.000 /
+        (1+0,1)^4 +2.800.000 / (1+0,1)^5 = 10.614.202, I_R =
+        10.614.202/10.000.000 = 1.0614</p></li>
+        </ul></li>
+        </ul>
+        <p><strong>Vnitřním výnosem procento</strong> <span
+        class="math inline">VVP</span> je nejčastěji používaná metoda
+        hodnocení investic. Zjišťujeme, jaký je procentní výnos
+        varianty.</p>
+        <p>První způsobem výpočtu je hledání takové úrovně diskontní
+        sazby, při které je čistá současná hodnota rovná nule.</p>
+        <p><span class="math display">\sum_{k =
+        1}^{n}\frac{CF_{k}}{\left( 1 + (i = VVP) \right)^{k}} - IN =
+        0</span></p>
+        <p>V praxi využíváme druhého postupu, který vychází ze dvou
+        diskontních sazeb – první <span class="math inline">i_{1}</span>
+        stanovíme skrze metodu WACC a rizikovou přirážkou <span
+        class="math inline">RP</span> (<span class="math inline">i_{1} =
+        WACC + RP</span>). Z první diskontní sazby nám musí vyjít
+        pozitivní čistá současná hodnota (jinak je investice nevýhodná a
+        odmítáme ji).</p>
+        <p>Druhou diskontní sazbu <span class="math inline">i_{2}</span>
+        si podnik volí individuálně. Je nutné, aby při využití <span
+        class="math inline">i_{2}</span> vyšli čisté současné hodnoty
+        všech variant záporně.</p>
+        <p><span class="math display">VVP = i_{1} +
+        \frac{ČSH_{1}}{ČSH_{1} + \left| ČSH_{2} \right|} \cdot \left(
+        i_{2} - i_{1} \right)</span></p>
+        <p>Přijatelnost u této metody vyhodnocujeme pomocí pravidla
+        <span class="math inline">VVP &gt; i_{1}</span>, poté jde o
+        výnosnou investici.</p>
+        <ul>
+        <li><p>Příklad 1</p>
+        <ul>
+        <li><p>Posuďte následující investiční variantu metodou vnitřního
+        výnosového procenta. Výchozí diskontní sazba je 15 %. Údaje jsou
+        níže:</p>
+        <ul>
+        <li><p>CF_0 = -8.000.000, CF_1 = 4.000.000, CF_2 = 4.500.000,
+        CF_3 = 3.000.000, CF_4 = 2.500.000</p></li>
+        </ul></li>
+        <li><p>Řešení, VVR = 29.84 %</p></li>
+        </ul></li>
+        </ul>
+        <h1 id="otázky-ke-zkoušce">Otázky ke zkoušce</h1>
+        <h2
+        id="popište-náklady-obětované-příležitosti-kapitálu-uveďte-příklad.">Popište
+        náklady obětované příležitosti kapitálu, uveďte příklad.</h2>
+        <p>Náklady obětované příležitosti kapitálu představují hodnotu
+        nejlepší alternativní investice se srovnatelným rizikem, které
+        se investor vzdal, když se rozhodl pro konkrétní investici,
+        jinými slovy jde o výnos, který by mohl získat, kdyby investoval
+        do jiné nejlepší dostupné varianty.</p>
+        <ul>
+        <li><p>Vyjadřují implicitní náklady využití kapitálu</p></li>
+        <li><p>Jsou základním principem ekonomického
+        rozhodování</p></li>
+        <li><p>Nejsou účetně zachyceny, ale mají reálný ekonomický
+        dopad</p></li>
+        <li><p>Příklad: Když firma investuje 1 milion Kč do rozšíření
+        výroby s očekávaným výnosem 7%, obětuje tím možnost uložit tyto
+        peníze do státních dluhopisů s výnosem 4% nebo do jiného
+        projektu s výnosem 6%</p></li>
+        <li><p>Při hodnocení investic musí být výnos vyšší než náklady
+        obětované příležitosti</p></li>
+        <li><p>Pomáhají určit minimální požadovanou výnosnost
+        investice</p></li>
+        <li><p>Liší se podle rizikovosti alternativních
+        investic</p></li>
+        </ul>
+        <h2
+        id="popište-co-obsahují-a-jak-se-od-sebe-liší-investice-a-způsob-financování.">Popište,
+        co obsahují a jak se od sebe liší investice a způsob
+        financování.</h2>
+        <p>Investice představuje vložení kapitálu do majetku s cílem
+        získat budoucí ekonomické přínosy, zatímco způsob financování
+        vyjadřuje, jakými zdroji jsou tyto investice pořízeny, přičemž
+        mezi těmito dvěma aspekty musí existovat optimální rovnováha s
+        ohledem na riziko, výnosnost a likviditu.</p>
+        <ul>
+        <li><p>Investice znamená pořízení aktiv (hmotných, nehmotných,
+        finančních)</p></li>
+        <li><p>Způsob financování určuje původ zdrojů (vlastní kapitál,
+        úvěr, leasing atd.)</p></li>
+        <li><p>Investice se zaměřuje na strukturu majetku (strana aktiv
+        v rozvaze)</p></li>
+        <li><p>Financování se týká struktury kapitálu (strana pasiv v
+        rozvaze)</p></li>
+        <li><p>Investice sleduje účel použití prostředků a očekávaný
+        výnos</p></li>
+        <li><p>Financování řeší cenu kapitálu (úrok, dividenda) a jeho
+        dostupnost</p></li>
+        <li><p>Správný soulad mezi investicí a jejím financováním je
+        klíčem k finanční stabilitě</p></li>
+        <li><p>Pro dlouhodobé investice je vhodné dlouhodobé financování
+        (zlaté bilanční pravidlo)</p></li>
+        </ul>
+        <h2 id="popište-jaké-vztahy-mohou-nastat-mezi-vh-a-cf.">Popište,
+        jaké vztahy mohou nastat mezi VH a CF.</h2>
+        <p>Mezi výsledkem hospodaření (VH) a cash flow (CF) mohou nastat
+        různé vztahy, které odrážejí časový nesoulad mezi účetním
+        zachycením nákladů a výnosů oproti skutečným peněžním tokům,
+        přičemž tento rozdíl je způsoben především akruálním principem
+        účetnictví.</p>
+        <ul>
+        <li><p>Zisk s pozitivním CF: ideální situace, podnik je ziskový
+        a má dostatek hotovosti</p></li>
+        <li><p>Zisk s negativním CF: rizikový stav, podnik je účetně
+        ziskový, ale nemá hotovost (např. kvůli investicím nebo nárůstu
+        pohledávek)</p></li>
+        <li><p>Ztráta s pozitivním CF: dočasně udržitelná situace,
+        podnik je ve ztrátě, ale má peníze (např. díky odpisům nebo
+        prodeji majetku)</p></li>
+        <li><p>Ztráta s negativním CF: kritická situace, podnik
+        prodělává a zároveň nemá hotovost</p></li>
+        <li><p>Rozdíl mezi VH a CF způsobují především odpisy, změny
+        stavu zásob a pohledávek</p></li>
+        <li><p>Dlouhodobě musí být trend VH a CF podobný pro finanční
+        zdraví podniku</p></li>
+        <li><p>Akruální princip účetnictví je hlavní příčinou rozdílů
+        (účtuje o výnosech a nákladech, nikoliv příjmech a
+        výdajích)</p></li>
+        </ul>
+        <h2 id="jaké-jsou-principy-finančního-řízení">Jaké jsou principy
+        finančního řízení?</h2>
+        <p>Principy finančního řízení představují základní pravidla a
+        koncepce, kterými se řídí finanční rozhodování v podniku s cílem
+        maximalizovat hodnotu firmy a zajistit její dlouhodobou
+        prosperitu při zachování finanční stability a přiměřeného
+        rizika.</p>
+        <ul>
+        <li><p>Princip peněžních toků (cash flow) - zdůrazňuje reálné
+        peněžní toky nad účetními výkazy</p></li>
+        <li><p>Princip čisté současné hodnoty – preference investic s
+        kladnou čistou současnou hodnotou</p></li>
+        <li><p>Princip respektování faktoru času – zohlednění časové
+        hodnoty peněz při rozhodování</p></li>
+        <li><p>Princip zohledňování rizika – vyšší riziko musí být
+        kompenzováno vyšším výnosem</p></li>
+        <li><p>Princip optimalizace kapitálové struktury – nalezení
+        optimálního poměru vlastního a cizího kapitálu</p></li>
+        <li><p>Princip zohledňování stupně efektivnosti kapitálových
+        trhů – respektování prostředí</p></li>
+        <li><p>Princip plánování a analýzy finančních údajů –
+        systematické řízení podnikových financí</p></li>
+        <li><p>Princip kompromisu mezi výnosností, rizikem a likviditou
+        – hledání vyvážené pozice</p></li>
+        </ul>
+        <h2
+        id="jaký-je-rozdíl-mezi-jednoduchým-a-složeným-úročením.">Jaký
+        je rozdíl mezi jednoduchým a složeným úročením.</h2>
+        <p>Rozdíl mezi jednoduchým a složeným úročením spočívá v tom, že
+        při jednoduchém úročení se úrok počítá vždy jen z původní
+        jistiny, zatímco při složeném úročení se v každém následujícím
+        období počítá úrok z jistiny navýšené o úroky z předchozích
+        období, což vede k exponenciálnímu růstu vložené částky.</p>
+        <ul>
+        <li><p>Jednoduché úročení: úroky se připisují jen k původní
+        jistině (lineární růst)</p></li>
+        <li><p>Složené úročení: úroky se připisují k jistině a dále se
+        úročí (exponenciální růst)</p></li>
+        <li><p>Vzorec pro jednoduché úročení: <span
+        class="math inline">FV\  = \ PV\  \times \ (1\  + \ n\  \times \
+        r)</span>, kde <span class="math inline">n</span> je počet
+        období a r je úroková sazba</p></li>
+        <li><p>Vzorec pro složené úročení: <span
+        class="math inline">FV\  = \ PV\  \times \ (1\  + \
+        r)^{n}</span></p></li>
+        <li><p>Při delším časovém horizontu je rozdíl mezi oběma
+        metodami výraznější</p></li>
+        <li><p>Jednoduché úročení se používá zejména pro krátkodobé
+        finanční operace (do 1 roku)</p></li>
+        <li><p>Složené úročení je běžné u dlouhodobých vkladů, úvěrů a
+        investic</p></li>
+        <li><p>Efekt složeného úročení je označován jako "úrok z úroku"
+        nebo "síla složeného úročení"</p></li>
+        </ul>
+        <h2
+        id="definujte-investici-a-uveďte-možnosti-jejího-financování-vč.-výhod-a-nevýhod.">Definujte
+        investici a uveďte možnosti jejího financování, vč. výhod a
+        nevýhod.</h2>
+        <p>Investice představuje vynakládání současných zdrojů s cílem
+        získání budoucích ekonomických přínosů ve formě výnosů, úspor
+        nákladů nebo jiných pozitivních efektů během delšího časového
+        období, přičemž může být financována různými způsoby, které mají
+        své specifické výhody a nevýhody.</p>
+        <ul>
+        <li><p>Financování vlastním kapitálem (nerozdělený zisk, vklady
+        vlastníků)</p>
+        <ul>
+        <li><p>Výhody: nezatěžuje cash flow splátkami, snižuje finanční
+        riziko, nezpůsobuje zadlužení</p></li>
+        <li><p>Nevýhody: vyšší cena kapitálu, omezený objem dostupných
+        prostředků</p></li>
+        </ul></li>
+        <li><p>Financování bankovním úvěrem</p>
+        <ul>
+        <li><p>Výhody: daňová uznatelnost úroků, páková efekt, ponechání
+        vlastnické kontroly</p></li>
+        <li><p>Nevýhody: zvýšení zadluženosti, zatížení cash flow
+        splátkami, požadavky na zajištění</p></li>
+        </ul></li>
+        <li><p>Financování leasingem</p>
+        <ul>
+        <li><p>Výhody: rozložení splátek, jednodušší získání než úvěr,
+        možné daňové výhody</p></li>
+        <li><p>Nevýhody: vyšší celková cena, majetek není ve vlastnictví
+        podniku během splácení</p></li>
+        </ul></li>
+        <li><p>Dluhopisové financování</p>
+        <ul>
+        <li><p>Výhody: získání velkého objemu zdrojů, flexibilní
+        podmínky</p></li>
+        <li><p>Nevýhody: náročnost emise, nutnost dobré bonity
+        emitenta</p></li>
+        </ul></li>
+        <li><p>Financování dotacemi</p>
+        <ul>
+        <li><p>Výhody: nenávratný kapitál, nižší náklady na
+        investici</p></li>
+        <li><p>Nevýhody: administrativní náročnost, omezující
+        podmínky</p></li>
+        </ul></li>
+        </ul>
+        <h2 id="popište-investiční-rozhodování.">Popište investiční
+        rozhodování.</h2>
+        <p>Investiční rozhodování je systematický proces výběru
+        nejvhodnějších investičních projektů na základě hodnocení jejich
+        ekonomických parametrů, rizika a souladu se strategickými cíli
+        podniku, přičemž zahrnuje identifikaci investičních
+        příležitostí, jejich analýzu, výběr optimálního projektu,
+        implementaci a následné vyhodnocení.</p>
+        <ul>
+        <li><p>Identifikace investičních příležitostí v souladu se
+        strategií podniku</p></li>
+        <li><p>Předinvestiční analýza (studie proveditelnosti, analýza
+        trhu, technická analýza)</p></li>
+        <li><p>Stanovení kapitálových výdajů a odhadovaných peněžních
+        příjmů</p></li>
+        <li><p>Výpočet finančních ukazatelů (NPV, IRR, doba
+        návratnosti)</p></li>
+        <li><p>Analýza rizika investice a citlivostní analýza</p></li>
+        <li><p>Zohlednění nefinančních faktorů (ekologické, sociální
+        aspekty)</p></li>
+        <li><p>Rozhodnutí o přijetí či zamítnutí investice</p></li>
+        <li><p>Implementace, kontrola a hodnocení realizované
+        investice</p></li>
+        <li><p>Investiční rozhodnutí jsou obvykle nevratná nebo obtížně
+        změnitelná</p></li>
+        </ul>
+        <h2
+        id="uveďte-metody-hodnocení-investic-jejich-výhody-a-nevýhody.">Uveďte
+        metody hodnocení investic, jejich výhody a nevýhody.</h2>
+        <p>Metody hodnocení investic jsou analytické nástroje používané
+        k posouzení ekonomické efektivnosti investičních projektů,
+        přičemž se dělí na statické metody (nerespektující faktor času)
+        a dynamické metody (zohledňující časovou hodnotu peněz), každá s
+        vlastními výhodami a omezeními.</p>
+        <ul>
+        <li><p>Doba návratnosti</p>
+        <ul>
+        <li><p>Výhody: jednoduchý výpočet, srozumitelnost, preference
+        likvidity</p></li>
+        <li><p>Nevýhody: ignoruje cash flow po době návratnosti,
+        nerespektuje časovou hodnotu peněz</p></li>
+        </ul></li>
+        <li><p>Čistá současná hodnota (NPV)</p>
+        <ul>
+        <li><p>Výhody: respektuje časovou hodnotu peněz, absolutní
+        vyjádření přínosu, aditivita</p></li>
+        <li><p>Nevýhody: citlivost na diskontní sazbu, složitější
+        výpočet, obtížnější interpretace</p></li>
+        </ul></li>
+        <li><p>Vnitřní výnosové procento (IRR)</p>
+        <ul>
+        <li><p>Výhody: relativní vyjádření výnosnosti, snadná
+        porovnatelnost s požadovanou výnosností</p></li>
+        <li><p>Nevýhody: možnost více řešení u nestandardních CF,
+        nevhodné pro vzájemně se vylučující projekty</p></li>
+        </ul></li>
+        <li><p>Index rentability (PI)</p>
+        <ul>
+        <li><p>Výhody: relativní ukazatel, vhodný při omezených
+        zdrojích</p></li>
+        <li><p>Nevýhody: nesrovnatelnost při různé velikosti projektů,
+        složitější výpočet</p></li>
+        </ul></li>
+        <li><p>Ekonomická přidaná hodnota (EVA)</p>
+        <ul>
+        <li><p>Výhody: zohledňuje náklady kapitálu, měří reálnou
+        ekonomickou výkonnost</p></li>
+        <li><p>Nevýhody: složitý výpočet, nutnost úprav účetních
+        dat</p></li>
+        </ul></li>
+        </ul>
+        <h2 id="co-je-to-diskontované-cash-flow">Co je to diskontované
+        cash flow?</h2>
+        <p>Diskontované cash flow je metoda přepočtu budoucích peněžních
+        toků na jejich současnou hodnotu pomocí diskontní sazby, která
+        zohledňuje časovou hodnotu peněz a riziko, čímž umožňuje
+        objektivní porovnání peněžních toků generovaných v různých
+        časových obdobích a s různou mírou rizika.</p>
+        <ul>
+        <li><p>Vychází z principu, že koruna získaná dnes má vyšší
+        hodnotu než koruna získaná v budoucnu</p></li>
+        <li><p>Využívá diskontní sazbu jako míru požadované výnosnosti
+        investice</p></li>
+        <li><p>Slouží jako základ pro výpočet čisté současné hodnoty
+        (NPV)</p></li>
+        <li><p>Používá se vzorec: <span class="math inline">PV\  =
+        \frac{FV}{(1 + r)^{n}}</span>, kde PV je současná hodnota, FV
+        budoucí hodnota, r diskontní sazba a n počet období</p></li>
+        <li><p>Čím vyšší je diskontní sazba, tím nižší je současná
+        hodnota budoucích peněžních toků</p></li>
+        <li><p>Diskontní sazba by měla reflektovat alternativní náklady
+        kapitálu a riziko investice</p></li>
+        <li><p>Je klíčovým nástrojem pro investiční rozhodování a
+        oceňování podniků</p></li>
+        <li><p>Umožňuje srovnávat projekty s různým časovým rozložením
+        cash flow</p></li>
+        </ul>
+        <h2
+        id="popište-princip-čsh-a-ir.-kdy-budete-investici-realizovat">Popište
+        princip ČSH a IR. Kdy budete investici realizovat?</h2>
+        <p>Čistá současná hodnota (ČSH) a index rentability (IR) jsou
+        dynamické metody hodnocení investic, přičemž ČSH představuje
+        rozdíl mezi současnou hodnotou všech budoucích příjmů a
+        současnou hodnotou všech výdajů investice, zatímco IR vyjadřuje
+        poměr současné hodnoty budoucích příjmů k současné hodnotě
+        investičních výdajů.</p>
+        <ul>
+        <li><p>ČSH = suma diskontovaných příjmů - suma diskontovaných
+        výdajů</p></li>
+        <li><p>IR = suma diskontovaných příjmů / suma diskontovaných
+        výdajů</p></li>
+        <li><p>Investici realizujeme, když <span
+        class="math inline">ČSH\  &gt; \ 0</span> a zároveň <span
+        class="math inline">IR\  &gt; \ 1</span></p></li>
+        <li><p>Při rozhodování mezi vzájemně se vylučujícími projekty
+        volíme projekt s vyšší ČSH</p></li>
+        <li><p>Při kapitálovém omezení volíme projekty s nejvyšším IR
+        (maximalizace hodnoty na jednotku investice)</p></li>
+        <li><p>ČSH měří absolutní přínos investice v peněžních
+        jednotkách</p></li>
+        <li><p>IR měří relativní výnosnost investice (kolik korun
+        přinese jedna investovaná koruna)</p></li>
+        <li><p>Obě metody respektují časovou hodnotu peněz a riziko
+        prostřednictvím diskontní sazby</p></li>
+        </ul>
+        <h2 id="co-je-to-finanční-analýza-a-k-čemu-slouží">Co je to
+        finanční analýza a k čemu slouží?</h2>
+        <p>Finanční analýza je systematický rozbor účetních dat a
+        dalších informací o podniku, který slouží k hodnocení minulého a
+        současného finančního zdraví společnosti, predikci budoucího
+        vývoje a poskytuje podklady pro finanční řízení a rozhodování o
+        dalším směřování podniku.</p>
+        <ul>
+        <li><p>Hodnotí finanční situaci, výkonnost a pozici
+        podniku</p></li>
+        <li><p>Identifikuje silné a slabé stránky finančního
+        řízení</p></li>
+        <li><p>Poskytuje zpětnou vazbu o naplňování finanční
+        strategie</p></li>
+        <li><p>Slouží jako podklad pro investiční a finanční
+        rozhodování</p></li>
+        <li><p>Pomáhá odhalit případné finanční problémy včas</p></li>
+        <li><p>Umožňuje srovnání s konkurencí nebo oborovými
+        průměry</p></li>
+        <li><p>Je základem pro finanční plánování a
+        prognózování</p></li>
+        <li><p>Poskytuje informace pro různé zájmové skupiny
+        (stakeholdery)</p></li>
+        </ul>
+        <h2 id="jaké-jsou-informační-zdroje-finanční-analýzy">Jaké jsou
+        informační zdroje finanční analýzy?</h2>
+        <p>Informační zdroje finanční analýzy představují soubor dat a
+        dokumentů, ze kterých analytici čerpají informace pro hodnocení
+        finančního zdraví podniku, přičemž zahrnují jak interní účetní
+        výkazy, tak externí informace o prostředí, ve kterém podnik
+        působí.</p>
+        <ul>
+        <li><p>Účetní závěrka (rozvaha, výkaz zisku a ztráty, výkaz cash
+        flow, příloha)</p></li>
+        <li><p>Výroční zprávy a zpráva auditora</p></li>
+        <li><p>Vnitropodnikové účetnictví a manažerské reporty</p></li>
+        <li><p>Podnikové statistiky (výroby, prodeje,
+        zaměstnanosti)</p></li>
+        <li><p>Podnikové plány a strategie</p></li>
+        <li><p>Informace z kapitálového trhu (u veřejně obchodovaných
+        společností)</p></li>
+        <li><p>Oborové srovnávací statistiky a benchmarky</p></li>
+        <li><p>Makroekonomické údaje a prognózy</p></li>
+        <li><p>Informace o konkurenci, dodavatelích a
+        odběratelích</p></li>
+        <li><p>Nefinanční informace (technologický vývoj, legislativní
+        změny)</p></li>
+        </ul>
+        <h2
+        id="popište-uživatele-výsledků-finanční-analýzy-a-z-jakého-důvodu-je-výstupy-zajímají.">Popište
+        uživatele výsledků finanční analýzy a z jakého důvodu je výstupy
+        zajímají.</h2>
+        <p>Uživatelé výsledků finanční analýzy jsou subjekty, které mají
+        zájem na finanční situaci podniku z různých důvodů, přičemž
+        každá skupina sleduje specifické aspekty analýzy podle svých
+        zájmů, které mohou být spojeny s investičním rozhodováním,
+        úvěrováním, obchodní spoluprací nebo strategickým řízením.</p>
+        <ul>
+        <li><p>Management – potřebuje informace pro operativní i
+        strategické řízení podniku</p></li>
+        <li><p>Vlastníci/akcionáři – zajímá je zhodnocení investovaného
+        kapitálu a dividendový potenciál</p></li>
+        <li><p>Banky a věřitelé – hodnotí schopnost splácet úvěry a
+        posuzují bonitu dlužníka</p></li>
+        <li><p>Dodavatelé – sledují platební schopnost a dlouhodobou
+        stabilitu obchodního partnera</p></li>
+        <li><p>Odběratelé – zajímají se o spolehlivost dodávek a
+        dlouhodobou perspektivu spolupráce</p></li>
+        <li><p>Zaměstnanci – sledují stabilitu zaměstnání a možnosti
+        růstu mezd</p></li>
+        <li><p>Konkurence – porovnává vlastní výsledky a hledá
+        konkurenční výhody</p></li>
+        <li><p>Stát a jeho orgány – kontrolují plnění daňových
+        povinností a využívají data pro statistiky</p></li>
+        <li><p>Potenciální investoři – hledají investiční příležitosti s
+        vhodným poměrem výnosu a rizika</p></li>
+        <li><p>Analytici a poradci – připravují podklady pro investiční
+        rozhodování svých klientů</p></li>
+        </ul>
+        <h2
+        id="co-obsahuje-finanční-analýza-podniku-jaká-je-její-struktura-kapitoly.">Co
+        obsahuje finanční analýza podniku – jaká je její struktura
+        (kapitoly).</h2>
+        <p>Finanční analýza podniku je strukturovaný dokument, který
+        systematicky hodnotí finanční zdraví společnosti prostřednictvím
+        různých analytických metod a ukazatelů, přičemž její standardní
+        struktura zahrnuje několik logicky uspořádaných kapitol, které
+        poskytují komplexní pohled na finanční situaci podniku.</p>
+        <ul>
+        <li><p>Úvod a charakteristika analyzovaného podniku</p></li>
+        <li><p>Analýza makroekonomického prostředí a odvětví</p></li>
+        <li><p>Horizontální analýza účetních výkazů (analýza
+        trendů)</p></li>
+        <li><p>Vertikální analýza účetních výkazů (analýza
+        struktury)</p></li>
+        <li><p>Analýza rozdílových ukazatelů (čistý pracovní kapitál,
+        čisté pohotové prostředky)</p></li>
+        <li><p>Analýza poměrových ukazatelů (rentabilita, likvidita,
+        aktivita, zadluženost)</p></li>
+        <li><p>Analýza soustav ukazatelů (pyramidové rozklady, bonitní a
+        bankrotní modely)</p></li>
+        <li><p>Mezipodnikové srovnání (benchmarking)</p></li>
+        <li><p>Identifikace silných a slabých stránek finančního
+        hospodaření</p></li>
+        <li><p>Návrhy a doporučení ke zlepšení finanční situace</p></li>
+        <li><p>Predikce budoucího vývoje</p></li>
+        <li><p>Závěrečné shrnutí</p></li>
+        </ul>
+        <h2
+        id="jaké-jsou-typy-ukazatelů-fa.-při-které-analýze-jsou-určeny">Jaké
+        jsou typy ukazatelů FA. Při které analýze jsou určeny?</h2>
+        <p>Finanční analýza využívá různé typy ukazatelů, které jsou
+        určovány při specifických analýzách účetních výkazů a finančních
+        dat, přičemž každý typ poskytuje jedinečný pohled na finanční
+        zdraví podniku a společně vytvářejí komplexní obraz o jeho
+        hospodaření.</p>
+        <ul>
+        <li><p>Absolutní ukazatele – určovány přímo z položek účetních
+        výkazů při horizontální a vertikální analýze</p></li>
+        <li><p>Rozdílové ukazatele – vypočítávány jako rozdíl určitých
+        položek aktiv a pasiv při analýze fondů finančních
+        prostředků</p></li>
+        <li><p>Poměrové ukazatele – vznikají jako podíl dvou položek při
+        analýze poměrových ukazatelů</p></li>
+        <li><p>Pyramidové ukazatele – vytvářeny při pyramidovém rozkladu
+        syntetických ukazatelů</p></li>
+        <li><p>Bonitní a bankrotní modely – komplexní ukazatele určované
+        při souhrnné analýze</p></li>
+        <li><p>Ukazatele cash flow – odvozované z výkazu peněžních toků
+        při analýze cash flow</p></li>
+        <li><p>Ukazatele přidané hodnoty – stanovované při analýze
+        tvorby a distribuce hodnoty</p></li>
+        <li><p>Ukazatele kapitálového trhu – počítané pro veřejně
+        obchodované společnosti při analýze tržní hodnoty</p></li>
+        </ul>
+        <h2
+        id="jaké-typy-ukazatelů-obsahuje-analýza-poměrových-ukazatelů">Jaké
+        typy ukazatelů obsahuje analýza poměrových ukazatelů?</h2>
+        <p>Analýza poměrových ukazatelů představuje jádro finanční
+        analýzy a zahrnuje několik základních skupin ukazatelů, které
+        hodnotí různé aspekty finančního zdraví podniku pomocí poměru
+        dvou nebo více položek z účetních výkazů, čímž umožňují
+        srovnávání v čase i mezi podniky navzájem.</p>
+        <ul>
+        <li><p>Ukazatele rentability (ziskovosti) - měří schopnost
+        podniku vytvářet zisk (ROA, ROE, ROS, ROCE)</p></li>
+        <li><p>Ukazatele likvidity – hodnotí schopnost podniku hradit
+        krátkodobé závazky (běžná, pohotová, okamžitá
+        likvidita)</p></li>
+        <li><p>Ukazatele aktivity – měří efektivnost využívání aktiv
+        (obrat aktiv, zásob, pohledávek, doba obratu)</p></li>
+        <li><p>Ukazatele zadluženosti – analyzují kapitálovou strukturu
+        a finanční stabilitu (celková zadluženost, úrokové
+        krytí)</p></li>
+        <li><p>Ukazatele tržní hodnoty – hodnotí vnímání podniku
+        investory (P/E ratio, dividendový výnos)</p></li>
+        <li><p>Ukazatele produktivity – měří výkonnost ve vztahu k
+        nákladům na zaměstnance</p></li>
+        <li><p>Ukazatele na bázi cash flow – analyzují peněžní toky v
+        relaci k jiným veličinám</p></li>
+        <li><p>Ukazatele hodnoty pro vlastníky (shareholder value) -
+        měří tvorbu hodnoty pro akcionáře</p></li>
+        </ul>
+        <h2 id="jakým-způsobem-lze-zvýšit-cf-v-podniku">Jakým způsobem
+        lze zvýšit CF v podniku?</h2>
+        <p>Zvýšení cash flow v podniku je možné dosáhnout
+        prostřednictvím systematických opatření zaměřených na
+        optimalizaci provozní, investiční a finanční činnosti, přičemž
+        klíčovými oblastmi jsou efektivní řízení pracovního kapitálu,
+        optimalizace nákladů, zlepšení platební disciplíny a strategické
+        řízení investic a financování.</p>
+        <ul>
+        <li><p>Zrychlení inkasa pohledávek (zkrácení doby splatnosti,
+        faktoring, slevy za včasnou platbu)</p></li>
+        <li><p>Optimalizace zásob (just-in-time, ABC analýza, optimální
+        velikost dodávky)</p></li>
+        <li><p>Vyjednání delší doby splatnosti u dodavatelů (prodloužení
+        závazků)</p></li>
+        <li><p>Zvýšení marží a objemu prodejů</p></li>
+        <li><p>Optimalizace fixních a variabilních nákladů</p></li>
+        <li><p>Odložení nebo rozložení investičních výdajů</p></li>
+        <li><p>Odprodej nepotřebného majetku</p></li>
+        <li><p>Leasing místo přímé koupě majetku</p></li>
+        <li><p>Restrukturalizace úvěrů (konsolidace,
+        refinancování)</p></li>
+        <li><p>Získání dotací nebo grantů</p></li>
+        <li><p>Daňová optimalizace (legální minimalizace daňové
+        povinnosti)</p></li>
+        <li><p>Zvýšení základního kapitálu nebo získání dalších
+        investorů</p></li>
+        </ul>
+        <h2 id="popište-likviditu-a-její-ukazatele."> Popište likviditu
+        a její ukazatele.</h2>
+        <p>Ukazatele likvidity ukazují, jak rychle je podnik schopen
+        uhradit své závazky.</p>
+        <ul>
+        <li><p><strong>Běžná likvidita</strong> (likvidita 3. stupně) –
+        poměr oběžných aktiv a krátkodobých závazků, očekávaná hodnota
+        mezi <span class="math inline">1,5</span> až <span
+        class="math inline">2,5</span>.</p></li>
+        </ul>
+        <p><span class="math display">LIQ_{3} =
+        \frac{OA}{KCK}</span></p>
+        <ul>
+        <li><p><strong>Rychlá likvidita</strong> (likvidita 2. stupně) –
+        poměr oběžných aktiv bez zásob a krátkodobých závazků, očekávaná
+        hodnota mezi <span class="math inline">1</span> až <span
+        class="math inline">1,5</span>.</p></li>
+        </ul>
+        <p><span class="math display">LIQ_{2} = \frac{OA -
+        zásoby}{KCK}</span></p>
+        <ul>
+        <li><p><strong>Okamžitá likvidita</strong> (likvidita 1. stupně)
+        – poměr krátkodobého finančního majetku a krátkodobých závazků,
+        očekávaná hodnota okolo <span
+        class="math inline">0,5</span>.</p></li>
+        </ul>
+        <p><span class="math display">LIQ_{1} = \frac{pen.prostředky\
+        (KFM)}{KCK}</span></p>
+        <h2 id="popište-ukazatele-zadluženosti.">Popište ukazatele
+        zadluženosti.</h2>
+        <p>Ukazatele zadluženosti ukazují, jakou mírou podnik spoléhá na
+        cizí kapitál.</p>
+        <ul>
+        <li><p><strong>Celková zadluženost</strong> – podíl cizího
+        kapitálu na celkových pasivech.</p></li>
+        </ul>
+        <p><span class="math display">CZ = \frac{CK}{VK + CK},CZ = DZ +
+        BZ</span></p>
+        <ul>
+        <li><p><strong>Dlouhodobá zadluženost</strong> – podíl
+        dlouhodobých závazků na celkových pasivech.</p></li>
+        </ul>
+        <p><span class="math display">DZ = \frac{DCK}{VK +
+        CK}</span></p>
+        <ul>
+        <li><p><strong>Běžná zadluženost</strong> – podíl krátkodobých
+        závazků na celkových pasivech.</p></li>
+        </ul>
+        <p><span class="math display">BZ = \frac{KCK}{VK +
+        CK}</span></p>
+        <h2 id="popište-ukazatele-rentability.">Popište ukazatele
+        rentability.</h2>
+        <p>Ukazatele rentability ukazují výnosnost podniku. Vycházíme
+        z hospodářského výsledku – ukazujeme vztah mezi hospodářským
+        výsledkem a vloženými zdroji. Pro vyčíslení potřebujeme výkaz
+        zisků a ztrát (pro hospodářský výsledek) a rozvahu (pro vložené
+        zdroje).</p>
+        <ul>
+        <li><p><strong>Rentabilita celkového kapitálu</strong> – poměr
+        mezi hospodářským výsledek a celkovou úrovní pasiv.</p></li>
+        </ul>
+        <p><span class="math display">RCK = \frac{HV}{VK +
+        CK}</span></p>
+        <ul>
+        <li><p><strong>Rentabilita vlastního kapitálu</strong> (ROE) –
+        poměr mezi hospodářským výsledkem a vlastním kapitálem.</p></li>
+        </ul>
+        <p><span class="math display">ROE = \frac{HV}{VK}</span></p>
+        <ul>
+        <li><p><strong>Rentabilita celkových aktiv</strong> (ROA) –
+        poměr mezi hospodářským výsledkem a celkovými aktivy. (stejná
+        hodnota jako rentabilita celkového kapitálu)</p></li>
+        </ul>
+        <p><span class="math display">ROA = \frac{HV}{SA +
+        OA}</span></p>
+        <ul>
+        <li><p><strong>Rentabilita tržeb</strong> – poměr mezi
+        hospodářským výsledkem a celkovými tržbami. (kolik tvoří zisk z
+        jedné koruny tržeb)</p></li>
+        </ul>
+        <p><span class="math display">RT = \frac{HV}{T}</span></p>
+        <h2 id="jaké-jsou-základní-ukazatele-obratu">Jaké jsou základní
+        ukazatele obratu?</h2>
+        <p>Základní ukazatele obratu (aktivity) měří efektivnost
+        využívání podnikových aktiv a jejich jednotlivých složek,
+        přičemž vyjadřují buď rychlost obratu (kolikrát se daná položka
+        obrátí za období) nebo dobu obratu (jak dlouho trvá jedna
+        obrátka ve dnech).</p>
+        <ul>
+        <li><p>Obrat celkových aktiv = tržby / celková aktiva</p>
+        <ul>
+        <li><p>Minimální doporučená hodnota je 1</p></li>
+        <li><p>Měří efektivnost využívání celkového majetku</p></li>
+        </ul></li>
+        <li><p>Obrat dlouhodobého majetku = tržby / dlouhodobý
+        majetek</p>
+        <ul>
+        <li><p>Ukazuje efektivnost využívání strojů, budov a
+        zařízení</p></li>
+        <li><p>Ovlivněn mírou odepsanosti majetku</p></li>
+        </ul></li>
+        <li><p>Obrat zásob = tržby / zásoby</p>
+        <ul>
+        <li><p>Udává, kolikrát je každá položka zásob prodána a znovu
+        naskladněna</p></li>
+        </ul></li>
+        <li><p>Doba obratu zásob = (zásoby × 360) / tržby</p>
+        <ul>
+        <li><p>Průměrný počet dnů do spotřeby nebo prodeje
+        zásob</p></li>
+        </ul></li>
+        <li><p>Doba obratu pohledávek = (pohledávky × 360) / tržby</p>
+        <ul>
+        <li><p>Průměrná doba inkasa pohledávek od odběratelů</p></li>
+        </ul>
+        <ul>
+        <li><p>Měla by být nižší než doba splatnosti vystavených
+        faktur</p></li>
+        </ul></li>
+        </ul>
+        <ul>
+        <li><p>Doba obratu závazků = (závazky × 360) / tržby</p>
+        <ul>
+        <li><p>Průměrná doba úhrady závazků dodavatelům</p></li>
+        <li><p>Souvisí s likviditou a platební morálkou podniku</p></li>
+        </ul></li>
+        <li><p>Obratový cyklus peněz = doba obratu zásob + doba obratu
+        pohledávek – doba obratu závazků</p>
+        <ul>
+        <li><p>Udává dobu od platby za nakoupený materiál do inkasa za
+        prodané výrobky</p></li>
+        </ul></li>
+        <li><p>Hodnoty ukazatelů obratu závisí na odvětví a charakteru
+        podnikání</p></li>
+        <li><p>Obecně platí, že doba obratu závazků by měla být delší
+        než doba obratu pohledávek</p></li>
+        </ul>
+        <h2 id="definujte-čisté-pohotové-prostředky.">Definujte čisté
+        pohotové prostředky.</h2>
+        <p>Čisté pohotové prostředky představují rozdíl mezi pohotovými
+        peněžními prostředky (hotovost, peníze na běžných účtech,
+        případně i vysoce likvidní ekvivalenty) a okamžitě splatnými
+        závazky, přičemž tento ukazatel měří okamžitou likviditu podniku
+        a jeho schopnost reagovat na nečekané výdaje.</p>
+        <ul>
+        <li><p>Vypočítají se jako: ČPP = pohotové peněžní prostředky –
+        okamžitě splatné závazky</p></li>
+        <li><p>Pohotové peněžní prostředky zahrnují především peníze v
+        hotovosti a na běžných účtech</p></li>
+        <li><p>V širším pojetí mohou zahrnovat i šeky, směnky,
+        krátkodobé cenné papíry či termínované vklady s krátkou
+        výpovědní lhůtou</p></li>
+        <li><p>Okamžitě splatné závazky jsou závazky s aktuální nebo
+        prošlou dobou splatnosti</p></li>
+        <li><p>Kladná hodnota ČPP znamená dostatek prostředků k úhradě
+        okamžitých závazků</p></li>
+        <li><p>Záporná hodnota signalizuje problémy s okamžitou
+        likviditou</p></li>
+        <li><p>Je přísnějším ukazatelem likvidity než čistý pracovní
+        kapitál</p></li>
+        <li><p>Odstraňuje nedostatky čistého pracovního kapitálu tím, že
+        vylučuje méně likvidní oběžná aktiva</p></li>
+        </ul>
+        <h2 id="co-je-to-wacc">Co je to WACC?</h2>
+        <p>WACC (Weighted Average Cost of Capital) neboli vážené
+        průměrné náklady kapitálu představují průměrnou cenu, kterou
+        podnik platí za využívání svého kapitálu, přičemž zohledňují jak
+        náklady na vlastní kapitál, tak náklady na cizí kapitál v
+        poměru, v jakém jsou tyto zdroje využívány.</p>
+        <ul>
+        <li><p>Vypočítá se jako: <span class="math inline">WACC\  = \
+        rd\  \times \ (1 - t) \times \frac{D}{C}\  + \ re\  \times
+        \frac{E}{C}</span></p>
+        <ul>
+        <li><p><span class="math inline">rd</span> = náklady na cizí
+        kapitál (úroková míra)</p></li>
+        <li><p>t = sazba daně z příjmů</p></li>
+        <li><p>D = cizí kapitál</p></li>
+        <li><p>E = vlastní kapitál</p></li>
+        <li><p>C = celkový kapitál (D+E)</p></li>
+        <li><p>re = náklady na vlastní kapitál</p></li>
+        </ul></li>
+        <li><p>Využívá se jako diskontní sazba při výpočtu čisté
+        současné hodnoty investic</p></li>
+        <li><p>Slouží jako minimální požadovaná výnosnost nových
+        investic</p></li>
+        <li><p>Zohledňuje daňový štít u nákladů na cizí kapitál (úroky
+        jsou daňově uznatelným nákladem)</p></li>
+        <li><p>Náklady na vlastní kapitál jsou obvykle vyšší než na cizí
+        kapitál (vyšší riziko pro vlastníky)</p></li>
+        <li><p>Optimální kapitálová struktura minimalizuje WACC</p></li>
+        <li><p>Je klíčovým ukazatelem při oceňování podniku metodou
+        DCF</p></li>
+        <li><p>Hodnota WACC se liší podle oboru, velikosti podniku a
+        jeho rizikového profilu</p></li>
+        </ul>
+        <h2
+        id="popište-problematiku-řízení-a-financování-oběžného-majetku.">Popište
+        problematiku Řízení a financování oběžného majetku.</h2>
+        <p>Řízení a financování oběžného majetku se zaměřuje na
+        optimalizaci struktury a objemu krátkodobých aktiv (zásob,
+        pohledávek a finančního majetku) a způsobu jejich financování s
+        cílem zajistit dostatečnou likviditu podniku při současné
+        maximalizaci rentability, přičemž zahrnuje rozhodování o
+        vhodných přístupech k řízení pracovního kapitálu.</p>
+        <ul>
+        <li><p>Oběžný majetek zahrnuje zásoby, pohledávky, krátkodobý
+        finanční majetek a peněžní prostředky</p></li>
+        <li><p>Charakteristiky: krátká doba použití, rychlá přeměna
+        formy, nižší hodnota jednotlivých složek</p></li>
+        <li><p>Řízení zásob: optimalizace velikosti dodávek, pojistné
+        zásoby, ABC analýza, just-in-time</p></li>
+        <li><p>Řízení pohledávek: stanovení úvěrových limitů, hodnocení
+        bonity zákazníků, faktoring, skonto</p></li>
+        <li><p>Řízení peněžních prostředků: cash management, cash
+        pooling, krátkodobé investování přebytků</p></li>
+        <li><p>Tři přístupy k financování:</p>
+        <ul>
+        <li><p>Konzervativní - dlouhodobé zdroje financují i část
+        přechodných oběžných aktiv (nižší riziko, nižší
+        výnosnost)</p></li>
+        <li><p>Umírněný - dlouhodobé zdroje kryjí trvalá oběžná aktiva,
+        krátkodobé zdroje přechodná oběžná aktiva</p></li>
+        <li><p>Agresivní - krátkodobé zdroje financují i část trvalých
+        oběžných aktiv (vyšší riziko, vyšší výnosnost)</p></li>
+        </ul></li>
+        <li><p>Čistý pracovní kapitál jako klíčový ukazatel financování
+        oběžného majetku</p></li>
+        </ul>
+        <h2
+        id="uveďte-zdroje-financování-oběžného-majetku.-popište-cizí-zdroje.">Uveďte
+        zdroje financování oběžného majetku. Popište cizí zdroje.</h2>
+        <p>Zdroje financování oběžného majetku zahrnují vlastní i cizí
+        kapitál, přičemž cizí zdroje představují zejména krátkodobé
+        financování od bank, dodavatelů a dalších subjektů, které je
+        využíváno pro pokrytí přechodných i trvalých potřeb oběžných
+        aktiv podniku.</p>
+        <ul>
+        <li><p>Cizí zdroje financování oběžného majetku:</p>
+        <ul>
+        <li><p>Krátkodobé bankovní úvěry (kontokorentní, revolvingový,
+        eskontní)</p></li>
+        <li><p>Dodavatelské úvěry (obchodní úvěr) - prodloužení doby
+        splatnosti faktur</p></li>
+        <li><p>Faktoring - odprodej krátkodobých pohledávek faktoringové
+        společnosti</p></li>
+        <li><p>Forfaiting - odprodej střednědobých a dlouhodobých
+        pohledávek (zejména v mezinárodním obchodě)</p></li>
+        <li><p>Krátkodobé dluhopisy a směnky</p></li>
+        <li><p>Zálohy od odběratelů</p></li>
+        <li><p>Nevyplacené mzdy a nezaplacené daně (závazky vůči
+        zaměstnancům a státu)</p></li>
+        </ul></li>
+        <li><p>Výhody cizích zdrojů: flexibilita, daňová uznatelnost
+        úroků, pákový efekt</p></li>
+        <li><p>Nevýhody cizích zdrojů: zvýšení zadluženosti, riziko
+        likvidity, závisí na bonitě podniku</p></li>
+        <li><p>Vlastní zdroje financování (nerozdělený zisk, odpisy)
+        jsou méně rizikové, ale dražší</p></li>
+        <li><p>Výběr zdrojů závisí na strategii financování, stavu
+        podniku a situaci na finančních trzích</p></li>
+        <li><p>Optimální struktura financování by měla respektovat
+        bilanční pravidla</p></li>
+        </ul>
+        <h2 id="jaké-znáte-druhy-úvěrů">Jaké znáte druhy úvěrů?</h2>
+        <p>Úvěry představují externí cizí zdroje financování poskytované
+        finančními institucemi nebo jinými subjekty za úplatu ve formě
+        úroku, přičemž existuje mnoho druhů úvěrů lišících se účelem,
+        dobou splatnosti, způsobem zajištění a dalšími
+        charakteristikami.</p>
+        <ul>
+        <li><p>Podle doby splatnosti:</p>
+        <ul>
+        <li><p>Krátkodobé (do 1 roku) - kontokorent, revolvingový
+        úvěr</p></li>
+        <li><p>Střednědobé (1-5 let) - investiční úvěry,
+        leasing</p></li>
+        <li><p>Dlouhodobé (nad 5 let) - hypoteční úvěry, některé
+        investiční úvěry</p></li>
+        </ul></li>
+        <li><p>Podle účelu:</p>
+        <ul>
+        <li><p>Provozní úvěry - financování běžné činnosti, oběžných
+        aktiv</p></li>
+        <li><p>Investiční úvěry - pořízení dlouhodobého majetku</p></li>
+        <li><p>Hypoteční úvěry - nákup, výstavba či rekonstrukce
+        nemovitostí</p></li>
+        <li><p>Spotřebitelské úvěry - financování spotřeby fyzických
+        osob</p></li>
+        </ul></li>
+        <li><p>Podle zajištění:</p>
+        <ul>
+        <li><p>Zajištěné (nemovitostí, pohledávkami, zásobami,
+        ručením)</p></li>
+        <li><p>Nezajištěné (na základě bonity klienta)</p></li>
+        </ul></li>
+        <li><p>Speciální druhy:</p>
+        <ul>
+        <li><p>Kontokorentní úvěr - možnost čerpat do mínusu na běžném
+        účtu</p></li>
+        <li><p>Revolvingový úvěr - opakované čerpání do stanoveného
+        limitu</p></li>
+        <li><p>Eskontní úvěr - odkup směnek před jejich
+        splatností</p></li>
+        <li><p>Lombardní úvěr - zajištěný cennými papíry nebo movitými
+        věcmi</p></li>
+        <li><p>Syndikovaný úvěr - poskytovaný skupinou bank pro velké
+        projekty</p></li>
+        </ul></li>
+        </ul>
+        <h2
+        id="uveďte-rozdíl-mezi-náklady-a-výdaji-a-výnosy-a-příjmy.">Uveďte
+        rozdíl mezi náklady a výdaji a výnosy a příjmy.</h2>
+        <p>Rozdíl mezi náklady a výdaji, resp. výnosy a příjmy spočívá v
+        jejich časovém nesouladu a způsobu účetního zachycení, přičemž
+        náklady a výnosy jsou účetními kategoriemi ovlivňujícími
+        výsledek hospodaření (principem časového rozlišení), zatímco
+        výdaje a příjmy představují skutečný pohyb peněžních
+        prostředků.</p>
+        <ul>
+        <li><p>Náklad je peněžní vyjádření spotřeby výrobních faktorů,
+        zaznamenaný v období, s nímž věcně a časově souvisí</p>
+        <ul>
+        <li><p>Účetně snižuje vlastní kapitál (zisk)</p></li>
+        <li><p>Ne vždy je spojen s okamžitým výdajem (např. odpisy,
+        tvorba rezerv)</p></li>
+        <li><p>Ovlivňuje výsledek hospodaření</p></li>
+        </ul></li>
+        <li><p>Výdaj představuje skutečný úbytek peněžních prostředků
+        (hotovosti nebo peněz na účtu)</p>
+        <ul>
+        <li><p>Ne vždy je nákladem (např. splátka úvěru, nákup
+        majetku)</p></li>
+        <li><p>Ovlivňuje cash flow</p></li>
+        <li><p>Není vázán na výkon, ale na skutečnou platbu</p></li>
+        </ul></li>
+        <li><p>Výnos je peněžní vyjádření výsledků hospodaření,
+        zaúčtovaný v období, s nímž věcně a časově souvisí</p>
+        <ul>
+        <li><p>Účetně zvyšuje vlastní kapitál (zisk)</p></li>
+        <li><p>Ne vždy znamená okamžitý příjem peněz (např. neuhrazené
+        faktury)</p></li>
+        <li><p>Ovlivňuje výsledek hospodaření</p></li>
+        </ul></li>
+        <li><p>Příjem představuje skutečný přírůstek peněžních
+        prostředků</p>
+        <ul>
+        <li><p>Ne vždy je výnosem (např. přijetí úvěru, vklad
+        vlastníka)</p></li>
+        <li><p>Ovlivňuje cash flow</p></li>
+        <li><p>Je vázán na skutečnou platbu</p></li>
+        </ul></li>
+        </ul>
+        <p>Pochopení těchto rozdílů je klíčové pro správné finanční
+        řízení a interpretaci účetních výkazů - výkaz zisku a ztráty
+        pracuje s náklady a výnosy, výkaz cash flow s příjmy a
+        výdaji.</p>
+        <h1 id="příloha-vzorečky">PŘÍLOHA – VZOREČKY</h1>
+        <ul>
+        <li><p>WACC, zlatá pravidla <span class="math inline">WACC =
+        k_{d} \cdot (1 - T) \cdot \frac{D}{C} + k_{E} \cdot
+        \frac{E}{C},SA \leq VK + DCK,VK \geq DCK + KCK</span></p></li>
+        <li><p>Kapitál <span class="math inline">PK = OA,ČPK = OA -
+        KCK,NPC = KP + DP + zásoby</span></p></li>
+        <li><p>Rentabilita <span class="math inline">RCK = \frac{HV}{VK
+        + CK},ROE = \frac{HV}{VK},ROA = \frac{HV}{SA + OA},RT =
+        \frac{HV}{T}</span></p></li>
+        <li><p>Aktivita <span class="math inline">OSA = \frac{T}{SA},OCA
+        = \frac{T}{SA + OA},OP_{d} = \frac{KP \cdot 365}{T}</span>,<span
+        class="math inline">OP_{Z} = \frac{Z \cdot
+        365}{T}</span></p></li>
+        <li><p>Zadluženost <span class="math inline">CZ = \frac{CK}{VK +
+        CK},CZ = DZ + BZ,DZ = \frac{DCK}{VK + CK},BZ = \frac{KCK}{VK +
+        CK}</span></p></li>
+        <li><p>Likvidita <span class="math inline">LIQ_{3} =
+        \frac{OA}{KCK}\lbrack 1,5 - 2,5\rbrack,LIQ_{2} = \frac{OA -
+        zásoby}{KCK}\lbrack 1 - 1,5\rbrack,LIQ_{1} =
+        \frac{pen.prostředky\ (KFM)}{KCK}\lbrack
+        0,5\rbrack</span></p></li>
+        <li><p>Úročení <span class="math inline">K_{n} = K_{0} \cdot (1
+        + i \cdot n),K_{n} = K_{0} \cdot (1 + i)^{n}</span>, <span
+        class="math inline">K_{0} = \frac{K_{n}}{(1 + i \cdot
+        n)}</span>,<span class="math inline">K_{0} = \frac{K_{n}}{(1 +
+        i)^{n}}</span></p></li>
+        <li><p>Spoření <span class="math inline">FV = m \cdot a \cdot
+        \left( 1 + \frac{m - 1}{2 \cdot m} \cdot r \right) \cdot
+        \frac{(1 + r)^{n} - 1}{r}</span></p></li>
+        <li><p>Současná hodnota cash flow <span class="math inline">SHFC
+        = \sum_{k = 1}^{n}\frac{CF_{k}}{(1 + i)^{k}}</span></p></li>
+        <li><p>Čistá současná hodnota <span class="math inline">ČSH =
+        SHCF - IN</span></p></li>
+        <li><p>Index rentability <span class="math inline">I_{R} =
+        \frac{SFCF}{IN}</span></p></li>
+        <li><p>Vnitřní výnosové procento <span
+        class="math inline">\sum_{k = 1}^{n}\frac{CF_{k}}{\left( 1 + (i
+        = VVP) \right)^{k}} - IN = 0</span>, <span
+        class="math inline">i_{1} = WACC + RP</span>, <span
+        class="math inline">VVP = i_{1} + \frac{ČSH_{1}}{ČSH_{1} +
+        \left| ČSH_{2} \right|} \cdot \left( i_{2} - i_{1}
+        \right)</span></p></li>
+        </ul>
+      </main>
+
+            <nav class="sidebar" id="TOC">
+        <h2>Obsah</h2>
+        <ul>
+        <li><a href="#finanční-analýza-podniku"
+        id="toc-finanční-analýza-podniku">Finanční analýza podniku</a>
+        <ul>
+        <li><a href="#ukazatele-rentability"
+        id="toc-ukazatele-rentability">Ukazatele rentability</a></li>
+        <li><a href="#ukazatele-aktivity"
+        id="toc-ukazatele-aktivity">Ukazatele aktivity</a></li>
+        <li><a href="#ukazatele-likvidity"
+        id="toc-ukazatele-likvidity">Ukazatele likvidity</a></li>
+        <li><a href="#ukazatele-zadluženosti"
+        id="toc-ukazatele-zadluženosti">Ukazatele zadluženosti</a></li>
+        <li><a href="#příklady" id="toc-příklady">Příklady</a></li>
+        </ul></li>
+        <li><a href="#úročení-odúročení-a-diskontování"
+        id="toc-úročení-odúročení-a-diskontování">Úročení, odúročení a
+        diskontování</a>
+        <ul>
+        <li><a href="#jednoduché-úročení"
+        id="toc-jednoduché-úročení">Jednoduché úročení</a></li>
+        <li><a href="#složené-úročení" id="toc-složené-úročení">Složené
+        úročení</a></li>
+        <li><a href="#odúročení" id="toc-odúročení">Odúročení</a></li>
+        <li><a href="#diskontování"
+        id="toc-diskontování">Diskontování</a></li>
+        </ul></li>
+        <li><a href="#spoření" id="toc-spoření">Spoření</a></li>
+        <li><a href="#investiční-rozhodování"
+        id="toc-investiční-rozhodování">Investiční rozhodování</a></li>
+        <li><a href="#otázky-ke-zkoušce"
+        id="toc-otázky-ke-zkoušce">Otázky ke zkoušce</a>
+        <ul>
+        <li><a
+        href="#popište-náklady-obětované-příležitosti-kapitálu-uveďte-příklad."
+        id="toc-popište-náklady-obětované-příležitosti-kapitálu-uveďte-příklad.">Popište
+        náklady obětované příležitosti kapitálu, uveďte
+        příklad.</a></li>
+        <li><a
+        href="#popište-co-obsahují-a-jak-se-od-sebe-liší-investice-a-způsob-financování."
+        id="toc-popište-co-obsahují-a-jak-se-od-sebe-liší-investice-a-způsob-financování.">Popište,
+        co obsahují a jak se od sebe liší investice a způsob
+        financování.</a></li>
+        <li><a href="#popište-jaké-vztahy-mohou-nastat-mezi-vh-a-cf."
+        id="toc-popište-jaké-vztahy-mohou-nastat-mezi-vh-a-cf.">Popište,
+        jaké vztahy mohou nastat mezi VH a CF.</a></li>
+        <li><a href="#jaké-jsou-principy-finančního-řízení"
+        id="toc-jaké-jsou-principy-finančního-řízení">Jaké jsou principy
+        finančního řízení?</a></li>
+        <li><a
+        href="#jaký-je-rozdíl-mezi-jednoduchým-a-složeným-úročením."
+        id="toc-jaký-je-rozdíl-mezi-jednoduchým-a-složeným-úročením.">Jaký
+        je rozdíl mezi jednoduchým a složeným úročením.</a></li>
+        <li><a
+        href="#definujte-investici-a-uveďte-možnosti-jejího-financování-vč.-výhod-a-nevýhod."
+        id="toc-definujte-investici-a-uveďte-možnosti-jejího-financování-vč.-výhod-a-nevýhod.">Definujte
+        investici a uveďte možnosti jejího financování, vč. výhod a
+        nevýhod.</a></li>
+        <li><a href="#popište-investiční-rozhodování."
+        id="toc-popište-investiční-rozhodování.">Popište investiční
+        rozhodování.</a></li>
+        <li><a
+        href="#uveďte-metody-hodnocení-investic-jejich-výhody-a-nevýhody."
+        id="toc-uveďte-metody-hodnocení-investic-jejich-výhody-a-nevýhody.">Uveďte
+        metody hodnocení investic, jejich výhody a nevýhody.</a></li>
+        <li><a href="#co-je-to-diskontované-cash-flow"
+        id="toc-co-je-to-diskontované-cash-flow">Co je to diskontované
+        cash flow?</a></li>
+        <li><a
+        href="#popište-princip-čsh-a-ir.-kdy-budete-investici-realizovat"
+        id="toc-popište-princip-čsh-a-ir.-kdy-budete-investici-realizovat">Popište
+        princip ČSH a IR. Kdy budete investici realizovat?</a></li>
+        <li><a href="#co-je-to-finanční-analýza-a-k-čemu-slouží"
+        id="toc-co-je-to-finanční-analýza-a-k-čemu-slouží">Co je to
+        finanční analýza a k čemu slouží?</a></li>
+        <li><a href="#jaké-jsou-informační-zdroje-finanční-analýzy"
+        id="toc-jaké-jsou-informační-zdroje-finanční-analýzy">Jaké jsou
+        informační zdroje finanční analýzy?</a></li>
+        <li><a
+        href="#popište-uživatele-výsledků-finanční-analýzy-a-z-jakého-důvodu-je-výstupy-zajímají."
+        id="toc-popište-uživatele-výsledků-finanční-analýzy-a-z-jakého-důvodu-je-výstupy-zajímají.">Popište
+        uživatele výsledků finanční analýzy a z jakého důvodu je výstupy
+        zajímají.</a></li>
+        <li><a
+        href="#co-obsahuje-finanční-analýza-podniku-jaká-je-její-struktura-kapitoly."
+        id="toc-co-obsahuje-finanční-analýza-podniku-jaká-je-její-struktura-kapitoly.">Co
+        obsahuje finanční analýza podniku – jaká je její struktura
+        (kapitoly).</a></li>
+        <li><a
+        href="#jaké-jsou-typy-ukazatelů-fa.-při-které-analýze-jsou-určeny"
+        id="toc-jaké-jsou-typy-ukazatelů-fa.-při-které-analýze-jsou-určeny">Jaké
+        jsou typy ukazatelů FA. Při které analýze jsou určeny?</a></li>
+        <li><a
+        href="#jaké-typy-ukazatelů-obsahuje-analýza-poměrových-ukazatelů"
+        id="toc-jaké-typy-ukazatelů-obsahuje-analýza-poměrových-ukazatelů">Jaké
+        typy ukazatelů obsahuje analýza poměrových ukazatelů?</a></li>
+        <li><a href="#jakým-způsobem-lze-zvýšit-cf-v-podniku"
+        id="toc-jakým-způsobem-lze-zvýšit-cf-v-podniku">Jakým způsobem
+        lze zvýšit CF v podniku?</a></li>
+        <li><a href="#popište-likviditu-a-její-ukazatele."
+        id="toc-popište-likviditu-a-její-ukazatele."> Popište likviditu
+        a její ukazatele.</a></li>
+        <li><a href="#popište-ukazatele-zadluženosti."
+        id="toc-popište-ukazatele-zadluženosti.">Popište ukazatele
+        zadluženosti.</a></li>
+        <li><a href="#popište-ukazatele-rentability."
+        id="toc-popište-ukazatele-rentability.">Popište ukazatele
+        rentability.</a></li>
+        <li><a href="#jaké-jsou-základní-ukazatele-obratu"
+        id="toc-jaké-jsou-základní-ukazatele-obratu">Jaké jsou základní
+        ukazatele obratu?</a></li>
+        <li><a href="#definujte-čisté-pohotové-prostředky."
+        id="toc-definujte-čisté-pohotové-prostředky.">Definujte čisté
+        pohotové prostředky.</a></li>
+        <li><a href="#co-je-to-wacc" id="toc-co-je-to-wacc">Co je to
+        WACC?</a></li>
+        <li><a
+        href="#popište-problematiku-řízení-a-financování-oběžného-majetku."
+        id="toc-popište-problematiku-řízení-a-financování-oběžného-majetku.">Popište
+        problematiku Řízení a financování oběžného majetku.</a></li>
+        <li><a
+        href="#uveďte-zdroje-financování-oběžného-majetku.-popište-cizí-zdroje."
+        id="toc-uveďte-zdroje-financování-oběžného-majetku.-popište-cizí-zdroje.">Uveďte
+        zdroje financování oběžného majetku. Popište cizí
+        zdroje.</a></li>
+        <li><a href="#jaké-znáte-druhy-úvěrů"
+        id="toc-jaké-znáte-druhy-úvěrů">Jaké znáte druhy úvěrů?</a></li>
+        <li><a
+        href="#uveďte-rozdíl-mezi-náklady-a-výdaji-a-výnosy-a-příjmy."
+        id="toc-uveďte-rozdíl-mezi-náklady-a-výdaji-a-výnosy-a-příjmy.">Uveďte
+        rozdíl mezi náklady a výdaji a výnosy a příjmy.</a></li>
+        </ul></li>
+        <li><a href="#příloha-vzorečky"
+        id="toc-příloha-vzorečky">PŘÍLOHA – VZOREČKY</a></li>
+        </ul>
+      </nav>
+          </div>
+  </body>
+</html>

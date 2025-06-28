@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>AI v podnikání a praxi - Studijní poznámky</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Load our local stylesheet and custom loader script -->
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="katex-loader.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="index.html" class="back-button">← Zpět</a>
+        <a href="index.html" class="home-link">Univerzitní studium</a>
+        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
+        <span class="breadcrumb-item">Newton University
+(bakalářský)</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-item-active">AI v podnikání a
+praxi</span>
+      </div>
+    </header>
+
+    <div class="page-container">
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">AI v podnikání a praxi</h1>
+        </header>
+        <h1 id="souhrnné-informace">Souhrnné informace</h1>
+        <h2 id="co-je-to-silná-umělá-inteligence">Co je to silná umělá
+        inteligence?</h2>
+        <p>Silná umělá inteligence (AGI – Artificial General
+        Intelligence) je hypotetický typ umělé inteligence, která by
+        dokázala vykonávat jakýkoliv intelektuální úkol, který dokáže
+        člověk, včetně vědomí, sebereflexe a generalizace mezi různými
+        doménami.</p>
+        <ul>
+        <li><p>V současnosti neexistuje žádný funkční systém silné
+        AI</p></li>
+        <li><p>Zahrnuje schopnost skutečného porozumění, kreativitu a
+        vědomí</p></li>
+        <li><p>Dokáže řešit libovolné problémy bez specifického
+        tréninku</p></li>
+        <li><p>Může sama sebe vylepšovat (rekurzivní
+        sebezdokonalování)</p></li>
+        <li><p>Je předmětem filozofických debat i výzkumu</p></li>
+        <li><p>Je spojována s konceptem technologické
+        singularity</p></li>
+        <li><p>Vyvolává etické a bezpečnostní otázky</p></li>
+        </ul>
+        <h2 id="co-je-to-slabá-umělá-inteligence">Co je to slabá umělá
+        inteligence?</h2>
+        <p>Slabá umělá inteligence (ANI – Artificial Narrow
+        Intelligence) je typ AI vyvinutý k plnění specifických úkolů v
+        určité doméně bez skutečného porozumění nebo schopnosti
+        generalizace mimo svůj účel.</p>
+        <ul>
+        <li><p>Všechny současné AI systémy jsou slabé AI</p></li>
+        <li><p>Jsou specializované na konkrétní úlohy (např. hraní
+        šachů, rozpoznávání obrazu)</p></li>
+        <li><p>Nemohou přenášet znalosti mezi různými doménami</p></li>
+        <li><p>Nemají vědomí ani skutečné porozumění</p></li>
+        <li><p>Jsou efektivní v úzce vymezených oblastech</p></li>
+        <li><p>Patří sem virtuální asistenti (Siri, Alexa), šachové
+        programy, systémy pro rozpoznávání obrazu</p></li>
+        <li><p>Jsou navrženy k řešení konkrétních problémů</p></li>
+        </ul>
+        <h2 id="co-je-to-strojové-učení">Co je to strojové učení?</h2>
+        <p>Strojové učení je podoblast umělé inteligence zaměřená na
+        vývoj algoritmů a statistických modelů, které počítačovým
+        systémům umožňují učit se z dat a zlepšovat svůj výkon při
+        řešení úkolů bez explicitního programování.</p>
+        <ul>
+        <li><p>Identifikuje vzory a pravidla v datech
+        automaticky</p></li>
+        <li><p>Hlavní kategorie: učení s dozorem, bez dozoru a
+        posilované učení</p></li>
+        <li><p>Využívá statistiku, pravděpodobnost a optimalizační
+        techniky</p></li>
+        <li><p>Vyžaduje kvalitní a reprezentativní data</p></li>
+        <li><p>Základem jsou algoritmy jako rozhodovací stromy, SVM,
+        k-means clustering</p></li>
+        <li><p>Aplikace: predikce, klasifikace, rozpoznávání vzorů,
+        doporučující systémy</p></li>
+        <li><p>Efektivita závisí na kvalitě dat a vhodnosti
+        modelu</p></li>
+        </ul>
+        <h2 id="co-je-to-hluboké-učení">Co je to hluboké učení?</h2>
+        <p>Hluboké učení je specializovaná podmnožina strojového učení
+        využívající vícevrstvé (hluboké) neuronové sítě schopné
+        automaticky extrahovat hierarchické reprezentace a abstraktní
+        vzory z velkých objemů dat.</p>
+        <ul>
+        <li><p>Využívá neuronové sítě s mnoha vrstvami (hluboké
+        architektury)</p></li>
+        <li><p>Dokáže automaticky identifikovat komplexní vzory v
+        datech</p></li>
+        <li><p>Není nutné ruční vytváření příznaků (feature
+        engineering)</p></li>
+        <li><p>Vyžaduje velké množství dat a výpočetní síly</p></li>
+        <li><p>Dosahuje mimořádných výsledků v obrazové a řečové
+        analýze</p></li>
+        <li><p>Základem velkých jazykových modelů (GPT, BERT)</p></li>
+        <li><p>Klíčové architektury zahrnují CNN, RNN, LSTM,
+        Transformery</p></li>
+        <li><p>Umožnilo průlom v oblasti počítačového vidění a
+        zpracování přirozeného jazyka</p></li>
+        </ul>
+        <h2 id="co-je-to-neuronová-síť">Co je to neuronová síť?</h2>
+        <p>Neuronová síť je výpočetní model inspirovaný strukturou a
+        funkcí biologických neuronových sítí v mozku, skládající se z
+        propojených uzlů (neuronů) organizovaných do vrstev, které
+        transformují vstupní data na výstupy pomocí vážených spojení a
+        aktivačních funkcí.</p>
+        <ul>
+        <li><p>Skládá se ze vstupní vrstvy, skrytých vrstev a výstupní
+        vrstvy</p></li>
+        <li><p>Každý neuron přijímá vstupy od předchozích neuronů,
+        zpracovává je a posílá výstupy dál</p></li>
+        <li><p>Učí se úpravou vah spojení pomocí zpětné propagace
+        chyby</p></li>
+        <li><p>Používá aktivační funkce (ReLU, sigmoid, tanh) k zavedení
+        nelinearity</p></li>
+        <li><p>Umožňuje identifikaci komplexních vztahů v
+        datech</p></li>
+        <li><p>Vyžaduje optimalizaci hyperparametrů (počet vrstev,
+        neuronů, learning rate)</p></li>
+        <li><p>Existuje mnoho specializovaných architektur pro různé
+        účely</p></li>
+        </ul>
+        <h2 id="co-je-to-generativní-umělá-inteligence">Co je to
+        generativní umělá inteligence?</h2>
+        <p>Generativní umělá inteligence je kategorie AI systémů
+        schopných vytvářet nový, originální obsah jako text, obrázky,
+        hudbu nebo video na základě vzorů naučených z trénovacích dat,
+        nikoliv pouze analyzovat nebo klasifikovat existující obsah.</p>
+        <ul>
+        <li><p>Zahrnuje modely jako GPT, DALL-E, Stable Diffusion,
+        Midjourney</p></li>
+        <li><p>Používá techniky jako variační autokodéry (VAE) a
+        generativní adversariální sítě (GAN)</p></li>
+        <li><p>Funguje na principu pravděpodobnostní predikce
+        následujících prvků</p></li>
+        <li><p>Dokáže tvořit obsah podobný lidské tvorbě, ale nemá
+        skutečné porozumění</p></li>
+        <li><p>Vyvolává otázky autorských práv a etiky</p></li>
+        <li><p>Trpí problémy jako halucinace (vytváření nepravdivých
+        informací)</p></li>
+        <li><p>Transformuje způsob tvorby obsahu v mnoha
+        oborech</p></li>
+        </ul>
+        <h2 id="co-je-to-prompt">Co je to prompt?</h2>
+        <p>Prompt je textový vstup nebo pokyn zadaný uživatelem do
+        systému umělé inteligence, který určuje, jaký typ výstupu má
+        model generovat, a poskytuje kontext pro generování
+        odpovědi.</p>
+        <ul>
+        <li><p>Funguje jako instrukce nebo dotaz pro AI systém</p></li>
+        <li><p>Může obsahovat kontext, příklady nebo specifické
+        požadavky</p></li>
+        <li><p>Kvalita a přesnost promptu významně ovlivňuje výstup
+        AI</p></li>
+        <li><p>Prompt engineering je technika optimalizace promptů pro
+        požadované výsledky</p></li>
+        <li><p>Složitější modely dokážou reagovat na složitější a
+        nuancovanější prompty</p></li>
+        <li><p>Může zahrnovat texty v přirozeném jazyce i specifické
+        formátovací instrukce</p></li>
+        <li><p>V generativních modelech definuje parametry generovaného
+        obsahu</p></li>
+        </ul>
+        <h2 id="co-je-to-selfprompting">Co je to selfprompting?</h2>
+        <p>Selfprompting je technika, při které AI model generuje nebo
+        upravuje vlastní prompty během generování odpovědi, což mu
+        umožňuje samostatně strukturovat své myšlení, rozdělit komplexní
+        problémy na menší kroky a zdokonalit svůj výstup bez dodatečných
+        instrukcí od uživatele.</p>
+        <ul>
+        <li><p>Model si vytváří vlastní vnitřní instrukce nebo dílčí
+        kroky</p></li>
+        <li><p>Používá se k strukturování myšlenkových procesů
+        AI</p></li>
+        <li><p>Umožňuje modelu rozložit složité úlohy na
+        jednodušší</p></li>
+        <li><p>Zlepšuje kvalitu odpovědí u komplexních problémů</p></li>
+        <li><p>Je podobné konceptu "řetězového myšlení"
+        (chain-of-thought)</p></li>
+        <li><p>Pomáhá modelu sledovat logickou linii uvažování</p></li>
+        <li><p>Zvyšuje spolehlivost a konzistenci odpovědí</p></li>
+        </ul>
+        <h2 id="co-jsou-to-halucinace-chatbotů">Co jsou to halucinace
+        chatbotů?</h2>
+        <p>Halucinace chatbotů jsou případy, kdy AI systémy generují
+        nepřesné, vymyšlené nebo nepravdivé informace, které prezentují
+        s důvěryhodností, ačkoliv tyto informace nejsou podloženy
+        faktickými znalostmi nebo trénovacími daty.</p>
+        <ul>
+        <li><p>Vznikají z pravděpodobnostních předpovědí následujících
+        tokenů v textu</p></li>
+        <li><p>Projevují se generováním neexistujících citací, zdrojů
+        nebo faktů</p></li>
+        <li><p>Častější u témat, kde má model omezenou znalost nebo
+        nejistotu</p></li>
+        <li><p>Mohou vypadat velmi přesvědčivě díky sebejistému
+        tónu</p></li>
+        <li><p>Souvisí s tím, že modely optimalizují plynulost odpovědí,
+        ne přesnost</p></li>
+        <li><p>Problematické zejména v oblastech vyžadujících faktickou
+        přesnost</p></li>
+        <li><p>Omezují se pomocí technik jako RLHF (učení z lidské
+        zpětné vazby)</p></li>
+        <li><p>Představují jedno z hlavních omezení současných
+        LLM</p></li>
+        </ul>
+        <h2 id="co-je-to-velký-jazykový-model">Co je to velký jazykový
+        model?</h2>
+        <p>Velký jazykový model (LLM – Large Language Model) je typ
+        neuronové sítě s miliardami parametrů trénovaný na obrovském
+        korpusu textových dat, který dokáže generovat, překládat a
+        zpracovávat přirozený jazyk na základě statistických vzorů,
+        které se naučil z trénovacích dat.</p>
+        <ul>
+        <li><p>Využívá architekturu Transformer s mechanismem pozornosti
+        (attention)</p></li>
+        <li><p>Obsahuje miliardy až biliony parametrů (vah)</p></li>
+        <li><p>Trénuje se na masivních textových korpusech</p></li>
+        <li><p>Dokáže generovat koherentní a kontextuálně relevantní
+        text</p></li>
+        <li><p>Může provádět širokou škálu jazykových úkolů bez
+        specifického přetrénování</p></li>
+        <li><p>Příklady zahrnují GPT-4, Claude, PaLM, Llama</p></li>
+        <li><p>Porozumění je statistické, ne konceptuální</p></li>
+        <li><p>Kvalita odpovědí závisí na kvalitě a rozsahu trénovacích
+        dat</p></li>
+        </ul>
+        <h2 id="jak-se-učí-stroj-při-učení-pod-dohledem">Jak se učí
+        stroj při učení pod dohledem?</h2>
+        <p>Učení pod dohledem (supervised learning) je metoda strojového
+        učení, při které algoritmus analyzuje označená trénovací data
+        obsahující vstupní-výstupní páry a vytváří model, jenž dokáže
+        předpovídat výstupy pro nové, dříve neviděné vstupy.</p>
+        <ul>
+        <li><p>Vyžaduje označená data (vstupy s přiřazenými správnými
+        výstupy)</p></li>
+        <li><p>Algoritmus se snaží minimalizovat rozdíl mezi predikcí a
+        skutečným výstupem</p></li>
+        <li><p>Využívá ztrátovou funkci k měření chyby predikce</p></li>
+        <li><p>Postupně optimalizuje parametry modelu k minimalizaci
+        chyby</p></li>
+        <li><p>Typické úlohy: klasifikace, regrese, rozpoznávání
+        objektů</p></li>
+        <li><p>Příklady algoritmů: rozhodovací stromy, neuronové sítě,
+        SVM</p></li>
+        <li><p>Kvalita modelu závisí na reprezentativnosti trénovacích
+        dat</p></li>
+        <li><p>Po natrénování je model evaluován na testovacích
+        datech</p></li>
+        </ul>
+        <h2 id="jak-se-učí-stroj-při-učení-bez-dozoru">Jak se učí stroj
+        při učení bez dozoru?</h2>
+        <p>Učení bez dozoru (unsupervised learning) je metoda strojového
+        učení, při které algoritmus analyzuje neoznačená data a snaží se
+        v nich samostatně identifikovat skryté struktury, vzory nebo
+        skupiny bez jakýchkoliv předem poskytnutých správných
+        odpovědí.</p>
+        <ul>
+        <li><p>Pracuje s neoznačenými daty (chybí informace o správném
+        výstupu)</p></li>
+        <li><p>Hledá přirozené vzory, struktury nebo shluky v
+        datech</p></li>
+        <li><p>Nevyžaduje lidské anotování dat (výhoda při velkých
+        datových sadách)</p></li>
+        <li><p>Hlavní typy: shlukování, dimenzionální redukce, detekce
+        anomálií</p></li>
+        <li><p>Příklady algoritmů: k-means, hierarchické shlukování,
+        PCA, autokodéry</p></li>
+        <li><p>Nemá jasně definovanou metriku úspěšnosti</p></li>
+        <li><p>Používá se pro průzkumnou analýzu dat a identifikaci
+        trendů</p></li>
+        <li><p>Často předchází učení s dozorem jako přípravný
+        krok</p></li>
+        </ul>
+        <h2 id="co-je-posilované-učení">Co je posilované učení?</h2>
+        <p>Posilované učení je metoda strojového učení, při které agent
+        interaguje s prostředím, provádí akce a učí se optimální
+        strategie na základě zpětné vazby ve formě odměn nebo
+        penalizací, s cílem maximalizovat kumulativní odměnu.</p>
+        <ul>
+        <li><p>Agent se učí metodou pokus-omyl v interaktivním
+        prostředí</p></li>
+        <li><p>Rozhoduje o akcích na základě stavu prostředí</p></li>
+        <li><p>Získává odměny nebo tresty za své akce</p></li>
+        <li><p>Snaží se maximalizovat dlouhodobou kumulativní
+        odměnu</p></li>
+        <li><p>Využívá kompromis mezi průzkumem (exploration) a
+        využíváním (exploitation)</p></li>
+        <li><p>Klíčové algoritmy: Q-learning, DQN, SARSA, Policy
+        Gradient</p></li>
+        <li><p>Aplikace: robotika, autonomní řízení, herní AI,
+        trading</p></li>
+        <li><p>Kombinuje se s hlubokým učením v deep reinforcement
+        learning</p></li>
+        </ul>
+        <h2 id="co-je-výstupem-tréninku-neuronové-sítě">Co je výstupem
+        tréninku neuronové sítě?</h2>
+        <p>Výstupem tréninku neuronové sítě je naučený model s
+        optimalizovanými hodnotami vah a biasů všech neuronů, který
+        dokáže transformovat vstupní data na požadované výstupy na
+        základě vzorů naučených z trénovacích dat.</p>
+        <ul>
+        <li><p>Optimalizované hodnoty vah spojení mezi neurony</p></li>
+        <li><p>Hodnoty biasů jednotlivých neuronů</p></li>
+        <li><p>Architektura sítě (pokud byla modifikována během
+        tréninku)</p></li>
+        <li><p>Hyperparametry modelu (často stanoveny před
+        tréninkem)</p></li>
+        <li><p>Transformační funkce pro převod vstupů na
+        výstupy</p></li>
+        <li><p>Naučené reprezentace dat ve vnitřních vrstvách (feature
+        maps)</p></li>
+        <li><p>Kvantifikovatelná přesnost na testovacích datech</p></li>
+        <li><p>Někdy i informace o průběhu tréninku (learning
+        curves)</p></li>
+        </ul>
+        <h2
+        id="jak-funguje-zpětná-propagace-backpropagation-v-neuronové-síti">Jak
+        funguje zpětná propagace (backpropagation) v neuronové
+        síti?</h2>
+        <p>Zpětná propagace je algoritmus používaný k tréninku
+        neuronových sítí, který počítá gradient ztrátové funkce vzhledem
+        k vahám sítě a systematicky upravuje tyto váhy směrem k
+        minimalizaci chyby, přičemž postupuje od výstupní vrstvy zpět ke
+        vstupní.</p>
+        <ul>
+        <li><p>Využívá řetězové pravidlo diferenciálního počtu</p></li>
+        <li><p>Probíhá ve dvou fázích: dopředný průchod a zpětný
+        průchod</p></li>
+        <li><p>V dopředném průchodu se vypočítá výstup sítě a chyba
+        predikce</p></li>
+        <li><p>Ve zpětném průchodu se vypočítá gradient chyby vzhledem k
+        vahám</p></li>
+        <li><p>Váhy se upravují v opačném směru gradientu (gradient
+        descent)</p></li>
+        <li><p>Velikost úprav řídí parametr learning rate</p></li>
+        <li><p>Efektivně distribuuje "vinu" za chybu mezi jednotlivé
+        neurony</p></li>
+        <li><p>Umožňuje trénink hlubokých neuronových sítí</p></li>
+        </ul>
+        <h2
+        id="kdo-je-autorem-díla-vytvořeného-pomocí-ai-pokud-člověk-ai-jen-zadal-pokyn">Kdo
+        je autorem díla vytvořeného pomocí AI, pokud člověk AI jen zadal
+        pokyn?</h2>
+        <p>Autorem díla vytvořeného pomocí AI je podle současné právní
+        úpravy ve většině jurisdikcí osoba, která poskytla tvůrčí vstup,
+        přičemž pouhé zadání jednoduchého pokynu AI obvykle není
+        považováno za dostatečný tvůrčí příspěvek pro přiznání
+        autorství.</p>
+        <ul>
+        <li><p>Autorské právo vyžaduje lidského původce díla</p></li>
+        <li><p>Míra lidského tvůrčího vkladu je klíčovým
+        faktorem</p></li>
+        <li><p>Komplexní a kreativní prompt může zakládat
+        autorství</p></li>
+        <li><p>V některých jurisdikcích může být dílo vytvořené AI
+        nepřiznatelné autorství</p></li>
+        <li><p>V EU se posuzuje prvek originality a tvůrčí vklad
+        člověka</p></li>
+        <li><p>V USA existuje požadavek "human authorship" (lidského
+        autorství)</p></li>
+        <li><p>Právní rámce se stále vyvíjejí s technologickým
+        pokrokem</p></li>
+        <li><p>Vývojáři AI systémů obvykle nemají nárok na autorství děl
+        vytvořených uživateli</p></li>
+        </ul>
+        <h2 id="může-být-ai-považována-za-autora">Může být AI považována
+        za autora?</h2>
+        <p>AI nemůže být v současném právním rámci většiny zemí
+        považována za autora díla, protože autorské právo tradičně
+        vyžaduje lidského tvůrce s právní subjektivitou a kreativním
+        záměrem.</p>
+        <ul>
+        <li><p>AI nemá právní subjektivitu (není právní osobou)</p></li>
+        <li><p>Nemá vědomí ani vlastní kreativní záměr</p></li>
+        <li><p>Autorské právo bylo vytvořeno pro ochranu lidské
+        tvořivosti</p></li>
+        <li><p>V USA Copyright Office odmítá registrovat díla vytvořená
+        AI bez lidského vstupu</p></li>
+        <li><p>V EU směrnice o autorském právu nepočítají s AI jako
+        autorem</p></li>
+        <li><p>Díla vytvořená čistě AI mohou spadat do veřejné
+        domény</p></li>
+        <li><p>Některé jurisdikce zvažují speciální kategorie ochrany
+        pro AI díla</p></li>
+        <li><p>Téma zůstává předmětem právních a etických
+        diskusí</p></li>
+        </ul>
+        <h2 id="co-je-to-zaměstnanecké-dílo">Co je to zaměstnanecké
+        dílo?</h2>
+        <p>Zaměstnanecké dílo je autorské dílo vytvořené zaměstnancem v
+        rámci plnění pracovních povinností, u kterého majetková autorská
+        práva automaticky náleží zaměstnavateli, zatímco osobnostní
+        práva zůstávají autorovi.</p>
+        <ul>
+        <li><p>Vytváří se v rámci pracovněprávního vztahu</p></li>
+        <li><p>Zaměstnavatel vykonává majetková práva k dílu svým
+        jménem</p></li>
+        <li><p>Zaměstnanec zůstává autorem (osobnostní práva)</p></li>
+        <li><p>Zaměstnavatel může dílo upravovat, spojovat s jinými
+        díly</p></li>
+        <li><p>Může vzniknout i na základě jiných smluvních vztahů
+        (např. služební dílo)</p></li>
+        <li><p>Specifická úprava se liší podle jurisdikce</p></li>
+        <li><p>V ČR je upraveno autorským zákonem</p></li>
+        <li><p>Nevzniká mimo rozsah pracovních povinností
+        zaměstnance</p></li>
+        </ul>
+        <h2
+        id="jaké-je-riziko-pokud-ai-systém-diskriminuje-při-náboru">Jaké
+        je riziko, pokud AI systém diskriminuje při náboru?</h2>
+        <p>Riziko diskriminace AI systému při náboru spočívá v porušení
+        antidiskriminačních zákonů, poškození reputace společnosti,
+        právních postizích a vytváření či posilování společenských
+        nerovností prostřednictvím systematického znevýhodňování
+        určitých skupin uchazečů na základě chráněných
+        charakteristik.</p>
+        <ul>
+        <li><p>Právní riziko porušení antidiskriminačních
+        zákonů</p></li>
+        <li><p>Finanční náklady spojené s právními spory a
+        odškodněním</p></li>
+        <li><p>Reputační škody a ztráta důvěry veřejnosti</p></li>
+        <li><p>Vytváření nebo posilování existujících nerovností na
+        pracovišti</p></li>
+        <li><p>Znemožnění přístupu kvalifikovaným kandidátům z důvodu
+        předpojatosti</p></li>
+        <li><p>Diskriminace může být skrytá a obtížně
+        odhalitelná</p></li>
+        <li><p>Odpovědnost nese organizace používající AI
+        systém</p></li>
+        <li><p>EU AI Act klasifikuje HR systémy jako vysoce
+        rizikové</p></li>
+        </ul>
+        <h2 id="co-je-to-zakázaný-ai-systém-podle-ai-act">Co je to
+        zakázaný AI systém podle AI Act?</h2>
+        <p>Zakázaný AI systém podle AI Actu je aplikace umělé
+        inteligence, která představuje nepřijatelné riziko pro základní
+        práva a bezpečnost občanů EU, a proto je její používání na území
+        Evropské unie zcela zakázáno.</p>
+        <ul>
+        <li><p>Systémy využívající manipulativní techniky k ovlivňování
+        chování</p></li>
+        <li><p>Systémy využívající zranitelnosti osob (věk,
+        postižení)</p></li>
+        <li><p>Systémy sociálního skórování jednotlivců veřejnými
+        orgány</p></li>
+        <li><p>Systémy pro biometrickou identifikaci v reálném čase na
+        veřejných prostranstvích (s výjimkami)</p></li>
+        <li><p>Systémy umožňující necílenou extrapolaci biometrických
+        dat z internetu</p></li>
+        <li><p>Systémy prediktivního policie používané pro předvídání
+        trestných činů jednotlivce</p></li>
+        <li><p>Systémy pro rozpoznávání emocí na pracovišti a
+        vzdělávacích institucích</p></li>
+        <li><p>Zakázání má na rozdíl od ostatních kategorií absolutní
+        charakter</p></li>
+        </ul>
+      </main>
+
+            <nav class="sidebar" id="TOC">
+        <h2>Obsah</h2>
+        <ul>
+        <li><a href="#souhrnné-informace"
+        id="toc-souhrnné-informace">Souhrnné informace</a>
+        <ul>
+        <li><a href="#co-je-to-silná-umělá-inteligence"
+        id="toc-co-je-to-silná-umělá-inteligence">Co je to silná umělá
+        inteligence?</a></li>
+        <li><a href="#co-je-to-slabá-umělá-inteligence"
+        id="toc-co-je-to-slabá-umělá-inteligence">Co je to slabá umělá
+        inteligence?</a></li>
+        <li><a href="#co-je-to-strojové-učení"
+        id="toc-co-je-to-strojové-učení">Co je to strojové
+        učení?</a></li>
+        <li><a href="#co-je-to-hluboké-učení"
+        id="toc-co-je-to-hluboké-učení">Co je to hluboké učení?</a></li>
+        <li><a href="#co-je-to-neuronová-síť"
+        id="toc-co-je-to-neuronová-síť">Co je to neuronová síť?</a></li>
+        <li><a href="#co-je-to-generativní-umělá-inteligence"
+        id="toc-co-je-to-generativní-umělá-inteligence">Co je to
+        generativní umělá inteligence?</a></li>
+        <li><a href="#co-je-to-prompt" id="toc-co-je-to-prompt">Co je to
+        prompt?</a></li>
+        <li><a href="#co-je-to-selfprompting"
+        id="toc-co-je-to-selfprompting">Co je to selfprompting?</a></li>
+        <li><a href="#co-jsou-to-halucinace-chatbotů"
+        id="toc-co-jsou-to-halucinace-chatbotů">Co jsou to halucinace
+        chatbotů?</a></li>
+        <li><a href="#co-je-to-velký-jazykový-model"
+        id="toc-co-je-to-velký-jazykový-model">Co je to velký jazykový
+        model?</a></li>
+        <li><a href="#jak-se-učí-stroj-při-učení-pod-dohledem"
+        id="toc-jak-se-učí-stroj-při-učení-pod-dohledem">Jak se učí
+        stroj při učení pod dohledem?</a></li>
+        <li><a href="#jak-se-učí-stroj-při-učení-bez-dozoru"
+        id="toc-jak-se-učí-stroj-při-učení-bez-dozoru">Jak se učí stroj
+        při učení bez dozoru?</a></li>
+        <li><a href="#co-je-posilované-učení"
+        id="toc-co-je-posilované-učení">Co je posilované učení?</a></li>
+        <li><a href="#co-je-výstupem-tréninku-neuronové-sítě"
+        id="toc-co-je-výstupem-tréninku-neuronové-sítě">Co je výstupem
+        tréninku neuronové sítě?</a></li>
+        <li><a
+        href="#jak-funguje-zpětná-propagace-backpropagation-v-neuronové-síti"
+        id="toc-jak-funguje-zpětná-propagace-backpropagation-v-neuronové-síti">Jak
+        funguje zpětná propagace (backpropagation) v neuronové
+        síti?</a></li>
+        <li><a
+        href="#kdo-je-autorem-díla-vytvořeného-pomocí-ai-pokud-člověk-ai-jen-zadal-pokyn"
+        id="toc-kdo-je-autorem-díla-vytvořeného-pomocí-ai-pokud-člověk-ai-jen-zadal-pokyn">Kdo
+        je autorem díla vytvořeného pomocí AI, pokud člověk AI jen zadal
+        pokyn?</a></li>
+        <li><a href="#může-být-ai-považována-za-autora"
+        id="toc-může-být-ai-považována-za-autora">Může být AI považována
+        za autora?</a></li>
+        <li><a href="#co-je-to-zaměstnanecké-dílo"
+        id="toc-co-je-to-zaměstnanecké-dílo">Co je to zaměstnanecké
+        dílo?</a></li>
+        <li><a
+        href="#jaké-je-riziko-pokud-ai-systém-diskriminuje-při-náboru"
+        id="toc-jaké-je-riziko-pokud-ai-systém-diskriminuje-při-náboru">Jaké
+        je riziko, pokud AI systém diskriminuje při náboru?</a></li>
+        <li><a href="#co-je-to-zakázaný-ai-systém-podle-ai-act"
+        id="toc-co-je-to-zakázaný-ai-systém-podle-ai-act">Co je to
+        zakázaný AI systém podle AI Act?</a></li>
+        </ul></li>
+        </ul>
+      </nav>
+          </div>
+  </body>
+</html>

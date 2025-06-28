@@ -24,6 +24,7 @@ async function main() {
   // Copy site-wide assets
   fs.copyFileSync(CSS_PATH, path.join(outputDir, 'styles.css'))
   fs.copyFileSync(JS_LOADER_PATH, path.join(outputDir, 'katex-loader.js'))
+  fs.copyFileSync('./favicon.svg', path.join(outputDir, 'favicon.svg'))
   console.log(`🎨 Copied site-wide assets (CSS, JS) to ${outputDir}`)
 
   // --- NEW: MANIFEST LOGIC ---
@@ -211,6 +212,7 @@ function generateIndexHtml(structure) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Univerzitní studium - materiály a přednášky</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

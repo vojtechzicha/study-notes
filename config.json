@@ -1,0 +1,30 @@
+{
+  "sources": [
+    {
+      "name": "Newton University (bakalářský)",
+      "path": "/Users/vojtechzicha/Documents/University NU Bachelor",
+      "update": false
+    },
+    {
+      "name": "Newton University (SZZ bakalářská)",
+      "path": "/Users/vojtechzicha/Documents/University NU Bachelor/Final Exam",
+      "update": false
+    },
+    {
+      "name": "Ekonomická fakulta TU Liberec (bakalářský)",
+      "path": "/Users/vojtechzicha/Documents/University TUL Bachelor",
+      "update": true
+    },
+    {
+      "name": "Ekonomická fakulta TU Liberec (SZZ bakalářská)",
+      "path": "/Users/vojtechzicha/Documents/University TUL Bachelor/Státní závěrečná zkouška",
+      "update": true
+    },
+    {
+      "name": "Fakulta elektrotechniky a informatiky VŠB-TU Ostrava (bakalářský)",
+      "path": "/Users/vojtechzicha/Documents/University VSB FEI Bachelor",
+      "update": true
+    }
+  ],
+  "outputDir": "./output"
+}

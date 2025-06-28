@@ -1,0 +1,14 @@
+{
+  "name": "mkdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "convert.js",
+  "scripts": {
+    "build": "node convert.js",
+    "deploy": "npm run build && git add . && git commit -m \"Update study notes\" && git push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

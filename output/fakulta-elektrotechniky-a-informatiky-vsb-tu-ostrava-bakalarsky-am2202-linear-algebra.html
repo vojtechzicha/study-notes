@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title> - Studijní poznámky</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Load our local stylesheet and custom loader script -->
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="katex-loader.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="index.html" class="back-button">← Zpět</a>
+        <a href="index.html" class="home-link">Univerzitní studium</a>
+        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
+        <span class="breadcrumb-item">Fakulta elektrotechniky a
+informatiky VŠB-TU Ostrava (bakalářský)</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-item-active"></span>
+      </div>
+    </header>
+
+    <div class="page-container">
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title"></h1>
+        </header>
+        <h1 id="matrix-operations">Matrix Operations</h1>
+        <h1 id="systems-of-linear-equations">Systems of Linear
+        Equations</h1>
+        <h1 id="vector-spaces">Vector Spaces</h1>
+        <h1 id="linear-transformations">Linear Transformations</h1>
+        <h1 id="bilinear-and-quadratic-forms">Bilinear and Quadratic
+        Forms</h1>
+        <h2 id="quadratic-form">Quadratic form</h2>
+        <p><strong>Definition</strong>: <span
+        class="math inline">\mathcal{Q}_{B}</span> is a <u>quadratic
+        form</u>, if it takes a vector and outputs a real number. <span
+        class="math inline">\mathcal{Q}_{B}\mathcal{:V}\mathbb{\rightarrow
+        R}</span>.</p>
+        <p><span class="math display">\mathcal{Q}_{B}(v)\mathcal{=
+        B}(v,v) = \mathcal{B}_{S}(v,v)</span></p>
+        <p><strong>Example</strong>: <span
+        class="math inline">\mathcal{Q:}\mathbb{R}^{3}\mathbb{\rightarrow
+        R;}\mathcal{Q}(x) = x^{T}x = x_{1}^{2} + x_{2}^{2} +
+        x_{3}^{2}</span>, always positive or zero</p>
+        <p><strong>Example:</strong> <span
+        class="math inline">\mathcal{Q:}\mathbb{R}^{2}\mathbb{\rightarrow
+        R;}\mathcal{Q}(x) = x^{T}Ax = a_{11}x_{1}^{2} + \left( a_{12} +
+        a_{21} \right)x_{1}x_{2} + a_{22}x_{2}^{2}</span>, contains
+        zero</p>
+        <p><strong>Example:</strong> <span
+        class="math inline">\mathcal{Q:F
+        \rightarrow}\mathbb{R;}\mathcal{Q}(f) = f^{2}(1)</span></p>
+        <p><span class="math inline">\mathcal{Q}_{B}(\alpha x) =
+        \alpha^{2}\mathcal{Q(}x)</span>, (prove by <span
+        class="math inline">B(\alpha x,\alpha x)</span>)</p>
+        <p><strong>Property:</strong> <span class="math inline">1 \in
+        R\left( \mathcal{Q} \right)\mathcal{\Rightarrow Q}(x) =
+        1;\mathcal{Q}(\alpha x) = \alpha^{2}\mathcal{Q}(x) =
+        \alpha^{2}</span> : if 1 is in the range, all positive numbers
+        and zero is in the range; similarly if -1 is in the range, all
+        negative numbers and zero is in the range.</p>
+        <p><strong>Property:</strong> <span
+        class="math inline">\mathcal{Q}(0)\mathcal{= Q}(0 \bullet 0) = 0
+        \bullet \mathcal{Q}(0) = 0</span></p>
+        <p>A bilinear form generating a quadratic form is not
+        unique.<br />
+        By adding any antisymmetric bilinear form, I’d get a new
+        one.</p>
+        <p><strong>Example:</strong> Find a symmetric bilinear form
+        <span class="math inline">\mathcal{B}_{S}</span> for quadratic
+        form <span class="math inline">\mathcal{Q}_{B}</span>.</p>
+        <p><span class="math display">\begin{array}{r}
+        \mathcal{B}_{S}(x + y,x + y)\mathcal{= B}(x,x)\mathcal{+
+        B}(x,y)\mathcal{+ B}(y,x)\mathcal{+ B}(y,y) \\
+        \mathcal{Q}(x)\mathcal{= Q}(x) + 2\mathcal{B}_{S}(x,y)\mathcal{+
+        Q}(y) \\
+        \mathcal{B}_{S}(x,y) = \frac{1}{2}\left( \mathcal{Q}(x +
+        y)\mathcal{- Q}(x)\mathcal{- Q}(y) \right)
+        \end{array}\ </span></p>
+        <p>A symmetric bilinear form generating a quadratic is
+        unique<br />
+        and given by <span class="math inline">\mathcal{B}_{S}(x,y,) =
+        \frac{1}{2}\left( \mathcal{Q}(x + y)\mathcal{- Q}(x)\mathcal{-
+        Q}(y) \right)</span>.</p>
+        <p><strong>Example:</strong> <span
+        class="math inline">\mathcal{B}(x,y) = 2x_{1}y_{1} - 3x_{1}y_{2}
+        + 5x_{2}y_{1} - x_{2}y_{2};\varepsilon = \{\lbrack
+        1,0\rbrack,\lbrack 0,1\rbrack\}</span></p>
+        <p><span class="math display">B = \begin{bmatrix}
+        2 &amp; - 3 \\
+        5 &amp; - 1
+        \end{bmatrix};B_{S} = \frac{1}{2}\left( B + B^{T} \right) =
+        \begin{bmatrix}
+        2 &amp; 1 \\
+        1 &amp; - 1
+        \end{bmatrix};Q = B_{S} = \begin{bmatrix}
+        2 &amp; 1 \\
+        1 &amp; - 1
+        \end{bmatrix}</span></p>
+        <p>A matrix of quadratic form is equal to a matrix of
+        corresponding bilinear form.</p>
+        <h3 id="classification">Classification</h3>
+        <p><strong>Definition</strong>: A <u>positive definite form</u>:
+        <span class="math inline">\mathcal{Q:V}\mathbb{\rightarrow
+        R:\forall}x \in \mathcal{V,}x \neq o:\mathcal{Q}(x) &gt;
+        0</span>.</p>
+        <p><strong>Definition</strong>: A <u>negative definite form</u>:
+        <span class="math inline">\mathcal{Q:V}\mathbb{\rightarrow
+        R:\forall}x \in \mathcal{V,}x \neq o:\mathcal{Q}(x) &lt;
+        0</span>.</p>
+        <p><strong>Definition</strong>: A <u>positive semi definite
+        form</u>: <span
+        class="math inline">\mathcal{Q:V}\mathbb{\rightarrow R:\forall}x
+        \in \mathcal{V,}x \neq o:\mathcal{Q}(x) \geq 0</span>.</p>
+        <p><strong>Definition</strong>: A <u>negative semi definite
+        form</u>: <span
+        class="math inline">\mathcal{Q:V}\mathbb{\rightarrow R:\forall}x
+        \in \mathcal{V,}x \neq o:\mathcal{Q}(x) \leq 0</span>.</p>
+        <p><strong>Definition</strong>: A <u>indefinite form</u>: <span
+        class="math inline">\mathcal{Q:V}\mathbb{\rightarrow R:\exists}x
+        \in \mathcal{V,}x \neq o:\mathcal{Q}(x) &lt; 0 \land \exists y
+        \in \mathcal{V,}y \neq o:\mathcal{Q}(x) &gt; 0</span>.</p>
+        <p><strong>Example:</strong> Classify <span
+        class="math inline">\mathcal{Q}(x) = - 2x_{1}^{2} + 2x_{1}x_{2}
+        - 3x_{2}^{2}</span>.</p>
+        <p><span class="math inline">\mathcal{Q}(x) = - 2x_{1}^{2} +
+        2x_{1}x_{2} - 3x_{2}^{2} = - 2\left( x_{1}^{2} - x_{1}x_{2} +
+        \frac{1}{4}x^{2} \right) - \frac{5}{2}x_{2}^{2} = \  - 2\left(
+        x_{1} - \frac{1}{2}x_{2} \right)^{2} -
+        \frac{5}{2}x_{2}^{2}\overset{\begin{aligned}
+        s_{1} &amp; = x_{1} - \frac{1}{2}x_{2} \\
+        s_{2} &amp; = x_{2}
+        \end{aligned}}{\rightarrow} - 2s_{1}^{2} -
+        \frac{5}{2}s_{2}^{2}</span>, aka it’s negative definite
+        form.</p>
+        <p><span class="math inline">\lbrack Q\rbrack_{N} =
+        \begin{bmatrix}
+        - 2 &amp; 1 \\
+        1 &amp; - 3
+        \end{bmatrix};s = \left( S = \begin{bmatrix}
+        1 &amp; - \frac{1}{2} \\
+        0 &amp; 1
+        \end{bmatrix} \right)x;\lbrack Q\rbrack_{S} = \begin{bmatrix}
+        - 2 &amp; 0 \\
+        0 &amp; - \frac{5}{2}
+        \end{bmatrix};</span> We diagnolised our matrix.</p>
+        <h3 id="congruent-operations">Congruent operations</h3>
+        <p>Perform a row operation and at the same time the
+        corresponding column operation.</p>
+        <p><span class="math inline">\lbrack Q\rbrack_{N} =
+        \begin{bmatrix}
+        - 2 &amp; 1 \\
+        1 &amp; - 3
+        \end{bmatrix} \sim \begin{bmatrix}
+        - 2 &amp; 1 \\
+        0 &amp; - \frac{5}{2}
+        \end{bmatrix} \sim \begin{bmatrix}
+        - 2 &amp; 0 \\
+        0 &amp; - \frac{5}{2}
+        \end{bmatrix}</span></p>
+        <p>For all symmetric matrices <span
+        class="math inline">\left\lbrack A \middle| I \right\rbrack \sim
+        \lbrack D|\widetilde{L}\rbrack</span> is called <u>LD
+        decomposition</u>.</p>
+        <p><strong>Example:</strong> Classify <span
+        class="math inline">\mathcal{Q}(x):Q = \begin{bmatrix}
+        2 &amp; - 1 &amp; 0 \\
+        - 1 &amp; 2 &amp; - 1 \\
+        0 &amp; - 1 &amp; 2
+        \end{bmatrix}</span></p>
+        <p><span class="math inline">\begin{bmatrix}
+        2 &amp; - 1 &amp; 0 \\
+        - 1 &amp; 2 &amp; - 1 \\
+        0 &amp; - 1 &amp; 2
+        \end{bmatrix} \sim \begin{bmatrix}
+        2 &amp; 0 &amp; 0 \\
+        0 &amp; 6 &amp; - 2 \\
+        0 &amp; - 2 &amp; 2
+        \end{bmatrix} \sim \begin{bmatrix}
+        2 &amp; 0 &amp; 0 \\
+        0 &amp; 6 &amp; 0 \\
+        0 &amp; 0 &amp; \frac{4}{3}
+        \end{bmatrix}</span>, it is a positive definite form.</p>
+        <h2 id="inner-product">Inner Product</h2>
+        <p><strong>Definition:</strong> Inner product on the real vector
+        space <span class="math inline">\mathcal{V}</span> is a
+        symmetric bilinear form on <span
+        class="math inline">\mathcal{V}</span>, which corresponding
+        quadratic form is a positive definite one.</p>
+        <p><span class="math display">\begin{aligned}
+        (u + v,w) &amp; = (u,w) + (v + w) \\
+        (\alpha u,v) &amp; = \alpha(u,v) \\
+        (u,v) &amp; = (v,u) \\
+        (u,u) &amp; &gt; 0;u \neq 0
+        \end{aligned}</span></p>
+        <p><strong>Example</strong>: Examine, whether <span
+        class="math inline">(f,g) = f(0)g(0) + f(1)g(1)</span> is an
+        inner product. (HOWTO: Examine all 4 conditions.)</p>
+        <p><strong>Example</strong>: Examine, whether <span
+        class="math inline">(x,y)_{A} = x^{T}Ay</span> is an inner
+        product. (It is.)</p>
+        <h3 id="norms">Norms</h3>
+        <p><strong>Definition</strong>: The norm of the vector on the
+        real vector space <span class="math inline">\mathcal{V}</span>
+        is a positive definite one quadratic form.</p>
+        <p><span class="math inline">\left\| x + y \right\| \leq \left\|
+        x \right\| + \left\| y \right\|\ </span>(triangular
+        inequality)<br />
+        <span class="math display">{\left\| \alpha x \right\| =
+        \alpha\left\| x \right\|
+        }{\left\| x \right\| = 0 \Leftrightarrow x = 0}</span></p>
+        <p><strong>Example:</strong> <span class="math inline">\left\| x
+        \right\|_{2} = \sqrt{x^{2} + y^{2}}</span> (Euclidian norm);
+        <span class="math inline">\left\| x \right\|_{0} =
+        \sum_{i}^{n}{|x_{i}|}</span> (zero norm); <span
+        class="math inline">\left\| x \right\|_{\infty} =
+        \max_{i}{|x_{i}|}</span> (maximum norm)</p>
+        <p><strong>Example:</strong> Energy norms: <span
+        class="math inline">(x,y)_{A} = x^{T}Ay;\left\| x \right\|_{A} =
+        \sqrt{(x,y)_{A}}</span></p>
+        <p><strong>Cauchy–Bunyakovsky–Schwarz inequality</strong>: <span
+        class="math inline">(x,y)^{2} \leq (x,x) \bullet
+        (y,y)</span></p>
+        <h3 id="orthonormality">Orthonormality</h3>
+        <p><strong>Definition</strong>: An orthonormal means that the
+        norm of all vectors is equal to one and is orthogonal.<br />
+        <strong>Definition:</strong> An orthogonal means, that the inner
+        product of any two vector is equal to zero.</p>
+        <p><strong>Gram-Schmidt Algorithm:</strong> Make a set of
+        vectors to orthonormal set.</p>
+        <ol type="1">
+        <li><p>Take the first vector from the set.</p></li>
+        <li><p>Orthogonalize the vector. We know <span
+        class="math inline">{f&#39;}_{n} = e_{n} - \alpha_{n - 1}f_{n -
+        1} - \ldots</span>, where <span class="math inline">\alpha_{y} =
+        \left( f_{y},e_{n} \right),\ldots</span>.</p></li>
+        <li><p>Orthonormalize the vector – divide it by its
+        norm.</p></li>
+        </ol>
+        <p><strong>Example:</strong> Find an orthonormal basis: <span
+        class="math inline">(x,y)_{A} = x^{T}Ay;\ A = \begin{bmatrix}
+        2 &amp; - 1 &amp; 0 \\
+        - 1 &amp; 2 &amp; - 1 \\
+        0 &amp; - 1 &amp; 2
+        \end{bmatrix};\left\| x \right\|_{A} = \sqrt{x^{T}Ax}\mathcal{;V
+        =}\mathbb{R}^{3}</span></p>
+        <p><span class="math display">\varepsilon = \left\{
+        \begin{bmatrix}
+        1 \\
+        0 \\
+        0
+        \end{bmatrix},\begin{bmatrix}
+        0 \\
+        1 \\
+        0
+        \end{bmatrix},\begin{bmatrix}
+        0 \\
+        0 \\
+        1
+        \end{bmatrix} \right\};f = \left\{ \frac{\begin{bmatrix}
+        1 \\
+        0 \\
+        0
+        \end{bmatrix}}{\left\| \begin{bmatrix}
+        1 \\
+        0 \\
+        0
+        \end{bmatrix} \right\| = \sqrt{2}} = \begin{bmatrix}
+        \frac{\sqrt{2}}{2} \\
+        0 \\
+        0
+        \end{bmatrix},\frac{\begin{bmatrix}
+        \frac{1}{2} \\
+        1 \\
+        0
+        \end{bmatrix}}{\left\| \begin{bmatrix}
+        \frac{1}{2} \\
+        1 \\
+        0
+        \end{bmatrix} \right\| = \frac{\sqrt{6}}{2}} = \begin{bmatrix}
+        \frac{1}{2} \\
+        1 \\
+        0
+        \end{bmatrix} \bullet \frac{\sqrt{6}}{2},\frac{\begin{bmatrix}
+        \frac{1}{3} \\
+        \frac{2}{3} \\
+        1
+        \end{bmatrix}}{\left\| \begin{bmatrix}
+        \frac{1}{3} \\
+        \frac{2}{3} \\
+        1
+        \end{bmatrix} \right\| = \frac{2\sqrt{3}}{3}} = \begin{bmatrix}
+        \frac{1}{3} \\
+        \frac{2}{3} \\
+        1
+        \end{bmatrix} \bullet \frac{\sqrt{3}}{2} \right\}</span></p>
+        <p><strong>Example:</strong> Find an orthonormal basis of <span
+        class="math inline">\mathcal{P}^{2}</span>: <span
+        class="math inline">(p,q) = \int_{0}^{1}{p(x)q(x)dx};\left\| p
+        \right\|_{A} = \sqrt{\int_{0}^{1}{p(x)^{2}dx}}</span></p>
+        <p><span class="math display">\varepsilon = \left\{ 1;x;x^{2}
+        \right\};f = \left\{ \frac{x^{2}}{\left\| x^{2} \right\| =
+        \frac{\sqrt{5}}{5}} = \sqrt{5}x^{2},\frac{x -
+        \frac{5}{4}x^{2}}{\left\| x - \frac{5}{4}x^{2} \right\| =
+        \frac{\sqrt{12}}{12}} = - 5\sqrt{3}x^{2} + 4\sqrt{3}x,\ldots
+        \right\}</span></p>
+        <h2 id="variation-principle">Variation Principle</h2>
+        <p><strong>Theorem:</strong> The matrix <span
+        class="math inline">A</span> is symmetric and positive definite,
+        <span class="math inline">(x,y)_{A} = x^{T}Ay</span>, <span
+        class="math inline">b(x) = b^{t}x</span>, <span
+        class="math inline">q(x) = \frac{1}{2}(x,x)_{A} - b(x)</span>,
+        vectors <span class="math inline">b</span> and <span
+        class="math inline">\overline{x}</span>.<br />
+        <span class="math display">A\overline{x} = b \Leftrightarrow
+        (x,y)_{A} = b(y),\forall y \in \mathbb{R}^{n} \Leftrightarrow
+        !\exists\overline{x}:q\left( \overline{x} \right) \leq
+        q(x)</span></p>
+        <p><strong>Notes:</strong> <span class="math inline">q(x)</span>
+        is an error function. The solution <span
+        class="math inline">\overline{x}</span> has the smallest error
+        possible.</p>
+        <p><strong>Example</strong>: <span class="math inline">A =
+        \begin{bmatrix}
+        2 &amp; - 1 &amp; 0 \\
+        - 1 &amp; 2 &amp; - 1 \\
+        0 &amp; - 1 &amp; 2
+        \end{bmatrix},b = \begin{bmatrix}
+        1 \\
+        1 \\
+        1
+        \end{bmatrix},f = \left\{ \begin{bmatrix}
+        \frac{\sqrt{2}}{2} \\
+        0 \\
+        0
+        \end{bmatrix},\begin{bmatrix}
+        \frac{1}{2} \\
+        1 \\
+        0
+        \end{bmatrix} \bullet \frac{\sqrt{6}}{2},\begin{bmatrix}
+        \frac{1}{3} \\
+        \frac{2}{3} \\
+        1
+        \end{bmatrix} \bullet \frac{\sqrt{3}}{2} \right\}</span>. Solve
+        <span class="math inline">Ax = b</span>.</p>
+        <p>Let’s use the middle equation <span
+        class="math inline">(x,y)_{A} = b(y),y \in f</span>. We can then
+        count only <span class="math inline">\begin{array}{r}
+        \alpha_{1} = b\left( f_{1} \right) \\
+        \cdots \\
+        \alpha_{n} = b\left( f_{n} \right)
+        \end{array}</span>.</p>
+        <h3 id="least-square-method">Least Square Method</h3>
+        <p><span class="math inline">r(x) = Ax - b</span> is called the
+        <u>residual vector</u>. It changes the problem to minimalize the
+        residuum.</p>
+        <p><strong>Theorem:</strong> The minimal residuum is achieved at
+        <span class="math inline">A^{T}Ax = A^{T}b</span></p>
+        <p><strong>Example:</strong> <span
+        class="math inline">\begin{aligned}
+        x_{1} + x_{2} &amp; = 0 \\
+        2x_{1} + x_{2} &amp; = 4 \\
+        3x_{1} + x_{2} &amp; = 4
+        \end{aligned}</span></p>
+        <p><span class="math display">A = \begin{bmatrix}
+        1 &amp; 1 \\
+        2 &amp; 1 \\
+        3 &amp; 1
+        \end{bmatrix};A^{T} = \begin{bmatrix}
+        1 &amp; 2 &amp; 3 \\
+        1 &amp; 1 &amp; 1
+        \end{bmatrix};b = \begin{bmatrix}
+        0 \\
+        4 \\
+        4
+        \end{bmatrix};A^{T}A = \begin{bmatrix}
+        14 &amp; 6 \\
+        6 &amp; 3
+        \end{bmatrix};A^{T}b = \begin{bmatrix}
+        20 \\
+        8
+        \end{bmatrix};x = \begin{bmatrix}
+        2 \\
+        - \frac{4}{3}
+        \end{bmatrix}</span></p>
+        <h1 id="eigenvalues-and-eigenvectors">Eigenvalues and
+        Eigenvectors</h1>
+        <h2 id="spectral-decomposition">Spectral Decomposition</h2>
+        <p>Spectral decomposition, a.k.a. diagonalization, is concerned
+        with a linear transformation <span class="math inline">A_{F,F} =
+        T \bullet A_{E,E} \bullet T^{- 1}</span>, where the matrix <span
+        class="math inline">A_{E,E} ≔ \begin{bmatrix}
+        \lambda_{1} &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; \lambda_{2} &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; \ddots &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; \lambda_{n}
+        \end{bmatrix}</span>. Assume, that for some <span
+        class="math inline">A</span> it holds true, <span
+        class="math inline">A \bullet e_{i} = \lambda_{i} \bullet
+        e_{i}</span> and <span
+        class="math inline">e_{1},\ldots,e_{n}</span> are linearly
+        independent. That implies <span class="math inline">A \bullet (T
+        ≔ \left\lbrack e_{1},\ldots,e_{n} \right\rbrack) = \left\lbrack
+        \lambda_{1} \bullet e_{1},\ldots,\lambda_{n} \bullet e_{n}
+        \right\rbrack</span>, and so <span class="math inline">A \bullet
+        T = T \bullet \begin{bmatrix}
+        \lambda_{1} &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; \lambda_{2} &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; \ddots &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; \lambda_{n}
+        \end{bmatrix}</span> .</p>
+        <p><strong>Conclusion 1</strong>: For any matrix <span
+        class="math inline">A \in C^{n \times n}</span>: <span
+        class="math inline">A = T \bullet D \bullet T^{- 1}</span>.</p>
+        <p>Assume that <span class="math inline">A</span> is real and
+        symmetric. We know <span class="math inline">A \bullet e =
+        \lambda \bullet e</span>. We can multiple by <span
+        class="math inline">e^{*} \bullet</span> to get <span
+        class="math inline">\left( e^{*} \right)^{T} \bullet A \bullet e
+        = \lambda \bullet \left\| e \right\|^{2}</span>. Now we know
+        <span class="math inline">e^{T} \bullet A^{T} \bullet e^{*} =
+        e^{T} \bullet A \bullet e^{*} = e^{T} \bullet (A \bullet e)^{*}
+        = e^{T} \bullet \lambda^{*} \bullet e^{*} = \lambda^{*} \bullet
+        \left\| e \right\|^{2}</span>, so <span
+        class="math inline">\lambda\mathbb{\in R}</span>.</p>
+        <p><strong>Conclusion 2:</strong> For any real symmetric matrix
+        <span class="math inline">A \in C^{n \times n}</span>: <span
+        class="math inline">\forall\lambda_{i}:\lambda_{i}\mathbb{\in
+        R}</span></p>
+        <p>Assume that <span class="math inline">A</span> is real and
+        symmetric. We know <span class="math inline">A \bullet e =
+        \lambda \bullet e</span>. We can multiply by <span
+        class="math inline">e_{j} \bullet</span>, where <span
+        class="math inline">\lambda_{i} \neq \lambda_{j}</span>. Now
+        <span class="math inline">e_{j}^{T} \bullet A \bullet e_{i} =
+        \lambda_{i} \bullet e_{j}^{T} \bullet e_{i}</span>, so <span
+        class="math inline">e_{j}^{T} \bullet A \bullet e_{i} =
+        e_{i}^{T} \bullet A^{T} \bullet e_{j} = e_{i}^{T} \bullet \left(
+        A \bullet e_{j} \right) = \lambda_{j} \bullet e_{i}^{T} \bullet
+        e_{j}</span>. Now because <span class="math inline">\left(
+        \lambda_{i} - \lambda_{j} \right) \bullet \left( e_{i} \bullet
+        e_{j} \right) = 0</span>.</p>
+        <p><strong>Conclusion 3:</strong> For any real symmetric matrix
+        <span class="math inline">A \in C^{n \times n}</span>: <span
+        class="math inline">\forall\left( e_{i},e_{j} \right):e_{i}\bot
+        e_{j},\lambda_{i} \neq \lambda_{j}</span></p>
+        <p><span class="math inline">A = T \bullet \left( D \in R^{n
+        \times n} \right) \bullet T^{- 1} = Q \bullet D \bullet
+        Q^{T}</span>, where <span class="math inline">Q</span> is
+        orthogonal matrix</p>
+        <p><strong>Example:</strong> Compute the spectral decomposition
+        of <span class="math inline">A = \begin{bmatrix}
+        3 &amp; 2 \\
+        2 &amp; 1
+        \end{bmatrix}.</span></p>
+        <p><span class="math display">|A - \lambda I| = \left|
+        \begin{matrix}
+        3 - \lambda &amp; 2 \\
+        2 &amp; 1 - \lambda
+        \end{matrix} \right| = \lambda^{2} - 4\lambda - 1;\lambda_{1} =
+        2 + \sqrt{5},\lambda_{2} = 2 - \sqrt{5}</span></p>
+        <p><span class="math display">\lambda_{1} = 2 +
+        \sqrt{5}:e_{1}&#39; = t \bullet \begin{bmatrix}
+        - 2 \\
+        1 - \sqrt{5}
+        \end{bmatrix},\ t^{2} \bullet \alpha = 1 \Rightarrow e_{1} =
+        \begin{bmatrix}
+        - \frac{2}{\sqrt{\alpha}} \\
+        \frac{1 - \sqrt{5}}{\sqrt{\alpha}}
+        \end{bmatrix}</span></p>
+        <p><span class="math display">\lambda_{2}:e_{2} = s \bullet
+        \begin{bmatrix}
+        - 2 \\
+        1 + \sqrt{5}
+        \end{bmatrix},s = \frac{1}{\sqrt{\beta}},\beta = 4 + \left( 1 +
+        \sqrt{5} \right)^{2}</span></p>
+        <p><span class="math display">Q = \left\lbrack e_{1},e_{2}
+        \right\rbrack;D = \begin{bmatrix}
+        2 + \sqrt{5} &amp; 0 \\
+        0 &amp; 2 - \sqrt{5}
+        \end{bmatrix};A = Q \bullet D \bullet Q^{T}</span></p>
+      </main>
+
+            <nav class="sidebar" id="TOC">
+        <h2>Obsah</h2>
+        <ul>
+        <li><a href="#matrix-operations"
+        id="toc-matrix-operations">Matrix Operations</a></li>
+        <li><a href="#systems-of-linear-equations"
+        id="toc-systems-of-linear-equations">Systems of Linear
+        Equations</a></li>
+        <li><a href="#vector-spaces" id="toc-vector-spaces">Vector
+        Spaces</a></li>
+        <li><a href="#linear-transformations"
+        id="toc-linear-transformations">Linear Transformations</a></li>
+        <li><a href="#bilinear-and-quadratic-forms"
+        id="toc-bilinear-and-quadratic-forms">Bilinear and Quadratic
+        Forms</a>
+        <ul>
+        <li><a href="#quadratic-form" id="toc-quadratic-form">Quadratic
+        form</a>
+        <ul>
+        <li><a href="#classification"
+        id="toc-classification">Classification</a></li>
+        <li><a href="#congruent-operations"
+        id="toc-congruent-operations">Congruent operations</a></li>
+        </ul></li>
+        <li><a href="#inner-product" id="toc-inner-product">Inner
+        Product</a>
+        <ul>
+        <li><a href="#norms" id="toc-norms">Norms</a></li>
+        <li><a href="#orthonormality"
+        id="toc-orthonormality">Orthonormality</a></li>
+        </ul></li>
+        <li><a href="#variation-principle"
+        id="toc-variation-principle">Variation Principle</a>
+        <ul>
+        <li><a href="#least-square-method"
+        id="toc-least-square-method">Least Square Method</a></li>
+        </ul></li>
+        </ul></li>
+        <li><a href="#eigenvalues-and-eigenvectors"
+        id="toc-eigenvalues-and-eigenvectors">Eigenvalues and
+        Eigenvectors</a>
+        <ul>
+        <li><a href="#spectral-decomposition"
+        id="toc-spectral-decomposition">Spectral Decomposition</a></li>
+        </ul></li>
+        </ul>
+      </nav>
+          </div>
+  </body>
+</html>

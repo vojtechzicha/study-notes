@@ -4,24 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Telekomunikační sítě - Studijní poznámky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Load our local stylesheet and custom loader script -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="katex-loader.js"></script>
   </head>
@@ -30,362 +17,20 @@
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
         <a href="index.html" class="home-link">Univerzitní studium</a>
-        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
         <span class="breadcrumb-item">Fakulta elektrotechniky a
 informatiky VŠB-TU Ostrava (bakalářský)</span>
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item-active">Telekomunikační sítě</span>
       </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
     </header>
 
+    <!-- The .page-container is now the main layout wrapper -->
     <div class="page-container">
-      <main class="content">
-        <header id="title-block-header">
-          <h1 class="title">Telekomunikační sítě</h1>
-        </header>
-        <h1 id="základy-telekomunikačních-sítí">Základy
-        telekomunikačních sítí</h1>
-        <p><strong>Telekomunikační síť</strong> tvoří skupina
-        telekomunikačních zařízení, která jsou logicky uspořádaná a
-        propojená s cílem poskytovat telekomunikační služby. Skládá se
-        ze skupiny zdrojů informací a přijímačů informací a ze sítě pro
-        přenos a přepojování signálů, ke které jsou zdroje a přijímače
-        připojeny prostřednictvím přístupových bodů a přístupových
-        vedení.</p>
-        <p>Úkolem sítě je umožnit výměnu zpráv mezi přístupovými body
-        k síti. Přístupové body jsou připojeny k účastnickým koncovým
-        zařízením pomocí přístupových vedení (u telefonních sítí
-        <strong>local loop</strong>).</p>
-        <ul>
-        <li><p>Kdykoli musí být možné vytvořit spojení z jednoho
-        přístupového bodu ke kterémukoli jinému přístupovému
-        bodu.</p></li>
-        <li><p>Každý uživatel musí mít možnost určit si sám požadovaný
-        cíl, musí mít možnost řízeného zásahu do sítě.</p></li>
-        <li><p>Síť musí být dostatečně výkonná – musí poskytovat
-        dostatečně velký počet současných spojovacích možností.</p></li>
-        </ul>
-        <p><em>Zde patří obrázek komunikačního modelu</em></p>
-        <p><strong>Komunikační spojení</strong> vytváří vazby mezi dvěma
-        koncovými zařízeními za účelem výměny informací určitého typu.
-        Tato vazba může mít v závislosti na použité službě nebo síti
-        různé vlastnosti. Komunikační spojení může být vytvořené pomocí
-        za sebou propojených kanálů anebo jako virtuální kanál - spojení
-        vstupního kanálu do komutačního uzlu a výstupního kanálu
-        z komutačního uzlu. Toto spojení může být trvalé nebo může být
-        vytvořeno jen po určitou dobu.</p>
-        <h2 id="dělení-telekomunikačních-sítí">Dělení telekomunikačních
-        sítí</h2>
-        <p>Pří <strong>spojově orientovaném přenosu</strong> se vytváří
-        komunikační spojení mezi dvěma koncovými zařízeními na základě
-        řídících informací (telefonní číslo, adresa koncového zařízení)
-        ze zdrojového zařízení. Typické příklady: tradiční telefonní
-        síť,</p>
-        <ol type="1">
-        <li><p>Vytvoření spojení ze zdroje do cíle a rezervace
-        požadované kapacity sítě.</p></li>
-        <li><p>Přenos uživatelských dat.</p></li>
-        <li><p>Ukončení spojení a uvolnění kapacity dat.</p></li>
-        </ol>
-        <p>Při <strong>nespojově orientovaném přenosu</strong> se
-        uživatelské informace přenáší ve formě krátkých datových bloků,
-        které se nazývají <strong>pakety</strong> a skládají se ze
-        záhlaví obsahující adresu a datového pole. Nedochází k rezervaci
-        kapacity sítě a není garantováno doručení paketu do cíle. Přenos
-        je efektivnější, protože kapacita sítě může být sdílená mnoha
-        uživateli. Typické příklady: IP sítě.</p>
-        <p>Tradiční telefonní sítě mají <strong>hierarchickou
-        strukturu</strong>, v níž každá geografická oblast je
-        obsluhována vlastní telefonní ústřednou primární úrovně, které
-        jsou vzájemně propojené prostřednictvím ústředen sekundární
-        úrovně, tranzitními ústřednami a mezinárodními ústřednami.</p>
-        <p>V <strong>nehierarchické struktuře</strong>, například IP
-        sítě, obvykle existuje jen přístupová síť a páteřní síť. Každý
-        paket zde může cestovat po jiné trase.</p>
-        <p>K <strong>veřejné síti</strong> se může připojit každý
-        uživatel – veřejná telefonní síť (PSTN – Public Switched
-        Telephone Network), internet. <strong>Privátní síť</strong>
-        mohou využívat jen definovaní uživatelé. V datových sítích
-        rozlišujeme <strong>LAN</strong> (Local Area Network),
-        <strong>MAN</strong> (Metropolitan Area Network),
-        <strong>WAN</strong> (Wide Area Network).</p>
-        <h2 id="signalizace">Signalizace</h2>
-        <p>Pomocí <strong>signalizace</strong> se vytváří, udržuje a
-        ukončuje spojení ve spojově orientovaných sítích. Signalizace
-        pomáhá nalézt cestu k cíli a rezervovat v síti komunikační kanál
-        s požadovanou kapacitou. Pomocí signalizačních informací síťové
-        uzly ví, který vstupní port mají propojit s kterým výstupním
-        portem pro dané spojení. Využívá se také k zabezpečení mnoha
-        uživatelských služeb. Tyto informace mohou být přenášeny jako
-        součást datového rámce nebo pomocí samostatných signalizačních
-        zpráv.</p>
-        <ul>
-        <li><p>Účastnická signalizace probíhá mezi účastnickým zařízením
-        a ústřednou.</p></li>
-        <li><p>Meziústřednová signalizace probíhá mezi jednotlivými
-        ústřednami. Meziústřednová signalizace využívá informace
-        z účastnické signalizace.</p></li>
-        </ul>
-        <p>Síťové komutační uzly mohou přepínat přenášené signály různým
-        způsobem podle použité telekomunikační technologie.</p>
-        <ul>
-        <li><p><strong>Přepínání kanálů</strong> – informace jsou
-        přenášeny prostřednictvím předem vytvořených kanálů; pokud má
-        síť dostatečnou kapacitu pro vytvoření nového kanálu, je tento
-        vytvořen a rezervován po celou dobu komunikace, jinak je
-        vytvoření odmítnuto. Kapacita tohoto kanálu je poté garantovaná,
-        čímž však její kapacita nemůže být sdílena mezi uživateli.
-        Příklad: telefonní sítě.</p></li>
-        <li><p><strong>Přepínání zpráv</strong> – zastaralý způsob;
-        přenášené zprávy jsou vybaveny cílovou adresou a poslány do sítě
-        bez rezervace kapacity. Pokud je v síti hodně provozu, musí
-        zprávy často čekat ve vstupní nebo výstupní vyrovnávací paměti
-        síťových uzlů. Každá zpráva je přenášena nezávisle na ostatních
-        – zprávy mohou cestovat k cíli po různých cestách.</p></li>
-        <li><p><strong>Přepínání paketů</strong> – na rozdíl od
-        přepínání zpráv jsou dlouhé zprávy rozděleny na menší pakety se
-        stejnou nebo podobnou délkou; efektivní způsob především pro
-        zhlukovitý typ provozu v počítačových sítí. Rozlišujeme
-        <strong>datagramovou obsluhu</strong>, kde mohou pakety dorazit
-        do cíle s různým zpožděním, vhodné pro data nenáročná na
-        přenosové zpoždění (čistá IP síť), nebo <strong>obsluhu pomocí
-        virtuálního kanálu</strong>, kde se pro přenos paketů tvoří
-        virtuální kanál s využitím předem vytvořených přepínacích
-        tabulek síťových uzlů. Data jsou přenášena ve formě paketů po
-        stejné cestě, v neměnném pořadí a se stejným zpožděním – Frame
-        Relay, MPLS, ATM.</p></li>
-        </ul>
-        <h1 id="protokolové-modely">Protokolové modely</h1>
-        <h2 id="protokolový-model-tcpip">Protokolový model TCP/IP</h2>
-        <p>Protokolový model by vytvořen na základě iniciativy
-        Ministerstva obrany USA s cílem zajistit spojení mezi ARPANET a
-        jinými sítěmi. Model byl navržen jako sada protokolů pro
-        heterogenní síťové prostředí vznikající během 70. a 80. let 20.
-        století. V současnosti se protokoly tohoto modelu používají při
-        komunikaci mezi počítači v rámci internetu i v mnoha jiných
-        sítí.</p>
-        <ul>
-        <li><p>Výhody: fragmentace IP paketů podle použité technologie
-        spojové vrstvy, flexibilní adresní systém.</p></li>
-        </ul>
-        <p><strong>Aplikační vrstva</strong> – odpovídá tem vrchním
-        vrstvám modelu OSI, nabízí služby systémem uživatelských
-        aplikací: FTP, telnet, SMTP, http.</p>
-        <p><strong>Transportní vrstva</strong> – poskytuje garantované
-        doručení dat pomocí <strong>TCP protokolu</strong> a doručení
-        „best effort“ pomocí <strong>UDP protokolu</strong>. Transportní
-        vrstva má za úkol realizovat datový přenos z aplikační vrstvy
-        s určitou kvalitou. Následně pak aplikační vrstvu informuje o
-        jeho provedení. Využívá níže položenou internetovou vrstvu jako
-        nástroj k přenosu paketů sítí bez zajištění spolehlivosti
-        přenosu.</p>
-        <p><strong>Internetová vrstva</strong> – internetová vrstva je
-        jádrem architektury TCP/IP, odpovídá síťové vrstvě modelu OSI.
-        Hlavním protokolem internetové vrstvy je <strong>IP
-        protokol</strong> – slouží k nespojovému, datagramovému přenosu
-        dat mezi sítěmi na principu „best effort“. IP protokol není
-        implementován jen v koncových zařízeních, ale i v síťových
-        zařízeních jako například směrovač. Mezi další protokoly patří
-        <strong>RIP</strong> (Routing Information Protocol) a
-        <strong>OSPF</strong> (Open Shortest Path First), které zkoumají
-        síťovou topologii, stanovují cesty k cíli a vytváření směrovací
-        tabuluky; <strong>ICMP</strong> (Internet Control Message
-        Protocol), který má za úkol přenášet informace o přenosových
-        chybách datových paketů, a <strong>IGMP</strong> (Internet Group
-        Management Protocol), pro podporu multicastingu – přenosu paketu
-        na více adres současně.</p>
-        <p><strong>Vrstva přístupu k síti</strong> – zodpovědná za
-        spolupráci s různými síťovými technologii; TCP/IP model považuje
-        každou technologii této vrstvy za nástroj k přenosu paketů
-        k dalšímu směrovači na cestě k cíli. Vrstva přístupu k síti není
-        striktně regulovaná, podporuje mnoho různých technologií –
-        Ethernet, FDDI, ….</p>
-        <h3 id="ip-protokol">IP protokol</h3>
-        <p>Úkolem IP je umožnit spojení s jednotlivými níže ležícími
-        technologiemi; nespojově orientovaný protokol. Pokud během
-        přenosu IP paketu nastane chyba, IP neumí provést žádnou činnost
-        k opravě této chyby. V současnosti používáme především IP verzi
-        4, ale stále více se prosazuje verze 6, která umožňuje lepší
-        podporu kvality služby QoS, multicastingu a bezpečnosti. Hlavně
-        ale přináší dostatečně velký počet adres pro rostoucí
-        internet.</p>
-        <h3 id="tcp-protokol">TCP protokol</h3>
-        <p>K zajištění spolehlivého doručení dat vytváří TCP logické
-        spojení, které umožňuje číslování přenášených paketů,
-        potvrzování jejich přijetí. Umí také detekovat a odstranit
-        duplicitní pakety a doručit pakety aplikační vrstvě v pořadí,
-        v kterém byly odeslány. Umožňuje komunikaci v duplexním
-        módu.</p>
-        <p>TCP rozděluje zprávy na <strong>segmenty</strong> a pro
-        přijetí je opět poskládá. Aplikační protokoly: HTTP, FTP, SMTP,
-        apod.</p>
-        <h3 id="udp-protokol">UDP protokol</h3>
-        <p>UDP je jednoduchý protokol na principu „best effort“, který
-        se používá, pokud spolehlivost přenosu není důležitá, nebo je
-        řešena nástroji aplikační vrstvy. Aplikační protokoly: TFTP,
-        SNMP, DNS, apod.</p>
-        <h3 id="rtp-protokol">RTP protokol</h3>
-        <p>Real-time Transport Protocol umožňuje komunikaci (hlas nebo
-        video) v reálném čase i v multicastovém režimu, využívá UDP.
-        Nepodporuje sice QoS, ale používá RTCP (RTP Control Protocol)
-        pro výměnu informací mezi zdrojovým a cílovým zařízení.</p>
-        <h2 id="síťový-řídicí-systém">Síťový řídicí systém</h2>
-        <p>Systém má za úkol sledovat parametry sítě a spravovat její
-        konfiguraci.</p>
-        <ul>
-        <li><p><strong>Agenti</strong> – softvérové moduly, které jsou
-        umístěny v síťových zařízeních a sbírají různé informace jako
-        počet chybných paketů přijatých síťovým zařízením.</p></li>
-        <li><p><strong>Řízený objekt</strong> – řízený objekt je popis
-        něčeho, co může být řízeno, např. seznam aktuálně aktivních TCP
-        spojení v určitém počítači. Řízené objekty se liší od
-        <strong>proměnných</strong>, které jsou instancemi jednotlivých
-        objektů, např. jedno aktivní TCP spojení v daném
-        počítači.</p></li>
-        <li><p><strong>Manažer</strong> – program, který iniciuje řídící
-        operace a přijímá řídící informace od agentů – vyžádané nebo
-        nevyžádané</p></li>
-        <li><p><strong>Řídící informační databáze</strong> (Management
-        Information Base) – MIB obsahuje všechny řízené objekty sdružené
-        do jednotlivých MIB modulů se stromovou strukturu.</p></li>
-        </ul>
-        <p>Příkladem síťového řídícího softvéru je <strong>SNMP</strong>
-        (Simple Network Management Protocol). Tento řídicí systém plní
-        následující úkoly: konfigurační management, chybový management,
-        výkonnostní management, bezpečnostní management a účtovací
-        management.</p>
-        <h2 id="telekomunikační-řídící-síť">Telekomunikační řídící
-        síť</h2>
-        <p>Telecommunication Management Network – TMN je fyzicky
-        oddělená síť pro řízení telekomunikačních sítí a služeb. Řízení
-        je nezávislé na zatížení telekomunikační sítě, řídící informace
-        jsou přenášeny nezávisle na síťových zařízení, konfigurace
-        síťových zařízení je možno připravit předem a realizovat v době
-        nižšího provozu v síti. TMN může být použita i v prostředí
-        telekomunikační sítě s vybavení od různých výrobců.</p>
-        <h1 id="lan-sítě">LAN sítě</h1>
-        <p>Cílem LAN sítí je propojit počítače umístěné v omezené
-        oblasti do podoby počítačové sítě obvykle spravovaná pouze
-        jednou organizací. Mezi důležité charakteristiky patří velikost
-        pokrytého území, počet připojených počítačů, počet a typ
-        nabízených služeb a požadované přenosové rychlosti.</p>
-        <p>LAN technologie využívají jen funkce fyzické a spojové
-        vrstvy. <strong>Fyzická vrstva</strong> se zabývá reprezentací
-        bitů pomocí elektrických, optických nebo elektromagnetických
-        vln. <strong>Spojová vrstva</strong> má dvě podvrstvy –
-        <strong>Řízení logického spoje LLC</strong> (implementována
-        softvérově) a <strong>řízení přístupu k médiu MAC</strong>
-        (implementováno jak softvérově, tak hardvérově). Protokoly v LAN
-        definuje IEEE 802. 802.1 definuje společné vlastnosti LAN, 802.2
-        podvrstvu LLC, 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi a
-        další.</p>
-        <p><strong>MAC podvrstva</strong> - MAC zajišťuje přístup
-        k přenosovému médiu, vytváří rámce a přenáší je mezi zařízeními
-        v síti. Jedním z hlavních algoritmů pro přístup k sdílenému
-        přenosovému médiu je <strong>náhodný přístup</strong> – stanice
-        s rámcem připraveným k přenosu se ho pokusí odeslat bez
-        koordinace využívaní sdíleného média s jinými stanicemi
-        s rizikem kolize. Metoda negarantuje přenos rámce v určitém
-        čase. <strong>Deterministický přístup</strong> – doba čekání na
-        přístup k médiu předem známa, rozlišuje <strong>token
-        passing</strong> a <strong>pollings</strong>. Sítě
-        s deterministickým přístupem lépe podporují QoS a lépe fungují
-        v době zahlcení sítě provozem. Na druhou stranu sítě s náhodným
-        přístupem jsou efektivnější a levnější.</p>
-        <p><strong>LLC podvrstva -</strong> vytváří rozhraní k síťové
-        vrstvě, která s ní sousedí a zajišťuje bezchybný přenos rámců
-        mezi zdrojem a cílem.</p>
-        <p><strong>Fyzická topologie</strong> popisuje, jak jsou síťová
-        zařízení mezi sebou pospojována. <strong>Logická
-        topologie</strong> popisuje, jakým způsobem jsou data vyměňována
-        mezi síťovými zařízeními. Příklady topologií: sběrnice, kruh,
-        hvězda, rozšířená hvězda.</p>
-        <h2 id="ethernet-ieee-802.3">Ethernet IEEE 802.3</h2>
-        <p><strong>Ethernet</strong> je v současnosti nejrozšířenější
-        LAN technologie díky své jednoduchosti a nízké ceně a zahrnuje
-        různé varianty této technologie, v užším smyslu je to síťový
-        standard pro přenos dat 10 MBit/s.</p>
-        <p><strong>CSMA/CD</strong> (Carrier Sense Multiple Access /
-        Collision Detection) je přístupová metoda s náhodným přístupem
-        používaná u Ethernetu. Algoritmus umožňuje více stanicím pokusit
-        se o přístup ke sdílenému médiu. Pokud je médium volné stanice
-        může vyslat svůj rámec. Pokud médium není volné, stanice musí
-        počkat, dokud médium nebude volné. Naslouchání nezaručuje
-        eliminaci situace, kdy se dvě nebo více stanic pokusí současně
-        vyslat své rámce, protože detekují prázdné přenosové médium –
-        nastane <strong>kolize</strong>. Poté, co je kolize detekována,
-        musí tyto stanice přestat vysílat a pak musí čekat po náhodnou
-        dobu, než se pokusí o nové vysílání. Tato čekací doba
-        exponenciálně roste, pokud nastane po sobě více jdoucích
-        kolizí.</p>
-        <p>Existuje více verzí Ethernet rámců. Pro DIX/Ethernet II
-        platí: 8 bytů preambule, 6 bytů cílové a zdrojové adresy, 2 byty
-        typu dat, až 1,500 bytů dat a 4 byty kontrolního součtu.</p>
-        <ul>
-        <li><p>Ethernet – 10 MBit/s</p></li>
-        <li><p>Fast Ethernet – 100 MBit/s, 802.3u</p></li>
-        <li><p>Gigabit Ethernet – 802.3z pro optické a STP kabely, IEEE
-        802.3ab pro UTP kabely,</p></li>
-        <li><p>10 Gigabit Ethernet – 802.3ae</p></li>
-        <li><p>40 Gigabit Ethernet a 100 Gigabit Ethernet –
-        802.3ba</p></li>
-        </ul>
-        <p>10, 40 a 100 Gigabit Ethernet jsou navrženy pro plně duplexní
-        spojení přes optická vlákna, na krátkou vzdálenost lze použít i
-        metalický kabel. Jsou velmi užitečné i v MAN a WAN sítích.
-        Metoda CSMA/CD již není použita.</p>
-        <h2 id="token-ring-ieee-802.5">Token Ring IEEE 802.5</h2>
-        <p><strong>Token Ring</strong> používá deterministická
-        přístupová metoda, která se nazývá <strong>token
-        passing</strong>. Používá se kruhová topologie, v níž se
-        odeslaný rámec vždy vrátí k odesílateli. V některých případech
-        je síť schopna automaticky opravit chyby, jedna stanice řídí
-        komunikaci.</p>
-        <p>V rámci sítě Token Ring každá stanice může obdržet data přímo
-        jen od jedné stanice – té, která ji předchází v rámci kruhu.
-        Každá stanice posílá svá data do nejbližší sousední stanice
-        v definovaném směru v rámci kruhu. Když stanice přijme rámec
-        token a nemá data k odeslání, pošle token k další stanici. Pokud
-        token dorazí do stanice, která má data k odeslání, tak tato
-        stanice token odebere ze sítě, čímž má právo k přístupu
-        k fyzickému médiu a k odeslání dat. Toto pošle v rámci spolu se
-        zdrojovou a cílovou adresu. Přenášená data putují kruhovou sítí
-        jedním směrem. Když rámec dorazí k cílové stnaici a zkopíruje
-        jej do vnitřního bufferu. Poté nastaví indikátor potvrzení
-        přijetí a rámec odešle dál. Až zdrojová stanice obdrží svůj
-        rámec zpět, odebere jej ze sítě a vloží do ní token.</p>
-        <p>Přenosové rychlosti 4 MBit/s nebo 16 MBit/, maximální počet
-        stanic je 260 a maximální délka kruhu je 4 km. Token Ring je
-        spolehlivější než Ethernet, ale dnes již nevyužitý.</p>
-        <h2 id="fiber-distributed-data-interface-fddi">Fiber Distributed
-        Data Interface FDDI</h2>
-        <p>FDDI je první LAN technologie, která začala používat optická
-        vlákna jako přenosové médium. FDDI používá <strong>token
-        passing</strong> a kruhovou topologii, nabízí však dva kruhy,
-        propojující jednotlivé stanice. Jeden kruh je hlavní a druhý
-        záložní. FDDI umožňuje přenášet rámce rychlostí 100 MBit/s
-        v rámci kruhu o délce až 100 km s nejvýše 500 stanicemi.</p>
-        <p>Za normálních okolností jsou data přenášeny jen přes primární
-        kruh, nazýváme <strong>thru mode</strong>. Pokud dojde k poruše
-        a část primárního kruhu není možné použít, propojí se primární a
-        sekundární kruh tak, aby společně vytvořily uzavřený kruh,
-        nazýváme <strong>wrap mode</strong>. FDDI nabízí
-        <strong>synchronní služby</strong>, která garantuje určitou
-        přenosovou rychlost jednotlivým stanicím a <strong>asynchronní
-        služba</strong>, která dynamicky přiděluje přenosovou
-        rychlost.</p>
-        <p>Standard FDDI definuje <strong>stanici třídy A</strong>
-        (připojena k oběma kruhů), <strong>stanici třídy B</strong>
-        (připojena jen k primárnímu kruhu) a <strong>koncentrát</strong>
-        (připojuje třidu B k sekundárnímu kruhu). FDDI se využije pro
-        propojení více budov a pro připojení výkonných serverů do
-        sítě.</p>
-        <p><strong>FDDI 2</strong> nabízí navíc izochronní službu
-        s přepínáním kanálů. <strong>FFOL</strong> (FDDI-Follow-On-LAN)
-        umožňuje vzájemné propojení FDDI sítí mezi sebou rychlostmi 155
-        Mbit/s a 622 Mbit/s vycházející z SDH.</p>
-      </main>
-
             <nav class="sidebar" id="TOC">
         <h2>Obsah</h2>
         <ul>
@@ -432,6 +77,369 @@ informatiky VŠB-TU Ostrava (bakalářský)</span>
         </ul></li>
         </ul>
       </nav>
-          </div>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Telekomunikační sítě</h1>
+        </header>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#základy-telekomunikačních-sítí"
+          id="toc-základy-telekomunikačních-sítí">Základy
+          telekomunikačních sítí</a>
+          <ul>
+          <li><a href="#dělení-telekomunikačních-sítí"
+          id="toc-dělení-telekomunikačních-sítí">Dělení
+          telekomunikačních sítí</a></li>
+          <li><a href="#signalizace"
+          id="toc-signalizace">Signalizace</a></li>
+          </ul></li>
+          <li><a href="#protokolové-modely"
+          id="toc-protokolové-modely">Protokolové modely</a>
+          <ul>
+          <li><a href="#protokolový-model-tcpip"
+          id="toc-protokolový-model-tcpip">Protokolový model TCP/IP</a>
+          <ul>
+          <li><a href="#ip-protokol" id="toc-ip-protokol">IP
+          protokol</a></li>
+          <li><a href="#tcp-protokol" id="toc-tcp-protokol">TCP
+          protokol</a></li>
+          <li><a href="#udp-protokol" id="toc-udp-protokol">UDP
+          protokol</a></li>
+          <li><a href="#rtp-protokol" id="toc-rtp-protokol">RTP
+          protokol</a></li>
+          </ul></li>
+          <li><a href="#síťový-řídicí-systém"
+          id="toc-síťový-řídicí-systém">Síťový řídicí systém</a></li>
+          <li><a href="#telekomunikační-řídící-síť"
+          id="toc-telekomunikační-řídící-síť">Telekomunikační řídící
+          síť</a></li>
+          </ul></li>
+          <li><a href="#lan-sítě" id="toc-lan-sítě">LAN sítě</a>
+          <ul>
+          <li><a href="#ethernet-ieee-802.3"
+          id="toc-ethernet-ieee-802.3">Ethernet IEEE 802.3</a></li>
+          <li><a href="#token-ring-ieee-802.5"
+          id="toc-token-ring-ieee-802.5">Token Ring IEEE 802.5</a></li>
+          <li><a href="#fiber-distributed-data-interface-fddi"
+          id="toc-fiber-distributed-data-interface-fddi">Fiber
+          Distributed Data Interface FDDI</a></li>
+          </ul></li>
+          </ul>
+        </div>
+         <h1 id="základy-telekomunikačních-sítí">Základy
+telekomunikačních sítí</h1>
+<p><strong>Telekomunikační síť</strong> tvoří skupina telekomunikačních
+zařízení, která jsou logicky uspořádaná a propojená s cílem poskytovat
+telekomunikační služby. Skládá se ze skupiny zdrojů informací a
+přijímačů informací a ze sítě pro přenos a přepojování signálů, ke které
+jsou zdroje a přijímače připojeny prostřednictvím přístupových bodů a
+přístupových vedení.</p>
+<p>Úkolem sítě je umožnit výměnu zpráv mezi přístupovými body k síti.
+Přístupové body jsou připojeny k účastnickým koncovým zařízením pomocí
+přístupových vedení (u telefonních sítí <strong>local
+loop</strong>).</p>
+<ul>
+<li><p>Kdykoli musí být možné vytvořit spojení z jednoho přístupového
+bodu ke kterémukoli jinému přístupovému bodu.</p></li>
+<li><p>Každý uživatel musí mít možnost určit si sám požadovaný cíl, musí
+mít možnost řízeného zásahu do sítě.</p></li>
+<li><p>Síť musí být dostatečně výkonná – musí poskytovat dostatečně
+velký počet současných spojovacích možností.</p></li>
+</ul>
+<p><em>Zde patří obrázek komunikačního modelu</em></p>
+<p><strong>Komunikační spojení</strong> vytváří vazby mezi dvěma
+koncovými zařízeními za účelem výměny informací určitého typu. Tato
+vazba může mít v závislosti na použité službě nebo síti různé
+vlastnosti. Komunikační spojení může být vytvořené pomocí za sebou
+propojených kanálů anebo jako virtuální kanál - spojení vstupního kanálu
+do komutačního uzlu a výstupního kanálu z komutačního uzlu. Toto spojení
+může být trvalé nebo může být vytvořeno jen po určitou dobu.</p>
+<h2 id="dělení-telekomunikačních-sítí">Dělení telekomunikačních
+sítí</h2>
+<p>Pří <strong>spojově orientovaném přenosu</strong> se vytváří
+komunikační spojení mezi dvěma koncovými zařízeními na základě řídících
+informací (telefonní číslo, adresa koncového zařízení) ze zdrojového
+zařízení. Typické příklady: tradiční telefonní síť,</p>
+<ol type="1">
+<li><p>Vytvoření spojení ze zdroje do cíle a rezervace požadované
+kapacity sítě.</p></li>
+<li><p>Přenos uživatelských dat.</p></li>
+<li><p>Ukončení spojení a uvolnění kapacity dat.</p></li>
+</ol>
+<p>Při <strong>nespojově orientovaném přenosu</strong> se uživatelské
+informace přenáší ve formě krátkých datových bloků, které se nazývají
+<strong>pakety</strong> a skládají se ze záhlaví obsahující adresu a
+datového pole. Nedochází k rezervaci kapacity sítě a není garantováno
+doručení paketu do cíle. Přenos je efektivnější, protože kapacita sítě
+může být sdílená mnoha uživateli. Typické příklady: IP sítě.</p>
+<p>Tradiční telefonní sítě mají <strong>hierarchickou
+strukturu</strong>, v níž každá geografická oblast je obsluhována
+vlastní telefonní ústřednou primární úrovně, které jsou vzájemně
+propojené prostřednictvím ústředen sekundární úrovně, tranzitními
+ústřednami a mezinárodními ústřednami.</p>
+<p>V <strong>nehierarchické struktuře</strong>, například IP sítě,
+obvykle existuje jen přístupová síť a páteřní síť. Každý paket zde může
+cestovat po jiné trase.</p>
+<p>K <strong>veřejné síti</strong> se může připojit každý uživatel –
+veřejná telefonní síť (PSTN – Public Switched Telephone Network),
+internet. <strong>Privátní síť</strong> mohou využívat jen definovaní
+uživatelé. V datových sítích rozlišujeme <strong>LAN</strong> (Local
+Area Network), <strong>MAN</strong> (Metropolitan Area Network),
+<strong>WAN</strong> (Wide Area Network).</p>
+<h2 id="signalizace">Signalizace</h2>
+<p>Pomocí <strong>signalizace</strong> se vytváří, udržuje a ukončuje
+spojení ve spojově orientovaných sítích. Signalizace pomáhá nalézt cestu
+k cíli a rezervovat v síti komunikační kanál s požadovanou kapacitou.
+Pomocí signalizačních informací síťové uzly ví, který vstupní port mají
+propojit s kterým výstupním portem pro dané spojení. Využívá se také
+k zabezpečení mnoha uživatelských služeb. Tyto informace mohou být
+přenášeny jako součást datového rámce nebo pomocí samostatných
+signalizačních zpráv.</p>
+<ul>
+<li><p>Účastnická signalizace probíhá mezi účastnickým zařízením a
+ústřednou.</p></li>
+<li><p>Meziústřednová signalizace probíhá mezi jednotlivými ústřednami.
+Meziústřednová signalizace využívá informace z účastnické
+signalizace.</p></li>
+</ul>
+<p>Síťové komutační uzly mohou přepínat přenášené signály různým
+způsobem podle použité telekomunikační technologie.</p>
+<ul>
+<li><p><strong>Přepínání kanálů</strong> – informace jsou přenášeny
+prostřednictvím předem vytvořených kanálů; pokud má síť dostatečnou
+kapacitu pro vytvoření nového kanálu, je tento vytvořen a rezervován po
+celou dobu komunikace, jinak je vytvoření odmítnuto. Kapacita tohoto
+kanálu je poté garantovaná, čímž však její kapacita nemůže být sdílena
+mezi uživateli. Příklad: telefonní sítě.</p></li>
+<li><p><strong>Přepínání zpráv</strong> – zastaralý způsob; přenášené
+zprávy jsou vybaveny cílovou adresou a poslány do sítě bez rezervace
+kapacity. Pokud je v síti hodně provozu, musí zprávy často čekat ve
+vstupní nebo výstupní vyrovnávací paměti síťových uzlů. Každá zpráva je
+přenášena nezávisle na ostatních – zprávy mohou cestovat k cíli po
+různých cestách.</p></li>
+<li><p><strong>Přepínání paketů</strong> – na rozdíl od přepínání zpráv
+jsou dlouhé zprávy rozděleny na menší pakety se stejnou nebo podobnou
+délkou; efektivní způsob především pro zhlukovitý typ provozu
+v počítačových sítí. Rozlišujeme <strong>datagramovou obsluhu</strong>,
+kde mohou pakety dorazit do cíle s různým zpožděním, vhodné pro data
+nenáročná na přenosové zpoždění (čistá IP síť), nebo <strong>obsluhu
+pomocí virtuálního kanálu</strong>, kde se pro přenos paketů tvoří
+virtuální kanál s využitím předem vytvořených přepínacích tabulek
+síťových uzlů. Data jsou přenášena ve formě paketů po stejné cestě,
+v neměnném pořadí a se stejným zpožděním – Frame Relay, MPLS,
+ATM.</p></li>
+</ul>
+<h1 id="protokolové-modely">Protokolové modely</h1>
+<h2 id="protokolový-model-tcpip">Protokolový model TCP/IP</h2>
+<p>Protokolový model by vytvořen na základě iniciativy Ministerstva
+obrany USA s cílem zajistit spojení mezi ARPANET a jinými sítěmi. Model
+byl navržen jako sada protokolů pro heterogenní síťové prostředí
+vznikající během 70. a 80. let 20. století. V současnosti se protokoly
+tohoto modelu používají při komunikaci mezi počítači v rámci internetu i
+v mnoha jiných sítí.</p>
+<ul>
+<li><p>Výhody: fragmentace IP paketů podle použité technologie spojové
+vrstvy, flexibilní adresní systém.</p></li>
+</ul>
+<p><strong>Aplikační vrstva</strong> – odpovídá tem vrchním vrstvám
+modelu OSI, nabízí služby systémem uživatelských aplikací: FTP, telnet,
+SMTP, http.</p>
+<p><strong>Transportní vrstva</strong> – poskytuje garantované doručení
+dat pomocí <strong>TCP protokolu</strong> a doručení „best effort“
+pomocí <strong>UDP protokolu</strong>. Transportní vrstva má za úkol
+realizovat datový přenos z aplikační vrstvy s určitou kvalitou. Následně
+pak aplikační vrstvu informuje o jeho provedení. Využívá níže položenou
+internetovou vrstvu jako nástroj k přenosu paketů sítí bez zajištění
+spolehlivosti přenosu.</p>
+<p><strong>Internetová vrstva</strong> – internetová vrstva je jádrem
+architektury TCP/IP, odpovídá síťové vrstvě modelu OSI. Hlavním
+protokolem internetové vrstvy je <strong>IP protokol</strong> – slouží
+k nespojovému, datagramovému přenosu dat mezi sítěmi na principu „best
+effort“. IP protokol není implementován jen v koncových zařízeních, ale
+i v síťových zařízeních jako například směrovač. Mezi další protokoly
+patří <strong>RIP</strong> (Routing Information Protocol) a
+<strong>OSPF</strong> (Open Shortest Path First), které zkoumají síťovou
+topologii, stanovují cesty k cíli a vytváření směrovací tabuluky;
+<strong>ICMP</strong> (Internet Control Message Protocol), který má za
+úkol přenášet informace o přenosových chybách datových paketů, a
+<strong>IGMP</strong> (Internet Group Management Protocol), pro podporu
+multicastingu – přenosu paketu na více adres současně.</p>
+<p><strong>Vrstva přístupu k síti</strong> – zodpovědná za spolupráci
+s různými síťovými technologii; TCP/IP model považuje každou technologii
+této vrstvy za nástroj k přenosu paketů k dalšímu směrovači na cestě
+k cíli. Vrstva přístupu k síti není striktně regulovaná, podporuje mnoho
+různých technologií – Ethernet, FDDI, ….</p>
+<h3 id="ip-protokol">IP protokol</h3>
+<p>Úkolem IP je umožnit spojení s jednotlivými níže ležícími
+technologiemi; nespojově orientovaný protokol. Pokud během přenosu IP
+paketu nastane chyba, IP neumí provést žádnou činnost k opravě této
+chyby. V současnosti používáme především IP verzi 4, ale stále více se
+prosazuje verze 6, která umožňuje lepší podporu kvality služby QoS,
+multicastingu a bezpečnosti. Hlavně ale přináší dostatečně velký počet
+adres pro rostoucí internet.</p>
+<h3 id="tcp-protokol">TCP protokol</h3>
+<p>K zajištění spolehlivého doručení dat vytváří TCP logické spojení,
+které umožňuje číslování přenášených paketů, potvrzování jejich přijetí.
+Umí také detekovat a odstranit duplicitní pakety a doručit pakety
+aplikační vrstvě v pořadí, v kterém byly odeslány. Umožňuje komunikaci
+v duplexním módu.</p>
+<p>TCP rozděluje zprávy na <strong>segmenty</strong> a pro přijetí je
+opět poskládá. Aplikační protokoly: HTTP, FTP, SMTP, apod.</p>
+<h3 id="udp-protokol">UDP protokol</h3>
+<p>UDP je jednoduchý protokol na principu „best effort“, který se
+používá, pokud spolehlivost přenosu není důležitá, nebo je řešena
+nástroji aplikační vrstvy. Aplikační protokoly: TFTP, SNMP, DNS,
+apod.</p>
+<h3 id="rtp-protokol">RTP protokol</h3>
+<p>Real-time Transport Protocol umožňuje komunikaci (hlas nebo video)
+v reálném čase i v multicastovém režimu, využívá UDP. Nepodporuje sice
+QoS, ale používá RTCP (RTP Control Protocol) pro výměnu informací mezi
+zdrojovým a cílovým zařízení.</p>
+<h2 id="síťový-řídicí-systém">Síťový řídicí systém</h2>
+<p>Systém má za úkol sledovat parametry sítě a spravovat její
+konfiguraci.</p>
+<ul>
+<li><p><strong>Agenti</strong> – softvérové moduly, které jsou umístěny
+v síťových zařízeních a sbírají různé informace jako počet chybných
+paketů přijatých síťovým zařízením.</p></li>
+<li><p><strong>Řízený objekt</strong> – řízený objekt je popis něčeho,
+co může být řízeno, např. seznam aktuálně aktivních TCP spojení
+v určitém počítači. Řízené objekty se liší od
+<strong>proměnných</strong>, které jsou instancemi jednotlivých objektů,
+např. jedno aktivní TCP spojení v daném počítači.</p></li>
+<li><p><strong>Manažer</strong> – program, který iniciuje řídící operace
+a přijímá řídící informace od agentů – vyžádané nebo nevyžádané</p></li>
+<li><p><strong>Řídící informační databáze</strong> (Management
+Information Base) – MIB obsahuje všechny řízené objekty sdružené do
+jednotlivých MIB modulů se stromovou strukturu.</p></li>
+</ul>
+<p>Příkladem síťového řídícího softvéru je <strong>SNMP</strong> (Simple
+Network Management Protocol). Tento řídicí systém plní následující
+úkoly: konfigurační management, chybový management, výkonnostní
+management, bezpečnostní management a účtovací management.</p>
+<h2 id="telekomunikační-řídící-síť">Telekomunikační řídící síť</h2>
+<p>Telecommunication Management Network – TMN je fyzicky oddělená síť
+pro řízení telekomunikačních sítí a služeb. Řízení je nezávislé na
+zatížení telekomunikační sítě, řídící informace jsou přenášeny nezávisle
+na síťových zařízení, konfigurace síťových zařízení je možno připravit
+předem a realizovat v době nižšího provozu v síti. TMN může být použita
+i v prostředí telekomunikační sítě s vybavení od různých výrobců.</p>
+<h1 id="lan-sítě">LAN sítě</h1>
+<p>Cílem LAN sítí je propojit počítače umístěné v omezené oblasti do
+podoby počítačové sítě obvykle spravovaná pouze jednou organizací. Mezi
+důležité charakteristiky patří velikost pokrytého území, počet
+připojených počítačů, počet a typ nabízených služeb a požadované
+přenosové rychlosti.</p>
+<p>LAN technologie využívají jen funkce fyzické a spojové vrstvy.
+<strong>Fyzická vrstva</strong> se zabývá reprezentací bitů pomocí
+elektrických, optických nebo elektromagnetických vln. <strong>Spojová
+vrstva</strong> má dvě podvrstvy – <strong>Řízení logického spoje
+LLC</strong> (implementována softvérově) a <strong>řízení přístupu
+k médiu MAC</strong> (implementováno jak softvérově, tak hardvérově).
+Protokoly v LAN definuje IEEE 802. 802.1 definuje společné vlastnosti
+LAN, 802.2 podvrstvu LLC, 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi
+a další.</p>
+<p><strong>MAC podvrstva</strong> - MAC zajišťuje přístup k přenosovému
+médiu, vytváří rámce a přenáší je mezi zařízeními v síti. Jedním
+z hlavních algoritmů pro přístup k sdílenému přenosovému médiu je
+<strong>náhodný přístup</strong> – stanice s rámcem připraveným
+k přenosu se ho pokusí odeslat bez koordinace využívaní sdíleného média
+s jinými stanicemi s rizikem kolize. Metoda negarantuje přenos rámce
+v určitém čase. <strong>Deterministický přístup</strong> – doba čekání
+na přístup k médiu předem známa, rozlišuje <strong>token
+passing</strong> a <strong>pollings</strong>. Sítě s deterministickým
+přístupem lépe podporují QoS a lépe fungují v době zahlcení sítě
+provozem. Na druhou stranu sítě s náhodným přístupem jsou efektivnější a
+levnější.</p>
+<p><strong>LLC podvrstva -</strong> vytváří rozhraní k síťové vrstvě,
+která s ní sousedí a zajišťuje bezchybný přenos rámců mezi zdrojem a
+cílem.</p>
+<p><strong>Fyzická topologie</strong> popisuje, jak jsou síťová zařízení
+mezi sebou pospojována. <strong>Logická topologie</strong> popisuje,
+jakým způsobem jsou data vyměňována mezi síťovými zařízeními. Příklady
+topologií: sběrnice, kruh, hvězda, rozšířená hvězda.</p>
+<h2 id="ethernet-ieee-802.3">Ethernet IEEE 802.3</h2>
+<p><strong>Ethernet</strong> je v současnosti nejrozšířenější LAN
+technologie díky své jednoduchosti a nízké ceně a zahrnuje různé
+varianty této technologie, v užším smyslu je to síťový standard pro
+přenos dat 10 MBit/s.</p>
+<p><strong>CSMA/CD</strong> (Carrier Sense Multiple Access / Collision
+Detection) je přístupová metoda s náhodným přístupem používaná u
+Ethernetu. Algoritmus umožňuje více stanicím pokusit se o přístup ke
+sdílenému médiu. Pokud je médium volné stanice může vyslat svůj rámec.
+Pokud médium není volné, stanice musí počkat, dokud médium nebude volné.
+Naslouchání nezaručuje eliminaci situace, kdy se dvě nebo více stanic
+pokusí současně vyslat své rámce, protože detekují prázdné přenosové
+médium – nastane <strong>kolize</strong>. Poté, co je kolize detekována,
+musí tyto stanice přestat vysílat a pak musí čekat po náhodnou dobu, než
+se pokusí o nové vysílání. Tato čekací doba exponenciálně roste, pokud
+nastane po sobě více jdoucích kolizí.</p>
+<p>Existuje více verzí Ethernet rámců. Pro DIX/Ethernet II platí: 8 bytů
+preambule, 6 bytů cílové a zdrojové adresy, 2 byty typu dat, až 1,500
+bytů dat a 4 byty kontrolního součtu.</p>
+<ul>
+<li><p>Ethernet – 10 MBit/s</p></li>
+<li><p>Fast Ethernet – 100 MBit/s, 802.3u</p></li>
+<li><p>Gigabit Ethernet – 802.3z pro optické a STP kabely, IEEE 802.3ab
+pro UTP kabely,</p></li>
+<li><p>10 Gigabit Ethernet – 802.3ae</p></li>
+<li><p>40 Gigabit Ethernet a 100 Gigabit Ethernet – 802.3ba</p></li>
+</ul>
+<p>10, 40 a 100 Gigabit Ethernet jsou navrženy pro plně duplexní spojení
+přes optická vlákna, na krátkou vzdálenost lze použít i metalický kabel.
+Jsou velmi užitečné i v MAN a WAN sítích. Metoda CSMA/CD již není
+použita.</p>
+<h2 id="token-ring-ieee-802.5">Token Ring IEEE 802.5</h2>
+<p><strong>Token Ring</strong> používá deterministická přístupová
+metoda, která se nazývá <strong>token passing</strong>. Používá se
+kruhová topologie, v níž se odeslaný rámec vždy vrátí k odesílateli.
+V některých případech je síť schopna automaticky opravit chyby, jedna
+stanice řídí komunikaci.</p>
+<p>V rámci sítě Token Ring každá stanice může obdržet data přímo jen od
+jedné stanice – té, která ji předchází v rámci kruhu. Každá stanice
+posílá svá data do nejbližší sousední stanice v definovaném směru
+v rámci kruhu. Když stanice přijme rámec token a nemá data k odeslání,
+pošle token k další stanici. Pokud token dorazí do stanice, která má
+data k odeslání, tak tato stanice token odebere ze sítě, čímž má právo
+k přístupu k fyzickému médiu a k odeslání dat. Toto pošle v rámci spolu
+se zdrojovou a cílovou adresu. Přenášená data putují kruhovou sítí
+jedním směrem. Když rámec dorazí k cílové stnaici a zkopíruje jej do
+vnitřního bufferu. Poté nastaví indikátor potvrzení přijetí a rámec
+odešle dál. Až zdrojová stanice obdrží svůj rámec zpět, odebere jej ze
+sítě a vloží do ní token.</p>
+<p>Přenosové rychlosti 4 MBit/s nebo 16 MBit/, maximální počet stanic je
+260 a maximální délka kruhu je 4 km. Token Ring je spolehlivější než
+Ethernet, ale dnes již nevyužitý.</p>
+<h2 id="fiber-distributed-data-interface-fddi">Fiber Distributed Data
+Interface FDDI</h2>
+<p>FDDI je první LAN technologie, která začala používat optická vlákna
+jako přenosové médium. FDDI používá <strong>token passing</strong> a
+kruhovou topologii, nabízí však dva kruhy, propojující jednotlivé
+stanice. Jeden kruh je hlavní a druhý záložní. FDDI umožňuje přenášet
+rámce rychlostí 100 MBit/s v rámci kruhu o délce až 100 km s nejvýše 500
+stanicemi.</p>
+<p>Za normálních okolností jsou data přenášeny jen přes primární kruh,
+nazýváme <strong>thru mode</strong>. Pokud dojde k poruše a část
+primárního kruhu není možné použít, propojí se primární a sekundární
+kruh tak, aby společně vytvořily uzavřený kruh, nazýváme <strong>wrap
+mode</strong>. FDDI nabízí <strong>synchronní služby</strong>, která
+garantuje určitou přenosovou rychlost jednotlivým stanicím a
+<strong>asynchronní služba</strong>, která dynamicky přiděluje
+přenosovou rychlost.</p>
+<p>Standard FDDI definuje <strong>stanici třídy A</strong> (připojena
+k oběma kruhů), <strong>stanici třídy B</strong> (připojena jen
+k primárnímu kruhu) a <strong>koncentrát</strong> (připojuje třidu B
+k sekundárnímu kruhu). FDDI se využije pro propojení více budov a pro
+připojení výkonných serverů do sítě.</p>
+<p><strong>FDDI 2</strong> nabízí navíc izochronní službu s přepínáním
+kanálů. <strong>FFOL</strong> (FDDI-Follow-On-LAN) umožňuje vzájemné
+propojení FDDI sítí mezi sebou rychlostmi 155 Mbit/s a 622 Mbit/s
+vycházející z SDH.</p>
+      </main>
+    </div>
   </body>
 </html>

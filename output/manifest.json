@@ -1,59 +1,230 @@
 {
-  "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.html": "AIB AI v podnikání a praxi",
-  "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.html": "CSR Společenská odpovědnost firem",
-  "newton-university-bakalarsky-fil-filozofie-pro-manazery.html": "FIL Filozofie pro manažery",
-  "newton-university-bakalarsky-frp-financni-rizeni-podniku.html": "FRP Finanční řízení podniku",
-  "newton-university-bakalarsky-mar-marketing.html": "MAR Marketing",
-  "newton-university-bakalarsky-mng-management.html": "MNG Management",
-  "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.html": "PEK1 Podniková ekonomika 1",
-  "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.html": "PEK2 Podniková ekonomika 2",
-  "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.html": "PKAP Politické a kulturní aspekty globálního podnikání",
-  "newton-university-bakalarsky-prm-projektovy-management.html": "PRM Projektový management",
-  "newton-university-bakalarsky-sma-strategicky-management.html": "SMA Strategický management",
-  "newton-university-szz-bakalarska-szz-ekonomika.html": "SZZ Ekonomika",
-  "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.html": "SZZ Globální podnikání a management",
-  "newton-university-szz-bakalarska-szz-management.html": "SZZ Management",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.html": "! IN1 Informatika I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.html": "! JA1 Jazyk I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.html": "! JA2 Jazyk II",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.html": "! KMA1E Matematika I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.html": "! MI1 Mikroekonomie I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.html": "! NP Nauka o podniku",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.html": "! ZAP1 Základy práva I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.html": "EPS Ekonomika a podnikání ve službách",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.html": "EVS Ekonomika služeb veřejného sektoru",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.html": "FPD Finance podniku a daně",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.html": "IN2 Informatika II",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.html": "KMA2E Matematika II",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.html": "MA1 Makroekonomie I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.html": "MK Marketing",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.html": "MS Marketing služeb",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.html": "MSPO Malé a střední podnikání",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.html": "PM Personální management",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.html": "POT Práce s odborným textem",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.html": "SM Strategický marketing",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.html": "STA1 Statistika I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.html": "STA2 Statistika II",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.html": "UC1 Účetnictví I",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.html": "UC2 Účetnictví II",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.html": "UM Úvod do managementu",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.html": "UVS Účetnictví vybraných subjektů poskytujících služby",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.html": "VYS Vybrané finanční služby",
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.html": "ZAP2 Základy práva II",
-  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.html": "SZZ Management služeb",
-  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.html": "SZZ Podniková ekonomika",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.html": "AM2107 Matematická analýza 3",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.html": "AM2108 Obyčejné diferenciální rovnice",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.html": "AM2109 Matematická analýza s Maplem",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.html": "AM2202 Linear Algebra",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.html": "AM2401 Statistika I",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.html": "AM2701 Numerické metody 1",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.html": "CS2005 Introduction to Theoretical CS",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.html": "CS2006 Computer Networks",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.html": "CS2018 Programovací jazyky a překladače",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.html": "CS2034 Computer Architecture and Parallel Systems",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.html": "EE2004 Bezpečnost v elektrotechnice",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.html": "PI0412 Fyzika I",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.html": "TN2101 Groudworks Electronics",
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.html": "TN2202 Telekomunikační sítě"
+  "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.html": {
+    "originalName": "AIB AI v podnikání a praxi",
+    "htmlName": "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.html"
+  },
+  "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.html": {
+    "originalName": "CSR Společenská odpovědnost firem",
+    "htmlName": "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.html"
+  },
+  "newton-university-bakalarsky-fil-filozofie-pro-manazery.html": {
+    "originalName": "FIL Filozofie pro manažery",
+    "htmlName": "newton-university-bakalarsky-fil-filozofie-pro-manazery.html"
+  },
+  "newton-university-bakalarsky-frp-financni-rizeni-podniku.html": {
+    "originalName": "FRP Finanční řízení podniku",
+    "htmlName": "newton-university-bakalarsky-frp-financni-rizeni-podniku.html"
+  },
+  "newton-university-bakalarsky-mar-marketing.html": {
+    "originalName": "MAR Marketing",
+    "htmlName": "newton-university-bakalarsky-mar-marketing.html"
+  },
+  "newton-university-bakalarsky-mng-management.html": {
+    "originalName": "MNG Management",
+    "htmlName": "newton-university-bakalarsky-mng-management.html"
+  },
+  "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.html": {
+    "originalName": "PEK1 Podniková ekonomika 1",
+    "htmlName": "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.html"
+  },
+  "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.html": {
+    "originalName": "PEK2 Podniková ekonomika 2",
+    "htmlName": "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.html"
+  },
+  "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.html": {
+    "originalName": "PKAP Politické a kulturní aspekty globálního podnikání",
+    "htmlName": "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.html"
+  },
+  "newton-university-bakalarsky-prm-projektovy-management.html": {
+    "originalName": "PRM Projektový management",
+    "htmlName": "newton-university-bakalarsky-prm-projektovy-management.html"
+  },
+  "newton-university-bakalarsky-sma-strategicky-management.html": {
+    "originalName": "SMA Strategický management",
+    "htmlName": "newton-university-bakalarsky-sma-strategicky-management.html"
+  },
+  "newton-university-szz-bakalarska-szz-ekonomika.html": {
+    "originalName": "SZZ Ekonomika",
+    "htmlName": "newton-university-szz-bakalarska-szz-ekonomika.html"
+  },
+  "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.html": {
+    "originalName": "SZZ Globální podnikání a management",
+    "htmlName": "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.html"
+  },
+  "newton-university-szz-bakalarska-szz-management.html": {
+    "originalName": "SZZ Management",
+    "htmlName": "newton-university-szz-bakalarska-szz-management.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.html": {
+    "originalName": "! IN1 Informatika I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.html": {
+    "originalName": "! JA1 Jazyk I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.html": {
+    "originalName": "! JA2 Jazyk II",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.html": {
+    "originalName": "! KMA1E Matematika I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.html": {
+    "originalName": "! MI1 Mikroekonomie I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.html": {
+    "originalName": "! NP Nauka o podniku",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.html": {
+    "originalName": "! ZAP1 Základy práva I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.html": {
+    "originalName": "EPS Ekonomika a podnikání ve službách",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.html": {
+    "originalName": "EVS Ekonomika služeb veřejného sektoru",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.html": {
+    "originalName": "FPD Finance podniku a daně",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.html": {
+    "originalName": "IN2 Informatika II",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.html": {
+    "originalName": "KMA2E Matematika II",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.html": {
+    "originalName": "MA1 Makroekonomie I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.html": {
+    "originalName": "MK Marketing",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.html": {
+    "originalName": "MS Marketing služeb",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.html": {
+    "originalName": "MSPO Malé a střední podnikání",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.html": {
+    "originalName": "PM Personální management",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.html": {
+    "originalName": "POT Práce s odborným textem",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.html": {
+    "originalName": "SM Strategický marketing",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.html": {
+    "originalName": "STA1 Statistika I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.html": {
+    "originalName": "STA2 Statistika II",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.html": {
+    "originalName": "UC1 Účetnictví I",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.html": {
+    "originalName": "UC2 Účetnictví II",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.html": {
+    "originalName": "UM Úvod do managementu",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.html": {
+    "originalName": "UVS Účetnictví vybraných subjektů poskytujících služby",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.html": {
+    "originalName": "VYS Vybrané finanční služby",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.html": {
+    "originalName": "ZAP2 Základy práva II",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.html": {
+    "originalName": "SZZ Management služeb",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.html"
+  },
+  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.html": {
+    "originalName": "SZZ Podniková ekonomika",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.html": {
+    "originalName": "AM2107 Matematická analýza 3",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.html": {
+    "originalName": "AM2108 Obyčejné diferenciální rovnice",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.html": {
+    "originalName": "AM2109 Matematická analýza s Maplem",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.html": {
+    "originalName": "AM2202 Linear Algebra",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.html": {
+    "originalName": "AM2401 Statistika I",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.html": {
+    "originalName": "AM2701 Numerické metody 1",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.html": {
+    "originalName": "CS2005 Introduction to Theoretical CS",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.html": {
+    "originalName": "CS2006 Computer Networks",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.html": {
+    "originalName": "CS2018 Programovací jazyky a překladače",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.html": {
+    "originalName": "CS2034 Computer Architecture and Parallel Systems",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.html": {
+    "originalName": "EE2004 Bezpečnost v elektrotechnice",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.html": {
+    "originalName": "PI0412 Fyzika I",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.html": {
+    "originalName": "TN2101 Groudworks Electronics",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.html"
+  },
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.html": {
+    "originalName": "TN2202 Telekomunikační sítě",
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.html"
+  }
 }

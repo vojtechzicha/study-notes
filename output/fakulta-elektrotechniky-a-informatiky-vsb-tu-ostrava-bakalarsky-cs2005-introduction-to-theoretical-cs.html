@@ -4,24 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Introduction to Theoretical CS - Studijní poznámky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Load our local stylesheet and custom loader script -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="katex-loader.js"></script>
   </head>
@@ -30,45 +17,55 @@
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
         <a href="index.html" class="home-link">Univerzitní studium</a>
-        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
         <span class="breadcrumb-item">Fakulta elektrotechniky a
 informatiky VŠB-TU Ostrava (bakalářský)</span>
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item-active">Introduction to Theoretical
 CS</span>
       </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
     </header>
 
+    <!-- The .page-container is now the main layout wrapper -->
     <div class="page-container">
-      <main class="content">
-        <header id="title-block-header">
-          <h1 class="title">Introduction to Theoretical CS</h1>
-        </header>
-        <p>Theoretical computer science study the mathematical solution
-        of computer science – algorithms, computational complexity,
-        formal languages and so on.</p>
-        <h1 id="logic">Logic</h1>
-        <p>The notation for <strong>sequent</strong> <span
-        class="math inline">\Gamma = B_{1},\ldots,B_{n} \vdash A</span>
-        means that the sequence <span class="math inline">\Gamma</span>
-        of propositions <span class="math inline">B_{1},..,B_{n}</span>
-        proved the conclusion <span class="math inline">A</span>. Logic
-        uses several <strong>logical connective</strong> –
-        conjunction,</p>
-        <p>We have several logical postures:
-        <strong>assumptions</strong> of sequents, <strong>introduction
-        of conjunction</strong> <span
-        class="math inline">\land_{i}</span> and <strong>elimination of
-        conjunction</strong> <span
-        class="math inline">\land_{e}</span>.</p>
-      </main>
-
             <nav class="sidebar" id="TOC">
         <h2>Obsah</h2>
         <ul>
         <li><a href="#logic" id="toc-logic">Logic</a></li>
         </ul>
       </nav>
-          </div>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Introduction to Theoretical CS</h1>
+        </header>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#logic" id="toc-logic">Logic</a></li>
+          </ul>
+        </div>
+         <p>Theoretical computer science study the mathematical solution
+of computer science – algorithms, computational complexity, formal
+languages and so on.</p>
+<h1 id="logic">Logic</h1>
+<p>The notation for <strong>sequent</strong> <span
+class="math inline">\Gamma = B_{1},\ldots,B_{n} \vdash A</span> means
+that the sequence <span class="math inline">\Gamma</span> of
+propositions <span class="math inline">B_{1},..,B_{n}</span> proved the
+conclusion <span class="math inline">A</span>. Logic uses several
+<strong>logical connective</strong> – conjunction,</p>
+<p>We have several logical postures: <strong>assumptions</strong> of
+sequents, <strong>introduction of conjunction</strong> <span
+class="math inline">\land_{i}</span> and <strong>elimination of
+conjunction</strong> <span class="math inline">\land_{e}</span>.</p>
+      </main>
+    </div>
   </body>
 </html>

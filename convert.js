@@ -1,40 +1,60 @@
-// convert.js - THE FINAL, STATEFUL VERSION
-// This script now uses a manifest.json to perfectly preserve original filenames,
-// solving all casing and diacritic issues for sources with "update: false".
+// convert.js - FINAL VERSION WITH PDF GENERATION
+// This script now builds the site and generates PDFs from the final HTML.
 
 const fs = require('fs')
 const path = require('path')
 const { execSync } = require('child_process')
+const puppeteer = require('puppeteer') // Import the new library
 
+// --- CONFIGURATION ---
 const CONFIG_PATH = './config.json'
 const LUA_FILTER_PATH = './remove-toc.lua'
 const CSS_PATH = './styles.css'
 const JS_LOADER_PATH = './katex-loader.js'
 const MASTER_TEMPLATE_PATH = './template.html'
-const MANIFEST_NAME = 'manifest.json' // The name of our new database file
+const MANIFEST_NAME = 'manifest.json'
 
+// --- PDF GENERATION FUNCTION ---
+async function generatePdfFromHtml(htmlPath, pdfPath) {
+  console.log(`   -> Generating PDF for "${path.basename(htmlPath)}"...`)
+  let browser
+  try {
+    browser = await puppeteer.launch({ headless: 'new' })
+    const page = await browser.newPage()
+    // Go to the local HTML file. 'networkidle0' waits for web fonts and KaTeX to load.
+    await page.goto('file://' + path.resolve(htmlPath), { waitUntil: 'networkidle0' })
+    // Generate the PDF
+    await page.pdf({
+      path: pdfPath,
+      format: 'A4',
+      printBackground: true, // Important for including CSS background colors
+      margin: { top: '20px', right: '20px', bottom: '20px', left: '20px' },
+    })
+    console.log(`   -> ✓ PDF successfully created at "${path.basename(pdfPath)}"`)
+  } catch (e) {
+    console.error(`   -> ❌ PDF generation failed: ${e.message}`)
+    // We don't abort the whole script, just skip this PDF.
+  } finally {
+    if (browser) await browser.close()
+  }
+}
+
+// --- MAIN EXECUTION LOGIC ---
 async function main() {
-  console.log('🚀 Starting Study Hub build process (Final Stateful Version)...')
+  console.log('🚀 Starting Study Hub build process (Final with PDFs)...')
 
   const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'))
   const { sources, outputDir } = config
 
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true })
 
-  // Copy site-wide assets
   fs.copyFileSync(CSS_PATH, path.join(outputDir, 'styles.css'))
   fs.copyFileSync(JS_LOADER_PATH, path.join(outputDir, 'katex-loader.js'))
   fs.copyFileSync('./favicon.svg', path.join(outputDir, 'favicon.svg'))
-  console.log(`🎨 Copied site-wide assets (CSS, JS) to ${outputDir}`)
+  console.log(`🎨 Copied site-wide assets to ${outputDir}`)
 
-  // --- NEW: MANIFEST LOGIC ---
   const manifestPath = path.join(outputDir, MANIFEST_NAME)
-  let manifest = {}
-  if (fs.existsSync(manifestPath)) {
-    manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'))
-  }
-  // --- END OF NEW LOGIC ---
-
+  let manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf-8')) : {}
   const siteStructure = []
 
   for (const source of sources) {
@@ -43,54 +63,40 @@ async function main() {
 
     if (!source.update) {
       console.log(`\n⏭️  Skipping directory (reading from manifest): "${source.name}"`)
-      // Find files in the manifest that belong to this source
       for (const htmlName in manifest) {
         if (htmlName.startsWith(sourceSlug + '-')) {
           const stats = fs.existsSync(path.join(outputDir, htmlName)) ? fs.statSync(path.join(outputDir, htmlName)) : { mtimeMs: 0 }
-          directoryFiles.files.push({
-            originalName: manifest[htmlName], // Get the PERFECT name from the manifest
-            htmlName: htmlName,
-            modifiedTime: stats.mtimeMs,
-          })
+          directoryFiles.files.push({ ...manifest[htmlName], modifiedTime: stats.mtimeMs })
         }
       }
-      if (directoryFiles.files.length > 0) {
-        console.log(`   -> Found ${directoryFiles.files.length} previously converted files in manifest.`)
-        siteStructure.push(directoryFiles)
-      }
+      if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
       continue
     }
 
     console.log(`\n🔄 Processing directory for updates: "${source.name}"`)
-    if (!fs.existsSync(source.path)) {
-      console.warn(`⚠️ Warning: Directory not found, skipping: ${source.path}`)
-      continue
-    }
+    if (!fs.existsSync(source.path)) continue
 
     const docxFiles = fs.readdirSync(source.path).filter(file => file.toLowerCase().endsWith('.docx'))
     if (docxFiles.length === 0) continue
 
     for (const docxFile of docxFiles) {
       const originalDocxPath = path.join(source.path, docxFile)
-      const baseName = path.basename(docxFile, '.docx') // This has correct casing and diacritics
-      const safeHtmlName = `${sourceSlug}-${slugify(baseName)}.html`
+      const baseName = path.basename(docxFile, '.docx')
+      const slugBase = slugify(baseName)
+      const safeHtmlName = `${sourceSlug}-${slugBase}.html`
+      const safeDocxName = `${sourceSlug}-${slugBase}.docx`
+      const safePdfName = `${sourceSlug}-${slugBase}.pdf`
+
       const outputHtmlPath = path.join(outputDir, safeHtmlName)
+      const outputDocxPath = path.join(outputDir, safeDocxName)
+      const outputPdfPath = path.join(outputDir, safePdfName)
       const tempHtmlPath = outputHtmlPath + '.temp'
 
-      let shouldConvert = true
-      if (fs.existsSync(outputHtmlPath)) {
-        const docxStats = fs.statSync(originalDocxPath)
-        const htmlStats = fs.statSync(outputHtmlPath)
-        if (docxStats.mtimeMs <= htmlStats.mtimeMs) shouldConvert = false
-      }
+      let shouldConvertHtml = !fs.existsSync(outputHtmlPath) || fs.statSync(originalDocxPath).mtimeMs > fs.statSync(outputHtmlPath).mtimeMs
 
-      if (!shouldConvert) {
-        console.log(`   -> Skipping "${baseName}" (no changes detected).`)
-      } else {
+      if (shouldConvertHtml) {
         try {
           console.log(`   -> Converting "${baseName}"...`)
-          const uniqueMediaSubdir = safeHtmlName.replace('.html', '_media')
-
           const pandocCommand = [
             'pandoc',
             `"${path.resolve(originalDocxPath)}"`,
@@ -98,54 +104,54 @@ async function main() {
             'html',
             '-s',
             '-o',
-            `"${path.basename(tempHtmlPath)}"`,
+            `"${tempHtmlPath}"`,
             '--katex',
             '--toc',
             `--lua-filter="${path.resolve(LUA_FILTER_PATH)}"`,
             `--template="${path.resolve(MASTER_TEMPLATE_PATH)}"`,
             `--metadata=group-name:"${source.name}"`,
-            `--extract-media="${uniqueMediaSubdir}"`,
+            `--metadata=docx_path:"${safeDocxName}"`,
+            `--metadata=pdf_path:"${safePdfName}"`,
+            `--extract-media=./media`,
           ].join(' ')
 
-          execSync(pandocCommand, { stdio: 'pipe', encoding: 'utf-8', cwd: outputDir })
-          fs.renameSync(path.join(outputDir, path.basename(tempHtmlPath)), outputHtmlPath)
-          console.log(`   -> ✨ Successfully created "${safeHtmlName}"`)
+          execSync(pandocCommand, { stdio: 'pipe', encoding: 'utf-8' })
+          fs.renameSync(tempHtmlPath, outputHtmlPath)
+          fs.copyFileSync(originalDocxPath, outputDocxPath) // Copy the source DOCX
+          console.log(`   -> ✨ Successfully created "${safeHtmlName}" and copied source DOCX.`)
         } catch (error) {
-          console.error(`\n❌ FATAL ERROR during conversion of "${docxFile}".`)
-          console.error(error.stderr || error.message)
+          console.error(`\n❌ FATAL ERROR during conversion of "${docxFile}". Aborting.`)
           if (fs.existsSync(tempHtmlPath)) fs.unlinkSync(tempHtmlPath)
-          console.error('   Aborting script.')
           process.exit(1)
         }
+      } else {
+        console.log(`   -> Skipping HTML build for "${baseName}" (no changes).`)
       }
 
-      // --- NEW: ALWAYS UPDATE THE MANIFEST AND SITE STRUCTURE ---
+      // Always generate PDF if the HTML is newer than the PDF
+      let shouldGeneratePdf = !fs.existsSync(outputPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputPdfPath).mtimeMs
+      if (shouldGeneratePdf) {
+        await generatePdfFromHtml(outputHtmlPath, outputPdfPath)
+      } else {
+        console.log(`   -> Skipping PDF build for "${baseName}" (no changes).`)
+      }
+
+      manifest[safeHtmlName] = { originalName: baseName, htmlName: safeHtmlName }
       const finalStats = fs.statSync(outputHtmlPath)
-      manifest[safeHtmlName] = baseName // Record the correct name
-      directoryFiles.files.push({
-        originalName: baseName, // Use the correct name
-        htmlName: safeHtmlName,
-        modifiedTime: finalStats.mtimeMs,
-      })
+      directoryFiles.files.push({ ...manifest[safeHtmlName], modifiedTime: finalStats.mtimeMs })
     }
-    if (directoryFiles.files.length > 0) {
-      siteStructure.push(directoryFiles)
-    }
+    if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
   }
 
-  // --- NEW: ALWAYS SAVE THE UPDATED MANIFEST ---
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
   console.log('\n💾 Manifest saved.')
-
   console.log('\n📄 Generating index.html...')
   const indexHtmlContent = generateIndexHtml(siteStructure)
   fs.writeFileSync(path.join(outputDir, 'index.html'), indexHtmlContent)
-
-  console.log('\n✅ All done! Your Study Hub is complete and robust.')
+  console.log('\n✅ All done! Your Study Hub is complete.')
 }
 
-// --- HELPER FUNCTIONS (Unchanged from previous versions) ---
-// The generateIndexHtml, slugify, etc. functions remain the same.
+// --- HELPER FUNCTIONS (generateIndexHtml and slugify are slightly updated) ---
 
 function slugify(text) {
   return text
@@ -155,7 +161,7 @@ function slugify(text) {
     .toLowerCase()
     .trim()
     .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
+    .replace(/[^\w.-]+/g, '')
     .replace(/--+/g, '-')
 }
 
@@ -212,8 +218,8 @@ function generateIndexHtml(structure) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Univerzitní studium - materiály a přednášky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <div class="container">

@@ -4,24 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Personální management - Studijní poznámky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Load our local stylesheet and custom loader script -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="katex-loader.js"></script>
   </head>
@@ -30,23 +17,30 @@
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
         <a href="index.html" class="home-link">Univerzitní studium</a>
-        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
         <span class="breadcrumb-item">Ekonomická fakulta TU Liberec
 (bakalářský)</span>
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item-active">Personální
 management</span>
       </div>
+      <div class="header-actions">
+        <a href="ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
     </header>
 
+    <!-- The .page-container is now the main layout wrapper -->
     <div class="page-container">
+      
       <main class="content">
         <header id="title-block-header">
           <h1 class="title">Personální management</h1>
         </header>
-        
-      </main>
 
-          </div>
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+         
+      </main>
+    </div>
   </body>
 </html>

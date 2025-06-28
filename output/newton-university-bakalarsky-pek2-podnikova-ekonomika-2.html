@@ -4,24 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Podniková ekonomika 2 - Studijní poznámky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Load our local stylesheet and custom loader script -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="katex-loader.js"></script>
   </head>
@@ -30,195 +17,21 @@
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
         <a href="index.html" class="home-link">Univerzitní studium</a>
-        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
         <span class="breadcrumb-item">Newton University
 (bakalářský)</span>
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item-active">Podniková ekonomika
 2</span>
       </div>
+      <div class="header-actions">
+        <a href="newton-university-bakalarsky-pek2-podnikova-ekonomika-2.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="newton-university-bakalarsky-pek2-podnikova-ekonomika-2.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="newton-university-bakalarsky-pek2-podnikova-ekonomika-2.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
     </header>
 
+    <!-- The .page-container is now the main layout wrapper -->
     <div class="page-container">
-      <main class="content">
-        <header id="title-block-header">
-          <h1 class="title">Podniková ekonomika 2</h1>
-        </header>
-        <h1 class="TOC-Heading" id="section"></h1>
-        <h1 id="nákladová-funkce">Nákladová funkce</h1>
-        <p>Stěžejním členěním nákladů je <strong>členění dle
-        produkce</strong> – náklady fixní a variabilní. Platí poté že
-        celkové náklady <span class="math inline">N = FN + VN,</span>
-        celkové variabilní náklady <span class="math inline">VN = V
-        \cdot Q</span> (patří zde materiál, přímé mzdy, spotřeba energií
-        ve výrobě).</p>
-        <p>Z toho odvodíme <strong>obecný tvar nákladové
-        funkce</strong> $<span class="math inline">N = FN + V \cdot
-        Q</span>. Na tento tvar má dopad, zda podnik realizuje homogenní
-        nebo nehomogenní produkci.</p>
-        <ul>
-        <li><p><strong>Homogenní</strong> (stejnorodá) <strong>produkce</strong> reprezentuje
-        výrobu jednoho druhu výrobku / poskytování jednoho typu služby.
-        Pro tento typ produkce platí, že jednotkové variabilní náklady
-        <span class="math inline">V\left\lbrack \frac{Kč}{ks}
-        \right\rbrack</span> a objem produkce <span
-        class="math inline">Q\lbrack ks\rbrack</span>.</p></li>
-        <li><p><strong>Nehomogenní produkce</strong> reprezentuje výrobu
-        různých výrobků a služeb. Pro tento typ produkce platí, že
-        průměrné variabilní náklady na jednu korunu produkce <span
-        class="math inline">V^{*}\lbrack Kč\rbrack</span> (variabilní
-        složka nákladů z jedné koruny tržeb) a objem produkce vyjádřený
-        objemem tržeb <span class="math inline">Q\lbrack
-        Kč\rbrack</span>. Nákladová funkce je primárně využívaná k
-        plánování finanční zdrojů.</p></li>
-        </ul>
-        <h2 id="metody-stanovení-nákladové-funkce">Metody stanovení
-        nákladové funkce</h2>
-        <p>První metodou je <strong>metoda dvou období</strong>.
-        Vycházíme z posledních 12 kalendářních měsíců. V každém měsíci
-        porovnáme objem produkce a spojené celkové náklady. Vybereme
-        období s minimálním a maximálním objemem produkce, pro každé z
-        nich sestavíme výchozí nákladovou funkci a získáme soustavu
-        rovnic, ze které dokážeme odvodit <span
-        class="math inline">FN</span> a V.</p>
-        <ul>
-        <li><p>Příklad č. 1</p></li>
-        <li><p>Jedná se o prostředí s nehomogenní produkcí (z důvodu
-        ukazatele objemu výrobu v peněžních částkách).</p></li>
-        <li><p>Maximální období - $8,500,000=FN+V{\cdot}12,000,000$
-        Minimální období - $6,000,000=FN+V{\cdot}7,000,000$ Řešením jsou
-        konstanty $FN=5,500,000$ a $V=0.25$. Nákladovou funkcí je tedy
-        $N=5,500,000+0.25{\cdot}Q$.</p></li>
-        </ul>
-        <p>Druhou metodou je <strong>metoda průměrů</strong>. Vycházíme
-        z posledních 12 kalendářních měsíců. Sledovaná období se seřadí
-        vzestupně, nebo sestupně, podle objemu produkce. Tato období se
-        rozdělí na dvě poloviny a z nich průměrem sestavíme funkci pro
-        maximální a minimální období. Dále pokračujeme stejně, jako v
-        předchozí metodě.</p>
-        <p>Přesnější metodou je metoda průměrů, protože do výpočtu
-        vstupují všechna sledovaná období.</p>
-        <h1 id="citlivostní-analýza">Citlivostní analýza</h1>
-        <ul>
-        <li><p>Přiklad č.2</p></li>
-        <li><p>Zadání - $FN=600,000$, $p=10$, $VN=4$, $Q_{max}=130,000$
-        Bod zvratu - $Q_0=\frac{FN}{C-V}=100,000$ Bezpečnostní marže 2 -
-        $BM_2=\frac{Q_{max}-Q_0}{Q_{max}}=23.1 \%$ (musíme kapacitu
-        využít alespoň na $76,9\%$, abychom nebyli ve ztrátě) Objem při
-        stanoveném zisku - $Q_{Z_{min}}=\frac{FN+Z_{min}}{C-V}=116,667$
-        Citlivost ceny - $FN_1=Q_1\cdot{(c_0-v_1)}, c_0=9,14,
-        S_c=\frac{c_1-c_0}{c_1}=8,6\%$</p></li>
-        </ul>
-        <h1 id="kalkulační-metody">Kalkulační metody</h1>
-        <p>Kalkulační metody jsou postupy pro stanovení nákladů na
-        kalkulační jednici - na výrobek nebo na službu. Výstup
-        kalkulačních metod se používá pro stanovení prodejní ceny.</p>
-        <p>Náklady členíme na <strong>přímé</strong> (lze přímo stanovit
-        v hodnotě na danou jednici - přímý materiál <span
-        class="math inline">PM</span>, přímé mzdy <span
-        class="math inline">PMZ</span>, ostatní přímé náklady <span
-        class="math inline">OPN</span>)
-        a <strong>nepřímé</strong> (nelze přímo vyčíslit, jedná se o
-        režijní náklady - výrobní režie <span
-        class="math inline">VR</span> (prostory, výrobní zařízení),
-        správní režie <span class="math inline">SR</span>
-        (administrativa, prostory, provoz), zásobovací režie <span
-        class="math inline">ZR</span> (sklady), odbytová režie <span
-        class="math inline">OR</span> (prodejní prostory)).</p>
-        <p>Všechny přímé a nepřímé náklady zachycuje <strong>typový
-        kalkulační vzorec</strong>. Jsme schopni
-        spočítat <strong>vlastní náklady výroby</strong> (<span
-        class="math inline">PM + PMZ + OPN + VR</span>),
-        poté <strong>vlastní náklady výkonu</strong> (<span
-        class="math inline">... + SR</span>), poté <strong>úplné vlastní
-        náklady výkonu</strong> <span class="math inline">n_{j}</span>
-        (<span class="math inline">\ldots + ZR + OR</span>).</p>
-        <h2 id="kalkulace-prostým-dělením">Kalkulace prostým
-        dělením</h2>
-        <p>Metoda je použitelná pouze pro oblast s homogonenní
-        produkcí.</p>
-        <p><span class="math display">n_{j} = \frac{N}{Q}</span></p>
-        <h2 id="kalkulace-ekvivalenčních-čísel">Kalkulace ekvivalenčních
-        čísel</h2>
-        <p>Metoda je použitelná pouze pro oblast nehomogennní produkce,
-        a to zejména v případě výroby ze stejného materiálu, tvarově
-        podobné výrobky nebo výrobu v typových řadách.</p>
-        <p>V prvním kroku se stanoví <strong>součet přepočítaných
-        jednic</strong> <span class="math inline">SPJ</span> (stanovím
-        základní výrobek s poměrovým číslem <span
-        class="math inline">1</span>, nákladové položky ostatních
-        výrobků se budou k tomuto základnímu vztahovat).</p>
-        <p><span class="math display">SPJ = \sum_{k = A}^{Z}{i_{k} \cdot
-        Q_{k}}</span></p>
-        <p>V dalším kroku pomocí součtu vypočítám nákladovou položku na
-        základní výrobek. Nákladové položky ostatních výrobků se stanoví
-        součinem příslušného ekvivalenčního čísla a nákladů na základní
-        výrobek.</p>
-        <h2 id="přirážková-kalkulace">Přirážková kalkulace</h2>
-        <p>Metoda je použitelná pouze pro oblast nehomogenní produkce.
-        Princip je postaven na stanovení na stanovení <strong>režijní
-        přirážky</strong> <span class="math inline">RP</span> - podíl
-        režijních nákladů <span class="math inline">RN</span> a
-        rozvrhové základny <span
-        class="math inline">RZ</span><strong>.</strong> Rozvrhovou
-        základnu si podnik volí individuálně (v praxi v závislosti na
-        konkrétních režii, může být použito jakékoli veličiny,
-        nejčastěji spotřeba času ve výrobě nebo objem produkce).</p>
-        <h2 id="kalkulace-variabilních-nákladů">Kalkulace variabilních
-        nákladů</h2>
-        <p>Metoda se používá pro optimalizaci výrobkového portfolia -
-        zjišťujeme, zda je vhodné do výroby zařadit nový výrobek, zda
-        vyřadit ztrátový výrobek nebo vyrábět jeden výrobek na úkor
-        druhého. V praxi se porovnává variabilní kalkulace před změnou s
-        variabilní kalkulací po změně.</p>
-        <p>Nejčastěji využíváme dvoustupňové variabilní kalkulace.
-        Vycházíme z <strong>portfolia výrobků</strong> a
-        kalkulujeme <strong>příspěvek na úhradu 1</strong> <span
-        class="math inline">{PÚ}_{1} = T - VN</span> (pokud vyjde
-        záporně, výrobek je třeba vyřadit), poté
-        kalkulujeme <strong>příspěvek na úhradu 2</strong> <span
-        class="math inline">PÚ_{2} = PÚ_{1} - PFN</span> (přímé fixní
-        náklady). Pokud od celkového příspěvku na úhradu 2 odečteme
-        společné fixní náklady, dostáváme hospodářský výsledek <span
-        class="math inline">HV = PÚ_{2} - SFN</span>. Příspěvek na
-        úhradu 2 porovnává pozici výrobku v rámci portfolia - zda je
-        Hvězda, apod.</p>
-        <h1 id="cenová-tvorba">Cenová tvorba</h1>
-        <p>Začínáme průzkumem trhu pro stanovení očekávané poptávky.
-        Poté stanovíme náklady na kalkulační jednici. Provedeme
-        porovnání nákladů se stejnými či konkurenčními výrobky. Vybereme
-        metodu cenové tvorby a na základě výstupu stanovíme výslednou
-        prodejní cenu.</p>
-        <h2 id="metoda-cenové-tvorby-pomocí-ziskové-přirážky">Metoda
-        cenové tvorby pomocí ziskové přirážky</h2>
-        <p>Podnik si stanoví ziskovou přirážku <span
-        class="math inline">zp</span> z jednicových nákladů.</p>
-        <p><span class="math display">C = n_{j} + z_{p} \cdot
-        n_{j}</span></p>
-        <h2
-        id="metoda-cenové-tvorby-pomocí-rentability-z-investovaného-kapitálu">Metoda
-        cenové tvorby pomocí rentability z investovaného kapitálu</h2>
-        <p>Používáme pouze v případě, pokud je nutná vstupní investice
-        <span class="math inline">IN</span> a z ní požadovaná
-        rentabilita <span class="math inline">ROI</span>.</p>
-        <p><span class="math display">C = n_{j} \cdot \frac{ROI \cdot
-        IN}{Q}</span></p>
-        <h2
-        id="metoda-cenové-tvorby-pomocí-zákazníkem-vnímané-hodnoty">Metoda
-        cenové tvorby pomocí zákazníkem vnímané hodnoty</h2>
-        <p>První možností aplikace je <strong>použití cenové
-        diskriminace</strong>.</p>
-        <p>Druhou možností je <strong>stanovení marketingovým
-        průzkumem</strong>, která stanoví horní hranici prodejní ceny
-        <span class="math inline">HHC</span> (maximální prodejní cena,
-        kterou je zákazník ochoten za výsledek připlatit).</p>
-        <p><span class="math display">HHC = Průměrná\ cena \cdot
-        \frac{Body\ našeho\ výrobku}{Průměrný\ počet\ bodů}</span></p>
-        <p>Oproti tomu stanovujeme dolní hranici prodejní ceny <span
-        class="math inline">DHC</span>, která motivuje výrobce k výrobě
-        a prodeji výrobku.</p>
-      </main>
-
             <nav class="sidebar" id="TOC">
         <h2>Obsah</h2>
         <ul>
@@ -265,6 +78,216 @@
         </ul></li>
         </ul>
       </nav>
-          </div>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Podniková ekonomika 2</h1>
+        </header>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#section" id="toc-section"></a></li>
+          <li><a href="#nákladová-funkce"
+          id="toc-nákladová-funkce">Nákladová funkce</a>
+          <ul>
+          <li><a href="#metody-stanovení-nákladové-funkce"
+          id="toc-metody-stanovení-nákladové-funkce">Metody stanovení
+          nákladové funkce</a></li>
+          </ul></li>
+          <li><a href="#citlivostní-analýza"
+          id="toc-citlivostní-analýza">Citlivostní analýza</a></li>
+          <li><a href="#kalkulační-metody"
+          id="toc-kalkulační-metody">Kalkulační metody</a>
+          <ul>
+          <li><a href="#kalkulace-prostým-dělením"
+          id="toc-kalkulace-prostým-dělením">Kalkulace prostým
+          dělením</a></li>
+          <li><a href="#kalkulace-ekvivalenčních-čísel"
+          id="toc-kalkulace-ekvivalenčních-čísel">Kalkulace
+          ekvivalenčních čísel</a></li>
+          <li><a href="#přirážková-kalkulace"
+          id="toc-přirážková-kalkulace">Přirážková kalkulace</a></li>
+          <li><a href="#kalkulace-variabilních-nákladů"
+          id="toc-kalkulace-variabilních-nákladů">Kalkulace variabilních
+          nákladů</a></li>
+          </ul></li>
+          <li><a href="#cenová-tvorba" id="toc-cenová-tvorba">Cenová
+          tvorba</a>
+          <ul>
+          <li><a href="#metoda-cenové-tvorby-pomocí-ziskové-přirážky"
+          id="toc-metoda-cenové-tvorby-pomocí-ziskové-přirážky">Metoda
+          cenové tvorby pomocí ziskové přirážky</a></li>
+          <li><a
+          href="#metoda-cenové-tvorby-pomocí-rentability-z-investovaného-kapitálu"
+          id="toc-metoda-cenové-tvorby-pomocí-rentability-z-investovaného-kapitálu">Metoda
+          cenové tvorby pomocí rentability z investovaného
+          kapitálu</a></li>
+          <li><a
+          href="#metoda-cenové-tvorby-pomocí-zákazníkem-vnímané-hodnoty"
+          id="toc-metoda-cenové-tvorby-pomocí-zákazníkem-vnímané-hodnoty">Metoda
+          cenové tvorby pomocí zákazníkem vnímané hodnoty</a></li>
+          </ul></li>
+          </ul>
+        </div>
+         <h1 class="TOC-Heading" id="section"></h1>
+<h1 id="nákladová-funkce">Nákladová funkce</h1>
+<p>Stěžejním členěním nákladů je <strong>členění dle produkce</strong> –
+náklady fixní a variabilní. Platí poté že celkové náklady <span
+class="math inline">N = FN + VN,</span> celkové variabilní náklady <span
+class="math inline">VN = V \cdot Q</span> (patří zde materiál, přímé
+mzdy, spotřeba energií ve výrobě).</p>
+<p>Z toho odvodíme <strong>obecný tvar nákladové funkce</strong> $<span
+class="math inline">N = FN + V \cdot Q</span>. Na tento tvar má dopad,
+zda podnik realizuje homogenní nebo nehomogenní produkci.</p>
+<ul>
+<li><p><strong>Homogenní</strong> (stejnorodá) <strong>produkce</strong> reprezentuje
+výrobu jednoho druhu výrobku / poskytování jednoho typu služby. Pro
+tento typ produkce platí, že jednotkové variabilní náklady <span
+class="math inline">V\left\lbrack \frac{Kč}{ks} \right\rbrack</span> a
+objem produkce <span class="math inline">Q\lbrack
+ks\rbrack</span>.</p></li>
+<li><p><strong>Nehomogenní produkce</strong> reprezentuje výrobu různých
+výrobků a služeb. Pro tento typ produkce platí, že průměrné variabilní
+náklady na jednu korunu produkce <span class="math inline">V^{*}\lbrack
+Kč\rbrack</span> (variabilní složka nákladů z jedné koruny tržeb) a
+objem produkce vyjádřený objemem tržeb <span
+class="math inline">Q\lbrack Kč\rbrack</span>. Nákladová funkce je
+primárně využívaná k plánování finanční zdrojů.</p></li>
+</ul>
+<h2 id="metody-stanovení-nákladové-funkce">Metody stanovení nákladové
+funkce</h2>
+<p>První metodou je <strong>metoda dvou období</strong>. Vycházíme z
+posledních 12 kalendářních měsíců. V každém měsíci porovnáme objem
+produkce a spojené celkové náklady. Vybereme období s minimálním a
+maximálním objemem produkce, pro každé z nich sestavíme výchozí
+nákladovou funkci a získáme soustavu rovnic, ze které dokážeme odvodit
+<span class="math inline">FN</span> a V.</p>
+<ul>
+<li><p>Příklad č. 1</p></li>
+<li><p>Jedná se o prostředí s nehomogenní produkcí (z důvodu ukazatele
+objemu výrobu v peněžních částkách).</p></li>
+<li><p>Maximální období - $8,500,000=FN+V{\cdot}12,000,000$ Minimální
+období - $6,000,000=FN+V{\cdot}7,000,000$ Řešením jsou konstanty
+$FN=5,500,000$ a $V=0.25$. Nákladovou funkcí je tedy
+$N=5,500,000+0.25{\cdot}Q$.</p></li>
+</ul>
+<p>Druhou metodou je <strong>metoda průměrů</strong>. Vycházíme z
+posledních 12 kalendářních měsíců. Sledovaná období se seřadí vzestupně,
+nebo sestupně, podle objemu produkce. Tato období se rozdělí na dvě
+poloviny a z nich průměrem sestavíme funkci pro maximální a minimální
+období. Dále pokračujeme stejně, jako v předchozí metodě.</p>
+<p>Přesnější metodou je metoda průměrů, protože do výpočtu vstupují
+všechna sledovaná období.</p>
+<h1 id="citlivostní-analýza">Citlivostní analýza</h1>
+<ul>
+<li><p>Přiklad č.2</p></li>
+<li><p>Zadání - $FN=600,000$, $p=10$, $VN=4$, $Q_{max}=130,000$ Bod
+zvratu - $Q_0=\frac{FN}{C-V}=100,000$ Bezpečnostní marže 2 -
+$BM_2=\frac{Q_{max}-Q_0}{Q_{max}}=23.1 \%$ (musíme kapacitu využít
+alespoň na $76,9\%$, abychom nebyli ve ztrátě) Objem při stanoveném
+zisku - $Q_{Z_{min}}=\frac{FN+Z_{min}}{C-V}=116,667$ Citlivost ceny -
+$FN_1=Q_1\cdot{(c_0-v_1)}, c_0=9,14,
+S_c=\frac{c_1-c_0}{c_1}=8,6\%$</p></li>
+</ul>
+<h1 id="kalkulační-metody">Kalkulační metody</h1>
+<p>Kalkulační metody jsou postupy pro stanovení nákladů na kalkulační
+jednici - na výrobek nebo na službu. Výstup kalkulačních metod se
+používá pro stanovení prodejní ceny.</p>
+<p>Náklady členíme na <strong>přímé</strong> (lze přímo stanovit v
+hodnotě na danou jednici - přímý materiál <span
+class="math inline">PM</span>, přímé mzdy <span
+class="math inline">PMZ</span>, ostatní přímé náklady <span
+class="math inline">OPN</span>) a <strong>nepřímé</strong> (nelze přímo
+vyčíslit, jedná se o režijní náklady - výrobní režie <span
+class="math inline">VR</span> (prostory, výrobní zařízení), správní
+režie <span class="math inline">SR</span> (administrativa, prostory,
+provoz), zásobovací režie <span class="math inline">ZR</span> (sklady),
+odbytová režie <span class="math inline">OR</span> (prodejní
+prostory)).</p>
+<p>Všechny přímé a nepřímé náklady zachycuje <strong>typový kalkulační
+vzorec</strong>. Jsme schopni spočítat <strong>vlastní náklady
+výroby</strong> (<span class="math inline">PM + PMZ + OPN + VR</span>),
+poté <strong>vlastní náklady výkonu</strong> (<span
+class="math inline">... + SR</span>), poté <strong>úplné vlastní náklady
+výkonu</strong> <span class="math inline">n_{j}</span> (<span
+class="math inline">\ldots + ZR + OR</span>).</p>
+<h2 id="kalkulace-prostým-dělením">Kalkulace prostým dělením</h2>
+<p>Metoda je použitelná pouze pro oblast s homogonenní produkcí.</p>
+<p><span class="math display">n_{j} = \frac{N}{Q}</span></p>
+<h2 id="kalkulace-ekvivalenčních-čísel">Kalkulace ekvivalenčních
+čísel</h2>
+<p>Metoda je použitelná pouze pro oblast nehomogennní produkce, a to
+zejména v případě výroby ze stejného materiálu, tvarově podobné výrobky
+nebo výrobu v typových řadách.</p>
+<p>V prvním kroku se stanoví <strong>součet přepočítaných
+jednic</strong> <span class="math inline">SPJ</span> (stanovím základní
+výrobek s poměrovým číslem <span class="math inline">1</span>, nákladové
+položky ostatních výrobků se budou k tomuto základnímu vztahovat).</p>
+<p><span class="math display">SPJ = \sum_{k = A}^{Z}{i_{k} \cdot
+Q_{k}}</span></p>
+<p>V dalším kroku pomocí součtu vypočítám nákladovou položku na základní
+výrobek. Nákladové položky ostatních výrobků se stanoví součinem
+příslušného ekvivalenčního čísla a nákladů na základní výrobek.</p>
+<h2 id="přirážková-kalkulace">Přirážková kalkulace</h2>
+<p>Metoda je použitelná pouze pro oblast nehomogenní produkce. Princip
+je postaven na stanovení na stanovení <strong>režijní
+přirážky</strong> <span class="math inline">RP</span> - podíl režijních
+nákladů <span class="math inline">RN</span> a rozvrhové základny <span
+class="math inline">RZ</span><strong>.</strong> Rozvrhovou základnu si
+podnik volí individuálně (v praxi v závislosti na konkrétních režii,
+může být použito jakékoli veličiny, nejčastěji spotřeba času ve výrobě
+nebo objem produkce).</p>
+<h2 id="kalkulace-variabilních-nákladů">Kalkulace variabilních
+nákladů</h2>
+<p>Metoda se používá pro optimalizaci výrobkového portfolia -
+zjišťujeme, zda je vhodné do výroby zařadit nový výrobek, zda vyřadit
+ztrátový výrobek nebo vyrábět jeden výrobek na úkor druhého. V praxi se
+porovnává variabilní kalkulace před změnou s variabilní kalkulací po
+změně.</p>
+<p>Nejčastěji využíváme dvoustupňové variabilní kalkulace. Vycházíme
+z <strong>portfolia výrobků</strong> a kalkulujeme <strong>příspěvek na
+úhradu 1</strong> <span class="math inline">{PÚ}_{1} = T - VN</span>
+(pokud vyjde záporně, výrobek je třeba vyřadit), poté
+kalkulujeme <strong>příspěvek na úhradu 2</strong> <span
+class="math inline">PÚ_{2} = PÚ_{1} - PFN</span> (přímé fixní náklady).
+Pokud od celkového příspěvku na úhradu 2 odečteme společné fixní
+náklady, dostáváme hospodářský výsledek <span class="math inline">HV =
+PÚ_{2} - SFN</span>. Příspěvek na úhradu 2 porovnává pozici výrobku v
+rámci portfolia - zda je Hvězda, apod.</p>
+<h1 id="cenová-tvorba">Cenová tvorba</h1>
+<p>Začínáme průzkumem trhu pro stanovení očekávané poptávky. Poté
+stanovíme náklady na kalkulační jednici. Provedeme porovnání nákladů se
+stejnými či konkurenčními výrobky. Vybereme metodu cenové tvorby a na
+základě výstupu stanovíme výslednou prodejní cenu.</p>
+<h2 id="metoda-cenové-tvorby-pomocí-ziskové-přirážky">Metoda cenové
+tvorby pomocí ziskové přirážky</h2>
+<p>Podnik si stanoví ziskovou přirážku <span
+class="math inline">zp</span> z jednicových nákladů.</p>
+<p><span class="math display">C = n_{j} + z_{p} \cdot n_{j}</span></p>
+<h2
+id="metoda-cenové-tvorby-pomocí-rentability-z-investovaného-kapitálu">Metoda
+cenové tvorby pomocí rentability z investovaného kapitálu</h2>
+<p>Používáme pouze v případě, pokud je nutná vstupní investice <span
+class="math inline">IN</span> a z ní požadovaná rentabilita <span
+class="math inline">ROI</span>.</p>
+<p><span class="math display">C = n_{j} \cdot \frac{ROI \cdot
+IN}{Q}</span></p>
+<h2 id="metoda-cenové-tvorby-pomocí-zákazníkem-vnímané-hodnoty">Metoda
+cenové tvorby pomocí zákazníkem vnímané hodnoty</h2>
+<p>První možností aplikace je <strong>použití cenové
+diskriminace</strong>.</p>
+<p>Druhou možností je <strong>stanovení marketingovým
+průzkumem</strong>, která stanoví horní hranici prodejní ceny <span
+class="math inline">HHC</span> (maximální prodejní cena, kterou je
+zákazník ochoten za výsledek připlatit).</p>
+<p><span class="math display">HHC = Průměrná\ cena \cdot \frac{Body\
+našeho\ výrobku}{Průměrný\ počet\ bodů}</span></p>
+<p>Oproti tomu stanovujeme dolní hranici prodejní ceny <span
+class="math inline">DHC</span>, která motivuje výrobce k výrobě a
+prodeji výrobku.</p>
+      </main>
+    </div>
   </body>
 </html>

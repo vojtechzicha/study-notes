@@ -3,12 +3,12 @@
     {
       "name": "Newton University (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University NU Bachelor",
-      "update": false
+      "update": true
     },
     {
       "name": "Newton University (SZZ bakalářská)",
       "path": "/Users/vojtechzicha/Documents/University NU Bachelor/Final Exam",
-      "update": false
+      "update": true
     },
     {
       "name": "Ekonomická fakulta TU Liberec (bakalářský)",
@@ -23,7 +23,7 @@
     {
       "name": "Fakulta elektrotechniky a informatiky VŠB-TU Ostrava (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University VSB FEI Bachelor",
-      "update": false
+      "update": true
     }
   ],
   "outputDir": "./output"

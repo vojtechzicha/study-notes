@@ -4,24 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Numerické metody 1 - Studijní poznámky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Load our local stylesheet and custom loader script -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="katex-loader.js"></script>
   </head>
@@ -30,214 +17,20 @@
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
         <a href="index.html" class="home-link">Univerzitní studium</a>
-        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
         <span class="breadcrumb-item">Fakulta elektrotechniky a
 informatiky VŠB-TU Ostrava (bakalářský)</span>
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item-active">Numerické metody 1</span>
       </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
     </header>
 
+    <!-- The .page-container is now the main layout wrapper -->
     <div class="page-container">
-      <main class="content">
-        <header id="title-block-header">
-          <h1 class="title">Numerické metody 1</h1>
-        </header>
-        <h1
-        id="korektnost-úloh-a-stabilita-výpočetních-postupů">Korektnost
-        úloh a stabilita výpočetních postupů</h1>
-        <p><em>Definice:</em> <strong>Korektní úloha</strong> na dvojici
-        <span class="math inline">\left( B_{1},B_{2} \right)</span> je
-        taková úloha <span class="math inline">y = U(x),x \in B_{1},y
-        \in B_{2}</span>, kde</p>
-        <ul>
-        <li><p><span class="math inline">\forall x \in B_{1}:\exists!y
-        \in B_{2}</span>;</p></li>
-        <li><p><span class="math inline">x_{n} \rightarrow x,U\left(
-        x_{n} \right) = y_{n} \Rightarrow U\left( x_{n} \right)
-        \rightarrow U(x) = y</span>, tj. řešení <span
-        class="math inline">y</span> spojitě závisí na <span
-        class="math inline">x</span>.</p></li>
-        </ul>
-        <p><em>Definice:</em> <strong>Dobře podmíněná úloha</strong>
-        <span class="math inline">u(x)</span> je taková úloha, kde malá
-        změna <span class="math inline">x</span> vyvolá malou změnu
-        <span class="math inline">y</span>. Pro dobře podmíněnou úlohu
-        platí<span class="math inline">1 &lt; c_{p} &lt; 100</span>,
-        kde:</p>
-        <p><span class="math display">c_{p} = \frac{\frac{\left\| \Delta
-        y \right\|}{\left\| y \right\|}}{\frac{\left\| \Delta x
-        \right\|}{\left\| x \right\|}}</span></p>
-        <h2 id="typy-chyb">Typy chyb</h2>
-        <ul>
-        <li><p><strong>Chyba matematického modelu</strong> – vzniká
-        nepřesným zachycením reality matematickým modelem</p></li>
-        <li><p><strong>Chyba numerické metody</strong> – nahrazení <span
-        class="math inline">\lim_{n \rightarrow \infty}a_{n} \approx
-        a_{500}</span></p></li>
-        <li><p><strong>Chyba aproximace</strong> – nahrazení matematické
-        úlohy numerickou, např. spojitá vstupní data za
-        diskrétní</p></li>
-        <li><p><strong>Chyby ve vstupních datech</strong></p></li>
-        <li><p><strong>Chyba aproximace</strong></p></li>
-        </ul>
-        <h2 id="aproximace-čísla">Aproximace čísla</h2>
-        <p>Nechť <span class="math inline">x</span> je přesná hodnota a
-        <span class="math inline">\widetilde{x} \approx x</span> je
-        aproximace hodnoty. <strong>Absolutní chyba</strong> vyjadřuje
-        <span class="math inline">\Delta x = x - \varepsilon</span>,
-        přičemž hledáme <strong>odhad absolutní</strong>
-        <strong>chyby</strong> <span class="math inline">\left\| \Delta
-        x \right\| \leq \varepsilon</span>. <strong>Relativní
-        chyba</strong> vyjadřuje <span class="math inline">\frac{\Delta
-        x}{x}</span>, přičemž hledáme <strong>odhad relativní
-        chyby</strong> <span class="math inline">\frac{\left\| \Delta x
-        \right\|}{\left\| x \right\|} = \frac{\left\| \Delta x
-        \right\|}{\left\| \widetilde{x} \right\|} \leq
-        \delta</span>.</p>
-        <h2 id="šíření-chyb-při-aritmetických-operací">Šíření chyb při
-        aritmetických operací</h2>
-        <p>Mějme odhady <span
-        class="math inline">\widetilde{x_{1}},\widetilde{x_{2}}</span> a
-        <span
-        class="math inline">\varepsilon_{1},\varepsilon_{2},\delta_{1},\delta_{2}</span>.</p>
-        <ul>
-        <li><p>Součet <span class="math inline">\widetilde{u} =
-        \widetilde{x_{1}} + \widetilde{x_{2}},\varepsilon =
-        \varepsilon_{1} + \varepsilon_{2},\delta = \frac{1}{\left|
-        \widetilde{x_{1}} - \widetilde{x_{2}} \right|} \cdot
-        (</span></p></li>
-        </ul>
-        <p>Obecný vzorec chyb: <span class="math inline">\varepsilon =
-        \sum_{i = 1}^{n}{\left| f_{x_{i}}&#39;\left(
-        \widetilde{x_{1}},\ldots,\widetilde{x_{n}} \right) \right| \cdot
-        \varepsilon_{i}},\delta = \frac{\varepsilon}{\left\| f\left(
-        \left\lbrack \widetilde{x_{1}},\ldots,\widetilde{x_{n}}
-        \right\rbrack \right) \right\|}</span>.</p>
-        <h1 id="numerické-řešení-nelineárních-rovnic">Numerické řešení
-        nelineárních rovnic</h1>
-        <p><em>Definice:</em> Nechť funkce <span
-        class="math inline">f\mathbb{:R \rightarrow R,}D(f) =
-        \left\langle a,b \right\rangle</span>. Číslo <span
-        class="math inline">\overline{x} \in \left\langle a,b
-        \right\rangle</span> nazýváme <strong>kořen rovnice</strong>
-        <span class="math inline">\mathbf{f}\left( \mathbf{x}
-        \right)\mathbf{= 0}</span> právě tehdy, když <span
-        class="math inline">f(x) = 0</span>.</p>
-        <p><em>Věta (existence</em> <span
-        class="math inline">\overline{x}</span><em>):</em> Nechť <span
-        class="math inline">f</span> je spojitá na <span
-        class="math inline">\left\langle a,b \right\rangle</span>, <span
-        class="math inline">f(a) \cdot f(b) &lt; 0</span>, poté rovnice
-        <span class="math inline">f(x) = 0</span> má alespoň jeden
-        kořen.</p>
-        <h2 id="separace-kořenů">Separace kořenů</h2>
-        <p>Hledáme polohu a počet kořenů.</p>
-        <ul>
-        <li><p>Grafická separace kořenů z grafu funkce</p></li>
-        <li><p>Grafická separace kořenů rozkladem na více funkcí<br />
-        <em>Příklad:</em> <span class="math inline">f(x) : = e^{x} - 2x
-        - 1 = e^{x} - (2x + 1) = f_{1}(x) - f_{2}(x)</span> a hledáme
-        průsečík těchto funkcí.</p></li>
-        <li><p>Tabelace funkce</p></li>
-        </ul>
-        <h2 id="metoda-půlení-intervalů">Metoda půlení intervalů</h2>
-        <p>Mějme <span class="math inline">a_{0},b_{0}</span> takové, že
-        <span class="math inline">f\left( a_{0} \right) \cdot f\left(
-        b_{0} \right) &lt; 0</span>. Konstruujme posloupnosti <span
-        class="math inline">\left( a_{k} \right),\left( b_{k}
-        \right)</span> takových, že <span
-        class="math inline">\left\langle a_{0},b_{0} \right\rangle
-        \supset \left\langle a_{1},b_{1} \right\rangle \supset \ldots
-        \supset \left\langle a_{k},b_{k} \right\rangle \supset
-        \ldots</span> a současně <span class="math inline">\forall i \in
-        \mathbb{N}^{0}:f\left( a_{i} \right) \cdot f\left( b_{i} \right)
-        &lt; 0</span>. Máme-li <span class="math inline">\left\langle
-        a_{k},b_{k} \right\rangle</span>, vypočteme <span
-        class="math inline">s_{k + 1} = \frac{a_{k} + b_{k}}{2}</span>.
-        Je-li <span class="math inline">f\left( a_{k} \right) \cdot
-        f\left( s_{k + 1} \right) &lt; 0</span>, poté <span
-        class="math inline">a_{k + 1} ≔ a_{k}</span> a <span
-        class="math inline">b_{k + 1} ≔ s_{k + 1}</span>. Je-li <span
-        class="math inline">f\left( b_{k} \right) \cdot f\left( s_{k +
-        1} \right) &lt; 0</span>, poté <span class="math inline">b_{k +
-        1} ≔ b_{k}</span> a <span class="math inline">a_{k + 1} ≔ s_{k +
-        1}</span>.</p>
-        <p><em>Věta (konvergence půlení intervalů):</em> Metoda půlení
-        intervalů je konvergentní a navíc <span
-        class="math inline">\lim_{k \rightarrow \infty}s_{k} =
-        \overline{x}</span>.</p>
-        <p>Nechť <span class="math inline">\overline{x} \in \left\langle
-        a_{k},b_{k} \right\rangle,s_{k + 1} = \frac{a_{k} +
-        b_{k}}{2},d_{k} = \frac{\left( b_{k} - a_{k} \right)}{2}</span>.
-        Víme, že <span class="math inline">a_{k} = s_{k + 1} -
-        d_{k},b_{k} = s_{k + 1} + d_{k},\overline{x} \in \left\langle
-        s_{k + 1} - d_{k},s_{k + 1} + d_{k} \right\rangle</span>. Tudíž
-        <span class="math inline">\left| \overline{x} - s_{k + 1}
-        \right| \leq d_{k}</span>. Dále <span class="math inline">b_{k}
-        - a_{k} = \frac{b_{k - 1} - a_{k - 1}}{2} = \ldots = \frac{b_{0}
-        - a_{0}}{2^{k}}</span> a <span class="math inline">0 \leq \left|
-        \overline{x} - s_{k + 1} \right| \leq d_{k} = \frac{b_{0} -
-        a_{0}}{2^{k - 1}} \rightarrow 0</span>. Víme tudíž, že <span
-        class="math inline">\lim_{k \rightarrow \infty}\left|
-        \overline{x} - s_{k + 1} \right| = 0 \Rightarrow \lim_{k
-        \rightarrow \infty}s_{k + 1} = \overline{x}</span>.<span
-        class="math inline">\blacksquare</span></p>
-        <h2 id="metoda-prostých-iterací">Metoda prostých iterací</h2>
-        <p>Metoda prostých iterací je založena na konstrukci
-        posloupnosti aproximací <span class="math inline">\left( x_{k}
-        \right),k \in \mathbb{N}^{0}</span> daných rekurzivním předpisem
-        <span class="math inline">x_{k + 1} = G\left( x_{k}
-        \right)</span>.</p>
-        <p><em>Definice:</em> Zobrazení <span
-        class="math inline">G:\mathbb{R}^{n} \rightarrow
-        \mathbb{R}^{n}</span> se nazývá <strong>kontraktivní</strong>,
-        platí-li:</p>
-        <p><span class="math display">\exists\varrho \in (0,1):\forall
-        x,y \in \Omega:\left\| G(x) - G(y) \right\| \leq \varrho \cdot
-        \left\| x - y \right\|</span></p>
-        <p><em>Definice:</em> Nechť je zobrazení <span
-        class="math inline">G:\mathbb{R}^{n} \rightarrow
-        \mathbb{R}^{n}</span>. Bod <span
-        class="math inline">\overline{x} \in \mathbb{R}^{n}</span> se
-        nazývá <strong>pevný bod</strong> zobrazení <span
-        class="math inline">G</span>, platí-li <span
-        class="math inline">\overline{x} = G\left( \overline{x}
-        \right)</span>.</p>
-        <p><em>Věta (pevný bod):</em> Nechť <span
-        class="math inline">\Omega \subset \mathbb{R}^{n}</span> je
-        souvislá, omezená a uzavřená množina, zobrazení <span
-        class="math inline">G:\mathbb{R}^{n} \rightarrow
-        \mathbb{R}^{n}</span> je kontraktivní v <span
-        class="math inline">\Omega</span> a postupně aproximace <span
-        class="math inline">x_{k} : = G\left( x_{k - 1} \right)</span>
-        leží v <span class="math inline">\Omega</span>, poté:</p>
-        <ul>
-        <li><p><span class="math inline">\forall x_{0} \in
-        \mathbb{R}^{n}</span> platí, že posloupnost <span
-        class="math inline">\left( x_{k} \right)</span> konverguje a
-        <span class="math inline">\lim_{k \rightarrow \infty}x_{k} =
-        \overline{x}</span>;</p></li>
-        <li><p><span class="math inline">\overline{x}</span> je pevným
-        bodem <span class="math inline">G</span>;</p></li>
-        <li><p><span class="math inline">\left\| x_{k} - \overline{x}
-        \right\| \leq \frac{\varrho^{k}}{1 - \varrho} \cdot \left\|
-        x_{1} - x_{0} \right\|</span></p></li>
-        </ul>
-        <p><em>Věta (postačující podmínka konvergence metody prostých
-        iterací):</em> Nechť <span class="math inline">\Omega \subset
-        \mathbb{R}^{n}</span> je souvislá, omezená a uzavřená množina,
-        zobrazení <span class="math inline">G:\mathbb{R}^{n} \rightarrow
-        \mathbb{R}^{n}</span> je kontraktivní v <span
-        class="math inline">\Omega</span> a postupně aproximace <span
-        class="math inline">x_{k} : = G\left( x_{k - 1} \right)</span>
-        leží v <span class="math inline">\Omega</span>, nechť <span
-        class="math inline">G \in C^{2}(\Omega)</span> a <span
-        class="math inline">\forall x \in \Omega:\left\| G&#39;(x)
-        \right\| \leq M &lt; 1</span>, poté platí tvrzení věty o pevném
-        bodě.</p>
-      </main>
-
             <nav class="sidebar" id="TOC">
         <h2>Obsah</h2>
         <ul>
@@ -267,6 +60,218 @@ informatiky VŠB-TU Ostrava (bakalářský)</span>
         </ul></li>
         </ul>
       </nav>
-          </div>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Numerické metody 1</h1>
+        </header>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#korektnost-úloh-a-stabilita-výpočetních-postupů"
+          id="toc-korektnost-úloh-a-stabilita-výpočetních-postupů">Korektnost
+          úloh a stabilita výpočetních postupů</a>
+          <ul>
+          <li><a href="#typy-chyb" id="toc-typy-chyb">Typy chyb</a></li>
+          <li><a href="#aproximace-čísla"
+          id="toc-aproximace-čísla">Aproximace čísla</a></li>
+          <li><a href="#šíření-chyb-při-aritmetických-operací"
+          id="toc-šíření-chyb-při-aritmetických-operací">Šíření chyb při
+          aritmetických operací</a></li>
+          </ul></li>
+          <li><a href="#numerické-řešení-nelineárních-rovnic"
+          id="toc-numerické-řešení-nelineárních-rovnic">Numerické řešení
+          nelineárních rovnic</a>
+          <ul>
+          <li><a href="#separace-kořenů"
+          id="toc-separace-kořenů">Separace kořenů</a></li>
+          <li><a href="#metoda-půlení-intervalů"
+          id="toc-metoda-půlení-intervalů">Metoda půlení
+          intervalů</a></li>
+          <li><a href="#metoda-prostých-iterací"
+          id="toc-metoda-prostých-iterací">Metoda prostých
+          iterací</a></li>
+          </ul></li>
+          </ul>
+        </div>
+         <h1
+id="korektnost-úloh-a-stabilita-výpočetních-postupů">Korektnost úloh a
+stabilita výpočetních postupů</h1>
+<p><em>Definice:</em> <strong>Korektní úloha</strong> na dvojici <span
+class="math inline">\left( B_{1},B_{2} \right)</span> je taková úloha
+<span class="math inline">y = U(x),x \in B_{1},y \in B_{2}</span>,
+kde</p>
+<ul>
+<li><p><span class="math inline">\forall x \in B_{1}:\exists!y \in
+B_{2}</span>;</p></li>
+<li><p><span class="math inline">x_{n} \rightarrow x,U\left( x_{n}
+\right) = y_{n} \Rightarrow U\left( x_{n} \right) \rightarrow U(x) =
+y</span>, tj. řešení <span class="math inline">y</span> spojitě závisí
+na <span class="math inline">x</span>.</p></li>
+</ul>
+<p><em>Definice:</em> <strong>Dobře podmíněná úloha</strong> <span
+class="math inline">u(x)</span> je taková úloha, kde malá změna <span
+class="math inline">x</span> vyvolá malou změnu <span
+class="math inline">y</span>. Pro dobře podmíněnou úlohu platí<span
+class="math inline">1 &lt; c_{p} &lt; 100</span>, kde:</p>
+<p><span class="math display">c_{p} = \frac{\frac{\left\| \Delta y
+\right\|}{\left\| y \right\|}}{\frac{\left\| \Delta x \right\|}{\left\|
+x \right\|}}</span></p>
+<h2 id="typy-chyb">Typy chyb</h2>
+<ul>
+<li><p><strong>Chyba matematického modelu</strong> – vzniká nepřesným
+zachycením reality matematickým modelem</p></li>
+<li><p><strong>Chyba numerické metody</strong> – nahrazení <span
+class="math inline">\lim_{n \rightarrow \infty}a_{n} \approx
+a_{500}</span></p></li>
+<li><p><strong>Chyba aproximace</strong> – nahrazení matematické úlohy
+numerickou, např. spojitá vstupní data za diskrétní</p></li>
+<li><p><strong>Chyby ve vstupních datech</strong></p></li>
+<li><p><strong>Chyba aproximace</strong></p></li>
+</ul>
+<h2 id="aproximace-čísla">Aproximace čísla</h2>
+<p>Nechť <span class="math inline">x</span> je přesná hodnota a <span
+class="math inline">\widetilde{x} \approx x</span> je aproximace
+hodnoty. <strong>Absolutní chyba</strong> vyjadřuje <span
+class="math inline">\Delta x = x - \varepsilon</span>, přičemž hledáme
+<strong>odhad absolutní</strong> <strong>chyby</strong> <span
+class="math inline">\left\| \Delta x \right\| \leq \varepsilon</span>.
+<strong>Relativní chyba</strong> vyjadřuje <span
+class="math inline">\frac{\Delta x}{x}</span>, přičemž hledáme
+<strong>odhad relativní chyby</strong> <span
+class="math inline">\frac{\left\| \Delta x \right\|}{\left\| x \right\|}
+= \frac{\left\| \Delta x \right\|}{\left\| \widetilde{x} \right\|} \leq
+\delta</span>.</p>
+<h2 id="šíření-chyb-při-aritmetických-operací">Šíření chyb při
+aritmetických operací</h2>
+<p>Mějme odhady <span
+class="math inline">\widetilde{x_{1}},\widetilde{x_{2}}</span> a <span
+class="math inline">\varepsilon_{1},\varepsilon_{2},\delta_{1},\delta_{2}</span>.</p>
+<ul>
+<li><p>Součet <span class="math inline">\widetilde{u} =
+\widetilde{x_{1}} + \widetilde{x_{2}},\varepsilon = \varepsilon_{1} +
+\varepsilon_{2},\delta = \frac{1}{\left| \widetilde{x_{1}} -
+\widetilde{x_{2}} \right|} \cdot (</span></p></li>
+</ul>
+<p>Obecný vzorec chyb: <span class="math inline">\varepsilon = \sum_{i =
+1}^{n}{\left| f_{x_{i}}&#39;\left(
+\widetilde{x_{1}},\ldots,\widetilde{x_{n}} \right) \right| \cdot
+\varepsilon_{i}},\delta = \frac{\varepsilon}{\left\| f\left(
+\left\lbrack \widetilde{x_{1}},\ldots,\widetilde{x_{n}} \right\rbrack
+\right) \right\|}</span>.</p>
+<h1 id="numerické-řešení-nelineárních-rovnic">Numerické řešení
+nelineárních rovnic</h1>
+<p><em>Definice:</em> Nechť funkce <span class="math inline">f\mathbb{:R
+\rightarrow R,}D(f) = \left\langle a,b \right\rangle</span>. Číslo <span
+class="math inline">\overline{x} \in \left\langle a,b
+\right\rangle</span> nazýváme <strong>kořen rovnice</strong> <span
+class="math inline">\mathbf{f}\left( \mathbf{x} \right)\mathbf{=
+0}</span> právě tehdy, když <span class="math inline">f(x) =
+0</span>.</p>
+<p><em>Věta (existence</em> <span
+class="math inline">\overline{x}</span><em>):</em> Nechť <span
+class="math inline">f</span> je spojitá na <span
+class="math inline">\left\langle a,b \right\rangle</span>, <span
+class="math inline">f(a) \cdot f(b) &lt; 0</span>, poté rovnice <span
+class="math inline">f(x) = 0</span> má alespoň jeden kořen.</p>
+<h2 id="separace-kořenů">Separace kořenů</h2>
+<p>Hledáme polohu a počet kořenů.</p>
+<ul>
+<li><p>Grafická separace kořenů z grafu funkce</p></li>
+<li><p>Grafická separace kořenů rozkladem na více funkcí<br />
+<em>Příklad:</em> <span class="math inline">f(x) : = e^{x} - 2x - 1 =
+e^{x} - (2x + 1) = f_{1}(x) - f_{2}(x)</span> a hledáme průsečík těchto
+funkcí.</p></li>
+<li><p>Tabelace funkce</p></li>
+</ul>
+<h2 id="metoda-půlení-intervalů">Metoda půlení intervalů</h2>
+<p>Mějme <span class="math inline">a_{0},b_{0}</span> takové, že <span
+class="math inline">f\left( a_{0} \right) \cdot f\left( b_{0} \right)
+&lt; 0</span>. Konstruujme posloupnosti <span class="math inline">\left(
+a_{k} \right),\left( b_{k} \right)</span> takových, že <span
+class="math inline">\left\langle a_{0},b_{0} \right\rangle \supset
+\left\langle a_{1},b_{1} \right\rangle \supset \ldots \supset
+\left\langle a_{k},b_{k} \right\rangle \supset \ldots</span> a současně
+<span class="math inline">\forall i \in \mathbb{N}^{0}:f\left( a_{i}
+\right) \cdot f\left( b_{i} \right) &lt; 0</span>. Máme-li <span
+class="math inline">\left\langle a_{k},b_{k} \right\rangle</span>,
+vypočteme <span class="math inline">s_{k + 1} = \frac{a_{k} +
+b_{k}}{2}</span>. Je-li <span class="math inline">f\left( a_{k} \right)
+\cdot f\left( s_{k + 1} \right) &lt; 0</span>, poté <span
+class="math inline">a_{k + 1} ≔ a_{k}</span> a <span
+class="math inline">b_{k + 1} ≔ s_{k + 1}</span>. Je-li <span
+class="math inline">f\left( b_{k} \right) \cdot f\left( s_{k + 1}
+\right) &lt; 0</span>, poté <span class="math inline">b_{k + 1} ≔
+b_{k}</span> a <span class="math inline">a_{k + 1} ≔ s_{k +
+1}</span>.</p>
+<p><em>Věta (konvergence půlení intervalů):</em> Metoda půlení intervalů
+je konvergentní a navíc <span class="math inline">\lim_{k \rightarrow
+\infty}s_{k} = \overline{x}</span>.</p>
+<p>Nechť <span class="math inline">\overline{x} \in \left\langle
+a_{k},b_{k} \right\rangle,s_{k + 1} = \frac{a_{k} + b_{k}}{2},d_{k} =
+\frac{\left( b_{k} - a_{k} \right)}{2}</span>. Víme, že <span
+class="math inline">a_{k} = s_{k + 1} - d_{k},b_{k} = s_{k + 1} +
+d_{k},\overline{x} \in \left\langle s_{k + 1} - d_{k},s_{k + 1} + d_{k}
+\right\rangle</span>. Tudíž <span class="math inline">\left|
+\overline{x} - s_{k + 1} \right| \leq d_{k}</span>. Dále <span
+class="math inline">b_{k} - a_{k} = \frac{b_{k - 1} - a_{k - 1}}{2} =
+\ldots = \frac{b_{0} - a_{0}}{2^{k}}</span> a <span
+class="math inline">0 \leq \left| \overline{x} - s_{k + 1} \right| \leq
+d_{k} = \frac{b_{0} - a_{0}}{2^{k - 1}} \rightarrow 0</span>. Víme
+tudíž, že <span class="math inline">\lim_{k \rightarrow \infty}\left|
+\overline{x} - s_{k + 1} \right| = 0 \Rightarrow \lim_{k \rightarrow
+\infty}s_{k + 1} = \overline{x}</span>.<span
+class="math inline">\blacksquare</span></p>
+<h2 id="metoda-prostých-iterací">Metoda prostých iterací</h2>
+<p>Metoda prostých iterací je založena na konstrukci posloupnosti
+aproximací <span class="math inline">\left( x_{k} \right),k \in
+\mathbb{N}^{0}</span> daných rekurzivním předpisem <span
+class="math inline">x_{k + 1} = G\left( x_{k} \right)</span>.</p>
+<p><em>Definice:</em> Zobrazení <span
+class="math inline">G:\mathbb{R}^{n} \rightarrow \mathbb{R}^{n}</span>
+se nazývá <strong>kontraktivní</strong>, platí-li:</p>
+<p><span class="math display">\exists\varrho \in (0,1):\forall x,y \in
+\Omega:\left\| G(x) - G(y) \right\| \leq \varrho \cdot \left\| x - y
+\right\|</span></p>
+<p><em>Definice:</em> Nechť je zobrazení <span
+class="math inline">G:\mathbb{R}^{n} \rightarrow \mathbb{R}^{n}</span>.
+Bod <span class="math inline">\overline{x} \in \mathbb{R}^{n}</span> se
+nazývá <strong>pevný bod</strong> zobrazení <span
+class="math inline">G</span>, platí-li <span
+class="math inline">\overline{x} = G\left( \overline{x}
+\right)</span>.</p>
+<p><em>Věta (pevný bod):</em> Nechť <span class="math inline">\Omega
+\subset \mathbb{R}^{n}</span> je souvislá, omezená a uzavřená množina,
+zobrazení <span class="math inline">G:\mathbb{R}^{n} \rightarrow
+\mathbb{R}^{n}</span> je kontraktivní v <span
+class="math inline">\Omega</span> a postupně aproximace <span
+class="math inline">x_{k} : = G\left( x_{k - 1} \right)</span> leží
+v <span class="math inline">\Omega</span>, poté:</p>
+<ul>
+<li><p><span class="math inline">\forall x_{0} \in \mathbb{R}^{n}</span>
+platí, že posloupnost <span class="math inline">\left( x_{k}
+\right)</span> konverguje a <span class="math inline">\lim_{k
+\rightarrow \infty}x_{k} = \overline{x}</span>;</p></li>
+<li><p><span class="math inline">\overline{x}</span> je pevným bodem
+<span class="math inline">G</span>;</p></li>
+<li><p><span class="math inline">\left\| x_{k} - \overline{x} \right\|
+\leq \frac{\varrho^{k}}{1 - \varrho} \cdot \left\| x_{1} - x_{0}
+\right\|</span></p></li>
+</ul>
+<p><em>Věta (postačující podmínka konvergence metody prostých
+iterací):</em> Nechť <span class="math inline">\Omega \subset
+\mathbb{R}^{n}</span> je souvislá, omezená a uzavřená množina, zobrazení
+<span class="math inline">G:\mathbb{R}^{n} \rightarrow
+\mathbb{R}^{n}</span> je kontraktivní v <span
+class="math inline">\Omega</span> a postupně aproximace <span
+class="math inline">x_{k} : = G\left( x_{k - 1} \right)</span> leží
+v <span class="math inline">\Omega</span>, nechť <span
+class="math inline">G \in C^{2}(\Omega)</span> a <span
+class="math inline">\forall x \in \Omega:\left\| G&#39;(x) \right\| \leq
+M &lt; 1</span>, poté platí tvrzení věty o pevném bodě.</p>
+      </main>
+    </div>
   </body>
 </html>

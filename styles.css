@@ -1,121 +1,98 @@
-/* styles.css - FINAL POLISHED VERSION */
+/* styles.css - FINAL VERSION WITH PRINT STYLES */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700&family=Roboto+Slab:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 /* --- GLOBAL & INDEX PAGE --- */
 body { font-family: 'Open Sans', sans-serif; line-height: 1.6; margin: 0; background-color: #f8f9fa; color: #212529; }
 .container { max-width: 900px; margin: 2rem auto; padding: 1rem 2rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.file-group-name { font-weight: normal; font-style: italic; color: #6c757d; font-size: 0.85em; margin-left: 0.5em; }
 #searchInput { width: 100%; padding: 0.8rem; font-size: 1.2em; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 2rem; box-sizing: border-box; }
 .directory-group.hidden, .active-files-group.hidden { display: none; }
 .badge { background-color: #17a2b8; color: white; padding: 0.2em 0.6em; font-size: 0.7em; font-weight: bold; border-radius: 10px; margin-left: 0.75rem; vertical-align: middle; text-transform: uppercase; }
-.file-group-name {
-    font-weight: normal;
-    font-style: italic;
-    color: #6c757d;
-    font-size: 0.85em;
-    margin-left: 0.5em;
-}
 
 /* --- NOTES PAGE & SHARED HEADER --- */
-.main-header { background-color: #fff; border-bottom: 1px solid #dee2e6; padding: 0.8rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-.header-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 1.5rem; }
+.main-header { background-color: #fff; border-bottom: 1px solid #dee2e6; padding: 0.8rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
+.header-content { display: flex; align-items: center; gap: 1.5rem; min-width: 0; }
 .home-link { font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 1.2em; color: #343a40; text-decoration: none; padding-right: 1.5rem; border-right: 1px solid #ced4da; flex-shrink: 0; }
 .back-button { color: #6c757d; text-decoration: none; font-size: 1.1em; }
 .back-button:hover { color: #007bff; }
 .breadcrumb-item, .breadcrumb-separator, .breadcrumb-item-active { font-size: 1.1em; color: #6c757d; white-space: nowrap; }
 .breadcrumb-item-active { font-weight: bold; color: #343a40; overflow: hidden; text-overflow: ellipsis; }
 .breadcrumb-separator { margin: 0 0.5rem; }
+.header-actions { display: flex; gap: 0.75rem; }
+.action-button { background-color: #e9ecef; color: #495057; padding: 0.4rem 0.8rem; border-radius: 5px; text-decoration: none; font-size: 0.9em; font-weight: bold; border: 1px solid #ced4da; transition: background-color 0.2s, color 0.2s; }
+.action-button:hover { background-color: #007bff; color: #fff; text-decoration: none; border-color: #0056b3; }
 
-.page-container { display: flex; flex-direction: row-reverse; max-width: 1400px; margin: 2rem auto; gap: 2rem; padding: 0 2rem; }
+/* --- SCREEN-ONLY LAYOUT --- */
+.page-container { display: flex; max-width: 1400px; margin: 2rem auto; gap: 2rem; padding: 0 2rem; }
+.content { flex-grow: 1; min-width: 0; }
+.sidebar { flex-basis: 300px; flex-shrink: 0; position: sticky; top: 80px; height: calc(100vh - 100px); overflow-y: auto; }
+.toc-print-only { display: none; } /* Hide the print TOC on screen */
 
-/* THIS IS THE KEY FIX FOR SCROLLSPY */
-.content {
-  flex-grow: 1;
-  background: #fff;
-  padding: 2rem 3rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  min-width: 0;
-  overflow-y: auto; /* Make the content area scrollable */
-  height: calc(100vh - (2rem * 2) - 58px); /* Full viewport height minus page margins and header height */
-}
-/* END OF FIX */
-
-h1 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 2.2em;
-  color: #2c3e50;
-  
-  /* NEW: Add a strong visual separator for top-level headings */
-  padding-bottom: 0.5em;
-  border-bottom: 3px solid #34495e;
-  margin-top: 3rem; /* Add more space above H1 */
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 1.7em;
-  color: #34495e;
-  
-  /* Use a lighter border for H2 to make it less dominant than H1 */
-  border-bottom: 1px solid #ced4da;
-  padding-bottom: 0.4em;
-  margin-top: 2.5rem;
-}
-
-h3, h4, h5, h6 {
-  font-family: "Roboto Slab", serif;
-  font-weight: 700;
-  color: #343a40;
-}
-
-/* Make sure the main title in the content block doesn't get the huge border */
-h1.title {
-  font-size: 2.5em;
-  text-align: left;
-  border-bottom: none; /* Remove the border from the page title */
-  margin-top: 0;
-}
-
+/* --- GENERAL DOCUMENT STYLING --- */
+h1, h2, h3, h4, h5, h6 { font-family: 'Roboto Slab', serif; font-weight: 700; color: #343a40; }
+h1 { font-size: 2.2em; padding-bottom: 0.5em; border-bottom: 3px solid #34495e; margin-top: 3rem; margin-bottom: 1.5rem; }
+h2 { font-size: 1.7em; border-bottom: 1px solid #ced4da; padding-bottom: 0.4em; margin-top: 2.5rem; }
+h1.title { font-size: 2.5em; text-align: left; border-bottom: none; margin-top: 0; }
 a, a:visited { color: #007bff; text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; border-radius: 4px; }
 blockquote { border-left: 4px solid #e9ecef; padding-left: 1rem; color: #6c757d; font-style: italic; }
 
 /* --- SIDEBAR TOC STYLING --- */
-.sidebar {
-  flex-basis: 300px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 80px;
-  height: calc(100vh - 100px);
-  overflow-y: auto;
-}
-.sidebar h2 { font-size: 1.2em; font-family: 'Roboto Slab', serif; color: #495057; border-bottom: 1px solid #e9ecef; padding-bottom: 0.5rem; }
+.sidebar h2 { font-size: 1.2em; border-bottom: 1px solid #e9ecef; padding-bottom: 0.5rem; }
 .sidebar ul { list-style: none; padding-left: 0.5rem; }
 .sidebar a { text-decoration: none; color: #495057; display: block; padding: 0.2rem 0; border-left: 3px solid transparent; padding-left: 1rem; transition: color 0.2s, border-color 0.2s; }
 .sidebar a.active, .sidebar a:hover { color: #007bff; border-left-color: #007bff; }
 .sidebar ul a { font-weight: bold; font-size: 0.9em; }
-.sidebar ul ul a {
-  font-weight: normal;
-  font-size: 0.85em;
-  font-style: italic;
-  color: #6c757d;
-  padding-left: 2rem;
-  border-left-width: 2px;
-}
+.sidebar ul ul a { font-weight: normal; font-size: 0.85em; font-style: italic; color: #6c757d; padding-left: 2rem; border-left-width: 2px; }
 .sidebar ul ul a:hover { font-style: normal; }
 
 /* --- NESTED LIST STYLING FOR MAIN CONTENT --- */
-.content ul { list-style: disc; padding-left: 2em; }
-.content ol { list-style: decimal; padding-left: 2em; }
-.content li { margin-bottom: 0.5em; }
-.content ul ul, .content ol ul, .content ul ol, .content ol ol { list-style-type: circle; margin-top: 0.5em; }
-.content ul ul ul, .content ol ul ul, .content ul ol ul, .content ol ol ul { list-style-type: square; }
-.content ul ul ul ul, .content ol ul ul ul, .content ul ol ul ul, .content ol ol ul ul { list-style-type: disc; color: #555; }
-.content ul ul ul ul ul, .content ol ul ul ul ul, .content ul ol ul ul ul, .content ol ol ul ul ul { list-style-type: circle; color: #777; }
+.content ul, .container ul { list-style: disc; padding-left: 2em; }
+.content ol, .container ol { list-style: decimal; padding-left: 2em; }
+.content li, .container li { margin-bottom: 0.5em; padding: 0; }
 
-/* --- INDEX PAGE STYLING --- */
-.container ul { list-style: none; padding: 0; }
-.container li { margin-bottom: 0.75rem; padding: 0.25rem 0; }
+/* ================================================= */
+/* --- PRINT STYLES FOR HIGH-FIDELITY PDF OUTPUT --- */
+/* ================================================= */
+@media print {
+  body {
+    background-color: #fff; /* White background for print */
+    font-size: 11pt; /* A standard print font size */
+  }
+
+  /* Hide all interactive elements */
+  .main-header, .sidebar {
+    display: none !important;
+  }
+
+  /* Show the print-only TOC */
+  .toc-print-only {
+    display: block !important;
+    page-break-after: always; /* Start the main content on a new page after the TOC */
+  }
+
+  /* Reset the main page layout to a single column */
+  .page-container, .content {
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  /* Ensure links are still identifiable */
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Improve page break behavior */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  blockquote, img {
+    page-break-inside: avoid;
+  }
+}

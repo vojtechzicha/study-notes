@@ -4,24 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Fyzika I - Studijní poznámky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Load our local stylesheet and custom loader script -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="katex-loader.js"></script>
   </head>
@@ -30,195 +17,20 @@
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
         <a href="index.html" class="home-link">Univerzitní studium</a>
-        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
         <span class="breadcrumb-item">Fakulta elektrotechniky a
 informatiky VŠB-TU Ostrava (bakalářský)</span>
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item-active">Fyzika I</span>
       </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
     </header>
 
+    <!-- The .page-container is now the main layout wrapper -->
     <div class="page-container">
-      <main class="content">
-        <header id="title-block-header">
-          <h1 class="title">Fyzika I</h1>
-        </header>
-        <p><strong>Klasická mechanika hmotného bodu</strong> zkoumá
-        mechanický pohyb – změnu vzájemné polohy tělese v prostoru a
-        v čase, jeho popis v prostoru a v čase a jeho příčiny, kde
-        rychlosti těles jsou mnohem menší než rychlost světla <span
-        class="math inline">c</span>. <strong>Hmotný bod</strong> je
-        fiktivní objekt, který má všechny relevantní znaky tělesa, které
-        reprezentuje a jeho geometrické rozměry jsou v daných
-        souvislostech zanedbatelně malé.</p>
-        <h1 id="kinematika">Kinematika</h1>
-        <p>Matematický popis pohybu v prostoru a v čase vzhledem
-        k vhodné vztažné soustavě – kartézská, válcová a kulová. Mezi
-        základní skalární veličiny patří dráha <span
-        class="math inline">s</span>, okamžitá rychlost <span
-        class="math inline">v</span> a okamžité zrychlení <span
-        class="math inline">a</span>, vedlejší vektorové patří vektor
-        elementárního úhlového otočení <span
-        class="math inline">\varphi</span>, vektor úhlové rychlosti
-        <span class="math inline">\omega</span> a vektor úhlového
-        zrychlení <span class="math inline">\varepsilon</span>.</p>
-        <p>Definujme střední průměrnou rychlost <span
-        class="math inline">v_{s} = \frac{\Delta s}{\Delta t}</span> a
-        okamžitou rychlost <span class="math inline">v = \lim_{\Delta t
-        \rightarrow 0}v_{s} = \frac{s}{dt}</span>, střední zrychlení
-        <span class="math inline">a_{s} = \frac{\Delta v}{\Delta
-        t}</span>, okamžité zrychlení <span class="math inline">a =
-        \lim_{\Delta t \rightarrow 0}\frac{\Delta v}{\Delta t} =
-        \frac{dv}{dt}</span>. V případě rovnoměrně zrychleného pohybu
-        <span class="math inline">a = \frac{dv}{dt} = konst.\ ,v =
-        \frac{ds}{dt} = at + v_{0},s = \frac{1}{2}at^{2} + v_{0}t +
-        s_{0}</span>. Pro <strong>volný pád</strong> platí <span
-        class="math inline">a = g,v_{0} = 0,v = gt,s =
-        \frac{1}{2}gt^{2}</span>, pro <strong>svislý vrh dolů</strong>
-        platí <span class="math inline">a = g,v_{0} \neq 0,v = v_{0} +
-        gt,s = v_{0}t + \frac{1}{2}gt^{2}</span> a pro <strong>svislý
-        vrh vzhůru</strong> platí <span class="math inline">a = -
-        g,v_{0} \neq 0,v = v_{0} - gt,s = v_{0}t -
-        \frac{1}{2}gt^{2}</span>.</p>
-        <p>Pro <strong>vektorový popis hmotného bodu</strong> zavádíme
-        polohový vektor <span class="math inline">r = r(t)</span>,
-        vektor průměrné rychlosti <span class="math inline">v_{s} =
-        \frac{\Delta r}{\Delta t}</span> ve směru <span
-        class="math inline">\Delta r</span> sečny trajektorie, vektor
-        okamžité rychlosti <span class="math inline">v = \lim_{\Delta t
-        \rightarrow 0}\frac{\Delta r}{\Delta t} = \frac{dr}{dt} =
-        \frac{dx}{dt}i + \frac{dy}{dt}j + \frac{dz}{dt}k</span> ve směru
-        tečny k trajektorii, vektor okamžitého zrychlení <span
-        class="math inline">a = \frac{dv}{dt} =
-        \frac{d^{2}r}{dt^{2}}</span>, zrychlení rozkládáme na tečnou a
-        normálovou složku <span class="math inline">a = \frac{dv}{dt} =
-        \frac{d(v\tau)}{dt} = \frac{dv}{dt}\tau + \frac{d\tau}{dt}v =
-        \frac{dv}{dt}\tau - \frac{v^{2}}{R}n = a_{r} + a_{n}</span>, kde
-        <span class="math inline">\tau</span> je jednotkový vekotr ve
-        směru tečny a <span class="math inline">n</span> je jednotkový
-        vektor ve směru normály k trajektorii pohybu a <span
-        class="math inline">R</span> je poloměr křivosti trajektorie.
-        Platí, že <span class="math inline">a_{r} = \frac{dv}{dt},a_{n}
-        = \frac{v^{2}}{R},a = \sqrt{\left( \frac{dv}{dt} \right)^{2} +
-        \left( \frac{v^{2}}{R} \right)^{2}}</span>. Dále zavádíme
-        úhlovou rychlost <span class="math inline">\omega =
-        \frac{d\varphi}{dt}</span>, kde <span
-        class="math inline">\varphi</span> je úhlová dráha (středový
-        úhel), o kterou se otočí průvodič hmotného bodu vedený ze středu
-        kruhové dráhy. Zavádíme úhlové zrychlení <span
-        class="math inline">\varepsilon = \frac{d\omega}{dt} =
-        \frac{d^{2}\varphi}{dt^{2}}</span>.</p>
-        <p>Kruhový pohyb je zvláštním případem křivočarého pohybu
-        v jedné rovině. Pro elementární úhlovou dráhu platí vztah <span
-        class="math inline">d\varphi = \frac{ds}{R}</span> a pro úhlovou
-        rychlost <span class="math inline">\omega = \frac{d\varphi}{dt}
-        = \frac{ds}{Rdt}</span> a pro obvodovou rychlost <span
-        class="math inline">v = \omega R</span>, pro úhlové zrychlení
-        <span class="math inline">\varepsilon = \frac{d\omega}{dt} =
-        \frac{a}{R}</span>. V případě rovnoměrného kruhového pohybu
-        platí <span class="math inline">\omega =
-        \frac{d\varphi}{dt},\omega&#39; = 0,\varphi(t) = \omega t +
-        \varphi_{0},T = \frac{2\pi R}{v} = \frac{2\pi}{\omega} =
-        \frac{1}{f}</span> V případě rovnoměrně zrychleného kruhového
-        pohybu platí <span class="math inline">\varepsilon =
-        konst.,\omega = \varepsilon t + t_{0},\varphi =
-        \frac{1}{2}\varepsilon t^{2} + \omega_{0}t +
-        \varphi_{0}</span>.</p>
-        <p>Vektorové vyjádření křivočarého pohybu: mějme polohové
-        vektory <span class="math inline">r(t)</span> a <span
-        class="math inline">r(t + dt)</span>, které svírají úhel <span
-        class="math inline">d\varphi</span>. Tomuto úhlu přiradíme
-        vektor tak <span class="math inline">d\varphi</span> tak, aby
-        byl kolmý na vektory <span class="math inline">r(t)</span> a
-        <span class="math inline">r(t + dt)</span> a jeho velikost byla
-        <span class="math inline">d\varphi</span>. Pro elementární změnu
-        platí <span class="math inline">dr = d\varphi \times r</span>.
-        Zavádíme vektor úhlové rychlosti <span
-        class="math inline">\omega = \frac{d\varphi}{dt}</span>, vektor
-        obvodové rychlosti <span class="math inline">v = \omega \times
-        r</span>, vektor úhlového zrychlení <span
-        class="math inline">\varepsilon = \frac{d\omega}{dt}</span> a
-        vektor obvodového zrychlení <span class="math inline">a =
-        \frac{dv}{dt} = \varepsilon \times r + \omega \times v =
-        \varepsilon \times r - R\omega^{2}n</span>, kde <span
-        class="math inline">n</span> je jednotkový vektor vnější
-        normály. Tudíž definujeme tečné zrychlení <span
-        class="math inline">a_{r} = \varepsilon \times r</span> a
-        normálové zrychlení <span class="math inline">a_{n} = -
-        R\omega^{2}n</span>.</p>
-        <h1 id="dynamika">Dynamika</h1>
-        <p><strong>Hmotnost</strong> je skalární kvantitativní míra
-        tíhových a setrvačných vlastností tělesa, je dána vnitřní
-        strukturou těles, nezávisí na volbě vztažné soustavy a platí
-        zákon zachování celkové hmotnosti. Jednotkou hmotnosti je 1 kg.
-        <strong>Hybnost</strong> je vektorová kvantitativní míra
-        mechanického pohybu, je rovnoběžná s vektorem rychlosti a
-        charakterizuje míru mechanického pohybu z hlediska
-        interakcí.</p>
-        <p><strong>Síla</strong> je vektorová kvantitativní míra
-        vzájemného působení těles, které má za následek buďto změnu
-        jejich pohybového stavu nebo jejich deformaci. Jedná se o
-        klouzavý vektor – pojem síly je abstrakcí, nemůže reálně
-        existovat bez hmotných objektů, protože vyjadřuje míru jejich
-        působení. Silové působení – interakci – mezi materiální objekty
-        je projevem existence polí. Rozlišujeme pole gravitační,
-        elektromagnetické, jaderných sil a slabých interakcí. Částice
-        působí ve čtyřech typech:</p>
-        <ol type="1">
-        <li><p>Silné interakce charakterizují vzájemné působení mezi
-        nukleony výměnou mezonů.</p></li>
-        <li><p>Elektromagnetické interakce nabitých částic jsou
-        provázeny výměnou fotonů.</p></li>
-        <li><p>Slabé interakce vedou k přeměně částic na jiné těžké
-        částice, přitom se uvolňují elektrony a neutrina.</p></li>
-        <li><p>Gravitační interakce probíhá mezi elektricky neutrálními
-        částicemi a je zprostředkována výměnou částic gravitačního pole
-        – gravitonů.</p></li>
-        </ol>
-        <h2 id="příklady-sil">Příklady sil</h2>
-        <ul>
-        <li><p><strong>Tíhová síla</strong> <span class="math inline">G
-        = mg</span>, kde <span class="math inline">g</span> je vektor
-        zemského tíhového zrychlení.</p></li>
-        <li><p><strong>Síla odporu prostředí</strong> <span
-        class="math inline">F_{r}</span>, která působí při pohybu těles
-        ve vazkém prostředí. Je rovnoběžná s vektorem rychlosti a má
-        opačný smysl. <span class="math inline">F_{r} =
-        \frac{1}{2}\varrho C_{x}v^{n}</span>.</p></li>
-        <li><p><strong>Síla smykového tření</strong> <span
-        class="math inline">F_{t}</span> vzniká při smýkání pevného
-        tělesa po podložce. Jestliže není pohyb ve svislém směru. <span
-        class="math inline">N + G = 0,N = G,F_{t} = \mu N</span>, kde
-        <span class="math inline">\mu</span> je součinitel smykového
-        tření.</p></li>
-        </ul>
-        <h2 id="newtonovy-pohybové-zákony">Newtonovy pohybové
-        zákony</h2>
-        <ul>
-        <li><p>Zákon setrvačnosti – těleso setrvává ve stavu
-        rovnoměrného přímočarého pohybu nebo klidu pokud není nuceno
-        působením jiných těles tento stav změnit.</p></li>
-        <li><p>Zákon síly – časová změna hybnosti hmotného bodu je rovna
-        výsledné síle, která na těleso působí. <span
-        class="math inline">F = \frac{dp}{dt}</span>, pokud je hmotnost
-        konstantní, pak <span class="math inline">F = m \cdot
-        \frac{dv}{dt} = ma</span>.</p></li>
-        <li><p>Zákon akce a reakce – jestliže těleso <span
-        class="math inline">A</span></p></li>
-        </ul>
-        <h2 id="příklady-dynamiky">Příklady dynamiky</h2>
-        <ul>
-        <li><p>Nakloněná rovina pod sklonem <span
-        class="math inline">\alpha</span>, platí pohybová rovnice <span
-        class="math inline">ma = \sum_{}^{}F_{i} = G + N + T</span>, kde
-        <span class="math inline">ma_{x} = m \cdot \frac{d^{2}x}{dt^{2}}
-        = G\sin\alpha - T</span>, <span class="math inline">ma_{y} =
-        \frac{d^{2}y}{dt^{2}} = 0 = - G\cos\alpha + N</span> a <span
-        class="math inline">T = \mu N</span>. Pro <span
-        class="math inline">N = G\cos\alpha</span></p></li>
-        </ul>
-      </main>
-
             <nav class="sidebar" id="TOC">
         <h2>Obsah</h2>
         <ul>
@@ -236,6 +48,186 @@ informatiky VŠB-TU Ostrava (bakalářský)</span>
         </ul></li>
         </ul>
       </nav>
-          </div>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Fyzika I</h1>
+        </header>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#kinematika"
+          id="toc-kinematika">Kinematika</a></li>
+          <li><a href="#dynamika" id="toc-dynamika">Dynamika</a>
+          <ul>
+          <li><a href="#příklady-sil" id="toc-příklady-sil">Příklady
+          sil</a></li>
+          <li><a href="#newtonovy-pohybové-zákony"
+          id="toc-newtonovy-pohybové-zákony">Newtonovy pohybové
+          zákony</a></li>
+          <li><a href="#příklady-dynamiky"
+          id="toc-příklady-dynamiky">Příklady dynamiky</a></li>
+          </ul></li>
+          </ul>
+        </div>
+         <p><strong>Klasická mechanika hmotného bodu</strong> zkoumá
+mechanický pohyb – změnu vzájemné polohy tělese v prostoru a v čase,
+jeho popis v prostoru a v čase a jeho příčiny, kde rychlosti těles jsou
+mnohem menší než rychlost světla <span class="math inline">c</span>.
+<strong>Hmotný bod</strong> je fiktivní objekt, který má všechny
+relevantní znaky tělesa, které reprezentuje a jeho geometrické rozměry
+jsou v daných souvislostech zanedbatelně malé.</p>
+<h1 id="kinematika">Kinematika</h1>
+<p>Matematický popis pohybu v prostoru a v čase vzhledem k vhodné
+vztažné soustavě – kartézská, válcová a kulová. Mezi základní skalární
+veličiny patří dráha <span class="math inline">s</span>, okamžitá
+rychlost <span class="math inline">v</span> a okamžité zrychlení <span
+class="math inline">a</span>, vedlejší vektorové patří vektor
+elementárního úhlového otočení <span class="math inline">\varphi</span>,
+vektor úhlové rychlosti <span class="math inline">\omega</span> a vektor
+úhlového zrychlení <span class="math inline">\varepsilon</span>.</p>
+<p>Definujme střední průměrnou rychlost <span class="math inline">v_{s}
+= \frac{\Delta s}{\Delta t}</span> a okamžitou rychlost <span
+class="math inline">v = \lim_{\Delta t \rightarrow 0}v_{s} =
+\frac{s}{dt}</span>, střední zrychlení <span class="math inline">a_{s} =
+\frac{\Delta v}{\Delta t}</span>, okamžité zrychlení <span
+class="math inline">a = \lim_{\Delta t \rightarrow 0}\frac{\Delta
+v}{\Delta t} = \frac{dv}{dt}</span>. V případě rovnoměrně zrychleného
+pohybu <span class="math inline">a = \frac{dv}{dt} = konst.\ ,v =
+\frac{ds}{dt} = at + v_{0},s = \frac{1}{2}at^{2} + v_{0}t +
+s_{0}</span>. Pro <strong>volný pád</strong> platí <span
+class="math inline">a = g,v_{0} = 0,v = gt,s = \frac{1}{2}gt^{2}</span>,
+pro <strong>svislý vrh dolů</strong> platí <span class="math inline">a =
+g,v_{0} \neq 0,v = v_{0} + gt,s = v_{0}t + \frac{1}{2}gt^{2}</span> a
+pro <strong>svislý vrh vzhůru</strong> platí <span class="math inline">a
+= - g,v_{0} \neq 0,v = v_{0} - gt,s = v_{0}t -
+\frac{1}{2}gt^{2}</span>.</p>
+<p>Pro <strong>vektorový popis hmotného bodu</strong> zavádíme polohový
+vektor <span class="math inline">r = r(t)</span>, vektor průměrné
+rychlosti <span class="math inline">v_{s} = \frac{\Delta r}{\Delta
+t}</span> ve směru <span class="math inline">\Delta r</span> sečny
+trajektorie, vektor okamžité rychlosti <span class="math inline">v =
+\lim_{\Delta t \rightarrow 0}\frac{\Delta r}{\Delta t} = \frac{dr}{dt} =
+\frac{dx}{dt}i + \frac{dy}{dt}j + \frac{dz}{dt}k</span> ve směru tečny
+k trajektorii, vektor okamžitého zrychlení <span class="math inline">a =
+\frac{dv}{dt} = \frac{d^{2}r}{dt^{2}}</span>, zrychlení rozkládáme na
+tečnou a normálovou složku <span class="math inline">a = \frac{dv}{dt} =
+\frac{d(v\tau)}{dt} = \frac{dv}{dt}\tau + \frac{d\tau}{dt}v =
+\frac{dv}{dt}\tau - \frac{v^{2}}{R}n = a_{r} + a_{n}</span>, kde <span
+class="math inline">\tau</span> je jednotkový vekotr ve směru tečny a
+<span class="math inline">n</span> je jednotkový vektor ve směru normály
+k trajektorii pohybu a <span class="math inline">R</span> je poloměr
+křivosti trajektorie. Platí, že <span class="math inline">a_{r} =
+\frac{dv}{dt},a_{n} = \frac{v^{2}}{R},a = \sqrt{\left( \frac{dv}{dt}
+\right)^{2} + \left( \frac{v^{2}}{R} \right)^{2}}</span>. Dále zavádíme
+úhlovou rychlost <span class="math inline">\omega =
+\frac{d\varphi}{dt}</span>, kde <span class="math inline">\varphi</span>
+je úhlová dráha (středový úhel), o kterou se otočí průvodič hmotného
+bodu vedený ze středu kruhové dráhy. Zavádíme úhlové zrychlení <span
+class="math inline">\varepsilon = \frac{d\omega}{dt} =
+\frac{d^{2}\varphi}{dt^{2}}</span>.</p>
+<p>Kruhový pohyb je zvláštním případem křivočarého pohybu v jedné
+rovině. Pro elementární úhlovou dráhu platí vztah <span
+class="math inline">d\varphi = \frac{ds}{R}</span> a pro úhlovou
+rychlost <span class="math inline">\omega = \frac{d\varphi}{dt} =
+\frac{ds}{Rdt}</span> a pro obvodovou rychlost <span
+class="math inline">v = \omega R</span>, pro úhlové zrychlení <span
+class="math inline">\varepsilon = \frac{d\omega}{dt} =
+\frac{a}{R}</span>. V případě rovnoměrného kruhového pohybu platí <span
+class="math inline">\omega = \frac{d\varphi}{dt},\omega&#39; =
+0,\varphi(t) = \omega t + \varphi_{0},T = \frac{2\pi R}{v} =
+\frac{2\pi}{\omega} = \frac{1}{f}</span> V případě rovnoměrně
+zrychleného kruhového pohybu platí <span class="math inline">\varepsilon
+= konst.,\omega = \varepsilon t + t_{0},\varphi = \frac{1}{2}\varepsilon
+t^{2} + \omega_{0}t + \varphi_{0}</span>.</p>
+<p>Vektorové vyjádření křivočarého pohybu: mějme polohové vektory <span
+class="math inline">r(t)</span> a <span class="math inline">r(t +
+dt)</span>, které svírají úhel <span
+class="math inline">d\varphi</span>. Tomuto úhlu přiradíme vektor tak
+<span class="math inline">d\varphi</span> tak, aby byl kolmý na vektory
+<span class="math inline">r(t)</span> a <span class="math inline">r(t +
+dt)</span> a jeho velikost byla <span
+class="math inline">d\varphi</span>. Pro elementární změnu platí <span
+class="math inline">dr = d\varphi \times r</span>. Zavádíme vektor
+úhlové rychlosti <span class="math inline">\omega =
+\frac{d\varphi}{dt}</span>, vektor obvodové rychlosti <span
+class="math inline">v = \omega \times r</span>, vektor úhlového
+zrychlení <span class="math inline">\varepsilon =
+\frac{d\omega}{dt}</span> a vektor obvodového zrychlení <span
+class="math inline">a = \frac{dv}{dt} = \varepsilon \times r + \omega
+\times v = \varepsilon \times r - R\omega^{2}n</span>, kde <span
+class="math inline">n</span> je jednotkový vektor vnější normály. Tudíž
+definujeme tečné zrychlení <span class="math inline">a_{r} = \varepsilon
+\times r</span> a normálové zrychlení <span class="math inline">a_{n} =
+- R\omega^{2}n</span>.</p>
+<h1 id="dynamika">Dynamika</h1>
+<p><strong>Hmotnost</strong> je skalární kvantitativní míra tíhových a
+setrvačných vlastností tělesa, je dána vnitřní strukturou těles,
+nezávisí na volbě vztažné soustavy a platí zákon zachování celkové
+hmotnosti. Jednotkou hmotnosti je 1 kg. <strong>Hybnost</strong> je
+vektorová kvantitativní míra mechanického pohybu, je rovnoběžná
+s vektorem rychlosti a charakterizuje míru mechanického pohybu
+z hlediska interakcí.</p>
+<p><strong>Síla</strong> je vektorová kvantitativní míra vzájemného
+působení těles, které má za následek buďto změnu jejich pohybového stavu
+nebo jejich deformaci. Jedná se o klouzavý vektor – pojem síly je
+abstrakcí, nemůže reálně existovat bez hmotných objektů, protože
+vyjadřuje míru jejich působení. Silové působení – interakci – mezi
+materiální objekty je projevem existence polí. Rozlišujeme pole
+gravitační, elektromagnetické, jaderných sil a slabých interakcí.
+Částice působí ve čtyřech typech:</p>
+<ol type="1">
+<li><p>Silné interakce charakterizují vzájemné působení mezi nukleony
+výměnou mezonů.</p></li>
+<li><p>Elektromagnetické interakce nabitých částic jsou provázeny
+výměnou fotonů.</p></li>
+<li><p>Slabé interakce vedou k přeměně částic na jiné těžké částice,
+přitom se uvolňují elektrony a neutrina.</p></li>
+<li><p>Gravitační interakce probíhá mezi elektricky neutrálními
+částicemi a je zprostředkována výměnou částic gravitačního pole –
+gravitonů.</p></li>
+</ol>
+<h2 id="příklady-sil">Příklady sil</h2>
+<ul>
+<li><p><strong>Tíhová síla</strong> <span class="math inline">G =
+mg</span>, kde <span class="math inline">g</span> je vektor zemského
+tíhového zrychlení.</p></li>
+<li><p><strong>Síla odporu prostředí</strong> <span
+class="math inline">F_{r}</span>, která působí při pohybu těles ve
+vazkém prostředí. Je rovnoběžná s vektorem rychlosti a má opačný smysl.
+<span class="math inline">F_{r} = \frac{1}{2}\varrho
+C_{x}v^{n}</span>.</p></li>
+<li><p><strong>Síla smykového tření</strong> <span
+class="math inline">F_{t}</span> vzniká při smýkání pevného tělesa po
+podložce. Jestliže není pohyb ve svislém směru. <span
+class="math inline">N + G = 0,N = G,F_{t} = \mu N</span>, kde <span
+class="math inline">\mu</span> je součinitel smykového tření.</p></li>
+</ul>
+<h2 id="newtonovy-pohybové-zákony">Newtonovy pohybové zákony</h2>
+<ul>
+<li><p>Zákon setrvačnosti – těleso setrvává ve stavu rovnoměrného
+přímočarého pohybu nebo klidu pokud není nuceno působením jiných těles
+tento stav změnit.</p></li>
+<li><p>Zákon síly – časová změna hybnosti hmotného bodu je rovna
+výsledné síle, která na těleso působí. <span class="math inline">F =
+\frac{dp}{dt}</span>, pokud je hmotnost konstantní, pak <span
+class="math inline">F = m \cdot \frac{dv}{dt} = ma</span>.</p></li>
+<li><p>Zákon akce a reakce – jestliže těleso <span
+class="math inline">A</span></p></li>
+</ul>
+<h2 id="příklady-dynamiky">Příklady dynamiky</h2>
+<ul>
+<li><p>Nakloněná rovina pod sklonem <span
+class="math inline">\alpha</span>, platí pohybová rovnice <span
+class="math inline">ma = \sum_{}^{}F_{i} = G + N + T</span>, kde <span
+class="math inline">ma_{x} = m \cdot \frac{d^{2}x}{dt^{2}} = G\sin\alpha
+- T</span>, <span class="math inline">ma_{y} = \frac{d^{2}y}{dt^{2}} = 0
+= - G\cos\alpha + N</span> a <span class="math inline">T = \mu N</span>.
+Pro <span class="math inline">N = G\cos\alpha</span></p></li>
+</ul>
+      </main>
+    </div>
   </body>
 </html>

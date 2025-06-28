@@ -4,24 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title> - Studijní poznámky</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Load our local stylesheet and custom loader script -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="katex-loader.js"></script>
   </head>
@@ -30,369 +17,20 @@
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
         <a href="index.html" class="home-link">Univerzitní studium</a>
-        <!-- THIS IS THE NEW BREADCRUMB LOGIC -->
         <span class="breadcrumb-item">Fakulta elektrotechniky a
 informatiky VŠB-TU Ostrava (bakalářský)</span>
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item-active"></span>
       </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
     </header>
 
+    <!-- The .page-container is now the main layout wrapper -->
     <div class="page-container">
-      <main class="content">
-        <header id="title-block-header">
-          <h1 class="title"></h1>
-        </header>
-        <h1 id="bezpečnost-pojmy-a-platná-legislativa">Bezpečnost, pojmy
-        a platná legislativa</h1>
-        <h2 id="základní-pojmy">Základní pojmy</h2>
-        <p>Za <strong>práci pod napětí</strong> se považuje práce na
-        zařízení, kdy pracovník některou části těla, nářadím nebo
-        předměty zasahuje do ochranného prostoru nebo je v kontaktu
-        s živou částí.</p>
-        <p>Za <strong>prevenci rizik</strong> se rozumí všechna opatření
-        vyplývající z právních a ostatních předpisů k zajištění
-        bezpečnosti a ochrany zdraví při práci a z opatření
-        zaměstnavatele, které mají za cíl předcházet rizikům,
-        odstraňovat nebo minimalizovat působení neodstranitelných
-        rizik.</p>
-        <h2 id="osoba-poučená-4">Osoba poučená (§4)</h2>
-        <ul>
-        <li><p>Osoba poučená <strong>nesmí</strong> pracovat na částech
-        nízkého napětí pod napětí (vyjma měření měřicími přístroji a
-        jednoduchých předem schválených postupů)</p></li>
-        </ul>
-        <h2 id="osoba-znalá-5">Osoba znalá (§5)</h2>
-        <ul>
-        <li><p>Osoba znalá může pracovat na zařízení nízkého napětí pod
-        napětím podle pracovních postupů, ale v prostorách mokrých,
-        venkovních a vlhkých pouze pod dozorem</p></li>
-        </ul>
-        <h2 id="bezpečnost-práce">Bezpečnost práce</h2>
-        <ul>
-        <li><p>Povinnost sepsat záznam o úrazu má
-        zaměstnavatel.</p></li>
-        <li><p>Zaměstnavatel sepisuje záznam o úrazu nejpozději do 5
-        pracovních dnů po oznámení pracovního úrazu.</p></li>
-        <li><p>Při práci pod dohledem je nutné na dodržování
-        bezpečnostních předpisů dohlédnout před započetím práce a
-        v průběhu prací podle potřeby občas.</p></li>
-        <li><p>Za prostory nebezpečné lze podle ČSN 33 2000 – 3
-        považovat prostory, kde vniká působením vnějších vlivů přechodné
-        nebo stále nebezpečí elektrického úrazu.</p></li>
-        </ul>
-        <h2 id="elektrické-zařízení">Elektrické zařízení</h2>
-        <p>Každé elektrické zařízení musí mít určenou osobu odpovědnou
-        za elektrické zařízení. Pro každou práci na elektrickém zařízení
-        musí být určen vedoucí práce.</p>
-        <p>Při dělení elektrických zařízení podle napěťových hladin je
-        hranice mezi střídavým napětím nízkým (kategorie II) a vysokým
-        (kategorie A) hranice určena: 600 V fázové a 1 kV sdružené.</p>
-        <h1 id="barevné-značení-vodiče-sdělovače-a-ovladače">Barevné
-        značení – vodiče, sdělovače a ovladače</h1>
-        <ul>
-        <li><p><strong>Barvy vodičů v elektrické instalaci v sítích
-        nízkého napětí</strong></p>
-        <ul>
-        <li><p>Staré instalace – PE zelený</p></li>
-        <li><p>Řídící okruhy pracovních strojů pro stejnosměrné napájení
-        – tmavě modrá</p></li>
-        <li><p>Řídící okruhy pracovních strojů pro střídavé napájení -
-        červená</p></li>
-        </ul></li>
-        <li><p><strong>Barvy izolovaných vodičů</strong></p>
-        <ul>
-        <li><p>V síti NN typu TN-S – <em>fáze</em> černý, hnědý nebo
-        šedivý; <em>ochranný vodič PE</em> zelenožlutý, <em>střední
-        nulový vodič</em> N světle modrý</p></li>
-        <li><p>V síti typu TN-C – <em>fáze</em> černý nebo hnědý,
-        <em>ochranný a pracovní vodič</em> <em>PEN</em> zelenožlutý
-        s modrými návleky nebo světlemodrý se zelenožlutými
-        návleky</p></li>
-        <li><p>Oranžově se značí vodiče, které nejsou vypínány hlavním
-        vypínačem, tj. jsou živé i po vypnutí hlavního jističe</p></li>
-        <li><p>Zelenožluté vodiče se nesmí přeznačovat za účelem jiné
-        funkce! Černý izolovaný vodič slouží pouze jako fázový
-        vodič!</p></li>
-        </ul></li>
-        <li><p><strong>Barvy natřených holých vodičů</strong></p>
-        <ul>
-        <li><p>V sítích NN typu TN-S – <em>fáze</em> oranžová s černými
-        pruhy, <em>ochranný vodič PE</em> zelenožlutý</p></li>
-        <li><p>V sítích TN-C – <em>fáze</em> oranžová s černými pruhy,
-        <em>ochranný a pracovní vodič PEN</em> zelenožlutý</p></li>
-        <li><p>Stejnosměrné soustavy – <em>kladný pól</em> tmavě
-        červeně, <em>záporný pól</em> tmavě modře, <em>vodič PEN</em>
-        zelenožlutě</p></li>
-        </ul></li>
-        <li><p><strong>Ovladače</strong></p>
-        <ul>
-        <li><p>Vypínací ovladač – přednostně černý, možný i šedý, bílý a
-        červený</p></li>
-        <li><p>Zapínací ovladač – přednostně bílý, možný i černý a
-        zelený</p></li>
-        <li><p>Nouzové vypnutí – červená na žlutém pozadí</p></li>
-        <li><p>Seřízení, nastavení, zvláštní význam – modré
-        tlačítko</p></li>
-        <li><p>Mimořádný stav (ruční najetí přerušeného automatického
-        cyklu) – žluté tlačítko</p></li>
-        </ul></li>
-        <li><p><strong>Signálky</strong></p>
-        <ul>
-        <li><p>Mimořádný stav (přetížení, výpadek) – žlutá</p></li>
-        <li><p>Normální stav – zelená</p></li>
-        <li><p>Nebezpečí, nouzové zastavení (porucha důležitého
-        zařízení) – červená</p></li>
-        <li><p>Zvláštní význam (podmínky vyžadující zásah) -
-        modrá</p></li>
-        </ul></li>
-        </ul>
-        <h1
-        id="základní-principy-ochrany-před-úrazem-elektrickým-proudem">Základní
-        principy ochrany před úrazem elektrickým proudem</h1>
-        <h2 id="třídy-ochran-elektrických-zařízení">Třídy ochran
-        elektrických zařízení</h2>
-        <ul>
-        <li><p><strong>I. třída</strong> (pouze základní izolace),
-        spotřebiče je nutno zapojit tří vodičově</p></li>
-        <li><p><strong>II. třída</strong> (základní a ochranná izolace),
-        spotřebič, který má značku <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image1.png"
-        style="width:0.36885in;height:0.375in" />, může být zapojen
-        dvoužilově</p></li>
-        </ul>
-        <h2 id="označení-vodičů">Označení vodičů</h2>
-        <ul>
-        <li><p>značka <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image2.png"
-        style="width:0.30208in;height:0.28259in" /> označuje ochranný
-        vodič, který musí být k zařízení připojen</p></li>
-        <li><p>značka <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image3.png"
-        style="width:0.39875in;height:0.34375in" /> označuje vodič
-        PEN</p></li>
-        <li><p>značka <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image4.png"
-        style="width:0.42361in;height:0.33333in" /> označuje ochranný
-        vodič PE</p></li>
-        <li><p>značka <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image5.png"
-        style="width:0.39394in;height:0.33333in" /> označuje nulový nebo
-        střední vodič</p></li>
-        <li><p>je-li na viditelném místě kovového povrchu nebo vnitřku
-        krytu značka <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image6.png"
-        style="width:0.40858in;height:0.36458in" />, pak není nutné
-        připojit ochranný vodič</p></li>
-        </ul>
-        <h2 id="druhy-sítí">Druhy sítí</h2>
-        <ul>
-        <li><p>První písmenko – <strong>T</strong> (bezprostřední
-        spojení jednoho bodu sítě se zemí) a <strong>I</strong>
-        (oddělení všech živých částí od země nebo spojení přes velkou
-        impedanci)</p></li>
-        <li><p>Druhé písmenko – <strong>T</strong> (nepřímé spojení
-        neživých částí se zemí) a <strong>N</strong> (přímé spojení
-        neživých částí s uzemněným uzlem sítě)</p></li>
-        <li><p>Další písmenka – <strong>S</strong> (funkce ochranného
-        vodiče je zajišťována vodičem odděleným od středního vodiče)
-        nebo <strong>C</strong> (funkce středního a ochranného vodiče je
-        spojena v PEN vodič)</p></li>
-        </ul>
-        <p>Mez bezpečného napětí v prostorách normálních a nebezpečných
-        je</p>
-        <ul>
-        <li><p>pro neživé části (kryty) a izolované části 50
-        V stejnosměrného a 120 V střídavého napětí</p></li>
-        <li><p>pro přístupné živé části (holé vodiče) 60
-        V stejnosměrného a 25 V střídavého napětí</p></li>
-        </ul>
-        <h3 id="sítě-tn">Sítě TN</h3>
-        <p>Jako síť TN se obecně označuje síť, která má přímo uzemněný
-        jeden bod sítě – nulový nebo krajní vodič, neživé části jsou
-        k tomuto bodu spojeny prostřednictvím ochranných vodičů.</p>
-        <p>Automatické oddělení zdroje v sítích TN lze realizovat
-        pojistkami, jističi a proudovým chráničem. Porucha v síti TN má
-        za následek nadproud ve fázovém vodiči ekvivalentní zkratu.</p>
-        <p>Při použití ochrany samočinným odpojením zdroje pro
-        spotřebiče třídy ochrany I. je v síti TN se jmenovitým fázovým
-        napětím 230 V pro koncové obvody do 32 A předepsán čas 0,4
-        s.</p>
-        <h4 id="tn-c">TN-C</h4>
-        <p>V síti TN-C je jeden bod sítě bezprostředně spojen se zemí.
-        V celé síti je funkce ochranného a středního vodiče spojena ve
-        vodič PEN. Dochází k přímému spojení neživých částí s uzemněným
-        uzlem sítě.</p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image7.png"
-        style="width:3.24657in;height:1.31264in" /></p>
-        <h4 id="tn-s">TN-S</h4>
-        <p>V síti TN-S je jeden bod sítě bezprostředně spojen se zemí.
-        V celé síti je funkce ochranného a středního oddělena na dva
-        vodiče. Dochází k přímému spojení neživých částí s uzemněným
-        uzlem sítě.</p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image8.png"
-        style="width:3.29167in;height:1.47917in" /> <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image9.png"
-        style="width:3.20568in;height:2.18047in" /></p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image10.png"
-        style="width:3.77199in;height:2.01881in" /></p>
-        <p>Ochranná vypínací smyčka je tvořena vynutím transformátoru –
-        fázovým vodičem k místu poruchy a ochranným vodičem sítě PE.</p>
-        <h4 id="tn-c-s">TN-C-S</h4>
-        <p>V síti TN-C-S je jeden bod sítě bezprostředně spojen se zemí.
-        Funkce ochranného a středního vodiče je v části sítě spojena ve
-        vodič PEN, který je posléze oddělen. Dochází k přímému spojení
-        neživých částí s uzemněným uzlem sítě.</p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image11.png"
-        style="width:3.64537in;height:1.21875in" /><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image12.png"
-        style="width:2.53534in;height:1.39691in" /></p>
-        <h3 id="síť-tt">Síť TT</h3>
-        <p>Síť, kdy je jeden bod přímo uzemněný.</p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image13.png"
-        style="width:2.44792in;height:1.79977in" /></p>
-        <p>Automatické odpojení od zdroje v síti TT v případě poruchy se
-        dnes obvykle realizuje proudovým chráničem, důvodem je malý
-        poruchový proud.</p>
-        <p>Porucha v síti TT má za následek zpravidla nadproud ve
-        fázovém vodiči podobající se přetížení.</p>
-        <h3 id="síť-it">Síť IT</h3>
-        <p>Síť, kdy jsou všechny živé části izolované od země, nebo
-        jeden bod je spojený se zemí přes velkou impedancí.</p>
-        <p>První porucha se v síti IT bez hlídače izolačního stavu
-        obtížně zjišťuje, jeho použití z důvodu zajištění kontinuity je
-        nutné. Automatické odpojení od zdroje v síti IT v případě první
-        poruchy se obvykle nevyžaduje.</p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image14.png"
-        style="width:2.20833in;height:1.65996in" /><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image14.png"
-        style="width:2.89583in;height:1.75315in" /></p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image15.png"
-        style="width:3.16652in;height:2.42708in" /></p>
-        <h2 id="ochrana-bezpečným-malým-napětím">Ochrana bezpečným malým
-        napětím</h2>
-        <p>Napětí obvodů SELV nebo PELV v prostorách normálním nesmí
-        přesáhnout hodnotu 50 v střídavě a 120 V stejnosměrně.</p>
-        <ul>
-        <li><p>Označení SELV se používá pro obvody s bezpečným malým
-        napětím (pro daný prostor), jejichž živé části nejsou spojeny
-        v žádném případě se zemí.</p></li>
-        <li><p>Označení PELV se používá pro obvody s bezpečným malým
-        napětím (pro daný prostor), jejichž živé části jsou spojeny se
-        zemí v určitém bodě.</p></li>
-        </ul>
-        <h2 id="ochrana-proudovým-chráničem">Ochrana proudovým
-        chráničem</h2>
-        <p>Proudový chránič z podstaty nejistí před zkratem a
-        přetížením. Platí, že PEN <strong>nesmí</strong> procházet
-        magnetickým obvodem proudového chrániče.</p>
-        <p>Proudový chránič s rozdílovým proudem 30 mA chrání uživatele
-        před přímým dotykem živých částí a před nepřímým dotykem, tj.
-        dotykem neživých částí.</p>
-        <p>Použití ochranného opatření s rozdílovým proudem 30 mA jako
-        jediného opatření před úrazem elektrickým proudem není možné, je
-        nutné uplatnit ochranné opatření „automatické odpojení od
-        zdroje“ nebo „dvojitá nebo zesílená izolace“ nebo „elektrické
-        oddělení“.</p>
-        <h2 id="ochrana-elektrickým-oddělením">Ochrana elektrickým
-        oddělením</h2>
-        <p>Při použití ochrany elektrickým oddělením
-        <strong>nesmí</strong> napětí elektricky odděleného obvodu
-        přesáhnout 500 V.</p>
-        <h2 id="zapojení-prodlužovacích-přívodů">Zapojení prodlužovacích
-        přívodů</h2>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image16.png"
-        style="width:3.52083in;height:1.51042in" /></p>
-        <h3 id="zapojení-v-síti-tn-s">Zapojení v síti TN-S</h3>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image17.png"
-        style="width:2.25in;height:3.64583in" /></p>
-        <p>Zapojení po roce 1999:</p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image18.png"
-        style="width:0.90625in;height:2.04167in" /> <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image19.png"
-        style="width:1.09375in;height:4.98958in" /></p>
-        <h3 id="zapojení-spotřebiče-i.-třídy-v-síti-tn-c">Zapojení
-        spotřebiče I. třídy v síti TN-C</h3>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image20.png"
-        style="width:1.15625in;height:5.5in" /> <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image21.png"
-        style="width:1.60417in;height:5.1875in" /> <img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image22.png"
-        style="width:1.45833in;height:5.17708in" /></p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image23.png"
-        style="width:5.35417in;height:1.5in" /></p>
-        <p>Zapojení ve starší instalaci:</p>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image24.png"
-        style="width:2.34375in;height:3.78125in" /></p>
-        <h3 id="správné-zapojení">Správné zapojení</h3>
-        <p><img
-        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice_media/media/image25.png"
-        style="width:2.36458in;height:1.6875in" /></p>
-        <h2 id="jističe">Jističe</h2>
-        <p>Vedení se jistí proti přetížení a zkratu na začátku vedení
-        nebo na začátek odbočky při snížení průřezu vedení.</p>
-        <p>Platí, že jistič je možno vyměnit za jistič s vyšším
-        vybavovacím proudem pouze za předpokladu, že dojde k posouzení
-        funkčnosti ochrany před nebezpečným dotykem. Při rozšíření
-        stávajícího okruhu nevyžadující změnu jištění se vypracování
-        revizní zprávy obvykle nepožaduje, je však nutné provést záznam
-        o kontrole s podpisem pověřeného pracovníka.</p>
-        <p>Jmenovitou vypínací schopnosti vypínacího prvku (pojistka,
-        jistič) rozumím maximální poruchový proud, který je schopen
-        prvek bezpečně vypnout.</p>
-        <h3 id="typy-jističů">Typy jističů</h3>
-        <ul>
-        <li><p><strong>Typ B</strong> – poměr zkratové spouště
-        k jmenovitému proudu cca <strong>3-5</strong></p></li>
-        <li><p><strong>Typ C</strong> – poměr zkratové spouště
-        k jmenovitému proudu cca <strong>6-9</strong></p></li>
-        <li><p><strong>Typ D</strong></p></li>
-        </ul>
-        <h3 id="značení-pojistek">Značení pojistek</h3>
-        <p>Pojistkové spodky závitových spojek je nutno zapojit středním
-        kontaktem na stranu zdroje.</p>
-        <ul>
-        <li><p><strong>gG</strong> – určeno pro všeobecné použití –
-        jištění vedení, kabelů, zařízení před přetížením a
-        zkratem</p></li>
-        <li><p><strong>aM</strong> – určeno pro jištění motorů a
-        spotřebičů s velkým záběrovým proudem, jistí v omezeném rozsahu
-        nadproudů, jen pro zkraty</p></li>
-        </ul>
-        <h1
-        id="první-pomoc-při-úrazech-elektrickým-proudem-hašení-elektrického-zařízení">První
-        pomoc při úrazech elektrickým proudem, hašení elektrického
-        zařízení</h1>
-        <h2 id="postup-při-vzniku-úrazu-elektrickým-proudem">Postup při
-        vzniku úrazu elektrickým proudem</h2>
-        <p>Vyprostit postiženého z dosahu elektrického proudu, zajistit
-        životní funkce – umělé dýchání, nepřímá srdečná masáž, přivolání
-        lékařské pomoci, uvědomění vedoucího, zápis do knihy úrazů.</p>
-        <p>Je-li postižený po úraze elektrickým proudem při vědomí, pak
-        jej stačí udržovat pod odhledem (ticho – teplo – tekutiny).</p>
-        <p>Pokud by postižení po úrazu elektrickým proudem v bezvědomí
-        dýchal a objeví se u něj cyanóza (fialoví), pak je třeba
-        k umělému dýchání přidat nepřímou srdeční masáž.</p>
-        <h2 id="hašení">Hašení</h2>
-        <p>Elektrické zařízení pod napětím lze hasit sněhovým a
-        práškovým hasicím přístrojem (ne vodním).</p>
-        <p>Bezpečně vypnuté elektrické zařízení je možné hasit pěnovým,
-        práškovým, sněhovým nebo vodním hasicím přístrojem.</p>
-      </main>
-
             <nav class="sidebar" id="TOC">
         <h2>Obsah</h2>
         <ul>
@@ -472,6 +110,402 @@ informatiky VŠB-TU Ostrava (bakalářský)</span>
         </ul></li>
         </ul>
       </nav>
-          </div>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title"></h1>
+        </header>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#bezpečnost-pojmy-a-platná-legislativa"
+          id="toc-bezpečnost-pojmy-a-platná-legislativa">Bezpečnost,
+          pojmy a platná legislativa</a>
+          <ul>
+          <li><a href="#základní-pojmy" id="toc-základní-pojmy">Základní
+          pojmy</a></li>
+          <li><a href="#osoba-poučená-4" id="toc-osoba-poučená-4">Osoba
+          poučená (§4)</a></li>
+          <li><a href="#osoba-znalá-5" id="toc-osoba-znalá-5">Osoba
+          znalá (§5)</a></li>
+          <li><a href="#bezpečnost-práce"
+          id="toc-bezpečnost-práce">Bezpečnost práce</a></li>
+          <li><a href="#elektrické-zařízení"
+          id="toc-elektrické-zařízení">Elektrické zařízení</a></li>
+          </ul></li>
+          <li><a href="#barevné-značení-vodiče-sdělovače-a-ovladače"
+          id="toc-barevné-značení-vodiče-sdělovače-a-ovladače">Barevné
+          značení – vodiče, sdělovače a ovladače</a></li>
+          <li><a
+          href="#základní-principy-ochrany-před-úrazem-elektrickým-proudem"
+          id="toc-základní-principy-ochrany-před-úrazem-elektrickým-proudem">Základní
+          principy ochrany před úrazem elektrickým proudem</a>
+          <ul>
+          <li><a href="#třídy-ochran-elektrických-zařízení"
+          id="toc-třídy-ochran-elektrických-zařízení">Třídy ochran
+          elektrických zařízení</a></li>
+          <li><a href="#označení-vodičů"
+          id="toc-označení-vodičů">Označení vodičů</a></li>
+          <li><a href="#druhy-sítí" id="toc-druhy-sítí">Druhy sítí</a>
+          <ul>
+          <li><a href="#sítě-tn" id="toc-sítě-tn">Sítě TN</a></li>
+          <li><a href="#síť-tt" id="toc-síť-tt">Síť TT</a></li>
+          <li><a href="#síť-it" id="toc-síť-it">Síť IT</a></li>
+          </ul></li>
+          <li><a href="#ochrana-bezpečným-malým-napětím"
+          id="toc-ochrana-bezpečným-malým-napětím">Ochrana bezpečným
+          malým napětím</a></li>
+          <li><a href="#ochrana-proudovým-chráničem"
+          id="toc-ochrana-proudovým-chráničem">Ochrana proudovým
+          chráničem</a></li>
+          <li><a href="#ochrana-elektrickým-oddělením"
+          id="toc-ochrana-elektrickým-oddělením">Ochrana elektrickým
+          oddělením</a></li>
+          <li><a href="#zapojení-prodlužovacích-přívodů"
+          id="toc-zapojení-prodlužovacích-přívodů">Zapojení
+          prodlužovacích přívodů</a>
+          <ul>
+          <li><a href="#zapojení-v-síti-tn-s"
+          id="toc-zapojení-v-síti-tn-s">Zapojení v síti TN-S</a></li>
+          <li><a href="#zapojení-spotřebiče-i.-třídy-v-síti-tn-c"
+          id="toc-zapojení-spotřebiče-i.-třídy-v-síti-tn-c">Zapojení
+          spotřebiče I. třídy v síti TN-C</a></li>
+          <li><a href="#správné-zapojení"
+          id="toc-správné-zapojení">Správné zapojení</a></li>
+          </ul></li>
+          <li><a href="#jističe" id="toc-jističe">Jističe</a>
+          <ul>
+          <li><a href="#typy-jističů" id="toc-typy-jističů">Typy
+          jističů</a></li>
+          <li><a href="#značení-pojistek"
+          id="toc-značení-pojistek">Značení pojistek</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a
+          href="#první-pomoc-při-úrazech-elektrickým-proudem-hašení-elektrického-zařízení"
+          id="toc-první-pomoc-při-úrazech-elektrickým-proudem-hašení-elektrického-zařízení">První
+          pomoc při úrazech elektrickým proudem, hašení elektrického
+          zařízení</a>
+          <ul>
+          <li><a href="#postup-při-vzniku-úrazu-elektrickým-proudem"
+          id="toc-postup-při-vzniku-úrazu-elektrickým-proudem">Postup
+          při vzniku úrazu elektrickým proudem</a></li>
+          <li><a href="#hašení" id="toc-hašení">Hašení</a></li>
+          </ul></li>
+          </ul>
+        </div>
+         <h1 id="bezpečnost-pojmy-a-platná-legislativa">Bezpečnost,
+pojmy a platná legislativa</h1>
+<h2 id="základní-pojmy">Základní pojmy</h2>
+<p>Za <strong>práci pod napětí</strong> se považuje práce na zařízení,
+kdy pracovník některou části těla, nářadím nebo předměty zasahuje do
+ochranného prostoru nebo je v kontaktu s živou částí.</p>
+<p>Za <strong>prevenci rizik</strong> se rozumí všechna opatření
+vyplývající z právních a ostatních předpisů k zajištění bezpečnosti a
+ochrany zdraví při práci a z opatření zaměstnavatele, které mají za cíl
+předcházet rizikům, odstraňovat nebo minimalizovat působení
+neodstranitelných rizik.</p>
+<h2 id="osoba-poučená-4">Osoba poučená (§4)</h2>
+<ul>
+<li><p>Osoba poučená <strong>nesmí</strong> pracovat na částech nízkého
+napětí pod napětí (vyjma měření měřicími přístroji a jednoduchých předem
+schválených postupů)</p></li>
+</ul>
+<h2 id="osoba-znalá-5">Osoba znalá (§5)</h2>
+<ul>
+<li><p>Osoba znalá může pracovat na zařízení nízkého napětí pod napětím
+podle pracovních postupů, ale v prostorách mokrých, venkovních a vlhkých
+pouze pod dozorem</p></li>
+</ul>
+<h2 id="bezpečnost-práce">Bezpečnost práce</h2>
+<ul>
+<li><p>Povinnost sepsat záznam o úrazu má zaměstnavatel.</p></li>
+<li><p>Zaměstnavatel sepisuje záznam o úrazu nejpozději do 5 pracovních
+dnů po oznámení pracovního úrazu.</p></li>
+<li><p>Při práci pod dohledem je nutné na dodržování bezpečnostních
+předpisů dohlédnout před započetím práce a v průběhu prací podle potřeby
+občas.</p></li>
+<li><p>Za prostory nebezpečné lze podle ČSN 33 2000 – 3 považovat
+prostory, kde vniká působením vnějších vlivů přechodné nebo stále
+nebezpečí elektrického úrazu.</p></li>
+</ul>
+<h2 id="elektrické-zařízení">Elektrické zařízení</h2>
+<p>Každé elektrické zařízení musí mít určenou osobu odpovědnou za
+elektrické zařízení. Pro každou práci na elektrickém zařízení musí být
+určen vedoucí práce.</p>
+<p>Při dělení elektrických zařízení podle napěťových hladin je hranice
+mezi střídavým napětím nízkým (kategorie II) a vysokým (kategorie A)
+hranice určena: 600 V fázové a 1 kV sdružené.</p>
+<h1 id="barevné-značení-vodiče-sdělovače-a-ovladače">Barevné značení –
+vodiče, sdělovače a ovladače</h1>
+<ul>
+<li><p><strong>Barvy vodičů v elektrické instalaci v sítích nízkého
+napětí</strong></p>
+<ul>
+<li><p>Staré instalace – PE zelený</p></li>
+<li><p>Řídící okruhy pracovních strojů pro stejnosměrné napájení – tmavě
+modrá</p></li>
+<li><p>Řídící okruhy pracovních strojů pro střídavé napájení -
+červená</p></li>
+</ul></li>
+<li><p><strong>Barvy izolovaných vodičů</strong></p>
+<ul>
+<li><p>V síti NN typu TN-S – <em>fáze</em> černý, hnědý nebo šedivý;
+<em>ochranný vodič PE</em> zelenožlutý, <em>střední nulový vodič</em> N
+světle modrý</p></li>
+<li><p>V síti typu TN-C – <em>fáze</em> černý nebo hnědý, <em>ochranný a
+pracovní vodič</em> <em>PEN</em> zelenožlutý s modrými návleky nebo
+světlemodrý se zelenožlutými návleky</p></li>
+<li><p>Oranžově se značí vodiče, které nejsou vypínány hlavním
+vypínačem, tj. jsou živé i po vypnutí hlavního jističe</p></li>
+<li><p>Zelenožluté vodiče se nesmí přeznačovat za účelem jiné funkce!
+Černý izolovaný vodič slouží pouze jako fázový vodič!</p></li>
+</ul></li>
+<li><p><strong>Barvy natřených holých vodičů</strong></p>
+<ul>
+<li><p>V sítích NN typu TN-S – <em>fáze</em> oranžová s černými pruhy,
+<em>ochranný vodič PE</em> zelenožlutý</p></li>
+<li><p>V sítích TN-C – <em>fáze</em> oranžová s černými pruhy,
+<em>ochranný a pracovní vodič PEN</em> zelenožlutý</p></li>
+<li><p>Stejnosměrné soustavy – <em>kladný pól</em> tmavě červeně,
+<em>záporný pól</em> tmavě modře, <em>vodič PEN</em>
+zelenožlutě</p></li>
+</ul></li>
+<li><p><strong>Ovladače</strong></p>
+<ul>
+<li><p>Vypínací ovladač – přednostně černý, možný i šedý, bílý a
+červený</p></li>
+<li><p>Zapínací ovladač – přednostně bílý, možný i černý a
+zelený</p></li>
+<li><p>Nouzové vypnutí – červená na žlutém pozadí</p></li>
+<li><p>Seřízení, nastavení, zvláštní význam – modré tlačítko</p></li>
+<li><p>Mimořádný stav (ruční najetí přerušeného automatického cyklu) –
+žluté tlačítko</p></li>
+</ul></li>
+<li><p><strong>Signálky</strong></p>
+<ul>
+<li><p>Mimořádný stav (přetížení, výpadek) – žlutá</p></li>
+<li><p>Normální stav – zelená</p></li>
+<li><p>Nebezpečí, nouzové zastavení (porucha důležitého zařízení) –
+červená</p></li>
+<li><p>Zvláštní význam (podmínky vyžadující zásah) - modrá</p></li>
+</ul></li>
+</ul>
+<h1
+id="základní-principy-ochrany-před-úrazem-elektrickým-proudem">Základní
+principy ochrany před úrazem elektrickým proudem</h1>
+<h2 id="třídy-ochran-elektrických-zařízení">Třídy ochran elektrických
+zařízení</h2>
+<ul>
+<li><p><strong>I. třída</strong> (pouze základní izolace), spotřebiče je
+nutno zapojit tří vodičově</p></li>
+<li><p><strong>II. třída</strong> (základní a ochranná izolace),
+spotřebič, který má značku <img src="./media/media/image1.png"
+style="width:0.36885in;height:0.375in" />, může být zapojen
+dvoužilově</p></li>
+</ul>
+<h2 id="označení-vodičů">Označení vodičů</h2>
+<ul>
+<li><p>značka <img src="./media/media/image2.png"
+style="width:0.30208in;height:0.28259in" /> označuje ochranný vodič,
+který musí být k zařízení připojen</p></li>
+<li><p>značka <img src="./media/media/image3.png"
+style="width:0.39875in;height:0.34375in" /> označuje vodič PEN</p></li>
+<li><p>značka <img src="./media/media/image4.png"
+style="width:0.42361in;height:0.33333in" /> označuje ochranný vodič
+PE</p></li>
+<li><p>značka <img src="./media/media/image5.png"
+style="width:0.39394in;height:0.33333in" /> označuje nulový nebo střední
+vodič</p></li>
+<li><p>je-li na viditelném místě kovového povrchu nebo vnitřku krytu
+značka <img src="./media/media/image6.png"
+style="width:0.40858in;height:0.36458in" />, pak není nutné připojit
+ochranný vodič</p></li>
+</ul>
+<h2 id="druhy-sítí">Druhy sítí</h2>
+<ul>
+<li><p>První písmenko – <strong>T</strong> (bezprostřední spojení
+jednoho bodu sítě se zemí) a <strong>I</strong> (oddělení všech živých
+částí od země nebo spojení přes velkou impedanci)</p></li>
+<li><p>Druhé písmenko – <strong>T</strong> (nepřímé spojení neživých
+částí se zemí) a <strong>N</strong> (přímé spojení neživých částí
+s uzemněným uzlem sítě)</p></li>
+<li><p>Další písmenka – <strong>S</strong> (funkce ochranného vodiče je
+zajišťována vodičem odděleným od středního vodiče) nebo
+<strong>C</strong> (funkce středního a ochranného vodiče je spojena
+v PEN vodič)</p></li>
+</ul>
+<p>Mez bezpečného napětí v prostorách normálních a nebezpečných je</p>
+<ul>
+<li><p>pro neživé části (kryty) a izolované části 50 V stejnosměrného a
+120 V střídavého napětí</p></li>
+<li><p>pro přístupné živé části (holé vodiče) 60 V stejnosměrného a 25
+V střídavého napětí</p></li>
+</ul>
+<h3 id="sítě-tn">Sítě TN</h3>
+<p>Jako síť TN se obecně označuje síť, která má přímo uzemněný jeden bod
+sítě – nulový nebo krajní vodič, neživé části jsou k tomuto bodu spojeny
+prostřednictvím ochranných vodičů.</p>
+<p>Automatické oddělení zdroje v sítích TN lze realizovat pojistkami,
+jističi a proudovým chráničem. Porucha v síti TN má za následek nadproud
+ve fázovém vodiči ekvivalentní zkratu.</p>
+<p>Při použití ochrany samočinným odpojením zdroje pro spotřebiče třídy
+ochrany I. je v síti TN se jmenovitým fázovým napětím 230 V pro koncové
+obvody do 32 A předepsán čas 0,4 s.</p>
+<h4 id="tn-c">TN-C</h4>
+<p>V síti TN-C je jeden bod sítě bezprostředně spojen se zemí. V celé
+síti je funkce ochranného a středního vodiče spojena ve vodič PEN.
+Dochází k přímému spojení neživých částí s uzemněným uzlem sítě.</p>
+<p><img src="./media/media/image7.png"
+style="width:3.24657in;height:1.31264in" /></p>
+<h4 id="tn-s">TN-S</h4>
+<p>V síti TN-S je jeden bod sítě bezprostředně spojen se zemí. V celé
+síti je funkce ochranného a středního oddělena na dva vodiče. Dochází
+k přímému spojení neživých částí s uzemněným uzlem sítě.</p>
+<p><img src="./media/media/image8.png"
+style="width:3.29167in;height:1.47917in" /> <img
+src="./media/media/image9.png"
+style="width:3.20568in;height:2.18047in" /></p>
+<p><img src="./media/media/image10.png"
+style="width:3.77199in;height:2.01881in" /></p>
+<p>Ochranná vypínací smyčka je tvořena vynutím transformátoru – fázovým
+vodičem k místu poruchy a ochranným vodičem sítě PE.</p>
+<h4 id="tn-c-s">TN-C-S</h4>
+<p>V síti TN-C-S je jeden bod sítě bezprostředně spojen se zemí. Funkce
+ochranného a středního vodiče je v části sítě spojena ve vodič PEN,
+který je posléze oddělen. Dochází k přímému spojení neživých částí
+s uzemněným uzlem sítě.</p>
+<p><img src="./media/media/image11.png"
+style="width:3.64537in;height:1.21875in" /><img
+src="./media/media/image12.png"
+style="width:2.53534in;height:1.39691in" /></p>
+<h3 id="síť-tt">Síť TT</h3>
+<p>Síť, kdy je jeden bod přímo uzemněný.</p>
+<p><img src="./media/media/image13.png"
+style="width:2.44792in;height:1.79977in" /></p>
+<p>Automatické odpojení od zdroje v síti TT v případě poruchy se dnes
+obvykle realizuje proudovým chráničem, důvodem je malý poruchový
+proud.</p>
+<p>Porucha v síti TT má za následek zpravidla nadproud ve fázovém vodiči
+podobající se přetížení.</p>
+<h3 id="síť-it">Síť IT</h3>
+<p>Síť, kdy jsou všechny živé části izolované od země, nebo jeden bod je
+spojený se zemí přes velkou impedancí.</p>
+<p>První porucha se v síti IT bez hlídače izolačního stavu obtížně
+zjišťuje, jeho použití z důvodu zajištění kontinuity je nutné.
+Automatické odpojení od zdroje v síti IT v případě první poruchy se
+obvykle nevyžaduje.</p>
+<p><img src="./media/media/image14.png"
+style="width:2.20833in;height:1.65996in" /><img
+src="./media/media/image14.png"
+style="width:2.89583in;height:1.75315in" /></p>
+<p><img src="./media/media/image15.png"
+style="width:3.16652in;height:2.42708in" /></p>
+<h2 id="ochrana-bezpečným-malým-napětím">Ochrana bezpečným malým
+napětím</h2>
+<p>Napětí obvodů SELV nebo PELV v prostorách normálním nesmí přesáhnout
+hodnotu 50 v střídavě a 120 V stejnosměrně.</p>
+<ul>
+<li><p>Označení SELV se používá pro obvody s bezpečným malým napětím
+(pro daný prostor), jejichž živé části nejsou spojeny v žádném případě
+se zemí.</p></li>
+<li><p>Označení PELV se používá pro obvody s bezpečným malým napětím
+(pro daný prostor), jejichž živé části jsou spojeny se zemí v určitém
+bodě.</p></li>
+</ul>
+<h2 id="ochrana-proudovým-chráničem">Ochrana proudovým chráničem</h2>
+<p>Proudový chránič z podstaty nejistí před zkratem a přetížením. Platí,
+že PEN <strong>nesmí</strong> procházet magnetickým obvodem proudového
+chrániče.</p>
+<p>Proudový chránič s rozdílovým proudem 30 mA chrání uživatele před
+přímým dotykem živých částí a před nepřímým dotykem, tj. dotykem
+neživých částí.</p>
+<p>Použití ochranného opatření s rozdílovým proudem 30 mA jako jediného
+opatření před úrazem elektrickým proudem není možné, je nutné uplatnit
+ochranné opatření „automatické odpojení od zdroje“ nebo „dvojitá nebo
+zesílená izolace“ nebo „elektrické oddělení“.</p>
+<h2 id="ochrana-elektrickým-oddělením">Ochrana elektrickým
+oddělením</h2>
+<p>Při použití ochrany elektrickým oddělením <strong>nesmí</strong>
+napětí elektricky odděleného obvodu přesáhnout 500 V.</p>
+<h2 id="zapojení-prodlužovacích-přívodů">Zapojení prodlužovacích
+přívodů</h2>
+<p><img src="./media/media/image16.png"
+style="width:3.52083in;height:1.51042in" /></p>
+<h3 id="zapojení-v-síti-tn-s">Zapojení v síti TN-S</h3>
+<p><img src="./media/media/image17.png"
+style="width:2.25in;height:3.64583in" /></p>
+<p>Zapojení po roce 1999:</p>
+<p><img src="./media/media/image18.png"
+style="width:0.90625in;height:2.04167in" /> <img
+src="./media/media/image19.png"
+style="width:1.09375in;height:4.98958in" /></p>
+<h3 id="zapojení-spotřebiče-i.-třídy-v-síti-tn-c">Zapojení spotřebiče I.
+třídy v síti TN-C</h3>
+<p><img src="./media/media/image20.png"
+style="width:1.15625in;height:5.5in" /> <img
+src="./media/media/image21.png"
+style="width:1.60417in;height:5.1875in" /> <img
+src="./media/media/image22.png"
+style="width:1.45833in;height:5.17708in" /></p>
+<p><img src="./media/media/image23.png"
+style="width:5.35417in;height:1.5in" /></p>
+<p>Zapojení ve starší instalaci:</p>
+<p><img src="./media/media/image24.png"
+style="width:2.34375in;height:3.78125in" /></p>
+<h3 id="správné-zapojení">Správné zapojení</h3>
+<p><img src="./media/media/image25.png"
+style="width:2.36458in;height:1.6875in" /></p>
+<h2 id="jističe">Jističe</h2>
+<p>Vedení se jistí proti přetížení a zkratu na začátku vedení nebo na
+začátek odbočky při snížení průřezu vedení.</p>
+<p>Platí, že jistič je možno vyměnit za jistič s vyšším vybavovacím
+proudem pouze za předpokladu, že dojde k posouzení funkčnosti ochrany
+před nebezpečným dotykem. Při rozšíření stávajícího okruhu nevyžadující
+změnu jištění se vypracování revizní zprávy obvykle nepožaduje, je však
+nutné provést záznam o kontrole s podpisem pověřeného pracovníka.</p>
+<p>Jmenovitou vypínací schopnosti vypínacího prvku (pojistka, jistič)
+rozumím maximální poruchový proud, který je schopen prvek bezpečně
+vypnout.</p>
+<h3 id="typy-jističů">Typy jističů</h3>
+<ul>
+<li><p><strong>Typ B</strong> – poměr zkratové spouště k jmenovitému
+proudu cca <strong>3-5</strong></p></li>
+<li><p><strong>Typ C</strong> – poměr zkratové spouště k jmenovitému
+proudu cca <strong>6-9</strong></p></li>
+<li><p><strong>Typ D</strong></p></li>
+</ul>
+<h3 id="značení-pojistek">Značení pojistek</h3>
+<p>Pojistkové spodky závitových spojek je nutno zapojit středním
+kontaktem na stranu zdroje.</p>
+<ul>
+<li><p><strong>gG</strong> – určeno pro všeobecné použití – jištění
+vedení, kabelů, zařízení před přetížením a zkratem</p></li>
+<li><p><strong>aM</strong> – určeno pro jištění motorů a spotřebičů
+s velkým záběrovým proudem, jistí v omezeném rozsahu nadproudů, jen pro
+zkraty</p></li>
+</ul>
+<h1
+id="první-pomoc-při-úrazech-elektrickým-proudem-hašení-elektrického-zařízení">První
+pomoc při úrazech elektrickým proudem, hašení elektrického zařízení</h1>
+<h2 id="postup-při-vzniku-úrazu-elektrickým-proudem">Postup při vzniku
+úrazu elektrickým proudem</h2>
+<p>Vyprostit postiženého z dosahu elektrického proudu, zajistit životní
+funkce – umělé dýchání, nepřímá srdečná masáž, přivolání lékařské
+pomoci, uvědomění vedoucího, zápis do knihy úrazů.</p>
+<p>Je-li postižený po úraze elektrickým proudem při vědomí, pak jej
+stačí udržovat pod odhledem (ticho – teplo – tekutiny).</p>
+<p>Pokud by postižení po úrazu elektrickým proudem v bezvědomí dýchal a
+objeví se u něj cyanóza (fialoví), pak je třeba k umělému dýchání přidat
+nepřímou srdeční masáž.</p>
+<h2 id="hašení">Hašení</h2>
+<p>Elektrické zařízení pod napětím lze hasit sněhovým a práškovým
+hasicím přístrojem (ne vodním).</p>
+<p>Bezpečně vypnuté elektrické zařízení je možné hasit pěnovým,
+práškovým, sněhovým nebo vodním hasicím přístrojem.</p>
+      </main>
+    </div>
   </body>
 </html>

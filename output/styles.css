@@ -5,8 +5,6 @@
 /* --- GLOBAL & INDEX PAGE --- */
 body { font-family: 'Open Sans', sans-serif; line-height: 1.6; margin: 0; background-color: #f8f9fa; color: #212529; }
 .container { max-width: 900px; margin: 2rem auto; padding: 1rem 2rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-h1 { font-family: 'Roboto Slab', serif; color: #2c3e50; text-align: center; margin-bottom: 2rem; }
-h2 { font-family: 'Roboto Slab', serif; color: #34495e; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem; margin-top: 2.5rem; }
 #searchInput { width: 100%; padding: 0.8rem; font-size: 1.2em; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 2rem; box-sizing: border-box; }
 .directory-group.hidden, .active-files-group.hidden { display: none; }
 .badge { background-color: #17a2b8; color: white; padding: 0.2em 0.6em; font-size: 0.7em; font-weight: bold; border-radius: 10px; margin-left: 0.75rem; vertical-align: middle; text-transform: uppercase; }
@@ -43,7 +41,43 @@ h2 { font-family: 'Roboto Slab', serif; color: #34495e; border-bottom: 2px solid
 }
 /* END OF FIX */
 
-h1.title { font-size: 2.5em; text-align: left; }
+h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.2em;
+  color: #2c3e50;
+  
+  /* NEW: Add a strong visual separator for top-level headings */
+  padding-bottom: 0.5em;
+  border-bottom: 3px solid #34495e;
+  margin-top: 3rem; /* Add more space above H1 */
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.7em;
+  color: #34495e;
+  
+  /* Use a lighter border for H2 to make it less dominant than H1 */
+  border-bottom: 1px solid #ced4da;
+  padding-bottom: 0.4em;
+  margin-top: 2.5rem;
+}
+
+h3, h4, h5, h6 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  color: #343a40;
+}
+
+/* Make sure the main title in the content block doesn't get the huge border */
+h1.title {
+  font-size: 2.5em;
+  text-align: left;
+  border-bottom: none; /* Remove the border from the page title */
+  margin-top: 0;
+}
+
 a, a:visited { color: #007bff; text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; border-radius: 4px; }

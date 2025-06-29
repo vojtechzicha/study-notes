@@ -14,26 +14,53 @@ const JS_LOADER_PATH = './katex-loader.js'
 const MASTER_TEMPLATE_PATH = './template.html'
 const MANIFEST_NAME = 'manifest.json'
 
+// --- HELPER FUNCTION FOR DATE FORMATTING ---
+function getFormattedDate(date) {
+  if (!date) return 'N/A'
+  const d = new Date(date)
+  return `${d.toLocaleDateString('cs-CZ')} v ${d.toLocaleTimeString('cs-CZ')}`
+}
+
 // --- PDF GENERATION FUNCTION ---
-async function generatePdfFromHtml(htmlPath, pdfPath) {
+// We need to pass update/generation dates to this function for the PDF pages
+async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate) {
   console.log(`   -> Generating PDF for "${path.basename(htmlPath)}"...`)
   let browser
   try {
     browser = await puppeteer.launch({ headless: 'new' })
     const page = await browser.newPage()
-    // Go to the local HTML file. 'networkidle0' waits for web fonts and KaTeX to load.
     await page.goto('file://' + path.resolve(htmlPath), { waitUntil: 'networkidle0' })
-    // Generate the PDF
+
+    // Set the content of our new PDF pages using the passed dates
+    await page.evaluate(
+      (updateDate, generationDate) => {
+        const titleUpdate = document.querySelector('#pdf-title-page .update-date')
+        const titleGen = document.querySelector('#pdf-title-page .generation-date')
+        const lastUpdate = document.querySelector('#pdf-last-page .update-date')
+        const lastGen = document.querySelector('#pdf-last-page .generation-date')
+
+        if (titleUpdate) titleUpdate.textContent = updateDate
+        if (titleGen) titleGen.textContent = generationDate
+        if (lastUpdate) lastUpdate.textContent = updateDate
+        if (lastGen) lastGen.textContent = generationDate
+      },
+      updateDate,
+      generationDate
+    )
+
     await page.pdf({
       path: pdfPath,
       format: 'A4',
-      printBackground: true, // Important for including CSS background colors
-      margin: { top: '20px', right: '20px', bottom: '20px', left: '20px' },
+      printBackground: true,
+      margin: { top: '25px', right: '25px', bottom: '25px', left: '25px' },
+      // The displayHeaderFooter option is needed to render our print-only pages correctly
+      displayHeaderFooter: true,
+      headerTemplate: '<div></div>', // We are not using margins, but this enables print styles
+      footerTemplate: '<div></div>',
     })
     console.log(`   -> ✓ PDF successfully created at "${path.basename(pdfPath)}"`)
   } catch (e) {
     console.error(`   -> ❌ PDF generation failed: ${e.message}`)
-    // We don't abort the whole script, just skip this PDF.
   } finally {
     if (browser) await browser.close()
   }
@@ -42,6 +69,10 @@ async function generatePdfFromHtml(htmlPath, pdfPath) {
 // --- MAIN EXECUTION LOGIC ---
 async function main() {
   console.log('🚀 Starting Study Hub build process (Final with PDFs)...')
+
+  const generationDate = new Date() // Capture generation time once
+  const formattedGenerationDate = getFormattedDate(generationDate)
+  let latestUpdateTime = 0 // To track the most recent file change
 
   const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'))
   const { sources, outputDir } = config
@@ -92,6 +123,15 @@ async function main() {
       const outputPdfPath = path.join(outputDir, safePdfName)
       const tempHtmlPath = outputHtmlPath + '.temp'
 
+      const sourceStats = fs.statSync(originalDocxPath)
+      const updateDate = new Date(sourceStats.mtimeMs)
+      const formattedUpdateDate = getFormattedDate(updateDate)
+
+      // Track the latest update time across all files
+      if (sourceStats.mtimeMs > latestUpdateTime) {
+        latestUpdateTime = sourceStats.mtimeMs
+      }
+
       let shouldConvertHtml = !fs.existsSync(outputHtmlPath) || fs.statSync(originalDocxPath).mtimeMs > fs.statSync(outputHtmlPath).mtimeMs
 
       // NEW: Define the final media directory path for this specific document
@@ -138,6 +178,8 @@ async function main() {
             `--metadata=group-name:"${source.name}"`,
             `--metadata=docx_path:"${safeDocxName}"`,
             `--metadata=pdf_path:"${safePdfName}"`,
+            `--metadata=generation_date:"${formattedGenerationDate}"`,
+            `--metadata=update_date:"${formattedUpdateDate}"`,
             // This now correctly points to a directory inside the CWD (`output`).
             // Pandoc will generate a src relative to this, e.g., "file-media/media/image.png"
             `--extract-media="${pandocMediaDir}"`,
@@ -175,14 +217,13 @@ async function main() {
       // Always generate PDF if the HTML is newer than the PDF
       let shouldGeneratePdf = !fs.existsSync(outputPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputPdfPath).mtimeMs
       if (shouldGeneratePdf) {
-        await generatePdfFromHtml(outputHtmlPath, outputPdfPath)
+        await generatePdfFromHtml(outputHtmlPath, outputPdfPath, formattedUpdateDate, formattedGenerationDate)
       } else {
         console.log(`   -> Skipping PDF build for "${baseName}" (no changes).`)
       }
 
       manifest[safeHtmlName] = { originalName: baseName, htmlName: safeHtmlName }
-      const finalStats = fs.statSync(outputHtmlPath)
-      directoryFiles.files.push({ ...manifest[safeHtmlName], modifiedTime: finalStats.mtimeMs })
+      directoryFiles.files.push({ ...manifest[safeHtmlName], modifiedTime: sourceStats.mtimeMs })
     }
     if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
   }
@@ -190,7 +231,7 @@ async function main() {
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
   console.log('\n💾 Manifest saved.')
   console.log('\n📄 Generating index.html...')
-  const indexHtmlContent = generateIndexHtml(siteStructure)
+  const indexHtmlContent = generateIndexHtml(siteStructure, formattedGenerationDate, getFormattedDate(latestUpdateTime))
   fs.writeFileSync(path.join(outputDir, 'index.html'), indexHtmlContent)
   console.log('\n✅ All done! Your Study Hub is complete.')
 }
@@ -209,7 +250,7 @@ function slugify(text) {
     .replace(/--+/g, '-')
 }
 
-function generateIndexHtml(structure) {
+function generateIndexHtml(structure, generationDate, latestUpdateDate) {
   structure.sort((a, b) => a.directoryName.localeCompare(b.directoryName))
   const now = Date.now()
   const recentThreshold = 90 * 24 * 60 * 60 * 1000
@@ -268,10 +309,24 @@ function generateIndexHtml(structure) {
 <body>
     <div class="container">
         <h1>Univerzitní studium - materiály a přednášky</h1>
+        <div class="page-info">
+            <span>Poslední sestavení webu: <strong>${generationDate}</strong></span>
+            <span>Poslední aktualizace poznámek: <strong>${latestUpdateDate}</strong></span>
+        </div>
         <input type="text" id="searchInput" placeholder="Hledat v poznámkách...">
         ${activeFilesHtml}
         <div id="file-list">${fileListHtml}</div>
     </div>
+    <footer class="main-footer-license">
+        <p>
+            Veškeré materiály na této stránce jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek.
+            Jsou poskytovány bez záruky a slouží výhradně ke studijním účelům.
+        </p>
+        <p>
+            Obsah je licencován pod <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Uveďte původ-Neužívejte komerčně-Zachovejte licenci 4.0 Mezinárodní</a>.
+            To znamená, že materiály můžete volně sdílet a upravovat pro nekomerční účely, pokud uvedete původního autora a zachováte stejnou licenci.
+        </p>
+    </footer>
     <script>
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', (e) => {

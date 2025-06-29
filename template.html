@@ -13,6 +13,16 @@
     <script defer src="katex-loader.js"></script>
   </head>
   <body>
+    <!-- NEW: PDF Title Page (hidden on screen) -->
+    <div id="pdf-title-page">
+      <h1>$title$</h1>
+      <p class="group-name">$group-name$</p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+    </div>
+
     <header class="main-header">
       <div class="header-content">
         <a href="index.html" class="back-button">← Zpět</a>
@@ -42,6 +52,12 @@
           <h1 class="title">$title$</h1>
         </header>
 
+        <!-- NEW: Note page date info -->
+        <div class="page-info">
+          <span>Poslední aktualizace: <strong>$update_date$</strong></span>
+          <span>Verze k: <strong>$generation_date$</strong></span>
+        </div>
+
         <!-- This is a new wrapper for the PDF Table of Contents -->
         $if(toc)$
         <div class="toc-print-only">
@@ -50,6 +66,16 @@
         </div>
         $endif$ $body$
       </main>
+    </div>
+
+    <!-- NEW: PDF Last Page (hidden on screen) -->
+    <div id="pdf-last-page">
+      <h2>Konec dokumentu</h2>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+      <p class="license-info">Licencováno pod Creative Commons BY-NC-SA 4.0.</p>
     </div>
   </body>
 </html>

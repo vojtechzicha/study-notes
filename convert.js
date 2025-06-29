@@ -1,4 +1,4 @@
-// convert.js - UPDATED TO HANDLE DOCX, PDF, AND COMBINED SOURCES
+// convert.js - FINAL VERSION (IDEMPOTENT BUILD)
 const fs = require('fs')
 const path = require('path')
 const { execSync } = require('child_process')
@@ -63,7 +63,10 @@ async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate
 
 // --- MAIN EXECUTION LOGIC ---
 async function main() {
-  console.log('🚀 Starting Study Hub build process (with PDF support)...')
+  console.log('🚀 Starting Study Hub build process...')
+
+  // NEW: Flag to track if any files were actually changed
+  let anyFileUpdated = false
 
   const generationDate = new Date()
   const formattedGenerationDate = getFormattedDate(generationDate)
@@ -104,7 +107,6 @@ async function main() {
     console.log(`\n🔄 Processing directory for updates: "${source.name}"`)
     if (!fs.existsSync(source.path)) continue
 
-    // --- NEW: File Discovery Logic ---
     const sourceFiles = fs.readdirSync(source.path)
     const fileGroups = new Map()
 
@@ -119,7 +121,6 @@ async function main() {
       if (ext === '.docx') fileGroups.get(baseName).docx = file
       if (ext === '.pdf') fileGroups.get(baseName).pdf = file
     }
-    // --- End of File Discovery ---
 
     if (fileGroups.size === 0) continue
 
@@ -131,7 +132,7 @@ async function main() {
       if (files.docx && files.pdf) fileType = 'docx_and_pdf'
       else if (files.docx) fileType = 'docx'
       else if (files.pdf) fileType = 'pdf'
-      else continue // Should not happen
+      else continue
 
       console.log(`\n-> Processing "${baseName}" (Type: ${fileType})`)
 
@@ -140,7 +141,6 @@ async function main() {
       const docxStats = originalDocxPath ? fs.statSync(originalDocxPath) : null
       const pdfStats = originalPdfPath ? fs.statSync(originalPdfPath) : null
 
-      // Determine the most recent update time for this item
       const updateTime = Math.max(docxStats?.mtimeMs || 0, pdfStats?.mtimeMs || 0)
       const updateDate = new Date(updateTime)
       const formattedUpdateDate = getFormattedDate(updateDate)
@@ -152,16 +152,14 @@ async function main() {
         originalName: baseName,
         sourceSlug: sourceSlug,
         modifiedTime: updateTime,
-        // NEW: Pass the cutoff date into the manifest entry
         showUpdatesAfter: source.showUpdatesAfter,
       }
 
-      // --- Scenario 1 & 3: DOCX is present ---
       if (fileType.startsWith('docx')) {
         const safeHtmlName = `${sourceSlug}-${slugBase}.html`
         const safeDocxName = `${sourceSlug}-${slugBase}.docx`
-        const safeGeneratedPdfName = `${sourceSlug}-${slugBase}.pdf` // PDF from HTML
-        const safeSourcePdfName = files.pdf ? `${sourceSlug}-${slugBase}.source.pdf` : null // Original PDF
+        const safeGeneratedPdfName = `${sourceSlug}-${slugBase}.pdf`
+        const safeSourcePdfName = files.pdf ? `${sourceSlug}-${slugBase}.source.pdf` : null
 
         const outputHtmlPath = path.join(outputDir, safeHtmlName)
         const outputDocxPath = path.join(outputDir, safeDocxName)
@@ -175,7 +173,6 @@ async function main() {
           sourcePdfName: safeSourcePdfName,
         })
 
-        // Update check: check against docx AND original pdf if it exists
         const htmlExists = fs.existsSync(outputHtmlPath)
         const htmlMtime = htmlExists ? fs.statSync(outputHtmlPath).mtimeMs : 0
         let shouldConvertHtml = !htmlExists || docxStats.mtimeMs > htmlMtime || (pdfStats && pdfStats.mtimeMs > htmlMtime)
@@ -184,6 +181,7 @@ async function main() {
         const finalMediaDir = path.join(outputDir, mediaDirName)
 
         if (shouldConvertHtml) {
+          anyFileUpdated = true // NEW: A file will be updated
           if (fs.existsSync(finalMediaDir)) {
             console.log(`   -> Removing old media directory: "${mediaDirName}"`)
             fs.rmSync(finalMediaDir, { recursive: true, force: true })
@@ -212,11 +210,10 @@ async function main() {
               `--template="${pandocTemplatePath}"`,
               `--metadata=group-name:"${source.name}"`,
               `--metadata=docx_path:"${safeDocxName}"`,
-              `--metadata=pdf_path:"${safeGeneratedPdfName}"`, // Link to the generated PDF
+              `--metadata=pdf_path:"${safeGeneratedPdfName}"`,
               `--metadata=generation_date:"${formattedGenerationDate}"`,
               `--metadata=update_date:"${formattedUpdateDate}"`,
               `--extract-media="${mediaDirName}"`,
-              // NEW: Conditionally add path to original PDF
               safeSourcePdfName ? `--metadata=source_pdf_path:"${safeSourcePdfName}"` : '',
             ]
               .filter(Boolean)
@@ -227,7 +224,7 @@ async function main() {
 
             fs.renameSync(path.join(outputDir, pandocTempHtmlPath), outputHtmlPath)
             fs.copyFileSync(originalDocxPath, outputDocxPath)
-            if (safeSourcePdfName) fs.copyFileSync(originalPdfPath, outputSourcePdfPath) // Copy original PDF
+            if (safeSourcePdfName) fs.copyFileSync(originalPdfPath, outputSourcePdfPath)
             console.log(`   -> ✨ Successfully created "${safeHtmlName}" and supporting files.`)
           } catch (error) {
             process.chdir(originalCwd)
@@ -243,19 +240,19 @@ async function main() {
         let shouldGeneratePdf =
           !fs.existsSync(outputGeneratedPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputGeneratedPdfPath).mtimeMs
         if (shouldGeneratePdf) {
+          anyFileUpdated = true // NEW: A file will be updated
           await generatePdfFromHtml(outputHtmlPath, outputGeneratedPdfPath, formattedUpdateDate, formattedGenerationDate)
         } else {
           console.log(`   -> Skipping Generated PDF build for "${baseName}" (no changes).`)
         }
-      }
-      // --- Scenario 2: PDF only ---
-      else if (fileType === 'pdf') {
+      } else if (fileType === 'pdf') {
         const safeSourcePdfName = `${sourceSlug}-${slugBase}.pdf`
         const outputPdfPath = path.join(outputDir, safeSourcePdfName)
         Object.assign(manifestEntry, { sourcePdfName: safeSourcePdfName })
 
         let shouldCopyPdf = !fs.existsSync(outputPdfPath) || pdfStats.mtimeMs > fs.statSync(outputPdfPath).mtimeMs
         if (shouldCopyPdf) {
+          anyFileUpdated = true // NEW: A file will be updated
           console.log(`   -> Copying source PDF "${files.pdf}"...`)
           fs.copyFileSync(originalPdfPath, outputPdfPath)
         } else {
@@ -269,15 +266,21 @@ async function main() {
     if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
   }
 
-  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
-  console.log('\n💾 Manifest saved.')
-  console.log('\n📄 Generating index.html...')
-  const indexHtmlContent = generateIndexHtml(siteStructure, formattedGenerationDate, getFormattedDate(latestUpdateTime))
-  fs.writeFileSync(path.join(outputDir, 'index.html'), indexHtmlContent)
-  console.log('\n✅ All done! Your Study Hub is complete.')
+  // --- NEW: Conditional generation of manifest and index.html ---
+  if (anyFileUpdated) {
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
+    console.log('\n💾 Manifest saved.')
+    console.log('\n📄 Generating index.html...')
+    const indexHtmlContent = generateIndexHtml(siteStructure, formattedGenerationDate, getFormattedDate(latestUpdateTime))
+    fs.writeFileSync(path.join(outputDir, 'index.html'), indexHtmlContent)
+    console.log('\n✅ All done! Your Study Hub is complete.')
+  } else {
+    console.log('\n- No file updates detected. Skipping manifest and index.html generation.')
+    console.log('\n✅ All done! Your Study Hub is up-to-date.')
+  }
 }
 
-// --- HELPER FUNCTIONS ---
+// --- HELPER FUNCTIONS (generateIndexHtml and slugify are unchanged) ---
 
 function slugify(text) {
   return text
@@ -304,12 +307,9 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
     })
   })
 
-  // --- UPDATED LOGIC FOR "Nedávno aktualizované" ---
   const activeFiles = allFiles
     .filter(file => {
-      // Condition 1: Must be within the 210-day active window
       const isActive = now - file.modifiedTime < activeThreshold
-      // Condition 2: Must be after the specified cutoff date (if it exists)
       const isAfterCutoff = !file.showUpdatesAfter || file.modifiedTime > new Date(file.showUpdatesAfter).getTime()
       return isActive && isAfterCutoff
     })

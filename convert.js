@@ -99,47 +99,68 @@ async function main() {
       const finalMediaDir = path.join(outputDir, mediaDirName)
 
       if (shouldConvertHtml) {
-        // NEW: Before converting, remove the old media directory if it exists.
-        // This handles cases where images are removed from the source DOCX.
+        // This path is relative to the project root, CWD is still root here.
         if (fs.existsSync(finalMediaDir)) {
           console.log(`   -> Removing old media directory: "${mediaDirName}"`)
           fs.rmSync(finalMediaDir, { recursive: true, force: true })
         }
 
+        // Store original CWD to revert back to it
+        const originalCwd = process.cwd()
+
         try {
           console.log(`   -> Converting "${baseName}"...`)
+
+          // =================================================================
+          // === KEY CHANGE: Change into the output directory ===
+          process.chdir(outputDir)
+          // =================================================================
+
+          // Now, define paths for the Pandoc command relative to the NEW CWD (`output`)
+          const pandocSourcePath = path.relative(process.cwd(), path.resolve(originalCwd, originalDocxPath))
+          const pandocTempHtmlPath = path.basename(tempHtmlPath) // e.g., "file.html.temp"
+          const pandocLuaFilterPath = path.relative(process.cwd(), path.resolve(originalCwd, LUA_FILTER_PATH))
+          const pandocTemplatePath = path.relative(process.cwd(), path.resolve(originalCwd, MASTER_TEMPLATE_PATH))
+          const pandocMediaDir = mediaDirName // e.g., "file-media" (no "output/" prefix)
+
           const pandocCommand = [
             'pandoc',
-            `"${path.resolve(originalDocxPath)}"`,
+            `"${pandocSourcePath}"`,
             '-t',
             'html',
             '-s',
             '-o',
-            `"${tempHtmlPath}"`,
+            `"${pandocTempHtmlPath}"`,
             '--katex',
             '--toc',
-            `--lua-filter="${path.resolve(LUA_FILTER_PATH)}"`,
-            `--template="${path.resolve(MASTER_TEMPLATE_PATH)}"`,
+            `--lua-filter="${pandocLuaFilterPath}"`,
+            `--template="${pandocTemplatePath}"`,
             `--metadata=group-name:"${source.name}"`,
             `--metadata=docx_path:"${safeDocxName}"`,
             `--metadata=pdf_path:"${safePdfName}"`,
-            // UPDATED: Tell pandoc to extract media to the unique final directory.
-            // Pandoc will create this directory and generate correct relative links.
-            `--extract-media="${finalMediaDir}"`,
+            // This now correctly points to a directory inside the CWD (`output`).
+            // Pandoc will generate a src relative to this, e.g., "file-media/media/image.png"
+            `--extract-media="${pandocMediaDir}"`,
           ].join(' ')
 
           execSync(pandocCommand, { stdio: 'pipe', encoding: 'utf-8' })
+
+          // Success! Revert CWD before doing more file operations.
+          process.chdir(originalCwd)
+
+          // Now use the original paths (relative to root) for file operations
           fs.renameSync(tempHtmlPath, outputHtmlPath)
           fs.copyFileSync(originalDocxPath, outputDocxPath)
           console.log(`   -> ✨ Successfully created "${safeHtmlName}" and extracted media.`)
         } catch (error) {
+          // IMPORTANT: Make sure we change back, even on error
+          process.chdir(originalCwd)
+
           console.error(`\n❌ FATAL ERROR during conversion of "${docxFile}". Aborting.`)
-          console.error(error.stderr || error.message) // Log the actual Pandoc error
+          console.error(error.stderr || error.message)
 
-          // Cleanup temp HTML
+          // Cleanup temp files using original paths
           if (fs.existsSync(tempHtmlPath)) fs.unlinkSync(tempHtmlPath)
-
-          // NEW: Also clean up the partially created media directory on failure.
           if (fs.existsSync(finalMediaDir)) {
             console.error(`   -> Cleaning up failed media extraction at "${mediaDirName}"...`)
             fs.rmSync(finalMediaDir, { recursive: true, force: true })

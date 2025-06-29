@@ -1,9 +1,9 @@
-// katex-loader.js - FINAL POLISHED VERSION
+// katex-loader.js - FINAL POLISHED VERSION (with direct sidebar scroll fix)
 // This script handles math rendering and synchronized scrolling for the TOC,
 // and now intelligently centers the active link in the sidebar's viewport.
 
 document.addEventListener('DOMContentLoaded', function () {
-  // --- PART 1: KaTeX Math Rendering ---
+  // --- PART 1: KaTeX Math Rendering --- (No changes here)
   try {
     const mathElements = document.querySelectorAll('.math')
     if (typeof katex !== 'undefined' && mathElements.length > 0) {
@@ -40,8 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (headings.length === 0) return
 
   const onScroll = () => {
-    // Using a more reliable way to get scroll position that works across browsers
-    const scrollPosition = mainContent.scrollTop
+    const scrollPosition = window.scrollY
     const offset = 150 // An offset to trigger highlighting a bit early
     let activeHeadingId = null
 
@@ -63,16 +62,25 @@ document.addEventListener('DOMContentLoaded', function () {
         // Then, add it to the correct one
         link.classList.add('active')
 
-        // --- THE FINAL UX FIX ---
-        // Scroll the new active link to the CENTER of the sidebar.
-        link.scrollIntoView({
+        // === THE NEW, ROBUST SCROLLING LOGIC ===
+        // We now scroll the sidebar directly, instead of using scrollIntoView,
+        // which was causing the disruptive scroll loop with the main window.
+
+        // Calculate the position of the link relative to the top of the sidebar's content
+        const linkOffsetTop = link.offsetTop
+
+        // Calculate the desired scroll position to center the link in the sidebar's viewport
+        const desiredScrollTop = linkOffsetTop - sidebar.clientHeight / 2 + link.clientHeight / 2
+
+        // Programmatically scroll ONLY the sidebar. This will not trigger a window scroll event.
+        sidebar.scrollTo({
+          top: desiredScrollTop,
           behavior: 'smooth',
-          block: 'center', // This is the key change
         })
       }
     })
   }
 
-  mainContent.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('scroll', onScroll, { passive: true })
   onScroll() // Run on load to set initial state
 })

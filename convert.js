@@ -92,10 +92,7 @@ async function main() {
       for (const manifestKey in manifest) {
         if (manifest[manifestKey].sourceSlug === sourceSlug) {
           const entry = manifest[manifestKey]
-          const outputPath = path.join(
-            outputDir,
-            entry.htmlName || entry.sourcePdfName
-          )
+          const outputPath = path.join(outputDir, entry.htmlName || entry.sourcePdfName)
           const stats = fs.existsSync(outputPath) ? fs.statSync(outputPath) : { mtimeMs: 0 }
           directoryFiles.files.push({ ...entry, modifiedTime: stats.mtimeMs })
         }
@@ -154,9 +151,11 @@ async function main() {
         type: fileType,
         originalName: baseName,
         sourceSlug: sourceSlug,
-        modifiedTime: updateTime
+        modifiedTime: updateTime,
+        // NEW: Pass the cutoff date into the manifest entry
+        showUpdatesAfter: source.showUpdatesAfter,
       }
-      
+
       // --- Scenario 1 & 3: DOCX is present ---
       if (fileType.startsWith('docx')) {
         const safeHtmlName = `${sourceSlug}-${slugBase}.html`
@@ -168,17 +167,17 @@ async function main() {
         const outputDocxPath = path.join(outputDir, safeDocxName)
         const outputGeneratedPdfPath = path.join(outputDir, safeGeneratedPdfName)
         const outputSourcePdfPath = safeSourcePdfName ? path.join(outputDir, safeSourcePdfName) : null
-        
+
         Object.assign(manifestEntry, {
           htmlName: safeHtmlName,
           docxName: safeDocxName,
           generatedPdfName: safeGeneratedPdfName,
-          sourcePdfName: safeSourcePdfName
-        });
+          sourcePdfName: safeSourcePdfName,
+        })
 
         // Update check: check against docx AND original pdf if it exists
-        const htmlExists = fs.existsSync(outputHtmlPath);
-        const htmlMtime = htmlExists ? fs.statSync(outputHtmlPath).mtimeMs : 0;
+        const htmlExists = fs.existsSync(outputHtmlPath)
+        const htmlMtime = htmlExists ? fs.statSync(outputHtmlPath).mtimeMs : 0
         let shouldConvertHtml = !htmlExists || docxStats.mtimeMs > htmlMtime || (pdfStats && pdfStats.mtimeMs > htmlMtime)
 
         const mediaDirName = `${sourceSlug}-${slugBase}-media`
@@ -193,16 +192,22 @@ async function main() {
           try {
             console.log(`   -> Converting "${baseName}"...`)
             process.chdir(outputDir)
-            
+
             const pandocSourcePath = path.relative(process.cwd(), path.resolve(originalCwd, originalDocxPath))
             const pandocTempHtmlPath = path.basename(outputHtmlPath) + '.temp'
             const pandocLuaFilterPath = path.relative(process.cwd(), path.resolve(originalCwd, LUA_FILTER_PATH))
             const pandocTemplatePath = path.relative(process.cwd(), path.resolve(originalCwd, MASTER_TEMPLATE_PATH))
-            
+
             const pandocCommand = [
-              'pandoc', `"${pandocSourcePath}"`, '-t', 'html', '-s',
-              '-o', `"${pandocTempHtmlPath}"`,
-              '--katex', '--toc',
+              'pandoc',
+              `"${pandocSourcePath}"`,
+              '-t',
+              'html',
+              '-s',
+              '-o',
+              `"${pandocTempHtmlPath}"`,
+              '--katex',
+              '--toc',
               `--lua-filter="${pandocLuaFilterPath}"`,
               `--template="${pandocTemplatePath}"`,
               `--metadata=group-name:"${source.name}"`,
@@ -212,8 +217,10 @@ async function main() {
               `--metadata=update_date:"${formattedUpdateDate}"`,
               `--extract-media="${mediaDirName}"`,
               // NEW: Conditionally add path to original PDF
-              safeSourcePdfName ? `--metadata=source_pdf_path:"${safeSourcePdfName}"` : ""
-            ].filter(Boolean).join(' ')
+              safeSourcePdfName ? `--metadata=source_pdf_path:"${safeSourcePdfName}"` : '',
+            ]
+              .filter(Boolean)
+              .join(' ')
 
             execSync(pandocCommand, { stdio: 'pipe', encoding: 'utf-8' })
             process.chdir(originalCwd)
@@ -233,30 +240,31 @@ async function main() {
           console.log(`   -> Skipping HTML build for "${baseName}" (no changes).`)
         }
 
-        let shouldGeneratePdf = !fs.existsSync(outputGeneratedPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputGeneratedPdfPath).mtimeMs
+        let shouldGeneratePdf =
+          !fs.existsSync(outputGeneratedPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputGeneratedPdfPath).mtimeMs
         if (shouldGeneratePdf) {
           await generatePdfFromHtml(outputHtmlPath, outputGeneratedPdfPath, formattedUpdateDate, formattedGenerationDate)
         } else {
           console.log(`   -> Skipping Generated PDF build for "${baseName}" (no changes).`)
         }
-      } 
+      }
       // --- Scenario 2: PDF only ---
       else if (fileType === 'pdf') {
-        const safeSourcePdfName = `${sourceSlug}-${slugBase}.pdf`;
-        const outputPdfPath = path.join(outputDir, safeSourcePdfName);
-        Object.assign(manifestEntry, { sourcePdfName: safeSourcePdfName });
+        const safeSourcePdfName = `${sourceSlug}-${slugBase}.pdf`
+        const outputPdfPath = path.join(outputDir, safeSourcePdfName)
+        Object.assign(manifestEntry, { sourcePdfName: safeSourcePdfName })
 
-        let shouldCopyPdf = !fs.existsSync(outputPdfPath) || pdfStats.mtimeMs > fs.statSync(outputPdfPath).mtimeMs;
-        if(shouldCopyPdf) {
-            console.log(`   -> Copying source PDF "${files.pdf}"...`);
-            fs.copyFileSync(originalPdfPath, outputPdfPath);
+        let shouldCopyPdf = !fs.existsSync(outputPdfPath) || pdfStats.mtimeMs > fs.statSync(outputPdfPath).mtimeMs
+        if (shouldCopyPdf) {
+          console.log(`   -> Copying source PDF "${files.pdf}"...`)
+          fs.copyFileSync(originalPdfPath, outputPdfPath)
         } else {
-            console.log(`   -> Skipping PDF copy for "${baseName}" (no changes).`);
+          console.log(`   -> Skipping PDF copy for "${baseName}" (no changes).`)
         }
       }
-      
-      manifest[manifestKey] = manifestEntry;
-      directoryFiles.files.push(manifestEntry);
+
+      manifest[manifestKey] = manifestEntry
+      directoryFiles.files.push(manifestEntry)
     }
     if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
   }
@@ -272,7 +280,15 @@ async function main() {
 // --- HELPER FUNCTIONS ---
 
 function slugify(text) {
-  return text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w.-]+/g, '').replace(/--+/g, '-')
+  return text
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w.-]+/g, '')
+    .replace(/--+/g, '-')
 }
 
 function generateIndexHtml(structure, generationDate, latestUpdateDate) {
@@ -282,18 +298,32 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
   const activeThreshold = 210 * 24 * 60 * 60 * 1000
 
   let allFiles = []
-  structure.forEach(dir => { dir.files.forEach(file => { allFiles.push({ ...file, directoryName: dir.directoryName }) }) })
+  structure.forEach(dir => {
+    dir.files.forEach(file => {
+      allFiles.push({ ...file, directoryName: dir.directoryName })
+    })
+  })
 
-  const activeFiles = allFiles.filter(file => now - file.modifiedTime < activeThreshold).sort((a, b) => b.modifiedTime - a.modifiedTime)
+  // --- UPDATED LOGIC FOR "Nedávno aktualizované" ---
+  const activeFiles = allFiles
+    .filter(file => {
+      // Condition 1: Must be within the 210-day active window
+      const isActive = now - file.modifiedTime < activeThreshold
+      // Condition 2: Must be after the specified cutoff date (if it exists)
+      const isAfterCutoff = !file.showUpdatesAfter || file.modifiedTime > new Date(file.showUpdatesAfter).getTime()
+      return isActive && isAfterCutoff
+    })
+    .sort((a, b) => b.modifiedTime - a.modifiedTime)
 
   let activeFilesHtml = ''
   if (activeFiles.length > 0) {
     activeFilesHtml += `<div class="active-files-group" data-directory-name="nedávno aktualizované"><h2>Nedávno aktualizované</h2><ul>`
     activeFiles.forEach(file => {
-      const link = file.type === 'pdf'
-        ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
-        : `<a href="./${file.htmlName}">${file.originalName}</a>`
-      
+      const link =
+        file.type === 'pdf'
+          ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
+          : `<a href="./${file.htmlName}">${file.originalName}</a>`
+
       activeFilesHtml += `
             <li data-file-name="${file.originalName.toLowerCase()}" data-directory-name="${file.directoryName.toLowerCase()}">
                 ${link}
@@ -306,14 +336,17 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
   let fileListHtml = ''
   for (const dir of structure) {
     dir.files.sort((a, b) => a.originalName.localeCompare(b.originalName))
-    fileListHtml += `<div class="directory-group" data-directory-name="${dir.directoryName.toLowerCase()}"><h2>${dir.directoryName}</h2><ul>`
+    fileListHtml += `<div class="directory-group" data-directory-name="${dir.directoryName.toLowerCase()}"><h2>${
+      dir.directoryName
+    }</h2><ul>`
     for (const file of dir.files) {
       const isRecent = now - file.modifiedTime < recentThreshold
       const newBadge = isRecent ? ' <span class="badge">NOVÉ</span>' : ''
-      const link = file.type === 'pdf'
-        ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
-        : `<a href="./${file.htmlName}">${file.originalName}</a>`
-      
+      const link =
+        file.type === 'pdf'
+          ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
+          : `<a href="./${file.htmlName}">${file.originalName}</a>`
+
       fileListHtml += `<li data-file-name="${file.originalName.toLowerCase()}">${link}${newBadge}</li>`
     }
     fileListHtml += `</ul></div>`

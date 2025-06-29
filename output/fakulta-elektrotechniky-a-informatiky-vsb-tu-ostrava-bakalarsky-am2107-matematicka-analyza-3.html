@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Matematická analýza 3 - Studijní poznámky</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="katex-loader.js"></script>
+  </head>
+  <body>
+    <!-- NEW: PDF Title Page (hidden on screen) -->
+    <div id="pdf-title-page">
+      <h1>Matematická analýza 3</h1>
+      <p class="group-name">Fakulta elektrotechniky a informatiky VŠB-TU
+Ostrava (bakalářský)</p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="header-content">
+        <a href="index.html" class="back-button">← Zpět</a>
+        <a href="index.html" class="home-link">Univerzitní studium</a>
+        <span class="breadcrumb-item">Fakulta elektrotechniky a
+informatiky VŠB-TU Ostrava (bakalářský)</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-item-active">Matematická analýza
+3</span>
+      </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
+    </header>
+
+    <!-- The .page-container is now the main layout wrapper -->
+    <div class="page-container">
+            <nav class="sidebar" id="TOC">
+        <h2>Obsah</h2>
+        <ul>
+        <li><a href="#číselné-řady" id="toc-číselné-řady">Číselné
+        řady</a>
+        <ul>
+        <li><a
+        href="#httpupload.wikimedia.orgwikipediaenthumbaa0sierpinski_carpet.png243px-sierpinski_carpet.pngmotivační-příklady"
+        id="toc-httpupload.wikimedia.orgwikipediaenthumbaa0sierpinski_carpet.png243px-sierpinski_carpet.pngmotivační-příklady"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3-media/media/image1.png"
+        style="width:1.36458in;height:1.36458in"
+        alt="http://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Sierpinski_carpet.png/243px-Sierpinski_carpet.png" />Motivační
+        příklady</a></li>
+        <li><a href="#základní-pojmy" id="toc-základní-pojmy">Základní
+        pojmy</a></li>
+        <li><a href="#kritéria-absolutní-konvergence"
+        id="toc-kritéria-absolutní-konvergence">Kritéria absolutní
+        konvergence</a></li>
+        <li><a href="#kritéria-neabsolutní-konvergence"
+        id="toc-kritéria-neabsolutní-konvergence">Kritéria neabsolutní
+        konvergence</a></li>
+        <li><a href="#odhad-zbytku-řady"
+        id="toc-odhad-zbytku-řady">Odhad zbytku řady</a></li>
+        <li><a href="#přerovnávání-řad"
+        id="toc-přerovnávání-řad">Přerovnávání řad</a></li>
+        </ul></li>
+        <li><a href="#vektorové-funkce"
+        id="toc-vektorové-funkce">Vektorové funkce</a>
+        <ul>
+        <li><a href="#motivační-příklady"
+        id="toc-motivační-příklady">Motivační příklady</a></li>
+        <li><a href="#základní-pojmy-1"
+        id="toc-základní-pojmy-1">Základní pojmy</a></li>
+        <li><a href="#limita-a-spojitost-vektorové-funkce"
+        id="toc-limita-a-spojitost-vektorové-funkce">Limita a spojitost
+        vektorové funkce</a>
+        <ul>
+        <li><a href="#limita-vektorové-funkce"
+        id="toc-limita-vektorové-funkce">Limita vektorové
+        funkce</a></li>
+        <li><a href="#spojitost-vektorové-funkce"
+        id="toc-spojitost-vektorové-funkce">Spojitost vektorové
+        funkce</a></li>
+        </ul></li>
+        <li><a href="#diferenciál-vektorové-funkce"
+        id="toc-diferenciál-vektorové-funkce">Diferenciál vektorové
+        funkce</a></li>
+        </ul></li>
+        </ul>
+      </nav>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Matematická analýza 3</h1>
+        </header>
+
+        <!-- NEW: Note page date info -->
+        <div class="page-info">
+          <span>Poslední aktualizace: <strong>14. 1. 2024 v
+15:41:04</strong></span>
+          <span>Verze k: <strong>29. 6. 2025 v 15:18:06</strong></span>
+        </div>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#číselné-řady" id="toc-číselné-řady">Číselné
+          řady</a>
+          <ul>
+          <li><a
+          href="#httpupload.wikimedia.orgwikipediaenthumbaa0sierpinski_carpet.png243px-sierpinski_carpet.pngmotivační-příklady"
+          id="toc-httpupload.wikimedia.orgwikipediaenthumbaa0sierpinski_carpet.png243px-sierpinski_carpet.pngmotivační-příklady"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3-media/media/image1.png"
+          style="width:1.36458in;height:1.36458in"
+          alt="http://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Sierpinski_carpet.png/243px-Sierpinski_carpet.png" />Motivační
+          příklady</a></li>
+          <li><a href="#základní-pojmy" id="toc-základní-pojmy">Základní
+          pojmy</a></li>
+          <li><a href="#kritéria-absolutní-konvergence"
+          id="toc-kritéria-absolutní-konvergence">Kritéria absolutní
+          konvergence</a></li>
+          <li><a href="#kritéria-neabsolutní-konvergence"
+          id="toc-kritéria-neabsolutní-konvergence">Kritéria neabsolutní
+          konvergence</a></li>
+          <li><a href="#odhad-zbytku-řady"
+          id="toc-odhad-zbytku-řady">Odhad zbytku řady</a></li>
+          <li><a href="#přerovnávání-řad"
+          id="toc-přerovnávání-řad">Přerovnávání řad</a></li>
+          </ul></li>
+          <li><a href="#vektorové-funkce"
+          id="toc-vektorové-funkce">Vektorové funkce</a>
+          <ul>
+          <li><a href="#motivační-příklady"
+          id="toc-motivační-příklady">Motivační příklady</a></li>
+          <li><a href="#základní-pojmy-1"
+          id="toc-základní-pojmy-1">Základní pojmy</a></li>
+          <li><a href="#limita-a-spojitost-vektorové-funkce"
+          id="toc-limita-a-spojitost-vektorové-funkce">Limita a
+          spojitost vektorové funkce</a>
+          <ul>
+          <li><a href="#limita-vektorové-funkce"
+          id="toc-limita-vektorové-funkce">Limita vektorové
+          funkce</a></li>
+          <li><a href="#spojitost-vektorové-funkce"
+          id="toc-spojitost-vektorové-funkce">Spojitost vektorové
+          funkce</a></li>
+          </ul></li>
+          <li><a href="#diferenciál-vektorové-funkce"
+          id="toc-diferenciál-vektorové-funkce">Diferenciál vektorové
+          funkce</a></li>
+          </ul></li>
+          </ul>
+        </div>
+         <h1 id="číselné-řady">Číselné řady</h1>
+<h2
+id="httpupload.wikimedia.orgwikipediaenthumbaa0sierpinski_carpet.png243px-sierpinski_carpet.pngmotivační-příklady"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3-media/media/image1.png"
+style="width:1.36458in;height:1.36458in"
+alt="http://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Sierpinski_carpet.png/243px-Sierpinski_carpet.png" />Motivační
+příklady</h2>
+<p>Sierpinského koberec</p>
+<ul>
+<li><p>Achilles běží rychlostí <span class="math inline">10\ ms^{-
+1}</span>, želva běží rychlostí <span class="math inline">1\ ms^{-
+1}</span>. Na startu má želva náskok <span class="math inline">1\
+m</span>. Za jak dlouho se setkají a kde?<br />
+Úloha vede na součet řady <span class="math inline">100 \cdot \sum_{n =
+1}^{\infty}\left( \frac{1}{10} \right)^{n}</span>.</p></li>
+<li><p>Jaká je plocha Sierpinského koberce (viz Figure 1) o hraně <span
+class="math inline">1\ j</span>?<br />
+Úloha vede na součet řady <span class="math inline">\frac{1}{9} \cdot
+\sum_{n = 1}^{\infty}\left( \frac{8}{9} \right)^{n - 1}</span>.</p></li>
+</ul>
+<h2 id="základní-pojmy">Základní pojmy</h2>
+<p><em>Definice (řady a základní pojmy):</em> <strong>Řadou (reálných
+čísel)</strong> rozumíme výraz <span class="math inline">a_{1} + a_{2} +
+\ldots + a_{n} + \ldots ≝ \sum_{n = 1}^{\infty}a_{n}</span>, kde pro
+každé <span class="math inline">n\mathbb{\in N}</span> je <span
+class="math inline">a_{n}\mathbb{\in R}</span>, tj. <span
+class="math inline">\left( a_{n} \right)</span> je posloupností reálných
+čísel. Číslo <span class="math inline">a_{n}</span> nazýváme <span
+class="math inline">\mathbf{n}</span><strong>-tým členem řady</strong>.
+Posloupnost <span class="math inline">\left( s_{n} \right) : = a_{1} +
+\ldots + a_{n}</span> nazýváme <strong>posloupností částečných součtů
+řady</strong>. Existuje-li <span class="math inline">\lim s_{n} = S \in
+\mathbb{R}^{*}</span>, nazýváme ji <strong>součtem řady</strong> a
+označíme ji <span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>.
+Pokud <span class="math inline">S</span> existuje a platí, že <span
+class="math inline">s\mathbb{\in R}</span>, pak řekneme, že řada
+<strong>konverguje</strong>. Pokud <span class="math inline">S = \left\{
++ \infty, - \infty \right\}</span> nebo <span
+class="math inline">S</span> neexistuje, pak řekneme, že řada
+<strong>diverguje</strong>.</p>
+<ul>
+<li><p>Aritmetická řada <span class="math inline">1 + 2 + \ldots n +
+\ldots = \sum_{n = 1}^{\infty}n = \infty</span>, řada
+diverguje.</p></li>
+<li><p>Geometrická řada <span class="math inline">1 + q + q^{2} + \ldots
++ q^{n} + \ldots = \sum_{n = 1}^{\infty}q^{n - 1} = \left\{
+\begin{array}{r}
+\frac{1}{1 - q},q \in (1, - 1) \\
+\nexists,q \notin (1, - 1)
+\end{array} \right.\ </span>.</p></li>
+<li><p>Harmonická řada <span class="math inline">1 + \frac{1}{2} +
+\frac{1}{3} + \ldots + \frac{1}{n} + \ldots = \sum_{n =
+1}^{\infty}\frac{1}{n} = \infty</span>, řada diverguje.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{1}{n(n
++ 1)} = \sum_{n = 1}^{\infty}{\left( \frac{1}{n} - \frac{1}{n + 1}
+\right) = 1}</span>, řada je konvergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{1}{(n -
+1)!} = e</span> (Taylorův polynom <span class="math inline">e^{x}</span>
+v bodě <span class="math inline">0</span>).</p></li>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}{( - 1)^{n +
+1} \cdot \frac{1}{2n - 1} = \frac{\pi}{4}}</span> (Taylorův polynom
+<span class="math inline">{atan}x</span> v bodě <span
+class="math inline">0</span>).</p></li>
+</ul>
+<p><em>Věta (nutná podmínka konvergence řady):</em> Konverguje-li řada
+<span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>, poté <span
+class="math inline">\lim a_{n} = 0</span>.</p>
+<p>Z předpokladu platí, že <span class="math inline">\lim s_{n} =
+S\mathbb{\in R}</span> existuje. Poté <span class="math inline">\lim
+a_{n} = \lim\left( s_{n} - s_{n - 1} \right) = \lim s_{n} - \lim s_{n -
+1} = S - S = 0</span>.<span class="math inline">\blacksquare</span></p>
+<p><em>Věta:</em> Konverguje-li řada <span class="math inline">\sum_{n =
+1}^{\infty}\left| a_{n} \right|</span>, poté konverguje i řada <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>.</p>
+<p>Z předpokladu platí <span class="math inline">\sum_{n =
+1}^{\infty}\left| a_{n} \right| = S\mathbb{\in R}</span>. Zavedeme <span
+class="math inline">\forall n\mathbb{\in N:}a_{n}^{+} = \max\left\{
+a_{n},0 \right\},a_{n}^{-} = \max\left\{ - a_{n},0 \right\}</span>.
+Platí, že <span class="math inline">a_{n}^{+} \geq 0</span> a <span
+class="math inline">a_{n}^{-} \geq 0</span>. Poté <span
+class="math inline">s_{n} = a_{1} + \ldots a_{n} = a_{1}^{+} - a_{1}^{-}
++ \ldots + a_{n}^{+} - a_{n}^{-} = s_{n}^{+} - s_{n}^{-}</span>. Dále
+<span class="math inline">\lim s_{n} = \lim s_{n}^{+} - \lim
+s_{n}^{-}</span>, tudíž pokud <span class="math inline">s_{n}^{+}</span>
+a <span class="math inline">s_{n}^{-}</span> jsou konvergentní, poté i
+<span class="math inline">s_{n}</span> je konvergentní. S využitím věty
+o limitě neklesající a shora omezené posloupnosti ukažme, že posloupnost
+<span class="math inline">s_{n}^{+}</span> je neklesající díky definici
+<span class="math inline">a_{n}^{+}</span> a shora omezená <span
+class="math inline">s_{n}^{+} = a_{1}^{+} + \ldots + a_{n}^{+} \leq
+\left| a_{1} \right| + \ldots + \left| a_{n} \right| \rightarrow S \leq
+S</span>. Podobně <span class="math inline">s_{n}^{-} = a_{1}^{-} +
+\ldots + a_{n}^{-} \leq \left| a_{1} \right| + \ldots\left| a_{n}
+\right| \rightarrow S \leq S</span>. Proto platí, že <span
+class="math inline">s_{n}^{+}</span> a <span
+class="math inline">s_{n}^{-}</span> jsou konvergentní.<span
+class="math inline">\blacksquare</span></p>
+<p><em>Definice (absolutní konvergence):</em> Konverguje-li řada <span
+class="math inline">\sum_{n = 1}^{\infty}{|a_{n}|}</span>, poté řadu
+<span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> nazýváme
+<strong>absolutně konvergentní řadou</strong>. Konverguje-li řada <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>, ale řada <span
+class="math inline">\sum_{n = 1}^{\infty}{|a_{n}|}</span> diverguje,
+poté řadu <span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>
+nazýváme <strong>neabsolutně konvergentní řadou</strong>.</p>
+<p>Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{( - 1)^{n +
+1}}{n}</span> je neabsolutně konvergentní.</p>
+<h2 id="kritéria-absolutní-konvergence">Kritéria absolutní
+konvergence</h2>
+<p><em>Poznámka:</em> Píšeme-li „<span class="math inline">V(n)</span>
+platí pro všechna dost velká <span class="math inline">n\mathbb{\in
+N}</span>“, myslíme „<span class="math inline">\exists n_{0}\mathbb{\in
+N:\forall}n \geq n_{0},n\mathbb{\in N:}V(n)</span>“.</p>
+<p><em>Věta (srovnávací kritérium):</em> Nechť <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> a <span
+class="math inline">\sum_{n = 1}^{\infty}b_{n}</span> jsou takové řady,
+že:</p>
+<ol type="1">
+<li><p><span class="math inline">\left| a_{n} \right| \leq b_{n}</span>,
+pro všechna dost velká <span class="math inline">n\mathbb{\in
+N}</span>;</p></li>
+<li><p>řada <span class="math inline">\sum_{n = 1}^{\infty}b_{n}</span>
+je konvergentní;</p></li>
+</ol>
+<p>poté <span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>
+konverguje absolutně.</p>
+<p>Díky druhému předpokladu platí, že <span
+class="math inline">s_{n}^{b} = \sum_{k = 1}^{n}b_{k}</span> je shora
+omezená. Určeme <span class="math inline">s_{n}^{a} = \sum_{k =
+1}^{n}\left| a_{k} \right|</span>, poté <span
+class="math inline">s_{n}^{a} \leq s_{n}^{b} + c,c\mathbb{\in R}</span>
+a <span class="math inline">s_{n}^{a}</span> je také shora omezená.
+Navíc <span class="math inline">s_{n}^{a}</span> je neklesající a tudíž
+<span class="math inline">s_{n}^{a}</span> je konvergentní.<span
+class="math inline">\blacksquare</span></p>
+<p><em>Důsledek (věta o srovnávacím kritériu):</em> Nechť <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> a <span
+class="math inline">\sum_{n = 1}^{\infty}b_{n}</span> jsou takové řady,
+že:</p>
+<ol type="1">
+<li><p><span class="math inline">\sum_{n = 1}^{\infty}a_{n} = +
+\infty</span>;</p></li>
+<li><p><span class="math inline">0 \leq a_{n} \leq b_{n}</span> pro
+všechna dost velká <span class="math inline">n\mathbb{\in
+N}</span>;</p></li>
+</ol>
+<p>poté <span class="math inline">\sum_{n = 1}^{\infty}b_{n} = +
+\infty</span>.</p>
+<ul>
+<li><p>Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{n^{2}}</span>.<br />
+Předpokládejme, že řada konverguje a srovnejme s řadou <span
+class="math inline">\sum_{n = 1}^{\infty}\frac{1}{n(n - 1)}</span>.
+Platí, že <span class="math inline">\forall n\mathbb{\in N,}n \geq
+2:\frac{1}{n^{2}} \leq \frac{1}{n(n - 1)}</span>. Musíme ukázat, že
+<span class="math inline">\sum_{n = 2}^{\infty}\frac{1}{n(n - 1)}</span>
+konverguje. K tomu využijeme rovnost s konvergentní řadou <span
+class="math inline">\sum_{n = 2}^{\infty}\frac{1}{n(n - 1)} = \sum_{n =
+1}^{\infty}\frac{1}{n(n + 1)}</span>.<br />
+Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{n^{2}}</span> je absolutně konvergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{\sqrt{n}}</span>.<br />
+Předpokládejme, že řada diverguje a srovnejme s řadou <span
+class="math inline">\sum_{n = 1}^{\infty}\frac{1}{n} = + \infty</span>.
+Platí, že <span class="math inline">\forall n\mathbb{\in N,}n \geq
+1:\frac{1}{\sqrt{n}} \geq \frac{1}{n}</span>.<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{1}{\sqrt{n}} =
++ \infty</span> je divergentní.</p></li>
+</ul>
+<p><em>Věta (d’Alambertovo kritérium):</em> Mějme <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> takovou řadu,
+že:</p>
+<ol type="1">
+<li><p>pokud platí <span class="math inline">\exists q \in
+\mathbb{R}^{+},q &lt; 1:\left| \frac{a_{n + 1}}{a_{n}} \right| \leq
+q</span> pro všechna dost velká <span class="math inline">n\mathbb{\in
+N}</span>, pak <span class="math inline">\sum_{n =
+1}^{\infty}a_{n}</span> je absolutně konvergentní.</p></li>
+<li><p>pokud platí <span class="math inline">\left| \frac{a_{n +
+1}}{a_{n}} \right| &gt; 1</span> pro všechna dost velká <span
+class="math inline">n\mathbb{\in N}</span>, pak <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je
+divergentní.</p></li>
+</ol>
+<p>Dokažme první tvrzení: z předpokladu platí, že <span
+class="math inline">\left| a_{n + 1} \right| \leq q \cdot \left| a_{n}
+\right|</span>, tudíž <span class="math inline">s = \left| a_{1} \right|
++ \ldots + \left| a_{n_{0}} \right| + \left| a_{n_{0} + 1} \right| +
+\ldots \leq \left| a_{1} \right| + \ldots + \left| a_{n_{0}} \right| +
+q\left| a_{n_{0}} \right| + q^{2}\left| a_{n_{0}} \right| + \ldots =
+\left| a_{1} \right| + \ldots + \left| a_{n_{0}} \right| + \left|
+a_{n_{0}} \right| \cdot \frac{q}{1 - q} &lt; \infty</span> a řada <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je absolutně
+konvergentní. Dokažme druhé tvrzení: <span class="math inline">\forall n
+\geq n_{0}:\left| a_{n + 1} \right| &gt; \left| a_{n} \right| &gt; 0
+\Rightarrow \lim a_{n} \neq 0</span> a řada <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je
+divergentní.<span class="math inline">\blacksquare</span></p>
+<p><em>Důsledek (limitní d’Alambertovo kritérium):</em> Mějme <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>. Pokud <span
+class="math inline">\lim\left| \frac{a_{n + 1}}{a_{n}} \right| &lt;
+1</span>, pak <span class="math inline">\sum_{n =
+1}^{\infty}a_{n}</span> je absolutně konvergentní. Je-li <span
+class="math inline">\lim\left| \frac{a_{n + 1}}{a_{n}} \right| &gt;
+1</span>, pak <span class="math inline">\sum_{n =
+1}^{\infty}a_{n}</span> je divergentní.</p>
+<p>Pro první tvrzení využijme d’Alambertovo kritérium 1 s <span
+class="math inline">q \in \left( \lim\left| \frac{a_{n + 1}}{a_{n}}
+\right|,1 \right)</span>. Pro druhé tvrzení využijme d’Alambertovo
+kritérium 2 s podmínkou, že pro všechna dost velká <span
+class="math inline">n\mathbb{\in N}</span> platí <span
+class="math inline">\left| \frac{a_{n + 1}}{a_{n}} \right| &gt;
+1</span>.</p>
+<ul>
+<li><p>Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{(n!)^{2}}{(2n)!}</span>.<br />
+Využijme limitní d’Alambertovo kritérium: <span
+class="math inline">\lim\frac{a_{n + 1}}{a_{n}} = \lim\frac{\frac{\left(
+\left( (n + 1)! \right)^{2} \right)}{(2n + 2)!}}{\frac{(n!)^{2}}{(2n)!}}
+= \lim{\frac{\left( \left( (n + 1)! \right)^{2} \right)}{(2n + 2)!}
+\cdot \frac{(2n)!}{(n!)^{2}}} = \lim\frac{n + 1}{2(2n + 1)} =
+\frac{1}{4} &lt; 1</span>.<br />
+Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{(n!)^{2}}{(2n)!}</span> je absolutně
+konvergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{2^{n}}{n}</span>.<br />
+Využijme limitní d’Alambertovo kritérium: <span
+class="math inline">\lim\frac{a_{n + 1}}{a_{n}} = \lim\frac{\frac{2^{n +
+1}}{n + 1}}{\frac{2^{n}}{n}} = \lim\frac{2n}{n + 1} = 2 &gt;
+1</span>.<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{2^{n}}{n} = +
+\infty</span> je divergentní.</p></li>
+</ul>
+<p><em>Věta (Cauchyho kritérium):</em> Mějme <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> takovou řadu,
+že:</p>
+<ol type="1">
+<li><p>pokud platí <span class="math inline">\exists q \in
+\mathbb{R}^{+},q &lt; 1:\sqrt[n]{\left| a_{n} \right|} \leq q</span> pro
+všechna dost velká <span class="math inline">n\mathbb{\in N}</span>, pak
+<span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je absolutně
+konvergentní.</p></li>
+<li><p>pokud platí <span class="math inline">\sqrt[n]{\left| a_{n}
+\right|} \geq 1</span> pro všechna dost velká <span
+class="math inline">n\mathbb{\in N}</span>, pak <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je
+divergentní.</p></li>
+</ol>
+<p>Dokažme první tvrzení: z předpokladu platí, že <span
+class="math inline">\left| a_{n} \right| \leq q^{n}</span>, tudíž <span
+class="math inline">s = \left| a_{1} \right| + \ldots + \left| a_{n_{0}}
+\right| + \left| a_{n_{0} + 1} \right| + \ldots \leq \left| a_{1}
+\right| + \ldots + \left| a_{n_{0} - 1} \right| + q^{n_{0}} + q^{n_{0} +
+1} + \ldots = \left| a_{1} \right| + \ldots + q^{n} \cdot \frac{1}{1 -
+q} &lt; \infty</span> a řada <span class="math inline">\sum_{n =
+1}^{\infty}a_{n}</span> je absolutně konvergentní. Dokažme druhé
+tvrzení: <span class="math inline">\forall n \geq n_{0}:\left| a_{n}
+\right| &gt; 1 \Rightarrow \lim a_{n} \neq 0</span> a řada <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je
+divergentní.<span class="math inline">\blacksquare</span></p>
+<p><em>Důsledek (limitní Cauchyho kritérium):</em> Mějme <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span>. Pokud <span
+class="math inline">\lim\sqrt[n]{\left| a_{n} \right|} &lt; 1</span>,
+pak <span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je
+absolutně konvergentní. Je-li <span
+class="math inline">\lim\sqrt[n]{\left| a_{n} \right|} &gt; 1</span>,
+pak <span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> je
+divergentní.</p>
+<ul>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}\left(
+\frac{n - 1}{n^{2}} \right)^{n}</span>.<br />
+Využijme limitní Cauchyho kritérium: <span
+class="math inline">\lim\sqrt[n]{\left( \frac{n - 1}{n^{2}} \right)^{n}}
+= \lim\frac{n - 1}{n^{2}} = 0 &lt; 1</span>.<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\left( \frac{n -
+1}{n^{2}} \right)^{n}</span> je absolutně konvergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{2^{n}}{n^{2}}</span>.<br />
+Využijme limitní Cauchyho kritérium: <span
+class="math inline">\lim\sqrt[n]{\frac{2^{n}}{n^{2}}} =
+\lim\frac{2}{\left( \sqrt[n]{n} \right)^{2}} = 2 &gt; 1</span>.<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{2^{n}}{n^{2}}
+= + \infty</span> je divergentní.</p></li>
+</ul>
+<p><em>Věta (integrální kritérium):</em> Nechť <span
+class="math inline">f</span> je nezáporná, nerostoucí a spojitá funkce v
+intervale <span class="math inline">\left\langle 1,\infty
+\right)</span>. Nechť dále platí, že <span class="math inline">\forall
+n\mathbb{\in N:}\left| a_{n} \right| = f(n)</span>. Poté řada <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> absolutně
+konverguje <u>právě tehdy</u>, konverguje-li <span
+class="math inline">\int_{1}^{\infty}{f(x)dx}</span> (tzn. že <span
+class="math inline">\lim_{t \rightarrow
+\infty}{\int_{1}^{t}{f(x)dx}}</span> existuje a je konečná).</p>
+<p>Uvědomme si, že existují limity <span class="math inline">\lim s_{n}
+\in \mathbb{R}^{*}</span> a <span class="math inline">\lim_{t
+\rightarrow \infty}{\int_{1}^{t}{f(x)dx}} \in \mathbb{R}^{*}</span>.
+Dokažme <span class="math inline">\sum_{n = 1}^{\infty}\left| a_{n}
+\right| &lt; \infty \Leftrightarrow \int_{1}^{\infty}{f(x)dx} &lt;
+\infty</span>. Z předpokladů <span class="math inline">s_{n} = \sum_{k =
+1}^{n}\left| a_{k} \right| = \sum_{k = 1}^{n}{f(k)} \geq \int_{1}^{n +
+1}{f(x)dx} \geq \sum_{k = 2}^{n + 1}{f(k)} = \sum_{k = 2}^{n + 1}\left|
+a_{k} \right| = s_{n + 1} - \left| a_{1} \right|</span>. Přejdeme-li
+<span class="math inline">n \rightarrow \infty</span>: <span
+class="math inline">\sum_{k = 1}^{\infty}\left| a_{k} \right| \geq
+\int_{1}^{\infty}{f(x)dx} \geq \sum_{k = 1}^{\infty}\left| a_{k} \right|
+- \left| a_{1} \right|</span>.<span
+class="math inline">\blacksquare</span></p>
+<ul>
+<li><p>Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{n}</span>.<br />
+Využijme integrální kritérium: <span class="math inline">\lim_{t
+\rightarrow \infty}{\int_{1}^{t}{\frac{1}{x}dx}} = \lim_{t \rightarrow
+\infty}{\ln t} = \infty</span>.<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{1}{n} =
+\infty</span> je divergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{n^{2}}</span>.<br />
+Využijme integrální kritérium: <span class="math inline">\lim_{t
+\rightarrow \infty}{\int_{1}^{t}{\frac{1}{x^{2}}dx}} = \lim_{t
+\rightarrow \infty}\left( - \frac{1}{t} + 1 \right) = 1</span>.<br />
+Řada <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{n^{2}}</span> je konvergentní.</p></li>
+</ul>
+<h2 id="kritéria-neabsolutní-konvergence">Kritéria neabsolutní
+konvergence</h2>
+<p><em>Věta (Leibnizovo kritérium):</em> Nechť posloupnost <span
+class="math inline">\left( a_{n} \right)</span> je taková, že platí:</p>
+<ol type="1">
+<li><p><span class="math inline">\forall n\mathbb{\in N:}a_{n} \geq
+0</span>;</p></li>
+<li><p><span class="math inline">\forall n\mathbb{\in N:}a_{n} \geq a_{n
++ 1}</span>;</p></li>
+<li><p><span class="math inline">\lim a_{n} = 0</span>;</p></li>
+</ol>
+<p>poté řada <span class="math inline">\sum_{n = 1}^{\infty}{( - 1)^{n +
+1} \cdot a_{n}}</span> je konvergentní.</p>
+<p>Označme si posloupnost sudých částečných součtů <span
+class="math inline">s_{n}^{*} ≔ s_{2n} = \sum_{k = 1}^{2n}{( - 1)^{k +
+1} \cdot a_{k}}</span>. Víme, že <span class="math inline">s_{n + 1}^{*}
+= s_{2n + 2} = s_{2n} - a_{2n + 1} + a_{2n + 2} \geq s_{n}^{*}</span>,
+neboť <span class="math inline">a_{2n + 1} \geq a_{2n + 2} \Rightarrow 0
+\geq a_{2n + 2} - a_{2n + 1}</span>. Dále <span
+class="math inline">s_{n}^{*} = s_{2n} = a_{1} - a_{2} + a_{3} - \cdots
++ a_{2n - 1} - a_{2n} = a_{1} - \left( a_{2} - a_{3} \right) - \cdots -
+\left( a_{2n - 2} - a_{2n - 1} \right) - a_{2n}</span>. Každá
+s postupných závorek je nezáporná, <span
+class="math inline">a_{2n}</span> je také nezáporné, tudíž <span
+class="math inline">s_{n}^{*} \leq a_{1}</span>. Jedná se o neklesající,
+shora omezenou posloupnost, tudíž <span class="math inline">\lim
+s_{n}^{*} = s\mathbb{\in R}</span>. Označme si posloupnost lichých
+částečných součtů <span class="math inline">s_{n}^{**} = s_{2n + 1} =
+\sum_{k = 1}^{2n + 1}{( - 1)^{k + 1} \cdot a_{k}}</span>. Víme, že <span
+class="math inline">s_{n}^{**} = s_{n}^{*} + a_{2n + 1}</span> a <span
+class="math inline">\lim s_{n}^{**} = \lim s_{n}^{*} + \lim a_{n2 + 1} =
+s + 0 = s\mathbb{\in R}</span>.<span
+class="math inline">\blacksquare</span></p>
+<ul>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{( -
+1)^{n + 1}}{n}</span>.<br />
+Členy <span class="math inline">a_{n} = \frac{1}{n}</span> jsou
+nezáporné, nerostoucí a <span class="math inline">\lim\frac{1}{n} =
+0</span>. Jsou splněny předpoklady Leibnizova kritéria.<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{( - 1)^{n +
+1}}{n}</span> je konvergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}{( - 1)^{n +
+1} \cdot \frac{n + 1}{n}}</span>.<br />
+Členy <span class="math inline">a_{n} = \frac{n + 1}{n}</span> jsou
+nezáporné, nerostoucí, avšak <span class="math inline">\lim\frac{n +
+1}{n} = 1</span>, tudíž nejsou splněny předpoklady Leibnizova kritéria.
+Neboť <span class="math inline">\lim{( - 1)^{n + 1} \cdot \frac{n +
+1}{n}}</span> neexistuje (posloupnost lichých a sudých členů má různou
+limitu), není splněna nutná podmínka konvergence.<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{( - 1)^{n +
+1}}{n}</span> je divergentní.</p></li>
+</ul>
+<p><em>Věta (Abelovo-Dirichletovo kritérium):</em> Nechť posloupnost
+<span class="math inline">\left( a_{n} \right)</span> je monotónní.
+Platí-li jedna z následujících podmínek:</p>
+<ol type="1">
+<li><p>posloupnost <span class="math inline">\left( a_{n} \right)</span>
+je omezená a řada <span class="math inline">\sum_{n =
+1}^{\infty}b_{n}</span> je konvergentní. (Abelovo kritérium.)</p></li>
+<li><p><span class="math inline">\lim a_{n} = 0</span> a posloupnost
+částečných součtů řady <span class="math inline">\sum_{n =
+1}^{\infty}b_{n}</span> je omezená. (Dirichletovo kritérium.)</p></li>
+</ol>
+<p>Poté řada <span class="math inline">\sum_{n = 1}^{\infty}{a_{n} \cdot
+b_{n}}</span> je konvergentní.</p>
+<ul>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{( -
+1)^{n}}{n}</span>.<br />
+Využijme Dirichletovo kritérium: <span class="math inline">a_{n} =
+\frac{1}{n}</span> (posloupnost je monotónní a <span
+class="math inline">\lim\frac{1}{n} = 0</span>) a <span
+class="math inline">b_{n} = ( - 1)^{n}</span> (posloupnost částečných
+součtů <span class="math inline">- 1 \leq \sum_{k = 1}^{n}( - 1)^{k}
+\leq 0</span> je omezená).<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{( -
+1)^{n}}{n}</span> je konvergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{n^{2}
+\cdot \sin n}{\left( n^{2} + 1 \right) \cdot 2^{n}}</span>.<br />
+Využijeme Abelovo kritérium: <span class="math inline">a_{n} =
+\frac{n^{2}}{n^{2} + 1}</span> (posloupnost je monotónní, kladná, shora
+omezená) a <span class="math inline">b_{n} = \frac{\sin n}{2^{n}}</span>
+(absolutní konvergenci ukažme srovnávacím kritériem: <span
+class="math inline">\frac{\left| \sin n \right|}{2^{n}} \leq
+\frac{1}{2^{n}},\sum_{n = 1}^{\infty}\frac{1}{2^{n}} = 1</span>).<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}\frac{n^{2} \cdot
+\sin n}{\left( n^{2} + 1 \right) \cdot 2^{n}}</span> je
+konvergentní.</p></li>
+<li><p>Řada <span class="math inline">\sum_{n = 1}^{\infty}{\frac{1}{n}
+\cdot \sin\frac{n \cdot \pi}{4}}</span>.<br />
+Využijme Dirichletovo kritérium; <span class="math inline">a_{n} =
+\frac{1}{n}</span> (posloupnost je monotónní a <span
+class="math inline">\lim\frac{1}{n} = 0</span>) a <span
+class="math inline">b_{n} = \sin\frac{n \cdot \pi}{4}</span> (platí
+<span class="math inline">0 \leq \sum_{k = 1}^{n}{\sin\frac{k \cdot
+\pi}{4} \leq 1 + \sqrt{2}}</span>).<br />
+Řada <span class="math inline">\sum_{n = 1}^{\infty}{\frac{1}{n} \cdot
+\sin\frac{n \cdot \pi}{4}}</span> je konvergentní.</p></li>
+</ul>
+<h2 id="odhad-zbytku-řady">Odhad zbytku řady</h2>
+<p>Mějme řadu <span class="math inline">\sum_{n =
+1}^{\infty}a_{n}</span>. Řadu <span class="math inline">a_{n + 1} + a_{n
++ 2} + \ldots = \sum_{k = n + 1}^{\infty}a_{k}</span> nazveme
+<strong>zbytkem řady</strong> <span class="math inline">\sum_{\mathbf{k
+= 1}}^{\mathbf{\infty}}\mathbf{a}_{\mathbf{k}}</span>
+<strong>po</strong> <span
+class="math inline">\mathbf{n}</span><strong>-tém členu</strong>. Pro
+konvergentní řady je užitečné odhadnout součet jejího zbytku. Platí, že
+<span class="math inline">\sum_{k = 1}^{\infty}a_{k} = s_{1}\mathbb{\in
+R \Leftrightarrow}\sum_{k = n + 1}^{\infty}a_{k} = s_{2}\mathbb{\in
+R}</span>.</p>
+<p>Součet zbytku řady můžeme odhadnout pomocí několika metod:</p>
+<ul>
+<li><p>pomocí srovnávacího kritéria (<span class="math inline">\sum_{k =
+n + 1}^{\infty}a_{k} \leq \sum_{k = n + 1}^{\infty}b_{k} =
+s</span>);</p></li>
+<li><p>pomocí integrálního kritéria (<span class="math inline">\sum_{k =
+n + 1}^{\infty}a_{k} \leq \int_{n}^{\infty}{f(x)dx}</span>);</p></li>
+<li><p>pomocí limitního d’Alambertova kritéria – nechť <span
+class="math inline">q = \frac{a_{n + 1}}{a_{n}}</span>, poté <span
+class="math inline">r_{n} \leq \left| a_{n} \right| \cdot \frac{q}{1 -
+q}</span>;</p></li>
+<li><p>pomocí Leibnizova kritéria (<span class="math inline">\sum_{k = n
++ 1}^{\infty}{( - 1)^{k + 1} \cdot a_{k}} \leq a_{2n + 1}</span>; je-li
+<span class="math inline">n</span> sudé, <span
+class="math inline">\sum_{k = n + 1}^{\infty}{( - 1)^{k + 1} \cdot
+a_{k}} \geq 0</span>; je-li <span class="math inline">n</span> liché,
+<span class="math inline">\sum_{k = n + 1}^{\infty}{( - 1)^{k + 1} \cdot
+a_{k}} \leq 0</span>).</p></li>
+</ul>
+<ul>
+<li><p>Odhadněte součet <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{(n - 1)!}</span>.<br />
+Podle limitního d’Alambertova kritéria je řada absolutně konvergentní.
+<span class="math inline">\sum_{n = 1}^{\infty}{\frac{1}{(n - 1)!} =
+\frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \sum_{n =
+5}^{\infty}\frac{1}{(n - 1)!}}</span> a využijeme srovnávací kritérium
+pro odhad zbytku řady <span class="math inline">\sum_{n =
+5}^{\infty}\frac{1}{(n - 1)!} \leq \sum_{n = 5}^{\infty}\frac{1}{2^{n -
+1}} = \frac{1}{8}</span>.<br />
+Tudíž <span class="math inline">\frac{8}{3} \leq \sum_{n =
+1}^{\infty}\frac{1}{(n - 1)!} \leq \frac{8}{3} + \frac{1}{8} \approx
+e</span>.</p></li>
+<li><p>Odhadněte součet <span class="math inline">\sum_{n =
+1}^{\infty}\frac{1}{n^{2}}</span>.<br />
+Podle integrálního kritéria je řada absolutně konvergentní. <span
+class="math inline">\sum_{n = 1}^{\infty}\frac{1}{n^{2}} = \frac{1}{1} +
+\frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \sum_{n =
+5}^{\infty}\frac{1}{n^{2}}</span>. Využijeme integrální kritérium pro
+odhad zbytku řady: <span class="math inline">0 \leq \sum_{n =
+5}^{\infty}\frac{1}{n^{2}} \leq \int_{4}^{\infty}{\frac{1}{x^{2}}dx} =
+\lim_{t \rightarrow \infty}\left\lbrack - \frac{1}{x}
+\right\rbrack_{4}^{t} = \lim_{t \rightarrow \infty}\left( - \frac{1}{t}
++ \frac{1}{4} \right) = \frac{1}{4}</span>.<br />
+Tudíž <span class="math inline">\frac{205}{144} \leq \sum_{n =
+1}^{\infty}\frac{1}{n^{2}} \leq \frac{205}{144} +
+\frac{1}{4}</span>.</p></li>
+<li><p>Odhadněte součet <span class="math inline">\sum_{n =
+1}^{\infty}\frac{( - 1)^{n - 1}}{2n - 1}</span>.<br />
+Podle Leibnizova kritéria je řada konvergentní. <span
+class="math inline">\sum_{n = 1}^{\infty}\frac{( - 1)^{n - 1}}{2n - 1} =
+\frac{1}{1} - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \sum_{n =
+5}^{\infty}\frac{( - 1)^{n - 1}}{2n - 1}</span>. Využijeme Leibnizovo
+kritérium pro odhad zbytku řady: <span class="math inline">0 \leq
+\sum_{n = 5}^{\infty}\frac{( - 1)^{n - 1}}{2n - 1} \leq
+\frac{1}{9}</span>.<br />
+Tudíž <span class="math inline">\frac{76}{105} \leq \sum_{n =
+1}^{\infty}\frac{( - 1)^{n - 1}}{2n - 1} \leq \frac{76}{105} +
+\frac{1}{9}</span>.</p></li>
+</ul>
+<h2 id="přerovnávání-řad">Přerovnávání řad</h2>
+<p><em>Definice:</em> Mějme prosté zobrazení <span
+class="math inline">\varphi\mathbb{:N \mapsto N}</span>. Řadu <span
+class="math inline">\sum_{n = 1}^{\infty}a_{\varphi(n)}</span> nazveme
+<strong>přerovnáním řady</strong> <span class="math inline">\sum_{n =
+1}^{\infty}a_{n}</span>.</p>
+<p><em>Věta (komutativita přerovnání řady):</em> Konverguje-li <span
+class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> absolutně,
+konverguje absolutně i řada přerovnaná a má stejný součet. Konverguje-li
+<span class="math inline">\sum_{n = 1}^{\infty}a_{n}</span> neabsolutně,
+přerovnaná řada má libovolný součet či přerovnaná řada byla
+divergentní.</p>
+<h1 id="vektorové-funkce">Vektorové funkce</h1>
+<h2 id="motivační-příklady">Motivační příklady</h2>
+<ul>
+<li><p>Mějme hmotný bod v gravitačním poli (<span class="math inline">g
+= 10ms^{- 2}</span>). Pohybujeme se pod úhlem <span
+class="math inline">\varphi = \frac{\pi}{4}</span>. Známe <span
+class="math inline">v_{0},t_{0},(x,y)</span> a hledáme <span
+class="math inline">v,t,(x,y)</span>. Tento příklad můžeme řešit funkcí
+<span class="math inline">f:\mathbb{R}^{2} \rightarrow
+\mathbb{R}^{2}:f(t,v) = \begin{bmatrix}
+\frac{\sqrt{2}}{2}vt,\frac{\sqrt{2}}{2}vt - 10t^{2}
+\end{bmatrix}^{T}</span>. Pokud <span class="math inline">c =
+\left\lbrack t_{0},v_{0} \right\rbrack</span>, hledáme <span
+class="math inline">c + h = \lbrack t,v\rbrack</span>. Víme, že <span
+class="math inline">f(c + h) \approx f(c) + df_{c}(h) = \left\lbrack
+\frac{\sqrt{2}}{2}v_{0}t_{0},\frac{\sqrt{2}}{2}v_{0}t_{0} - 5t_{0}^{2}
+\right\rbrack^{T} + \left\lbrack {f_{1}}_{t}&#39;\left( t_{0},v_{0}
+\right)h_{1} + {f_{1}}_{v}&#39;\left( t_{0},v_{0}
+\right)h_{1},{f_{2}}_{t}&#39;\left( t_{0},v_{0} \right)h_{2} +
+{f_{2}}_{v}&#39;\left( t_{0},v_{0} \right)h_{2} \right\rbrack^{T} =
+\left\lbrack \frac{\sqrt{2}}{2}v_{0}t_{0},\frac{\sqrt{2}}{2}v_{0}t_{0} -
+5t_{0}^{2} \right\rbrack^{T} + \begin{bmatrix}
+{f_{1}}_{t}&#39; &amp; {f_{1}}_{v}&#39; \\
+{f_{2}}_{t}&#39; &amp; {f_{2}}_{v}&#39;
+\end{bmatrix}\begin{bmatrix}
+h_{1} \\
+h_{2}
+\end{bmatrix}</span>.</p></li>
+</ul>
+<h2 id="základní-pojmy-1">Základní pojmy</h2>
+<ul>
+<li><p>Symbolem <span class="math inline">\mathbb{R}^{n}</span> rozumíme
+metrický a vektorový prostor. Prvky <span
+class="math inline">\mathbb{R}^{n}</span> jsou uspořádané <span
+class="math inline">n</span>-tice reálných čísel <span
+class="math inline">x = \left\lbrack x_{1},\ldots,x_{n}
+\right\rbrack</span>, <strong>euklidovská metrika</strong> <span
+class="math inline">\rho(x,y) ≔ \sqrt{\left( x_{1} - y_{1} \right)^{2} +
+\ldots + \left( x_{n} - y_{n} \right)^{2}}</span></p></li>
+<li><p>Zavádíme <strong>normu</strong> prvku <span
+class="math inline">x</span>:<span class="math inline">\left\| x
+\right\| = \rho(x,0) = \sqrt{x_{1}^{2} + \ldots x_{n}^{2}}</span>. Víme,
+že <span class="math inline">\rho(x,y) = \left\| x - y \right\|</span>.
+Zavádíme <strong>okolí bodu</strong> <span
+class="math inline">\mathbf{x}</span> <strong>o poloměru</strong> <span
+class="math inline">\mathbf{\varepsilon}</span>: <span
+class="math inline">U(x,\varepsilon) ≔ \left\{ y \in
+\mathbb{R}^{n}:\rho(x,y) &lt; \varepsilon \right\}</span> a
+<strong>prstencové okolí bodu</strong> <span
+class="math inline">\mathbf{x}</span> <strong>o poloměru</strong> <span
+class="math inline">\mathbf{\varepsilon}</span>: <span
+class="math inline">P(x,\varepsilon) = U(x,\varepsilon) \smallsetminus
+\left\{ x \right\}</span>.</p></li>
+<li><p>Pro <strong>limitu</strong> <span
+class="math inline">\mathbf{n}</span><strong>-rozměrné
+posloupnosti</strong> <span class="math inline">a_{k}</span> platí <span
+class="math inline">\lim a_{k} = \lim\left\lbrack
+a_{k_{1}},a_{k_{2}},\ldots,a_{k_{n}} \right\rbrack = \left\lbrack
+a_{1},a_{2},\ldots,a_{n} \right\rbrack = a \in \mathbb{R}^{n}
+\Leftrightarrow \lim{\rho\left( a_{k},a \right)} = 0 \Leftrightarrow
+\left\| a_{k} - a \right\| = 0 \Leftrightarrow \forall i \in \left\{
+1,\ldots,n \right\}:\lim a_{k_{i}} = a_{i}</span>.</p></li>
+</ul>
+<p><em>Definice:</em> <strong>Vektorovou funkcí</strong> z <span
+class="math inline">\mathbb{R}^{n}</span> do <span
+class="math inline">\mathbb{R}^{m}</span> (reálnou <span
+class="math inline">m</span>-rozměrnou funkcí <span
+class="math inline">n</span> reálných proměnných) nazýváme každé
+zobrazení <span class="math inline">\mathbb{R}^{n} \rightarrow
+\mathbb{R}^{m}</span>, tzn. každému <span class="math inline">x =
+\left\lbrack x_{1},\ldots,x_{n} \right\rbrack \in D_{f} \subset
+\mathbb{R}^{n}</span> přiřadí právě jednu hodnotu <span
+class="math inline">f(x) = \left\lbrack f_{1}(x),\ldots,f_{m}(x)
+\right\rbrack \in H_{f} \subset \mathbb{R}^{m}</span>. Množinu <span
+class="math inline">D_{f}</span> nazýváme <strong>definiční obor
+funkce</strong> <span class="math inline">f</span>, množinu <span
+class="math inline">H_{f}</span> nazýváme <strong>oborem hodnot
+funkce</strong> <span class="math inline">f</span> a <span
+class="math inline">f_{1},..,f_{m}</span> nazýváme <strong>složky
+vektorové funkce</strong> <span class="math inline">f:\mathbb{R}^{n}
+\rightarrow \mathbb{R}^{m}</span>.</p>
+<ul>
+<li><p>Pokud <span class="math inline">m = n</span>, nazýváme funkci
+<span class="math inline">f</span> <strong>vektorovým polem</strong>.
+Je-li <span class="math inline">m = 1</span>, nazýváme funkce <span
+class="math inline">f</span> <strong>skalárním polem</strong>.</p></li>
+</ul>
+<p><em>Úmluva:</em> Je-li <span class="math inline">f:\mathbb{R}^{n}
+\rightarrow \mathbb{R}^{m}</span> dána pouze svým předpisem, chápeme
+<span class="math inline">D_{f}</span> jako množinu všech <span
+class="math inline">x \in \mathbb{R}^{n}</span>, pro které má předpis
+smysl.</p>
+<ul>
+<li><p>Nechť <span class="math inline">f = \left\lbrack
+f_{1},\ldots,f_{n} \right\rbrack:\mathbb{R}^{n} \rightarrow
+\mathbb{R}^{m}</span>. Poté <span class="math inline">D_{f} = \bigcap_{i
+= 1}^{m}D_{f_{i}}</span>.</p></li>
+</ul>
+<ul>
+<li><p>Určete <span class="math inline">D_{f}</span> pro <span
+class="math inline">f:\mathbb{R}^{2} \rightarrow \mathbb{R}^{3}:f(x,y) =
+\left\lbrack \sqrt{x + y},x^{2} + 1,x \cdot \sqrt{y}
+\right\rbrack</span>.<br />
+Víme, že <span class="math inline">D_{f} = \left\{ \lbrack x,y\rbrack
+\in \mathbb{R}^{2}:x + y \geq 0 \right\} \cap \mathbb{R}^{2} \cap
+\left\{ \lbrack x,y\rbrack \in \mathbb{R}^{2}:y \geq 0 \right\} =
+\left\{ \lbrack x,y\rbrack \in \mathbb{R}^{2}:y \geq - x \land y \geq 0
+\right\}</span>.</p></li>
+</ul>
+<p><em>Definice:</em> Mějme <span class="math inline">f,g:\mathbb{R}^{n}
+\rightarrow \mathbb{R}^{m}</span> a <span
+class="math inline">c\mathbb{\in R}</span>. Funkce <span
+class="math inline">f + g,f - g,c \cdot f</span> definujeme takto:</p>
+<ul>
+<li><p><span class="math inline">(f + g)(x) ≔ f(x) +
+g(x)</span>;</p></li>
+<li><p><span class="math inline">(f - g)(x) ≔ f(x) -
+g(x)</span>;</p></li>
+<li><p><span class="math inline">(c \cdot f)(x) ≔ c \cdot
+f(x)</span>.</p></li>
+</ul>
+<h2 id="limita-a-spojitost-vektorové-funkce">Limita a spojitost
+vektorové funkce</h2>
+<h3 id="limita-vektorové-funkce">Limita vektorové funkce</h3>
+<p>Mějme <span class="math inline">f:\mathbb{R}^{n}\mathbb{\rightarrow
+R,}x_{0} \in \mathbb{R}^{n},a \in \mathbb{R}^{*}</span>. Poté platí
+<span class="math inline">x_{0} \neq x_{n} \rightarrow x_{0} \Rightarrow
+f\left( x_{n} \right) \rightarrow a \Leftrightarrow \lim_{x \rightarrow
+x_{0}}{f(x)} = a</span>.</p>
+<p><em>Definice:</em> Řekneme, že funkce <span
+class="math inline">f:\mathbb{R}^{n} \rightarrow \mathbb{R}^{m}</span>
+<strong>má v bodě</strong> <span
+class="math inline">\mathbf{x}_{\mathbf{0}}\mathbf{\in}\mathbb{R}^{\mathbf{n}}</span>
+<strong>limitu</strong> <span class="math inline">a \in
+\mathbb{R}^{m}</span> (píšeme <span class="math inline">\lim_{x
+\rightarrow x_{0}}{f(x)} = a</span>), platí-li:</p>
+<p><span class="math display">x_{0} \neq x_{k} \rightarrow x_{0}
+\Rightarrow \left\lbrack f_{1}\left( x_{k} \right),\ldots,f_{m}\left(
+x_{k} \right) \right\rbrack \rightarrow a = \left\lbrack
+a_{1},\ldots,a_{m} \right\rbrack</span></p>
+<ul>
+<li><p><span class="math inline">\lim_{x \rightarrow x_{0}}{f(x)} = a
+\Rightarrow \exists P\left( x_{0} \right) \subset D_{f}</span>.</p></li>
+</ul>
+<p><em>Věta:</em> Nechť <span class="math inline">f(x) = \left\lbrack
+f_{1}(x),\ldots f_{n}(x) \right\rbrack:\mathbb{R}^{n} \rightarrow
+\mathbb{R}^{m},x_{0} \in \mathbb{R}^{n},a \in \mathbb{R}^{m}</span>.
+Poté <span class="math inline">\lim_{x \rightarrow x_{0}}{f(x)} = a
+\Leftrightarrow \forall i \in \left\{ 1,\ldots,n \right\}:\lim_{x
+\rightarrow x_{0}}{f_{i}(x)} = a_{i}</span>.</p>
+<h3 id="spojitost-vektorové-funkce">Spojitost vektorové funkce</h3>
+<p>Mějme <span class="math inline">f:\mathbb{R}^{n}\mathbb{\rightarrow
+R,}x_{0} \in \mathbb{R}^{n}</span>. Funkce je spojitá v bodě <span
+class="math inline">x_{0}</span> právě tehdy, když <span
+class="math inline">\lim_{x \rightarrow x_{0}}{f(x)} = f\left( x_{0}
+\right)</span>.</p>
+<p><em>Definice:</em> Řekneme, že funkce <span
+class="math inline">f:\mathbb{R}^{n} \rightarrow \mathbb{R}^{m}</span>
+je <strong>spojitá v bodě</strong> <span
+class="math inline">\mathbf{x}_{\mathbf{0}}\mathbf{\in}\mathbb{R}^{\mathbf{n}}</span>,
+platí-li:</p>
+<p><span class="math display">\lim_{x \rightarrow x_{0}}{f(x)} = f\left(
+x_{0} \right)</span></p>
+<ul>
+<li><p>Ze spojitosti <span class="math inline">f</span> v bodě <span
+class="math inline">x_{0}</span> plyne, že <span
+class="math inline">\exists U\left( x_{0} \right) \subset
+D_{f}</span>.</p></li>
+</ul>
+<p>Řekneme, že funkce <span class="math inline">f:\mathbb{R}^{n}
+\rightarrow \mathbb{R}^{m}</span> je <strong>spojitá v bodě</strong>
+<span
+class="math inline">\mathbf{x}_{\mathbf{0}}\mathbf{\in}\mathbb{R}^{\mathbf{n}}</span>
+<strong>vzhledem k </strong><span class="math inline">\mathbf{M
+\subset}\mathbb{R}^{\mathbf{n}}</span>, platí-li:</p>
+<p><span class="math display">\forall i\mathbb{\in N:}{x_{k}}_{i} \in
+M:x_{0} \neq x_{k} \rightarrow x_{0} \Rightarrow f\left( x_{k} \right)
+\rightarrow f\left( x_{0} \right)</span></p>
+<p>Řekneme, že funkce <span class="math inline">f:\mathbb{R}^{n}
+\rightarrow \mathbb{R}^{m}</span> je <strong>spojitá na množině</strong>
+<span class="math inline">\mathbf{M
+\subset}\mathbb{R}^{\mathbf{n}}</span>, platí-li, že pro všechna <span
+class="math inline">x_{0} \in M</span> je <span
+class="math inline">f</span> spojitá v bodě <span
+class="math inline">x_{0}</span> vzhledem k množině <span
+class="math inline">M</span>.</p>
+<p>Řekneme, že funkce <span class="math inline">f:\mathbb{R}^{n}
+\rightarrow \mathbb{R}^{m}</span> je <strong>spojitá</strong>, platí-li,
+že je spojitá na množině <span class="math inline">D_{f}</span>.</p>
+<p><em>Věta:</em> Nechť <span class="math inline">f:\mathbb{R}^{n}
+\rightarrow \mathbb{R}^{m},x_{0} \in M \subset \mathbb{R}^{n}</span>.
+Poté <span class="math inline">f</span> je spojitá v <span
+class="math inline">x_{0}</span> (spojitá v <span
+class="math inline">x_{0}</span> vzhledem k <span
+class="math inline">M</span>, spojitá na <span
+class="math inline">M</span>, spojitá) právě tehdy, platí-li:</p>
+<p><span class="math inline">\forall i \in \left\{ 1,..,m
+\right\}:f_{i}</span> je spojitá v <span
+class="math inline">x_{0}</span> (spojitá v <span
+class="math inline">x_{0}</span> vzhledem k <span
+class="math inline">M</span>, spojitá na <span
+class="math inline">M</span>, spojitá).</p>
+<h2 id="diferenciál-vektorové-funkce">Diferenciál vektorové funkce</h2>
+<p>Pro <span class="math inline">f:\mathbb{R}^{n}\mathbb{\rightarrow
+R}</span> platí <span class="math inline">f(c + h) = f(x) + df(c) +
+\omega(h),\lim_{\left\| h \right\| \rightarrow
+0}\frac{\omega(h)}{\left\| h \right\|} = 0</span>. Pro diferenciál
+vektorové funkce v bodě <span class="math inline">c</span> platí <span
+class="math inline">df_{c}(h) = f&#39;(c)h = \begin{bmatrix}
+{f_{1}&#39;}_{x_{1}}(c) &amp; \cdots &amp; {f_{1}&#39;}_{x_{n}}(c) \\
+\vdots &amp; \ddots &amp; \vdots \\
+{f_{m}&#39;}_{x_{1}}(c) &amp; \cdots &amp; {f_{m}&#39;}_{x_{n}}(c)
+\end{bmatrix}\begin{bmatrix}
+h_{1} \\
+\vdots \\
+h_{n}
+\end{bmatrix} = \left\lbrack df_{1}(c),\ldots,df_{m}(c)
+\right\rbrack^{T}</span>.</p>
+      </main>
+    </div>
+
+    <!-- NEW: Add the footer to every note page -->
+    <footer class="main-footer-license">
+      <p>
+        Veškeré materiály na této stránce jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou poskytovány
+        bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <p>
+        Obsah je licencován pod
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer"
+          >Creative Commons Uveďte původ-Neužívejte komerčně-Zachovejte licenci 4.0 Mezinárodní</a
+        >. To znamená, že materiály můžete volně sdílet a upravovat pro nekomerční účely, pokud uvedete původního autora a zachováte stejnou
+        licenci.
+      </p>
+    </footer>
+
+    <!-- PDF Last Page (UPDATED CONTENT) -->
+    <div id="pdf-last-page">
+      <h2>Závěrečné informace</h2>
+      <p class="pdf-purpose-text">
+        Veškeré materiály v tomto dokumentu jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou
+        poskytovány bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+      <p class="license-info">Licencováno pod Creative Commons BY-NC-SA 4.0.</p>
+    </div>
+  </body>
+</html>

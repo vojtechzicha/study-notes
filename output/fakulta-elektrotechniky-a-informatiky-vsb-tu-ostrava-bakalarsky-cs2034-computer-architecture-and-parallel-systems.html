@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Computer Architecture and Parallel
+Systems - Studijní poznámky</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="katex-loader.js"></script>
+  </head>
+  <body>
+    <!-- NEW: PDF Title Page (hidden on screen) -->
+    <div id="pdf-title-page">
+      <h1>Computer Architecture and Parallel Systems</h1>
+      <p class="group-name">Fakulta elektrotechniky a informatiky VŠB-TU
+Ostrava (bakalářský)</p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="header-content">
+        <a href="index.html" class="back-button">← Zpět</a>
+        <a href="index.html" class="home-link">Univerzitní studium</a>
+        <span class="breadcrumb-item">Fakulta elektrotechniky a
+informatiky VŠB-TU Ostrava (bakalářský)</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-item-active">Computer Architecture and
+Parallel Systems</span>
+      </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
+    </header>
+
+    <!-- The .page-container is now the main layout wrapper -->
+    <div class="page-container">
+            <nav class="sidebar" id="TOC">
+        <h2>Obsah</h2>
+        <ul>
+        <li><a href="#computer-architecture"
+        id="toc-computer-architecture">Computer Architecture</a>
+        <ul>
+        <li><a href="#von-neumann-architecture"
+        id="toc-von-neumann-architecture">Von Neumann Architecture</a>
+        <ul>
+        <li><a href="#advantages-of-von-neumann-architecture"
+        id="toc-advantages-of-von-neumann-architecture">Advantages of
+        Von Neumann Architecture</a></li>
+        <li><a href="#disadvantages-of-von-neumann-architecture"
+        id="toc-disadvantages-of-von-neumann-architecture">Disadvantages
+        of Von Neumann Architecture</a></li>
+        </ul></li>
+        <li><a href="#harvard-architecture"
+        id="toc-harvard-architecture">Harvard Architecture</a>
+        <ul>
+        <li><a href="#advantages-of-harvard-architecture"
+        id="toc-advantages-of-harvard-architecture">Advantages of
+        Harvard Architecture</a></li>
+        <li><a href="#disadvantages-of-harvard-architecture"
+        id="toc-disadvantages-of-harvard-architecture">Disadvantages of
+        Harvard Architecture</a></li>
+        </ul></li>
+        <li><a href="#generations-of-computers"
+        id="toc-generations-of-computers">Generations of
+        computers</a></li>
+        </ul></li>
+        <li><a href="#communication-with-devices"
+        id="toc-communication-with-devices">Communication with
+        devices</a>
+        <ul>
+        <li><a href="#address-decoder" id="toc-address-decoder">Address
+        decoder</a></li>
+        <li><a href="#io-ports" id="toc-io-ports">I/O Ports</a></li>
+        <li><a href="#io-ports-with-indicator"
+        id="toc-io-ports-with-indicator">I/O Ports with
+        Indicator</a></li>
+        <li><a href="#device-with-buffer"
+        id="toc-device-with-buffer"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image7.tmp"
+        style="width:4.61458in;height:2.66667in" />Device with
+        Buffer</a></li>
+        <li><a href="#communication-with-interrupt"
+        id="toc-communication-with-interrupt">Communication with
+        Interrupt</a></li>
+        <li><a href="#dma-direct-memory-access"
+        id="toc-dma-direct-memory-access">DMA – Direct Memory
+        Access</a></li>
+        <li><a href="#channels" id="toc-channels">Channels</a></li>
+        </ul></li>
+        <li><a href="#risc-processors" id="toc-risc-processors">RISC
+        Processors</a>
+        <ul>
+        <li><a href="#pipelining" id="toc-pipelining">Pipelining</a>
+        <ul>
+        <li><a href="#delayed-jump" id="toc-delayed-jump">Delayed
+        Jump</a></li>
+        <li><a href="#bit-branch-prediction"
+        id="toc-bit-branch-prediction"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image10.tmp"
+        style="width:3.3125in;height:1.33861in" />Bit Branch
+        Prediction</a></li>
+        <li><a href="#super-scalar-architecture"
+        id="toc-super-scalar-architecture">Super-Scalar
+        Architecture</a></li>
+        </ul></li>
+        <li><a href="#data-and-structural-hazards"
+        id="toc-data-and-structural-hazards">Data and Structural
+        Hazards</a></li>
+        <li><a href="#arm" id="toc-arm">ARM</a></li>
+        <li><a href="#mips" id="toc-mips">MIPS</a></li>
+        <li><a href="#microchip-and-atmel"
+        id="toc-microchip-and-atmel">Microchip and Atmel</a></li>
+        </ul></li>
+        <li><a href="#intel-x86-history"
+        id="toc-intel-x86-history">Intel x86 History</a>
+        <ul>
+        <li><a href="#intel-8080" id="toc-intel-8080">Intel
+        8080</a></li>
+        <li><a href="#intel-8086" id="toc-intel-8086">Intel
+        8086</a></li>
+        <li><a href="#intel-80186" id="toc-intel-80186">Intel
+        80186</a></li>
+        <li><a href="#intel-80286" id="toc-intel-80286">Intel
+        80286</a></li>
+        <li><a href="#intel-80386dx" id="toc-intel-80386dx">Intel
+        80386DX</a></li>
+        <li><a href="#intel-80486dx" id="toc-intel-80486dx">Intel
+        80486DX</a></li>
+        <li><a href="#pentium" id="toc-pentium">Pentium</a></li>
+        <li><a href="#pentium-pro" id="toc-pentium-pro">Pentium
+        Pro</a></li>
+        <li><a href="#pentium-2" id="toc-pentium-2">Pentium 2</a></li>
+        <li><a href="#pentium-3" id="toc-pentium-3">Pentium 3</a></li>
+        <li><a href="#pentium-4" id="toc-pentium-4">Pentium 4</a></li>
+        <li><a href="#pentium-6-em64t" id="toc-pentium-6-em64t">Pentium
+        6 EM64T</a></li>
+        <li><a href="#pentium-m" id="toc-pentium-m">Pentium M</a></li>
+        <li><a href="#intel-core-core-duo-core-solo"
+        id="toc-intel-core-core-duo-core-solo">Intel Core, Core Duo,
+        Core Solo</a></li>
+        <li><a href="#intel-core-2" id="toc-intel-core-2">Intel Core
+        2</a></li>
+        <li><a href="#intel-atom" id="toc-intel-atom">Intel
+        Atom</a></li>
+        <li><a href="#itanium-and-itanium-2"
+        id="toc-itanium-and-itanium-2">Itanium and Itanium 2</a></li>
+        </ul></li>
+        <li><a href="#internal-computers-memory"
+        id="toc-internal-computers-memory">Internal Computers Memory</a>
+        <ul>
+        <li><a href="#memory-classification"
+        id="toc-memory-classification">Memory Classification</a></li>
+        <li><a href="#dynamic-ram" id="toc-dynamic-ram"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image13.tmp"
+        style="width:2.52778in;height:2.96875in" />Dynamic RAM</a></li>
+        <li><a href="#static-memory" id="toc-static-memory"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image14.tmp"
+        style="width:2.58542in;height:1.8125in" />Static memory</a></li>
+        <li><a href="#nonvolatile-memory"
+        id="toc-nonvolatile-memory">Nonvolatile Memory</a></li>
+        <li><a href="#memristor" id="toc-memristor">Memristor</a></li>
+        </ul></li>
+        <li><a href="#microcomputers"
+        id="toc-microcomputers">Microcomputers</a>
+        <ul>
+        <li><a href="#microcomputer-synchronization"
+        id="toc-microcomputer-synchronization">Microcomputer
+        Synchronization</a></li>
+        <li><a href="#protection-against-noise"
+        id="toc-protection-against-noise">Protection against
+        noise</a></li>
+        <li><a href="#ports" id="toc-ports"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image15.tmp"
+        style="width:3.22917in;height:2.27083in" />Ports</a></li>
+        <li><a href="#serial-communication"
+        id="toc-serial-communication"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image16.tmp"
+        style="width:2.79167in;height:2.30467in" />Serial
+        Communication</a></li>
+        <li><a href="#timer-and-counter"
+        id="toc-timer-and-counter">Timer and Counter</a></li>
+        <li><a href="#da-converters" id="toc-da-converters">D/A
+        Converters</a></li>
+        <li><a href="#ad-converters" id="toc-ad-converters">A/D
+        Converters</a></li>
+        </ul></li>
+        <li><a href="#external-memories-disks"
+        id="toc-external-memories-disks">External Memories – Disks</a>
+        <ul>
+        <li><a href="#magnetic-medium" id="toc-magnetic-medium">Magnetic
+        medium</a>
+        <ul>
+        <li><a href="#data-encoding" id="toc-data-encoding">Data
+        Encoding</a></li>
+        <li><a href="#hard-disk" id="toc-hard-disk"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image19.tmp"
+        style="width:3.05556in;height:2.08333in" />Hard Disk</a></li>
+        <li><a href="#floppy-drives" id="toc-floppy-drives">Floppy
+        Drives</a></li>
+        </ul></li>
+        <li><a href="#optical-drives" id="toc-optical-drives"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image20.tmp"
+        style="width:2.97917in;height:3.40625in" />Optical
+        drives</a></li>
+        <li><a href="#magneto-optical-disks"
+        id="toc-magneto-optical-disks">Magneto-optical Disks</a></li>
+        </ul></li>
+        <li><a href="#computer-display-units"
+        id="toc-computer-display-units">Computer Display Units</a>
+        <ul>
+        <li><a href="#crt" id="toc-crt">CRT</a></li>
+        <li><a href="#liquid-crystal-display"
+        id="toc-liquid-crystal-display"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image23.tmp"
+        style="width:2.60417in;height:1.92708in" />Liquid Crystal
+        Display</a></li>
+        <li><a href="#plasma-display" id="toc-plasma-display">Plasma
+        display</a></li>
+        <li><a href="#organic-led-display"
+        id="toc-organic-led-display">Organic LED Display</a></li>
+        <li><a href="#e-ink-display" id="toc-e-ink-display"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image26.tmp"
+        style="width:6.96875in;height:2.07431in" />E-Ink
+        Display</a></li>
+        </ul></li>
+        <li><a href="#digital-circuits"
+        id="toc-digital-circuits">Digital Circuits</a>
+        <ul>
+        <li><a href="#bipolar-technology"
+        id="toc-bipolar-technology">Bipolar Technology</a></li>
+        <li><a href="#unipolar-technology"
+        id="toc-unipolar-technology">Unipolar Technology</a></li>
+        <li><a href="#flash-memory" id="toc-flash-memory">Flash
+        Memory</a></li>
+        </ul></li>
+        <li><a href="#general-purpose-gpu-programming-and-cuda"
+        id="toc-general-purpose-gpu-programming-and-cuda"><img
+        src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image36.tmp"
+        style="width:3.8125in;height:1.45833in" />General Purpose GPU
+        Programming and CUDA</a>
+        <ul>
+        <li><a href="#cuda-architecture" id="toc-cuda-architecture">CUDA
+        Architecture</a>
+        <ul>
+        <li><a href="#rules-of-gpu-computing"
+        id="toc-rules-of-gpu-computing">Rules of GPU computing</a></li>
+        </ul></li>
+        <li><a href="#cuda-programming-model"
+        id="toc-cuda-programming-model">CUDA Programming model</a>
+        <ul>
+        <li><a href="#cuda-programming-extensions"
+        id="toc-cuda-programming-extensions">CUDA Programming
+        Extensions</a></li>
+        <li><a href="#cuda-application-program-interface"
+        id="toc-cuda-application-program-interface">CUDA Application
+        Program Interface</a></li>
+        </ul></li>
+        </ul></li>
+        </ul>
+      </nav>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Computer Architecture and Parallel
+Systems</h1>
+        </header>
+
+        <!-- NEW: Note page date info -->
+        <div class="page-info">
+          <span>Poslední aktualizace: <strong>26. 12. 2023 v
+9:16:20</strong></span>
+          <span>Verze k: <strong>29. 6. 2025 v 15:18:06</strong></span>
+        </div>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#computer-architecture"
+          id="toc-computer-architecture">Computer Architecture</a>
+          <ul>
+          <li><a href="#von-neumann-architecture"
+          id="toc-von-neumann-architecture">Von Neumann Architecture</a>
+          <ul>
+          <li><a href="#advantages-of-von-neumann-architecture"
+          id="toc-advantages-of-von-neumann-architecture">Advantages of
+          Von Neumann Architecture</a></li>
+          <li><a href="#disadvantages-of-von-neumann-architecture"
+          id="toc-disadvantages-of-von-neumann-architecture">Disadvantages
+          of Von Neumann Architecture</a></li>
+          </ul></li>
+          <li><a href="#harvard-architecture"
+          id="toc-harvard-architecture">Harvard Architecture</a>
+          <ul>
+          <li><a href="#advantages-of-harvard-architecture"
+          id="toc-advantages-of-harvard-architecture">Advantages of
+          Harvard Architecture</a></li>
+          <li><a href="#disadvantages-of-harvard-architecture"
+          id="toc-disadvantages-of-harvard-architecture">Disadvantages
+          of Harvard Architecture</a></li>
+          </ul></li>
+          <li><a href="#generations-of-computers"
+          id="toc-generations-of-computers">Generations of
+          computers</a></li>
+          </ul></li>
+          <li><a href="#communication-with-devices"
+          id="toc-communication-with-devices">Communication with
+          devices</a>
+          <ul>
+          <li><a href="#address-decoder"
+          id="toc-address-decoder">Address decoder</a></li>
+          <li><a href="#io-ports" id="toc-io-ports">I/O Ports</a></li>
+          <li><a href="#io-ports-with-indicator"
+          id="toc-io-ports-with-indicator">I/O Ports with
+          Indicator</a></li>
+          <li><a href="#device-with-buffer"
+          id="toc-device-with-buffer"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image7.tmp"
+          style="width:4.61458in;height:2.66667in" />Device with
+          Buffer</a></li>
+          <li><a href="#communication-with-interrupt"
+          id="toc-communication-with-interrupt">Communication with
+          Interrupt</a></li>
+          <li><a href="#dma-direct-memory-access"
+          id="toc-dma-direct-memory-access">DMA – Direct Memory
+          Access</a></li>
+          <li><a href="#channels" id="toc-channels">Channels</a></li>
+          </ul></li>
+          <li><a href="#risc-processors" id="toc-risc-processors">RISC
+          Processors</a>
+          <ul>
+          <li><a href="#pipelining" id="toc-pipelining">Pipelining</a>
+          <ul>
+          <li><a href="#delayed-jump" id="toc-delayed-jump">Delayed
+          Jump</a></li>
+          <li><a href="#bit-branch-prediction"
+          id="toc-bit-branch-prediction"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image10.tmp"
+          style="width:3.3125in;height:1.33861in" />Bit Branch
+          Prediction</a></li>
+          <li><a href="#super-scalar-architecture"
+          id="toc-super-scalar-architecture">Super-Scalar
+          Architecture</a></li>
+          </ul></li>
+          <li><a href="#data-and-structural-hazards"
+          id="toc-data-and-structural-hazards">Data and Structural
+          Hazards</a></li>
+          <li><a href="#arm" id="toc-arm">ARM</a></li>
+          <li><a href="#mips" id="toc-mips">MIPS</a></li>
+          <li><a href="#microchip-and-atmel"
+          id="toc-microchip-and-atmel">Microchip and Atmel</a></li>
+          </ul></li>
+          <li><a href="#intel-x86-history"
+          id="toc-intel-x86-history">Intel x86 History</a>
+          <ul>
+          <li><a href="#intel-8080" id="toc-intel-8080">Intel
+          8080</a></li>
+          <li><a href="#intel-8086" id="toc-intel-8086">Intel
+          8086</a></li>
+          <li><a href="#intel-80186" id="toc-intel-80186">Intel
+          80186</a></li>
+          <li><a href="#intel-80286" id="toc-intel-80286">Intel
+          80286</a></li>
+          <li><a href="#intel-80386dx" id="toc-intel-80386dx">Intel
+          80386DX</a></li>
+          <li><a href="#intel-80486dx" id="toc-intel-80486dx">Intel
+          80486DX</a></li>
+          <li><a href="#pentium" id="toc-pentium">Pentium</a></li>
+          <li><a href="#pentium-pro" id="toc-pentium-pro">Pentium
+          Pro</a></li>
+          <li><a href="#pentium-2" id="toc-pentium-2">Pentium 2</a></li>
+          <li><a href="#pentium-3" id="toc-pentium-3">Pentium 3</a></li>
+          <li><a href="#pentium-4" id="toc-pentium-4">Pentium 4</a></li>
+          <li><a href="#pentium-6-em64t"
+          id="toc-pentium-6-em64t">Pentium 6 EM64T</a></li>
+          <li><a href="#pentium-m" id="toc-pentium-m">Pentium M</a></li>
+          <li><a href="#intel-core-core-duo-core-solo"
+          id="toc-intel-core-core-duo-core-solo">Intel Core, Core Duo,
+          Core Solo</a></li>
+          <li><a href="#intel-core-2" id="toc-intel-core-2">Intel Core
+          2</a></li>
+          <li><a href="#intel-atom" id="toc-intel-atom">Intel
+          Atom</a></li>
+          <li><a href="#itanium-and-itanium-2"
+          id="toc-itanium-and-itanium-2">Itanium and Itanium 2</a></li>
+          </ul></li>
+          <li><a href="#internal-computers-memory"
+          id="toc-internal-computers-memory">Internal Computers
+          Memory</a>
+          <ul>
+          <li><a href="#memory-classification"
+          id="toc-memory-classification">Memory Classification</a></li>
+          <li><a href="#dynamic-ram" id="toc-dynamic-ram"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image13.tmp"
+          style="width:2.52778in;height:2.96875in" />Dynamic
+          RAM</a></li>
+          <li><a href="#static-memory" id="toc-static-memory"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image14.tmp"
+          style="width:2.58542in;height:1.8125in" />Static
+          memory</a></li>
+          <li><a href="#nonvolatile-memory"
+          id="toc-nonvolatile-memory">Nonvolatile Memory</a></li>
+          <li><a href="#memristor" id="toc-memristor">Memristor</a></li>
+          </ul></li>
+          <li><a href="#microcomputers"
+          id="toc-microcomputers">Microcomputers</a>
+          <ul>
+          <li><a href="#microcomputer-synchronization"
+          id="toc-microcomputer-synchronization">Microcomputer
+          Synchronization</a></li>
+          <li><a href="#protection-against-noise"
+          id="toc-protection-against-noise">Protection against
+          noise</a></li>
+          <li><a href="#ports" id="toc-ports"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image15.tmp"
+          style="width:3.22917in;height:2.27083in" />Ports</a></li>
+          <li><a href="#serial-communication"
+          id="toc-serial-communication"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image16.tmp"
+          style="width:2.79167in;height:2.30467in" />Serial
+          Communication</a></li>
+          <li><a href="#timer-and-counter"
+          id="toc-timer-and-counter">Timer and Counter</a></li>
+          <li><a href="#da-converters" id="toc-da-converters">D/A
+          Converters</a></li>
+          <li><a href="#ad-converters" id="toc-ad-converters">A/D
+          Converters</a></li>
+          </ul></li>
+          <li><a href="#external-memories-disks"
+          id="toc-external-memories-disks">External Memories – Disks</a>
+          <ul>
+          <li><a href="#magnetic-medium"
+          id="toc-magnetic-medium">Magnetic medium</a>
+          <ul>
+          <li><a href="#data-encoding" id="toc-data-encoding">Data
+          Encoding</a></li>
+          <li><a href="#hard-disk" id="toc-hard-disk"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image19.tmp"
+          style="width:3.05556in;height:2.08333in" />Hard Disk</a></li>
+          <li><a href="#floppy-drives" id="toc-floppy-drives">Floppy
+          Drives</a></li>
+          </ul></li>
+          <li><a href="#optical-drives" id="toc-optical-drives"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image20.tmp"
+          style="width:2.97917in;height:3.40625in" />Optical
+          drives</a></li>
+          <li><a href="#magneto-optical-disks"
+          id="toc-magneto-optical-disks">Magneto-optical Disks</a></li>
+          </ul></li>
+          <li><a href="#computer-display-units"
+          id="toc-computer-display-units">Computer Display Units</a>
+          <ul>
+          <li><a href="#crt" id="toc-crt">CRT</a></li>
+          <li><a href="#liquid-crystal-display"
+          id="toc-liquid-crystal-display"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image23.tmp"
+          style="width:2.60417in;height:1.92708in" />Liquid Crystal
+          Display</a></li>
+          <li><a href="#plasma-display" id="toc-plasma-display">Plasma
+          display</a></li>
+          <li><a href="#organic-led-display"
+          id="toc-organic-led-display">Organic LED Display</a></li>
+          <li><a href="#e-ink-display" id="toc-e-ink-display"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image26.tmp"
+          style="width:6.96875in;height:2.07431in" />E-Ink
+          Display</a></li>
+          </ul></li>
+          <li><a href="#digital-circuits"
+          id="toc-digital-circuits">Digital Circuits</a>
+          <ul>
+          <li><a href="#bipolar-technology"
+          id="toc-bipolar-technology">Bipolar Technology</a></li>
+          <li><a href="#unipolar-technology"
+          id="toc-unipolar-technology">Unipolar Technology</a></li>
+          <li><a href="#flash-memory" id="toc-flash-memory">Flash
+          Memory</a></li>
+          </ul></li>
+          <li><a href="#general-purpose-gpu-programming-and-cuda"
+          id="toc-general-purpose-gpu-programming-and-cuda"><img
+          src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image36.tmp"
+          style="width:3.8125in;height:1.45833in" />General Purpose GPU
+          Programming and CUDA</a>
+          <ul>
+          <li><a href="#cuda-architecture"
+          id="toc-cuda-architecture">CUDA Architecture</a>
+          <ul>
+          <li><a href="#rules-of-gpu-computing"
+          id="toc-rules-of-gpu-computing">Rules of GPU
+          computing</a></li>
+          </ul></li>
+          <li><a href="#cuda-programming-model"
+          id="toc-cuda-programming-model">CUDA Programming model</a>
+          <ul>
+          <li><a href="#cuda-programming-extensions"
+          id="toc-cuda-programming-extensions">CUDA Programming
+          Extensions</a></li>
+          <li><a href="#cuda-application-program-interface"
+          id="toc-cuda-application-program-interface">CUDA Application
+          Program Interface</a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </div>
+         <h1 id="computer-architecture">Computer Architecture</h1>
+<p>From the modern point of view, <strong>architecture of
+computer</strong>, can be divided into four categories:</p>
+<ul>
+<li><p>Structure and Layout – parts description and their
+interconnection,</p></li>
+<li><p>Interaction and Cooperation – describe the dynamic communication
+of all working parts of a computer,</p></li>
+<li><p>Realization and Implementation – describe internal structure of
+all working parts,</p></li>
+<li><p>Functionality and Activity – final behavior of the whole
+computer.</p></li>
+</ul>
+<h2 id="von-neumann-architecture">Von Neumann Architecture</h2>
+<p>John von Neumann introduced a universal computer. It most comply with
+some principles and criteria:</p>
+<ul>
+<li><p>Computer consists of memory, arithmetical-logical unit
+(ALU),</p></li>
+<li><p>all parts of a computer are connected together by bus,</p></li>
+<li><p>computer structure is independent on the computed problem, a
+computer is programmed with content of memory,</p></li>
+<li><p>every computing step depends on the previous step,</p></li>
+<li><p>machine instruction and data are in the same memory,</p></li>
+<li><p>memory is split to small cells with the same size; their ordinal
+numbers are called address numbers,</p></li>
+<li><p>program consists of a sequence of instructions; instructions are
+executed in order they are stored in memory,</p></li>
+<li><p>sequence of instructions can be changed only by unconditional or
+conditional jump instructions,</p></li>
+<li><p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image1.tmp"
+style="width:2.67708in;height:1.875in" />instructions, characters, data
+and numbers are represented in binary form.</p></li>
+</ul>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image2.tmp"
+style="width:2.65625in;height:1.73958in" /></p>
+<p>Today, Control Unit and ALU are integrated in one circuit called
+Processor or CPU shown on the second picture. Memory and devices are
+controlled by CPU, bus between blocks integrate Data Bus, Address Bus
+and Control Bus. Data can pass through bus in half duplex mode to or
+from CPU.</p>
+<h3 id="advantages-of-von-neumann-architecture">Advantages of Von
+Neumann Architecture</h3>
+<ul>
+<li><p>Control Unit gets data and instruction in the same way from one
+memory; it simplifies design and development of the Control
+Unit.</p></li>
+<li><p>Data from memory and from devices are accessed in the same
+way.</p></li>
+<li><p>Memory organization is in the hands of programmers.</p></li>
+</ul>
+<h3 id="disadvantages-of-von-neumann-architecture">Disadvantages of Von
+Neumann Architecture</h3>
+<ul>
+<li><p>Serial instruction processing does not allow parallel execution
+of program. Parallel executions are simulated later by the OS.</p></li>
+<li><p>One bus is a bottleneck. Only one information can be accessed at
+the same time.</p></li>
+<li><p>Instruction stored in the same memory as the data can be
+accidentally rewritten by an error in a program.</p></li>
+</ul>
+<h2 id="harvard-architecture">Harvard Architecture</h2>
+<p>Developed in 1947, Harvard University created slightly different
+architecture. Memory for data was separated from the memory for
+instructions.</p>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image3.tmp"
+style="width:4.27083in;height:1.86458in" />Until today both
+architectures are used in modern computers, both used massively in
+mainstream production.</p>
+<p>Harvard architecture is used primary for small embedded computers and
+signal processing. Von Neumann is better for desktop computers, laptops,
+workstations and high performance computers.</p>
+<p>Some computers may use advantages from both architectures. Typically
+they use two separated memories. The first one is used for programs and
+the second one to store dynamic data. A good example can be handheld
+devices – PDA and mobile phones.</p>
+<h3 id="advantages-of-harvard-architecture">Advantages of Harvard
+Architecture</h3>
+<ul>
+<li><p>Two memories with two buses allow parallel access to data and
+instructions. Execution can be two times faster.</p></li>
+<li><p>Both memories can be produced by different technologies
+(Flash/EEPROM, SRAM/DRAM).</p></li>
+<li><p>Both memories can use different cell sizes.</p></li>
+<li><p>Program can’t rewrite itself.</p></li>
+</ul>
+<h3 id="disadvantages-of-harvard-architecture">Disadvantages of Harvard
+Architecture</h3>
+<ul>
+<li><p>Control unit for two buses is more complicated and more
+expensive.</p></li>
+<li><p>Production of a computer with two buses is more
+expensive.</p></li>
+<li><p>Development of a complicated control unit needs more
+time.</p></li>
+<li><p>Free data memory can’t be used for instruction and
+vice-versa.</p></li>
+</ul>
+<h2 id="generations-of-computers">Generations of computers</h2>
+<ul>
+<li><p>First generations used vacuum tubes, drums for memory (capacity
+in kB) and synchronous CPU to communicate with devices.</p></li>
+<li><p>Second generations used transistors, ferrite for memory (capacity
+in 10 kB) and asynchronous CPU to communicate with devices.</p></li>
+<li><p>Third generations used SSI and MSI IC, ferrite and IC for memory
+(capacity in 1 MB) and channels to communicate with devices.</p></li>
+<li><p>Fourth generations used LSI IC and VLSI IC, LSI IC and VLSI IC
+for memory (capacity in 10 MB) and peripheral controllers to communicate
+with devices.</p></li>
+</ul>
+<h1 id="communication-with-devices">Communication with devices</h1>
+<p>According to Von Neumann architecture, all parts of computers are
+connected together by <strong>bus</strong>. Bus is a bundle of parallel
+wires separated to three main parts:</p>
+<ul>
+<li><p>Data Bus – wires are marked as D0 up to DN, where N is the number
+of data bits (wires) used for transmission.</p></li>
+<li><p>Address Bus – wires are marked as A0 up to AM, where M is the
+number of bits used for addressing.</p></li>
+<li><p>Control Bus – set of control signals to control activity on
+bus</p>
+<ul>
+<li><p>Reset – signal is used to initialize all devices connected to
+bus</p></li>
+<li><p>RD/WR – control direction of data transmission from / to
+devices</p></li>
+<li><p>MEMR/MEMW – control data transfer from / to memory.</p></li>
+</ul></li>
+</ul>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image4.tmp"
+style="width:6.5625in;height:2.71875in" /></p>
+<p>There is 16 bit CPU with 16 bit address bus and 8 bit data bus.</p>
+<ul>
+<li><p>To address 8 kB, it is necessary to use 13 bits, thus signals A0
+up to A12 are connected directly to RAM and ROM chip.</p></li>
+<li><p>The signal RD and WR from control bus are used to control
+direction of communication.</p></li>
+<li><p>Address decoder generates signal CS for RAM and ROM from three
+highest bits A13 up to A15.</p></li>
+<li><p>Data from / to RAM and ROM are transferred by data bus D0 up to
+D7.</p></li>
+</ul>
+<p>In some computers, where low-cost is important, it is possible to
+reduce the number of wires in the bus. Some parts in this case are
+<strong>multiplexed</strong>. In the first step the signals are sent to
+Address Bus and in second step the same wires are used to transfer data.
+Multiplexing reduces computer’s speed, but it makes it cheaper and
+easier.</p>
+<h2 id="address-decoder">Address decoder</h2>
+<p>The address decoder is a <strong>comparator</strong> of input value
+given by signals A0 up to AN and stored value. When both values are the
+same, Address Decoder activates the output pin. Address decoder can be
+connected to all signals on the address bus, or can use only selected
+signals. All chips connected to a Data Bus must satisfy the requirement
+that pins on chip connected to signals D0 up to DN are three states.</p>
+<p>When chips reads data from data bus, pins must be in <strong>input
+mode</strong>. In situation, when chip writes data to the data bus, its
+pins must be in <strong>output mode</strong>. When chip is not active,
+all pins are in <strong>high impedance</strong> state, <strong>not to
+disturb other chips</strong> on the bus.</p>
+<h2 id="io-ports">I/O Ports</h2>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image5.tmp"
+style="width:4.41667in;height:2.67708in" />The simplest way for
+communication with devices is the usage of Input and Output Ports. The
+devices has integrate data register, called Port, where data are
+exchanged between CPU and Devices.</p>
+<p>When an executed program requires data from device, control unit
+generates RD signal and devices writes data to the bus. This method is
+used very rarely. All devices must be always prepared for reading and
+writing.</p>
+<p>The main disadvantage is that direct usage of I/O Ports does not use
+any form of feedback and thus data may be lost during transfer.</p>
+<h2 id="io-ports-with-indicator">I/O Ports with Indicator</h2>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image6.tmp"
+style="width:4.4375in;height:2.91667in" />The main disadvantage of I/O
+ports usage – missing feedback – can be solved by an
+<strong>indicator</strong>. It is implemented by RS Flip-flop. When
+Input device has the data prepared, it uses STB signal to set the
+indicator. Its output is observed by executed program. If indicator is
+set, it is possible to read data safely. Signal RD will clear the
+indicator during reading.</p>
+<p>This method will still have a problem with data loss. If CPU delays
+reading from the device, it may fail or may overflow internal register
+of buffer. The method, when the program first checks the indicator in
+the loop and then reads data, is called <strong>spooling</strong> and
+consumes too much of CPU’s performance.</p>
+<p>The indicator can be also used for writing. The program in CPU must
+check the indicator before it writes data, to make sure, that the
+previous data was accepted.</p>
+<h2 id="device-with-buffer"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image7.tmp"
+style="width:4.61458in;height:2.66667in" />Device with Buffer</h2>
+<p>When big data throughput is required, it is necessary to implement
+the <strong>buffer</strong> between the devices and the CPU. The Buffer
+between the CPU and Device allows to send a block of data in one
+step.</p>
+<h2 id="communication-with-interrupt">Communication with Interrupt</h2>
+<p>To address spooling, a better technology for communication with
+devices was introduced – <strong>interrupt</strong>. It is an event
+generated by device, which interrupts the execution of the main program,
+then the CPU calls the interrupt routine and when the device is handled,
+the CPU returns execution to the main program. No testing of indicators
+in needed.</p>
+<p>The interrupt is handled by special <strong>interrupt
+controller</strong>, which is able to serve more interrupt requests at
+the time and able to communicate with the CPU.</p>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image8.tmp"
+style="width:6.60417in;height:1.98958in" /></p>
+<p>Communication with devices using I/O ports has one big weakness. All
+data must be transported through the bus two times. When program reads
+data from the device, the CPU has to read data from the device to the
+CPU and then stores it into the memory.</p>
+<h2 id="dma-direct-memory-access">DMA – Direct Memory Access</h2>
+<p>To remove the main problem of I/O ports, DMA was designed. All device
+controllers contain their own bus controller with registers. The first
+one for the data transfer, the second one for the address and the third
+one is the counter. The DMA controller controls data transmission from
+device to memory directly without involving the CPU. It also improves
+the bus bandwidth. The DMA controller have to cooperate with the CPU,
+because only one bus controller can control the bus at any moment.</p>
+<ol type="1">
+<li><p>CPU sets the Address Register and the Counter to the initial
+value.</p></li>
+<li><p>The DMA controller sends DMA-Request to CPU.</p></li>
+<li><p>When CPU releases the bus, it sends DMA-Accept to allow one DMA
+transfer.</p></li>
+<li><p>DMA sets value from address register to Address Bus.</p></li>
+<li><p>DMA writes data to Data bus.</p></li>
+<li><p>Memory stores data from bus to given address.</p></li>
+<li><p>DMA increments Address Register and decrements the
+Counter.</p></li>
+<li><p>One byte is transferred.</p></li>
+<li><p>If the counter is zero, the transmission ends.</p></li>
+<li><p>If the counter is not zero, the DMA continues from point
+1.</p></li>
+</ol>
+<p>DMA saves the CPU time required for computing and it uses time, when
+CPU does not access the bus. It greatly improves overall system
+throughput and the computing performance.</p>
+<h2 id="channels">Channels</h2>
+<p>High level replacement of the DMA. Channel Controller has its own CPU
+to directly control the connected devices. CPU only starts and stops
+communication.</p>
+<ul>
+<li><p>SCSI (Small Computer System Interface) – introduced in 1981,
+originally 5 MB/s, today 640 MB/s;</p></li>
+<li><p>FC (Fiber Channel) – used today for hard drives and disk
+arrays.</p></li>
+</ul>
+<h1 id="risc-processors">RISC Processors</h1>
+<p>From early 80’s we started to divide processors to two groups:</p>
+<ul>
+<li><p><strong>CISC</strong> – Complex Instruction Set Computer</p></li>
+<li><p><strong>RISC</strong> – Reduced Instruction Set Computer</p></li>
+</ul>
+<p>We can briefly summarize several improvements of RISC
+architecture:</p>
+<ul>
+<li><p>Only basic instructions are implemented; complex instructions are
+substituted by sequence of instructions.</p></li>
+<li><p>All instructions have the same length – reading them from memory
+is faster.</p></li>
+<li><p>All instruction use the same format – decoding is easier and
+decoding unit can be simple.</p></li>
+<li><p>Microprogramming controller is replaced by faster hardwired
+controller.</p></li>
+<li><p>Only two instructions can read / write data from / to memory -
+LOAD and STORE.</p></li>
+<li><p>Addressing modes are reduced to minimum number.</p></li>
+<li><p>More registers are implemented directly in processor.</p></li>
+<li><p>Pipelined execution of instruction is used.</p></li>
+<li><p>In every machine cycle one instruction is completed.</p></li>
+<li><p>Complex technical processor equipment is transferred to the
+programing language compiler.</p></li>
+</ul>
+<p>More registers have to be implemented, because all instructions are
+not able to access data directly in the memory and more temporary data
+is necessary to be stored in the processor.</p>
+<h2 id="pipelining">Pipelining</h2>
+<p>The processor is a sequential circuit. It takes input command for
+processing and until it is done, it does not accept any new command. The
+speed of execution is in the most cases given by external clock source.
+To use all parts of processor permanently, we change sequential circuit
+to chain of independent circuits. To consider the circuit as pipelined,
+all stages have to work for the same time, otherwise the slowest one
+hinders the process.</p>
+<ol type="1">
+<li><p><strong>FE</strong> – Fetch instruction</p></li>
+<li><p><strong>DE</strong> – Decode instruction</p></li>
+<li><p><strong>LD</strong> – Load data and operands</p></li>
+<li><p><strong>EX</strong> – Execute instruction</p></li>
+<li><p><strong>ST</strong> -Store result</p></li>
+</ol>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>T1</th>
+<th>T2</th>
+<th>T3</th>
+<th>T4</th>
+<th>T5</th>
+<th>T6</th>
+<th>T7</th>
+<th>T8</th>
+<th>T9</th>
+<th>T10</th>
+<th>T1</th>
+<th>T2</th>
+<th>T3</th>
+<th>T4</th>
+<th>T5</th>
+<th>T6</th>
+<th>T7</th>
+<th>T8</th>
+<th>T9</th>
+<th>T10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FE</td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td>I8</td>
+<td>I9</td>
+<td>I10</td>
+</tr>
+<tr>
+<td>DE</td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td>I8</td>
+<td>I9</td>
+</tr>
+<tr>
+<td>LD</td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td>I8</td>
+</tr>
+<tr>
+<td>EX</td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+</tr>
+<tr>
+<td>ST</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+</tr>
+<tr>
+<td></td>
+<td colspan="10" style="text-align: center;">CISC Processor</td>
+<td colspan="10" style="text-align: center;">RISC Processor</td>
+</tr>
+</tbody>
+</table>
+<p>The jump instruction changes the address of the next executed
+instruction and therefore instructions in progress are lost. The Fetch
+unit has to start loading instructions from the new address. The code
+contains up to 14 % of conditional jumps. A very long pipeline can cause
+great ineffectiveness, given by unnecessary losses of instructions in
+progress. This problem, known as <strong>pipeline queue
+filling</strong>, also arises when the program modifies itself. The
+problem is solved in modern processors in easy way: the program is not
+allowed to modify own code while running.</p>
+<h3 id="delayed-jump">Delayed Jump</h3>
+<p>One simple method to manage conditional jumps – the processor starts
+loading instructions from the new address after all unfinished
+instructions are done. Let’s have a three level pipelining. Before each
+jump, compiler must put an instruction, which would execute anyway (or
+NOP – No Instruction), so the result of a jump can be resolved and no
+harm <img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image9.tmp"
+style="width:3.3404in;height:1.34375in" />done.</p>
+<h3 id="bit-branch-prediction"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image10.tmp"
+style="width:3.3125in;height:1.33861in" />Bit Branch Prediction</h3>
+<p>The prediction can be divided into 2 groups:</p>
+<ul>
+<li><p>Static prediction – bits are part of machine instruction and are
+set by a compiler or a programmer. They are set once and for
+all.</p></li>
+<li><p>Dynamic prediction – bits are in the processor and they are
+controlled dynamically during the code execution.</p></li>
+</ul>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image11.tmp"
+style="width:3.4375in;height:2.3125in" />One bit static prediction is
+used in less powerful systems – it generates two failures in every loop,
+which is no problem for processors with short pipeline. In modern high
+performance systems tow bits dynamic prediction is used. The processor
+monitors the behavior of the conditional jump instruction and changes
+prediction only after two failures in the sequence. Bits are implemented
+directly in processor in Branch Prediction Table part to maximize the
+performance.</p>
+<h3 id="super-scalar-architecture">Super-Scalar Architecture</h3>
+<p>Used in the highest performance computers. The processor has
+implemented two parallel pipelines. Usually only one pipeline is
+working. When conditional jump is detected in early stages of
+instruction processing, first pipeline continues in processing in the
+normal way – following instruction sequence. The second pipeline obtains
+signal from the first one to start execution at conditional jump target
+address. But saving results is not allowed.</p>
+<p>When the result of conditional jump is known, super-scalar control
+unit in processor decides, which pipeline will continue. The first one
+can continue in the normal way without losses. When the second one is
+selected, instructions from target address are in progress and
+processing can continue without delay. The disadvantage of super-scalar
+architecture is the high price.</p>
+<h2 id="data-and-structural-hazards">Data and Structural Hazards</h2>
+<p>In many cases a problem may occur, when some pipeline stage needs,
+which are not yet available. For example some instruction needs address
+of operand, but address is not yet stored by the previous instruction.
+If it happens, we call it a <strong>data hazard</strong>. The problem
+can be solved directly in the pipeline, or by a compiler that prepares
+the correct instruction sequence.</p>
+<p>Another type of the hazard occurs during handling the resources. When
+more pipeline stages need to load data from memory, all stage circuits
+need access to the bus. But computer contains only one bus and it is
+impossible to use the bus parallel. The types of hazards are called
+<strong>structural hazards</strong>.</p>
+<h2 id="arm">ARM</h2>
+<p>One of the best known RISC processors is ARM – Acorn RISC Machine.
+The first production chip was available in 1986. The ARM is 32-bit
+processor with 32-bit data bus and 26-bit address bus. It contains 27
+registers and core of 30 000 transistors. In early 90’s Acorn started
+cooperate with Apple and the result was ARM6 and ARM7 with 32-bit
+address bus, cache on-chip and MMU. In the 4<sup>th</sup> generation
+5-stage pipeline was introduced in processor, the 5<sup>th</sup>
+generation of processor introduce 64-bit data bus to allow fetching two
+instructions in one cycle. Latest ARM generation uses 11-stages
+pipeline.</p>
+<p>ARM processors are very popular in many applications – mobile phones,
+PDA, graphics accelerators, routers, play-consoles, notebooks, tablets,
+robots, etc.</p>
+<h2 id="mips">MIPS</h2>
+<p>The first MIPS (Microprocessor without Interlocked Pipeline Stages)
+was introduced in 1985. The first R2000 was a full 32-bit version with
+32 registers, MMU with flat 4GB addressing and virtual memory. The
+pipeline had 5-stages: fetch, decode, execute, memory-access,
+write-result. It was possible to work in little- and big-endian memory
+model.</p>
+<p>Although design eliminated a number of useful instructions, such as
+multiply and divide, it was evident that the overall performance of the
+computer was dramatically improved, because the chip could run at much
+higher clock rates. First 64-bit version was introduce in 1991. The
+Rx000 processor family was very important for SUN and SGI
+workstations.</p>
+<p>One of the more interesting applications of the MIPS architecture is
+its usage in multiprocessor supercomputers. The MIPS cores have been
+commercially successful, now being used in many consumer application:
+Cisco and Mikrotik’s router board routers, Wi-Fi AP, cable modems and
+ADSL modems, smartcards, laser printer engines, set-top boxes, robots,
+handheld computers, Sony PlayStation 2 and Sony PSP.</p>
+<h2 id="microchip-and-atmel">Microchip and Atmel</h2>
+<p>The RISC architecture is not only used for phones, desktops or
+supercomputers. Today it is used for the smallest 8/bit
+microcomputers.</p>
+<p>One of the best known, massively used microcomputers are PICs,
+produced by Microchip. It implements one working register, 2-stages
+pipeline, after the jump instruction there is one machine cycle delay.
+It is based on Harvard architecture and implements only about 40
+instructions. PICs are designed in wide range, from battery supply
+version, up to the fast version with Ethernet and USB.</p>
+<p>Another well-known RISC microcomputer is AVR from Atmel. The
+processor is designed as Harvard architecture. It implements 2-stages
+pipeline, 32 registers and instruction set is designed directly for
+C-language compiler. It is more user friendly than PIC.</p>
+<p>The AVR is fast. The performance in MIPS is equal to clock frequency,
+PIC uses only quarter of clock signal.</p>
+<h1 id="intel-x86-history">Intel x86 History</h1>
+<p>Intel x86 represents the CISC processors evolution.</p>
+<h2 id="intel-8080">Intel 8080</h2>
+<p>1974, produced with NMOS 6 um, 6000 transistors, 2 MHz, 8b data bus,
+16b data bus</p>
+<p>This 8-bit processor is not directly the first member of x86 series,
+but it cannot be skipped. One of the first commercially successful
+microprocessors. That became the basis for a number of the first
+single-board computers and its instruction set inspired other
+manufacturers to develop 8-bit processors.</p>
+<h2 id="intel-8086">Intel 8086</h2>
+<p>1976, produced with HMOS 3.2 um, 29000 transistors, up to 10 MHz, 16b
+data bus, 20b address bus</p>
+<p>This is the first 16-bit processor. It is able to address up to 1MB
+of memory using the 64kB block segmentation. CPU is divided into two
+parts: execution unit and bus control unit. It contains eight 16-bit
+wide registers and four segment registers. This set of registers is the
+basis for all subsequent generations. The instruction queue is only 6
+bytes long and after jump instruction it is erased and refilled. It
+became basis for the PC-XT architecture from IBM.</p>
+<ul>
+<li><p><strong>Intel 8088<br />
+</strong>Same internal architecture as 8086, only the data bus width was
+reduced to 8-bit. The performance was decreased, but at the time there
+were many available peripheral chips for 8-bit microprocessors and they
+could be used for the Intel 8088 as well.</p></li>
+</ul>
+<h2 id="intel-80186">Intel 80186</h2>
+<p>1982, produced with HMOS 1.3 um, 55000 transistors, up to 25 MHz, 16b
+data bus, 20b address bus</p>
+<p>80186 introduced improved architecture and many accelerated
+instructions. The processor was primarily designed for embedded devices
+and it integrates many peripheral devices directly on the chip,
+especially DMA controller, clock, timer and ports. Thus it was
+incompatible with the PC-XT architecture. It was produced for 25 years
+and over these years it was gradually modernized. It was also licensed
+to many other manufacturers.</p>
+<ul>
+<li><p><strong>Intel 80188</strong> – the 8b data bus</p></li>
+</ul>
+<h2 id="intel-80286">Intel 80286</h2>
+<p>1982, produced with HMOS 1.5 um, 134000 transistors, up to 25 MHz,
+16b data bus, 24b address bus.</p>
+<p>The second x86 generation. Higher performance was achieved by two
+enhancements: most instructions needs less machine cycles for execution
+and the processor works on the higher frequency. The processor
+implements the new <em>Protected Mode</em> with possibility up to 16MB
+of RAM. It uses it in the MMU (Memory Management Unti) and implements
+<em>Virtual Memory</em> in range 1GB. These advancements allow to
+develop new safe, multitasking and multiuser OS. The IBM uses this CPU
+for the new standard known as PC-AT.</p>
+<h2 id="intel-80386dx">Intel 80386DX</h2>
+<p>1985, produced with CHMOS 1.5 um, 275000 transistors, up to 40 MHz,
+32b data bus, 32b address bus.</p>
+<p>The first full 32-bit processor with the full backward compatibility
+in R-M. All registers were extended to 32-bit. The address and data bus
+are 32-bit wide. In P-M the processor was able to address 4GB memory for
+each process and up to 64TB of the whole virtual memory. This addressing
+mode has been used until today. The processor implemented new Virtual
+Mode for compatibility with old R-M programs. Therefore old MS-DOS
+programs could be used in new operating systems.</p>
+<p>The processor had cache memory controller for fast L1 cache memory on
+the board. This memory was necessary for processors operating at a
+frequency over 30 MHz. First computer with 80386DX was introduced by
+Compaq.</p>
+<ul>
+<li><p><strong>Intel 80386SX</strong> – the 16b data bus</p></li>
+<li><p><strong>FPU coprocessor 8087/287/387</strong> – the first three
+generation of Intel processors were produced without units for floating
+point numbers computing. These Floating Point Units, called
+coprocessors, were produced as separate circuits. Computer manufactures
+had to implement a separated slot for coprocessor on the
+boards.</p></li>
+</ul>
+<h2 id="intel-80486dx">Intel 80486DX</h2>
+<p>1989, produced with CHMOS 1 um, 1.2 mil. transistors, up to 100 MHz,
+32b data and address bus</p>
+<p>The great increase of number of transistors indicated a lot of
+modernizations. Many improvements were done in ALU, in instruction queue
+and in throughput between internal parts. The processor contains the L1
+cache with size of 8 kB shared for data and instructions. MMU unit was
+improved too, especially for the higher performance in the protected
+mode. Another innovation was the FPU unit implementation directly on the
+chip.</p>
+<ul>
+<li><p><strong>Intel 80486SX</strong> – version without the FPU</p></li>
+<li><p><strong>Intel 80486DX2</strong> – version doubled the internal
+clock frequency and it was fully pin-compatible with 486DX.</p></li>
+<li><p><strong>Intel 80486DX5</strong> – version tripled the internal
+clock frequency</p></li>
+</ul>
+<h2 id="pentium">Pentium</h2>
+<p>1993, BiCMOS 0.25 um, 3.1 mil. transistors, up to 300 MHz, 64b data
+bus and 32b address bus</p>
+<p>The fifth generation called Pentium was the first x86 processor that
+implemented some RISC and superscalar features. The processor
+implemented two parallel ALU units. The branch prediction unit was
+implemented in the processor too. The processor contained separated L1
+caches for data and code. FPU was integrated as well. In 1997, Intel
+added the multimedia unit MMX.</p>
+<h2 id="pentium-pro">Pentium Pro</h2>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image12.tmp"
+style="width:3.1875in;height:3.98958in" />1995, BiCMOS 0.35 um, 5.5 mil.
+and 15. mil L2 cahce, up to 200 MHz, 64b data bus and 36b address
+bus</p>
+<p>The sixth generation brought a major technological breakthrough. It’s
+RISC processor with the backward CISC compatibility. Pentium Pro was
+primarily designed for servers thanks to its higher performance and
+higher price. It allows address up to 64GB physical memory.</p>
+<p>The Processors’ but interface unit is directly connected to L1
+caches, separated for code and data.</p>
+<p>The Fetch &amp; Decode Unit reads old CISC x86 instructions from the
+memory and decodes them to one or more RISC instructions, called
+<strong>micro-operations</strong>. All micro-ops have the same length –
+118 bits. The Decode unit is very complex and is composed of more
+internal parallel working units to decode CISC instructions fast
+enough.</p>
+<p>The decode unit is followed by the pure RISC processor. Decode
+instructions are not progressing into the instruction queue stored in
+Instruction Pool, a bank of 40 instructions. It uses <strong>out of
+order execution</strong> with complex execution unit.</p>
+<p>Executed instructions are put back to the pool with results, after
+the Retire Unit stores results back to registers and to the L1 cache.
+The processor contains Branch Prediction Unit and in the previous scheme
+is hidden in Fetch and Decode Unit. Prediction success rate is usually
+about 90 %.</p>
+<h2 id="pentium-2">Pentium 2</h2>
+<p>1997, BiCMOS 0.18 um, 7.5 mil. + 20 mil. L2 cache, up to 533 MHz, 64b
+data bus and 36b address bus</p>
+<p>Direct successor of Pentium Pro with MMX unit added, L2 cache is
+still in separated chip. High/end version of Pentium 2 with 512 kB of L2
+cache marked Xeon. The low-end processor with small or none L2 cache was
+marked as Celeron and was used in cheap personal computers.</p>
+<h2 id="pentium-3">Pentium 3</h2>
+<p>1999, BiCMOS 0.13 um, 9.5 mil + 18 mil. L2, up to 1.3 GHz, 64b data
+bus and 36b address bus</p>
+<p>It had integrated the L2 cache on single chip together with the CPU
+core. The execution unit got another helpers – the SSE unit and improved
+the branch prediction unit. The power management was significantly
+improved too. The P3 was the best processor for laptops for the next few
+years. It had later reappeared on the marked in upgraded form as Pentium
+M.</p>
+<h2 id="pentium-4">Pentium 4</h2>
+<p>2000, BiCMOS 0.065 um, 42 mil., 256 kB l2, up to 3.8 GHz, 64b data
+bus and 36b address bus</p>
+<p>It implements new architecture NetBurst designed for the new
+multimedia world. The processor had the same performance as P3 on the
+same frequency, together with significantly higher current
+consumption.</p>
+<p>The Fetch and Decode unit translates CISC instruction into RISC ones
+and sends them to the Out-of-order Execution Unit. The Retirement unit
+stores the results back to memories. The L1 code cache is placed after
+Fetch / Decode unit. Thus it contains decoded micro-operations. There is
+a pipeline with 20 stages in Pentium 4. It is two times longer than in
+Pentium Pro and it places greater demands on the branch prediction.</p>
+<h2 id="pentium-6-em64t">Pentium 6 EM64T</h2>
+<p>2004, BiCMOS 90nm, 125 mil. with 1MB L2, 2.888 GHz, 64b data bus and
+40b address bus</p>
+<p>First processor which adapted third-party standard. AMD at that time
+had a successful 64-bit technology, which was create by extending the
+old 32-bit architecture. Because Intel did not want to lose market
+position, they had to adapt.</p>
+<p>All registers were extended to 64-bit, 8 new registers were added and
+address bus was extended to 40 bits. The processor had very long
+pipeline (30 stages), it had to be clocked by high frequency and it was
+overheating.</p>
+<h2 id="pentium-m">Pentium M</h2>
+<p>2003, BiCMOS 65 nm, 77 mil. with 1MB L2, 2.2 GHz, 64b data bus and
+32b address bus</p>
+<p>It was designed primarily for notebooks. Intel took the best from P3
+architecture and used latest experiences with bus communication. The
+Pentium M with 1.5 GHZ clock had nearly the same performance as P4 with
+2.5GHz clock with only 30% in comparison with P4! But his processor was
+strictly sold only for notebooks as part of Centrino technology.</p>
+<h2 id="intel-core-core-duo-core-solo">Intel Core, Core Duo, Core
+Solo</h2>
+<p>2006, BiCMOS 65nm, 1 or 2 cores, 2.up to 2.2 GHz, 64b data bus and
+36b address bus</p>
+<p>Successor of Pentium M, not only desifned for notebooks, desktops and
+servers. It had wider bus and for the first time, two cores. And also in
+battery-powered computers.</p>
+<h2 id="intel-core-2">Intel Core 2</h2>
+<p>2006, BiCMOS 45nm, 1 to 4 cores, 3.3GHz, 64b data bus and 36b or 40b
+address bus</p>
+<p>Introduction of EM64T technology, virtually end of NetBurst
+architecture.</p>
+<h2 id="intel-atom">Intel Atom</h2>
+<p>2008, BiCMOS 45nm, 1 or 2 cores, up to 2 GHz, 64b data bus and 32b
+address bus</p>
+<p>Reaction to ultra-low power consumption processor by AMD (such as
+Geode and Eden), introduction of a new architecture named Bonell. The
+Front-end cluster fetches and decodes instructions and passes them to
+Instruction queue. The Front Side Bus and L2 cache are implemented in
+Bus unit.</p>
+<h2 id="itanium-and-itanium-2">Itanium and Itanium 2</h2>
+<p>2002, BiCMOS 65nm, 2 bil. transistors, 1.7GHz, 128b data bus and 40b
+address bus</p>
+<p>The 64-bit successor of Pentium family, completely designed as the
+new pure RISC processor. Its main weakness was the poor backward
+compatibility with the 32/bit predecessors. The Itanium is now designed
+for high performance servers and implements up to 24 MB of L3 cache
+directly on the chip.</p>
+<h1 id="internal-computers-memory">Internal Computers Memory</h1>
+<p>There are many types of memories used in today’s computers. Memories
+are made using different technologies.</p>
+<ol type="I">
+<li><p>Registers – smallest and fastest SRAM memory in
+processor</p></li>
+<li><p>Cache L1 – SRAM memory ranging from kB to tens of kB</p></li>
+<li><p>Cache L2 – SRAM memory ranging from tens of kB to tens of
+MB</p></li>
+<li><p>Main memory – DRAM size up to tens GB</p></li>
+<li><p>Hard drive – magnetic memory, size up to a few TB</p></li>
+<li><p>Optical memory – CD, DVD, etc.</p></li>
+<li><p>Magnetic tapes with capacity up to a few TB, but it is very
+slow</p></li>
+</ol>
+<p>Registers are the fastest and the most expensive. Tapes are the
+slowest and the cheapest.</p>
+<h2 id="memory-classification">Memory Classification</h2>
+<p>The internal computer memories are characterized by several
+parameters.</p>
+<ul>
+<li><p>By memory access</p>
+<ul>
+<li><p>RAM – Random Access Memory</p></li>
+<li><p>SAM – Serial Access Memory,</p></li>
+<li><p>Special access – stack, queue, multi-ports, associative
+memory</p></li>
+</ul></li>
+<li><p>The second division of memories can be made according to the
+ability to read and / or to write:</p>
+<ul>
+<li><p>RWM – Read and Write Memory</p></li>
+<li><p>ROM – Read Only Memory</p></li>
+<li><p>WOM – Write Only Mmoery</p></li>
+<li><p>Combined Memory</p></li>
+</ul></li>
+<li><p>The third option is to divide memories by the type of memory
+cell</p>
+<ul>
+<li><p>DRAM – Dynamic RAM, cell is capacitor</p></li>
+<li><p>SRAM – Static RAM, cell is transistor flip-flop</p></li>
+<li><p>EPROM, EEPROM, Flash – programmable memory, cell is special MOS
+transistor</p></li>
+</ul></li>
+</ul>
+<p>Memories are classified by all parameters simultaneously.</p>
+<h2 id="dynamic-ram"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image13.tmp"
+style="width:2.52778in;height:2.96875in" />Dynamic RAM</h2>
+<p>The Dynamic RAM has all cells realized by a tiny capacitor with one
+transistors. All capacitors have capacity in fF (femto Farad) and they
+are not able to store change for a long time. They are very quickly
+losing their charge. Therefore the charge of all capacitors in the chip
+has to be periodically refreshed every few milliseconds. The refresh was
+earlier realized by reading the memory, e.g. by the DMA usage. Now the
+“hidden” refresh is implemented directly in the chip and does not need
+external circuits.</p>
+<p>The chip integrates many millions or billions of cells organized in
+square matrix and all cells have their own addresses, given by address
+of a row and address of a column. Therefore we have to specify two
+addresses to select a single cell: the row and the column. This two-step
+addressing is a little slower than the direct addressing, but it needs
+less address signals. One matrix forms one layer on the chip. The chip
+can integrate more layers and on the same address of the row and the
+column it has more bits stored.</p>
+<p>To write data to memory, it is necessary to sand to the memory
+address of the ROW and then the address of the COL. Together with the
+COL address data is written to the data bus. To read, processor sends to
+the bus the sequence of the ROW and COL address signals and the memory
+chip writes data to the bus in the next bus clock cycle and the
+processor takes them.</p>
+<ul>
+<li><p><strong>Fast Page DRAM</strong> – When the processor reads data
+from following addresses, it is not necessary to send the ROW signal
+again, only the following COL addresses are sent. Thus reading is
+faster.</p></li>
+<li><p><strong>Synchronous DRAM</strong> – memory obtains signals ROW
+and COL and then it generates the following COL signals automatically
+inside the chip and it sends data to the bus. No more control signals
+are needed. But the chip has to be synchronized with the processor clock
+signal.</p></li>
+<li><p><strong>Double Data Rate SDRAM</strong> – two times faster than
+SDRAAM, data to the bus are sent two times per one clock cycle, this
+memory is used as double channel memory and the final average time of
+reading is in units of nanoseconds</p></li>
+</ul>
+<p>DRAM memories were produced over the time in several versions:</p>
+<ul>
+<li><p><strong>DIP – Dual In-line Package</strong> – the DRAM memory
+similarly to other semiconductor chips</p></li>
+<li><p><strong>SIPP</strong> – <strong>Single In-line Pin
+Packages</strong> – DIP insertion was complicated, unreliable</p></li>
+<li><p><strong>SIMM – Single In-line Memory Module</strong> – connector
+is directly on the module edge without pins</p></li>
+<li><p><strong>DIMM</strong> – <strong>Dual In-line Memory
+Module</strong> – designed for SDRAM and DDR SDRAM, successor of
+SIMM</p></li>
+<li><p><strong>SO</strong>-<strong>DIMM – Small Outline DIMM</strong> –
+designed for notebooks and embedded computers</p></li>
+</ul>
+<h2 id="static-memory"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image14.tmp"
+style="width:2.58542in;height:1.8125in" />Static memory</h2>
+<p>The static memory has all cells designed as the RS flip-flop. The
+information in cells is kept until the state is changed. It does not
+need refresh. Therefore these memories are called static. One bit can be
+saved in a cell consisting of four or six transistors.</p>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image14.tmp"
+style="width:3.85417in;height:2.66667in" />In the cell implemented as
+four transistors version, two transistors work as flip-flop and use
+resistors as active load. Other two transistors are activated by the
+address wire and connect the cell to the data wire for the reading or
+writing.</p>
+<p>The more modern six transistors version of cell needs more
+transistors, but the whole memory has lower consumption.</p>
+<p>SRAM is used for memory with fast access, memory cells are organized
+in the matrix, but all rows have their own full address. All cells in
+the row are activated in a single step. It is necessary to have a more
+complex decoder in the chip and use more address wires.</p>
+<h2 id="nonvolatile-memory">Nonvolatile Memory</h2>
+<p>The SRAM and DRAM memories hold information only when they are
+powered by the electricity. Nonvolatile memory needs power supply too,
+but only for data access. Information is held in special memory
+cells.</p>
+<ul>
+<li><p><strong>PROM or OTP</strong> – Programmable Read Only Memory,
+nowadays called One Time Programmable. This memory is used where stored
+information will never change. For example in microcomputer using that
+memory.</p></li>
+<li><p><strong>EPROM</strong> – Erasable PROM. This technology allows to
+clear the whole memory with ultraviolet light and program it again. But
+the chip has to be removed from board, which is inconvenient.</p></li>
+<li><p><strong>EEPROM</strong> – Electrically Erasable PROM. This type
+of memory does not need UV light, is being erased electrically. But for
+erasing it requires higher voltage, like the normal power supply. Memory
+also has to be erased as whole.</p></li>
+<li><p><strong>Flash</strong> – the successor of EEPROM. It allows to
+erase only a small part of the memory and modern version does not need
+higher voltage for the erasing. The disadvantages remain slow erasure
+and limited number of writes. It is also used as a disk known as SSD
+(Solid State Disk) or USB Flash Drive.</p></li>
+</ul>
+<h2 id="memristor">Memristor</h2>
+<p>The fourth passive circuit component was already envisioned
+theoretically in 1971 but first time made in 2008. Since the element
+“remembers” the amount of current the passed through in the past.
+Memristor is nano-device that remember information permanently, switch
+it in nanoseconds, it is super dense and power efficient. Probably in
+the near future, computers will use only one universal memory –
+“MRAM”.</p>
+<h1 id="microcomputers">Microcomputers</h1>
+<p>The microcontroller, monolithic computer, System on Chip, are
+technical terms used to describe computer integrated in one package.
+Microcomputers are made for many low-end and middle complex applications
+for more than 30 years. Usually Harvard architecture is used; are being
+controlled by a fixed program and they use data from their environment.
+The program is stored in the nonvolatile memory and data are stored in
+registers or SRAM. Newer microcomputers are designs as RISC, programmers
+prefer C-language.</p>
+<p>Microcomputers contain two main memories. The first one is for
+program and the second one for data. In older microcomputers
+manufacturers implemented EEPROM and the chip had a typical small window
+on the top for UV light erasing. Now, the Flash memories are used, RWM
+and Flash memories are used for data. The RWM memory can be usually
+divided into three layers:</p>
+<ul>
+<li><p><strong>Working registers</strong> - the first level of RWM.
+Generally, the microcomputer has one or two working registers, but it
+can have tens of them holding current data. Instructions are usually
+hardwired to use specific register.</p></li>
+<li><p><strong>Universal scratchpad registers</strong> – here the
+program stores the most frequently used data. The part of instruction
+set is able to manipulate with these registers. The limit is usually in
+the range from 16 to 256 registers.</p></li>
+<li><p><strong>RWM / Flash Memory</strong> – is used for larger or
+less-used data; instruction set usually does not allow direct
+manipulation with the memory content, except movement instructions.
+These data have to be moved to working registers. In some
+microcomputers, the RWM memory is not implemented and we have to use
+some external memory.</p></li>
+</ul>
+<h2 id="microcomputer-synchronization">Microcomputer
+Synchronization</h2>
+<p>Processors are sequential circuits and they are controlled by the
+clock signal, including microcomputers. Using clock signal is the only
+way to accurately calculate, how long the instruction is performed. The
+timing is primarily determined by the oscillator, microcomputers are
+currently equipped with the ability to use more types of clock sources,
+even the internal oscillator. The microprocessor has usually reserved
+two pins marked as X1 and X2 for clock source.</p>
+<ul>
+<li><p><strong>RC Circuit –</strong> the cheapest solution with higher
+inaccuracy. Because the timing depends on the value of capacitor and
+resistor, it is not possible to have accurate timing. The value of both
+passive parts changes with temperature and moreover with capacitors
+age.</p></li>
+<li><p><strong>Crystal –</strong> produced in wide range of frequencies
+and with very high accuracy. But its speed is fixed and cannot be
+changed; crystal requires two addition small capacitors.</p></li>
+<li><p><strong>External clock sources –</strong> many applications as
+clock source from other parts of circuit. It can be also produced by
+special oscillating circuits that can be adjust during operation. The
+dynamic decreasing of frequency can significantly reduce
+microprocessor’s power consumption, which is important for
+battery-powered applications.</p></li>
+</ul>
+<p>The processor is a sequential circuit. The behavior of the processor
+does not depend only on machine instructions, but also on its internal
+states, which affects the results. Therefore it is very important to
+define an initial state of all circuits in the processor and computer.
+The <strong>reset</strong> is the initial state defined very exactly in
+a technical documentation for each processor and its peripherals.</p>
+<h2 id="protection-against-noise">Protection against noise</h2>
+<p>Microcomputers are used in many applications where an environment for
+its operation is not always good. Therefore noise protection must be
+focused on multiple perspectives:</p>
+<ul>
+<li><p><strong>Physical impacts</strong> – the microcomputer has to be
+able to work in wide range of temperature, air pressure, humidity,
+acceleration, …</p></li>
+<li><p><strong>Mechanical resistance</strong> – the chip and its package
+has to be strong enough to allow reliable mounting on the board</p></li>
+<li><p><strong>Electrical resistance</strong> – the chip has to be able
+to work in wide range of voltage, because during the operation the
+voltage can significantly fluctuate; microcomputer are working in the
+range from 2.5 to 6V.</p></li>
+<li><p><strong>Electromagnetic resistance</strong> – high currents in
+environment can cause the unwanted current induction; therefore it is
+necessary to shield processors.</p></li>
+</ul>
+<p>The microcomputer has special independent circuit called WatchDog. If
+the program stops communicating with this circuit, the watchdog resets
+the microcomputer. When the slowly decreasing counter comes to zero, it
+generates a reset signal. Power supply is monitored in a similar way.
+When it drops below the allowed level, then the specific circuit sotps
+the computer. This guard is BROWNOUT.</p>
+<p>Each computer includes the interrupt support. Main program can be
+interrupted at anytime and anywhere. It is therefore important that the
+interrupt service always carries out only the necessary and then it
+quickly passes control back to the main program.</p>
+<h2 id="ports"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image15.tmp"
+style="width:3.22917in;height:2.27083in" />Ports</h2>
+<p>The computer is a processor, memory and peripherals. <strong>Parallel
+Port</strong> – usually they are organized in 4 or 8 bit groups,
+accessed by <strong>registers</strong>. The internal wiring always
+significantly affects the electrical properties of the ports.</p>
+<ol type="a">
+<li><p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image15.tmp"
+style="width:1.97983in;height:2.03125in" />Open Collector – allows
+connection to the circuit with the higher voltage than the microcomputer
+is powered; the closed output transistor set this output to a
+high-impedance state.</p></li>
+<li><p>Bidirectional port – when the output transistor is closed, the
+output has a defined logical value; programmers can read two values, the
+last written value to the D flip-flop or the real state on the output
+pin.</p></li>
+</ol>
+<h2 id="serial-communication"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image16.tmp"
+style="width:2.79167in;height:2.30467in" />Serial Communication</h2>
+<p>The parallel transfer is used only for short distance. The serial
+transfer needs only a few writes, can be used for longer distances and
+has a much easier controller. Standards used for serial communication on
+short distances are USB, RS232, I<sup>2</sup>C. Standards RS422, RS485,
+CAN Bus or Ethernet are used for communication on longer distances.</p>
+<p>The processor puts data to the transmitter’s data register and the
+controller in the serial interface passes it to the shift register. The
+data from this register are transmitted bit by bit to the shift register
+on receiver’s side. When one transfer unit is completed, then the
+receiver’s controller passes received data to the data register.</p>
+<ul>
+<li><p>Synchronous data transfer – one wire in serial line is used as
+clock signal.</p></li>
+<li><p>Asynchronous data transfer – usually first added bit synchronizes
+independent clock sources in both serial interfaces.</p></li>
+</ul>
+<p>The communication with clock signal is safer and easier, but is more
+expensive for large distances. The asynchronous mode adds the
+synchronization data to the transmission, thus it decreases the transfer
+speed.</p>
+<h2 id="timer-and-counter">Timer and Counter</h2>
+<p>The timer is incremented by the internal processor clock signal.
+Whereas the counter counts changes of the external signal. Programmers
+set the initial value and turn ON counting. When the value inside the
+counter overflows, the interrupt is automatically generated.</p>
+<p>The timer works in a similar way. Programmers set a prescaler. It is
+a circuit in front of the counter to slow down the clock signal. The
+prescaler can be changed dynamically. The counter at the end of this
+chain work as the normal counter.</p>
+<h2 id="da-converters">D/A Converters</h2>
+<p>The easiest D/A converter is PWM – <strong>Pulse Wide
+Modulation</strong>. The output signal from the microcomputer has two
+values (0 – 0V; 1 – 5V). By switching the 0 and 1 in the unequal ration
+of the time we create the continuous signal. To smooth it we have to
+connect the RC circuit. This must satisfy <span class="math inline">R
+\cdot C \gg T</span>, but causes small delay.</p>
+<p>The often used D/A converter is <strong>parallel converter</strong>.
+It is very fast and it uses only passive components – resistors. In
+practice controller with only two different resistors – R and 2xR – is
+used for converter.</p>
+<h2 id="ad-converters">A/D Converters</h2>
+<p>The first simple and fast A/D converter is <strong>comparative
+converter</strong>. The measured voltage is divided by the series of
+resistors to many levels with comparators in all nodes between them. Two
+adjoining comparators detect required voltage on one resistors. The
+converter output value is a sequence number of that comparator. It works
+very fast, because the voltage changes immidiently. The converter with 8
+bits resolution requires 256 comparators and it is not suitable for
+better resolution.</p>
+<p>We also have <strong>A/D converters with D/A conversion</strong>. We
+compare the value from one comparator with the value from D/A converter
+to find out the right digital output. We can use binary-search like
+optimization.</p>
+<p>The <strong>integrating A/D converters</strong> do not directly
+measure the voltage, but they measure the time of charging and
+discharging the capacitor. These converters are used for more-bit
+(16-24) resolution.</p>
+<p>We can construct <strong>A/D converters with the RC circuit</strong>.
+It is necessary to have one pin with level voltage detection, e.g.
+Schmitt trigger circuit. The sensor <span
+class="math inline">R_{S}</span> and the reference resistance <span
+class="math inline">R_{REF}</span> are connected to two pins. Both
+resistances are connected to capacitor with capacity C. We can calculate
+now the unknown sensor resistance <span class="math inline">R_{S} =
+R_{REF} \cdot \frac{T_{S}}{T_{REF}}</span>.</p>
+<h1 id="external-memories-disks">External Memories – Disks</h1>
+<h2 id="magnetic-medium">Magnetic medium</h2>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image17.tmp"
+style="width:3.49236in;height:1.8125in" /><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image18.tmp"
+style="width:3.98976in;height:2.04167in" />There is a very thin magnetic
+surface on the carrier and information is saved as a magnetic
+orientation in small magnetic elements. The longitudinal write was used
+for fifty years. Every drive uses two heads, one for reading and one for
+writing.</p>
+<p>Modern hard disks use greater density with perpendicular write. This
+principle required a change of the writing head design in a drive. The
+greater density provides more than higher medium capacity. More
+information passes under the read head at the same time and it increases
+the speed of reading.</p>
+<p>Reading heads are using the <strong>Giant Magnetic
+Resistance</strong>. The resistance of material depends on the ability
+to pass electrons. But very thin layers are also affected by the quantum
+mechanics. Ferromagnetic material in magnetic field can pass only
+electrons with the same spin.</p>
+<h3 id="data-encoding">Data Encoding</h3>
+<p>The first encoding system for digital data recording on magnetic
+media, was <strong>frequency modulation FM</strong>. This is a simple
+scheme, where a 1 is recorded as two consecutive flux reversals, and a 0
+is recorded as a flux reversal followed by no flux reversal. This is
+wasteful – each bit requires two flux reversal positions.</p>
+<p>The <strong>modified frequency modulation</strong> reduces the number
+of flux reversals. Instead of inserting a synchronization reversal
+before each bit, one is inserted only between consecutive zeros. The
+<strong>Run Length Limited</strong> encoding: looks at group of bits
+instead of encoding one bit at a time.</p>
+<h3 id="hard-disk"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image19.tmp"
+style="width:3.05556in;height:2.08333in" />Hard Disk</h3>
+<p>All hard disks consist of several major functional parts. Main parts
+are rounded plates with magnetic surface. All plates are mounted
+parallel on the spindle mounted in bearing and rotation being provided
+by the synchronous (three phase) motor. The speed of rotation is usually
+in thousands of rotations per minute and it is constant. One head (read
+or write) is moving above each plate surface. All heads are mounted on
+the pivot parallel with spindle. This pivot does not rotate, step motor
+only tilts them in small angle.</p>
+<p>Plates rotate with the high speed and heads move above plate surface.
+All heads move synchronously, because they are mounted firmly on pivot.
+In each step head makes a circle on a plate, called a track. Tracks with
+the same order number create virtual cylinders on plates. Each track is
+divided into circle segments in short called sectors. Tracks and sectors
+are on both sides of plates. Each sector is 512 bytes.</p>
+<p>For the maximum speed it is necessary to minimize the head movement.
+Thus data are in first step written to all sectors in one track. Then
+the writing continues on track with the same order number under the
+following head. When all heads finished writing to the single cylinder,
+then heads are moved to the next cylinder. The smallest addressing unit
+of the disk is one sector, thus the case is installed on the disk
+controller speeding up the reading.</p>
+<p>All disks are equipped with Self-Monitoring, Analysis and Reporting
+Technology called S.M.A.R.T. It informs users about technical problems
+during running and warn them of impending drive failure. Main monitored
+parameters are distance between heads and plates, the number of bad
+sectors, the high temperature, and the time required for the disk to
+spin up.</p>
+<ul>
+<li><p>Capacity – GB/TB is important parameter for the most
+users</p></li>
+<li><p>Size of disk – external dimension, usually 3.5’’ or
+2.5’’</p></li>
+<li><p>Speed – RPM, usually thousands of rotations</p></li>
+<li><p>Transfer speed – how many MB/s can disk read or write</p></li>
+<li><p>Interface - cable connector SATA, PATA, SAS</p></li>
+<li><p>Access time – average delay before reading</p></li>
+<li><p>Power consumption – disk with high consumption needs
+cooling</p></li>
+<li><p>MTBS – mean time between failures</p></li>
+</ul>
+<h3 id="floppy-drives">Floppy Drives</h3>
+<ul>
+<li><p>5.25’’ with capacity of 360kB, 720kB and 1.2MB</p></li>
+<li><p>3.5’’ with capacity of 720kb, 1.44MB and 2.88MB</p></li>
+<li><p>LS-120 Superdisk with capacity of 120MB</p></li>
+<li><p>ZIP – external or internal floppy drive with capacity
+100MB</p></li>
+</ul>
+<p>Floppy disks were manufactured in self-closing disk cartridges. Read
+head in the floppy drive has a direct contact with magnetic media.
+Floppy drive is therefore significantly slower, have a low speed and low
+reliability.</p>
+<h2 id="optical-drives"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image20.tmp"
+style="width:2.97917in;height:3.40625in" />Optical drives</h2>
+<p>The laser diode emits the beam through a semi-transparent mirror to
+the first lens. Pre-focused laser beam continues through the second
+focusing lens to CD-ROM media. Pits or lands may/may not reflect the
+beam back. The bottom reflexive layer of the mirror directs the beam to
+the sensor – laser photo diode. This diode converts the reflected signal
+to a digital one and the device controller decodes them to data.</p>
+<p>Pit depth is directly derived from the laser wavelength of 780 nm
+used in CD-ROM drive. Reflective index of polycarbonate is 1.55 and thus
+laser wavelength in polycarbonate is 500nm. The pit depth is ¼ of that
+value – 125nm. Track on CD-ROM media is in a spiral shape (not
+concentric circles). Capacity of DVD-ROM is greater not only due to
+higher density of information on DVD media, it also changed encoding of
+stored data increasing overall capacity of media nearly 7x. The spiral
+on CD-ROM has a total length up to 5.77 km with reading speed 150kB/s.
+DVD has the total length of 11.84km with the ability of two layers on
+both sides. Basic speed is 1.38MB/s.</p>
+<p>The CD-R medium allow users to write their own data to the disk only
+once. The laser must be ten times stronger for writing than for reading.
+The CD-RW medium allows rewriting the data. The recording layer is
+located between two layers of dielectric. The recording layer can be
+melted by the laser and allow to write data in the same way as the CD-R
+medium. But each data write causes a little damage of recording
+layer.</p>
+<p>The DVD disk is composed of two thinner polycarbonate disks. The DVD
+drive uses two laser beams for two layered disk (DVD-9, one layer
+DVD-5).</p>
+<h2 id="magneto-optical-disks">Magneto-optical Disks</h2>
+<p>The surface of plates is thermo-magnetic. Information is saved as
+magnetic orientation. Magnetic surface uses Curie temperature, when
+material change its ferromagnetic behavior to paramagnetic around 180°C.
+The surface is heated up by laser in a width of few micrometers and the
+write head stores data quickly. Because the heated track is very thin,
+its surrounding cools quickly.</p>
+<p>For reading it uses the Kerr magneto-optical effect. The polarized
+light changes its orientation, when it passes through the magnetic
+field. The light receiver only recognizes polarization and decodes to
+data. Speed of reading is the same as on hard disk.</p>
+<ul>
+<li><p>Effective – the high capacity with low price ranging from a few
+hundreds MB up to 600GB.</p></li>
+<li><p>Changeable – disk are changed in drive.</p></li>
+<li><p>Durability – information written to the disk remains there more
+than 100 years. The disk can be cleaned in normal way by water and
+detergent.</p></li>
+<li><p>Safe – the rewriting is possible only when the surface is
+heated.</p></li>
+<li><p>Many rewrites – it allow many millions of rewrite
+cycles.</p></li>
+</ul>
+<h1 id="computer-display-units">Computer Display Units</h1>
+<h2 id="crt">CRT</h2>
+<p>The CRT screen is the successor of the tubes. It is a glass vacuum
+tube. The front part of the screen is covered by luminophores. There is
+electron gun on the opposite side. Electron gun emits electrons and
+Wehnelt Cylinder guides <img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image21.tmp"
+style="width:3.07292in;height:2.80208in" />them to stream. In focusing
+cylinder the stream is narrowed to a thin ray. Because the Electron gun
+is the Cathode and the Screen is the Anode, the electron ray continues
+to screen. Then the ray has to pass through Focusing Coils, which direct
+ray to specified point on the screen and it is able to control the ray
+intensity.</p>
+<p>When electron ray reaches the luminophore on the screen, this
+material transforms the kinetic energy of electrons to photons. Thus the
+screen emits the light. On the screen there are three types of
+luminophores – red, green, blue – to achieve the colored light, and
+three electron guns work in the screen together, for each color
+individually.</p>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image22.tmp"
+style="width:1.58333in;height:1.79167in" /><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image22.tmp"
+style="width:1.69792in;height:1.45833in" />The ray has to “run” over the
+whole screen. The movement is not random, but driven. Ray starts in the
+upper left screen corner and from left to right, line-by-line, quickly
+“draws” the image. Than the ray returns back from the bottom right
+corner to the upper left corner. The luminophore is able to emit light
+only for a few milliseconds and image has to be redrawn many times per
+second. For human eyes the acceptable minimum refresh frequency is 60Hz.
+The ergonomic minimum is 72Hz and the best refresh rate is in the range
+from 80Hz to 100Hz.</p>
+<p><strong>Invar mask</strong> – metal plate with small round holes
+arranged as a honeycomb. Lower image quality on the screen edges.
+<strong>Trinitron mask</strong> – designed by Sony, luminophor on the
+screen is organized in columns separated by thin wires. Screen can be
+flat, image is good on the whole screen surface.</p>
+<ul>
+<li><p>The main parameters of CRT: diagonal resolution, horizontal and
+vertical refresh frequencies, refresh rate, resolution, bandwidth,
+weight, power consumption</p></li>
+<li><p>Benefits: sharpness, color fidelity, good response, viewing
+angle, visible at daylight, work at all temperatures.</p></li>
+<li><p>Disadvantages: heavy, high power consumptions, slow start,
+harmful radiation, aging of luminophores.</p></li>
+</ul>
+<h2 id="liquid-crystal-display"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image23.tmp"
+style="width:2.60417in;height:1.92708in" />Liquid Crystal Display</h2>
+<p>The source of light is on the LCD background. This light is polarized
+in all directions. The light has to be polarized by the first layer and
+continues through transparent orientation plate to nematic layer with
+crystals. Crystals in this layer have one very important property. They
+are able to change the orientation of the polarized light. Size of
+change can be affected by the electrical voltage. The light with changed
+polarization passes through the second orientation layer to the outer
+polarization filter.</p>
+<p>This filter has a orthogonal polarization relative to the first
+filter. Thus, only light with changed polarization in the middle layer
+can pass through the last layer. Brightness (intensity) of the output
+light is controlled by the voltage in the middle layer in nematic
+structures. Orientation filters help to set correct orientation of
+crystals in this structure. Because crystals are in liquid, their
+position change is delayed.</p>
+<p>When we need a color LCD, it is necessary to add the colored layer.
+Light from front polarized filter passes through one basic color and
+because the source of light is white, the result is exactly one basic
+color. The resulting color is combination of all three colors, thus all
+pixels on the color display consist of three smaller cells with
+different colors.</p>
+<p><strong>Passive display</strong> controls pixels with wires
+integrated in both orientation layers. The bottom layer integrates
+horizontal net of wires and the top layer the vertical net. The pixel on
+the screen is selected by proper horizontal and vertical wires and it is
+activated with required voltage. But interference between the wires
+causes blur.</p>
+<p><strong>Active display</strong> with TFT has all cells with their own
+control transistor and pixel activation is faster and accurate.</p>
+<ul>
+<li><p>The main parameters: diagonal resolution, thickness, brightness,
+contrast, viewing angle, color depth, response time.</p></li>
+<li><p>Benefits: low power consumption, light, small dimensions, stable
+image.</p></li>
+<li><p>Disadvantages: slow response, fixed resolution, color distortion,
+limited viewing angle, low brightness, backlight.</p></li>
+</ul>
+<h2 id="plasma-display">Plasma display</h2>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image24.tmp"
+style="width:3.25in;height:1.92708in" />Mostly used for large TV
+screens. The plasma is created in the small closed cell depicted on the
+previous scheme. The cell contains rare gases. When the voltage is
+connected to electrodes, gases will create the mixture of free electrons
+and positive atoms. Electrons are attracted to the anode and atoms to
+the opposite site. Now the state relaxes.</p>
+<p>At first we need “to shake” the cell to start collisions of electrons
+and atoms by using the alternating current. The mess creates the plasma
+inside the cell and it produces a UV light. The UV light is in the cell
+transformed by the phosphor to the visible light. The intensity of the
+cell light can be regulated by the intensity of AC power. The color
+filter has to be added for the color plasma display, like on LCD.</p>
+<ul>
+<li><p>Benefits: good contrast and brightness, all cells are source of
+light and backlight is not needed, good viewing angle.</p></li>
+<li><p>Disadvantages: high power consumption, memory effect, cells
+aging, high price.</p></li>
+</ul>
+<h2 id="organic-led-display">Organic LED Display</h2>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image25.tmp"
+style="width:2.5625in;height:1.9375in" />The metal cathode is at the
+back of all layers. The second layer is semiconductor for electron
+transport. The next layer is an organic material capable of emitting
+light. The fourth layer is a transparent material for holes transport.
+Under the glass plate there are transparent anodes.</p>
+<p>When the power is connected to electrodes, electrons start to
+cumulate in the organic layer closer to the anode. Holes cumulate on the
+opposite site of an organic material. Holes and electrons start “to
+collide” in organic layer, electrons and holes eliminate each other and
+emit photons. This principle is called
+<strong>recombination</strong>.</p>
+<p><strong>Active / Passive Matrix OLED</strong> has the same principle
+as the active and passive LCD displays, pixels are organized into a
+rectangular matrix. Each OLED is active in PMOLED with two orthogonal
+electrodes. Electrodes pass through the entire width and height of the
+display. In AMOLED displays all OLEDs are activated by their own
+transistor.</p>
+<ul>
+<li><p>OLED display is a light source and does not need a backlight. Its
+output power is about 30-50 lm/W – high efficiency.</p></li>
+<li><p>Benefits: high contrast, full range of color, low power
+consumption, good viewing angle, no delay.</p></li>
+<li><p>Disadvantages: none.</p></li>
+</ul>
+<h2 id="e-ink-display"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image26.tmp"
+style="width:6.96875in;height:2.07431in" />E-Ink Display</h2>
+<p>One cell is in E-Ink technology called capsule. All capsules have
+diameter in tens or hundreds of micrometers. Capsules contains
+electrophoretic (electrically separable) liquid. The liquid consists of
+the hydrocarbon oil, which is transparent and chemically stable for very
+long time. White particles with the positive charge swim in the oil.
+Black particles have the opposite charge. The oil is thick enough to
+keep particles in a stable position.</p>
+<p>White inorganic particles have the core made from the titanium oxide.
+The cover is silicon oxide and polymer. Black particles are made from
+the carbon.</p>
+<p>When the voltage is connected to electrodes, particles are attracted
+to the opposite charge. The top of black or white particles is then
+visible through the top transparent electrode. Particles stay in last
+position without current after voltage disconnection.</p>
+<ul>
+<li><p>Benefits: high contrast, readable on direct sunlight, high
+resolution, wide view angle, does not need backlight, zero power
+consumption after image redraw.</p></li>
+<li><p>Disadvantages: few levels of gray, no colors, slow redraw with
+long response.</p></li>
+</ul>
+<h1 id="digital-circuits">Digital Circuits</h1>
+<h2 id="bipolar-technology">Bipolar Technology</h2>
+<p>The bipolar technology uses bipolar transistors – NPN and PNP. This
+technology can achieve the high speed, but it has the high power
+consumption and allows less integration.</p>
+<ul>
+<li><p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image27.tmp"
+style="width:1.46875in;height:0.71875in" /><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image28.png"
+style="width:1.25347in;height:1.16667in" /><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image29.tmp"
+style="width:2.19792in;height:1.3125in" /><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image30.tmp"
+style="width:1.13542in;height:1.16667in" /><strong>Resistor-Transistors
+Logic</strong><br />
+Uses only resistors to create two levels of signal. The output
+transistor T1 connects the output <span
+class="math inline">\overline{A}</span> to the ground = the output is in
+low level. When the input signal is in low level, transistor T1 is
+closed and resistor RL directly passes the supply voltage to output -
+<span class="math inline">\overline{A}</span> is in the high
+level.</p></li>
+</ul>
+<ul>
+<li><p><strong>Diode-Transistor Logic</strong><br />
+The technology uses diodes in addition of the resistors and transistors.
+When A and B are disconnected on in 1, the voltage over resistor R1
+opens transistor T1 and output is in 0. When inputs A or B or both are
+connected to 0, the voltage between D1 and D2 falls down and the
+transistor T1 is closed and output is in logical 1.</p></li>
+<li><p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image31.tmp"
+style="width:2.92708in;height:1.71875in" /><strong>Transistor-Transistor
+Logic</strong><br />
+The input is made from the multiemmiter transistor. It works in a
+similar way as diodes in DTL. The output is created from two transistors
+and it has better output parameters, especially the switching speed. The
+transistor T2 accelerates the transition between output levels from 0 to
+1 and back.<br />
+The TTL output part consists of two transistors which allows
+<strong>three state output</strong>. In this way, it is possible to
+connect more outputs on the bus.<br />
+For many application the <strong>open collector</strong> is used. The
+output part there is only the lower transistor and its collector is
+directly drained output. This output can be used to control the signal
+on buses or to switch higher voltage than the supply is.<br />
+TTL circuits operate in precisely defined voltage levels. The high level
+above 2.0V, low level under 0.8V, forbidden area is between.</p></li>
+<li><p><strong>STTL</strong><br />
+To speed up transistor switching, the Schottky diode can be implemented
+in circuit between transistor diode and collector.</p></li>
+</ul>
+<h2 id="unipolar-technology">Unipolar Technology</h2>
+<p>The elementary part is unipolar transistor. It is better known as
+<strong>Field Effected Transistor</strong> with tree electrodes:
+S-Source (emitter), D-Drain (collector) and G-Gate (base). The FET
+controls the flow of electrons from the source to the drain by affecting
+the size and shape of a “conductive channel” created and influenced by
+the voltage or a lack of it applied across the source terminal to gate.
+This channel is the “stream” through which electrons flow from source to
+drain. The FET with SiO<sub>2</sub> insulation layer is known as
+<strong>MOSFET</strong> (Metal Oxide Semiconductor FET).</p>
+<ul>
+<li><p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image32.tmp"
+style="width:2.375in;height:1.76042in" /><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image33.tmp"
+style="width:1.63542in;height:1.52083in" /><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image34.tmp"
+style="width:2.80208in;height:1.38542in" /><strong>PMOS</strong>
+<em>(pic. 1)</em><br />
+MOSFET transistor with P channel, low power consumption, slow and
+incompatible with TTL.</p></li>
+</ul>
+<ul>
+<li><p><strong>NMOS</strong><br />
+MOSFET with N channel, three times faster than PMOS, compatible with
+TTL.</p></li>
+<li><p><strong>HMOS<br />
+</strong>Reduced the size of NMOS by 50 %, 8 times faster, 8 times more
+efficient, next generations HMOSII and HMOSIII.</p></li>
+<li><p><strong>Complementary MOS</strong> <em>(pic. 2)</em><br />
+Combination of PMOS and NMOS. When input is 1, PMOS is closed and NMOS
+output, the current does not flow in both states from supply to ground,
+consumption of gates is zero, basis of today’s computers, very good
+noise resistance, compatibility with TTL</p></li>
+<li><p><strong>BiCMOS</strong> <em>(pic. 3)</em><br />
+Combination of Bipolar and CMOS; bipolar ensures fast switching and high
+I/O speed, CMOS offers less power dissipation and higher packing
+density.</p></li>
+<li><p><strong>Floating-gate Avalanche-injection MOS</strong><br />
+Used in nonvolatile EPROM memory, the gate is programmed by electron
+injection and can be “cleared” by the UV light.</p></li>
+<li><p><strong>FLOating-gate Oxide cell</strong><br />
+Successor of FAMOS in EEPROM memories, gate can be cleared
+electrically.</p></li>
+</ul>
+<h2 id="flash-memory">Flash Memory</h2>
+<p>The scheme is similar to the FLOTOX technology, it uses two gates.
+Uses SONOS (Silicon-Oxide-Nitride-Oxide-Silicon) as a material. The
+floating gate of the transistor is able to store four levels of charge.
+Thus one transistor can store 2 bits. The cell with 2 levels of charge
+is called SLC – Single Level Cell. The MLC technology allows 100,000
+rewrites.</p>
+<ul>
+<li><p><strong>NOR flash</strong> – each cell has one terminal connected
+directly to the ground and other one connected directly to a bit lien.
+The NOR is suitable for embedded devices due to low latency</p></li>
+<li><p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image35.tmp"
+style="width:3.86458in;height:1.39583in" /><strong>NAND flash</strong> -
+several transistors are connected in series, and only if all word lines
+are pulled to high level, the bit line is pulled low. Despite additional
+transistor, the reduction of ground wires and bit liens allows a denser
+layout and the greater storage capacity per chip.</p></li>
+</ul>
+<h1 id="general-purpose-gpu-programming-and-cuda"><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image36.tmp"
+style="width:3.8125in;height:1.45833in" />General Purpose GPU
+Programming and CUDA</h1>
+<p>The first GPU computing was over the OpenGL programming interfaces.
+Game developers needed more universal hardware, therefore pixel shaders
+were developed. In 2207 NVidia introduced Compute Unified Device
+Architecture as a small extension of C language.</p>
+<p>GPUs are designed to run parallel many hundreds of threads. All
+threads have to be independent, the GPU does not guarantee the order of
+thread execution. GPU is designed to process the compute intensive code
+with a limited number of conditional jumps; is optimized for the
+sequential access to the main memory of graphical car with the transfer
+speed up to hundreds of GB/s.</p>
+<h2 id="cuda-architecture">CUDA Architecture</h2>
+<p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image37.tmp"
+style="width:2.84375in;height:3.58056in" />graphical card is divided to
+<strong>multiprocessors</strong>. The device memory is shared between
+all multiprocessors. It consist of three parts: the global memory,
+texture memory and constants memory. All multiprocessors can share their
+data only in device memory. The design of all microprocessors is the
+same. They contain <strong>shared memory</strong> for all
+<strong>processors</strong> in the single multiprocessor. All of them
+have their own bank of registers. Every processor has a read-only cache
+to speed up access to texture and constant memories.</p>
+<p>The FERMI architecture was introduced in 2010. Each multiprocessor
+contains 32 FPU double cores, 16 load/store units, 4 special function
+units. Each core has one ALU and FPU unit. One group of 16 cores is
+called half-wrap, each having one instruction decoder. For SFU are also
+available to handle transcendental and other special operations.</p>
+<p>The <strong>device</strong> is a graphical card with the DRAM memory
+and GPU multiprocessors. The <strong>host</strong> is any computer with
+installed device. The memory in the device and in the host are connected
+only by bus. They are not shared!</p>
+<ol type="1">
+<li><p>Copy data from HOST memory to the DEVICE memory (using
+PCI-Express with transfer speed less than 5GB/s).</p></li>
+<li><p>Start threads in DEVICE.</p></li>
+<li><p>Execute threads in GPUs multiprocessors.</p></li>
+<li><p>Copy results back from the DEVICE memory to HOST memory.</p></li>
+</ol>
+<h3 id="rules-of-gpu-computing">Rules of GPU computing</h3>
+<ul>
+<li><p>Minimize data transfer between host and device.</p></li>
+<li><p>Use GPU only for tasks with very intensive calculations.</p></li>
+<li><p>GPU with shared memory would be more suitable.</p></li>
+<li><p>For intensive data transfer use pipelining.</p></li>
+<li><p><img
+src="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems-media/media/image38.tmp"
+style="width:3.0625in;height:2.88542in" />GPU computing can be used
+alongside data transfer.</p></li>
+<li><p>Optimize access to shared memory (sequential better than
+random)</p></li>
+<li><p>Reduce divergent threads.</p></li>
+<li><p>Select optimal thread grid.</p></li>
+</ul>
+<h2 id="cuda-programming-model">CUDA Programming model</h2>
+<h3 id="cuda-programming-extensions">CUDA Programming Extensions</h3>
+<p>CUDA introduced a few language extensions to the standard.</p>
+<ul>
+<li><p>The <strong>kernel</strong> is a function for GPU threads. The
+C/C++ is extended for kernel function exectuion by
+command name&lt;&lt;&lt;gridDim, blockDim&gt;&gt;&gt;( void ).</p></li>
+<li><p><strong>__device__</strong> is a function modifier. This function
+will be executed in the device and it can be called only from the
+device.</p></li>
+<li><p><strong>__host__</strong> is a function modifier. This function
+will be executed in the host and it can be called only from
+the host.</p></li>
+<li><p><strong>__global__</strong> is a modifier for kernels. Functions
+will be executed in GPU, but called (started) is from CPU.</p></li>
+</ul>
+<p>Variable type qualifier:</p>
+<ul>
+<li><p><strong>__device__</strong> declares a variable that resides in
+the device as long as application is running.</p></li>
+<li><p><strong>__constant__</strong> is used for variables places in
+constant memory.</p></li>
+<li><p><strong>__shared__</strong> variable resides in shared memory of
+the block, where kernel is running.</p></li>
+</ul>
+<p>New types are defined, all common
+(char, int, short, long, float, double and unsigned variants) are
+used <strong>as structures</strong> with suffix 1, 2, 3 or 4. For
+example int3 is a structure with 3 items. All members are accessible
+byx, y, z and w fields. There's also typedef uint3 dim3.</p>
+<p>int3 myvar;<br />
+myvar.x = myvar.y = myvar.z = 0;</p>
+<p>Predefined variables:</p>
+<ul>
+<li><p>dim3 gridDim contains dimension of the whole grid.</p></li>
+<li><p>uint3 blockIdx contains block position in grid.</p></li>
+<li><p>dim3 blockDim contains dimension of block (all blocks in the grid
+have the same dimension).</p></li>
+<li><p>uint3 threadIdx contains position of thread in block.</p></li>
+<li><p>int warpSize contains the warp size in threads.</p></li>
+</ul>
+<p>Threads are organized into <strong>blocks</strong> of squares, blocks
+are organized into <strong>grid</strong> of threads. The block volume
+is <strong>limited to 1024</strong>, so rectangles can be 32×32, 64×16
+or 8×8.</p>
+<p><strong>int</strong> xCoordinate = blockIdx.x * blockDim.x +
+threadIdx.x;<br />
+<strong>int</strong> yCoordinate = blockIdx.y * blockDim.y +
+threadIdx.y;</p>
+<p>The task is to design a grid to cover our problem. In the lab
+example, we can use one thread for each pixel of our image.</p>
+<h3 id="cuda-application-program-interface">CUDA Application Program
+Interface</h3>
+<ul>
+<li><p>cudaMalloc() – allocates memory in device.</p></li>
+<li><p>cudaFree() – releases allocated memory</p></li>
+<li><p>cudaMemcpy() – copies memory between host and device, direction
+is given by the
+value cudaMemcpyHostToDevice or cudaMemcpyDeviceToHost.</p></li>
+<li><p>cudaDeviceReset() – initialize the device</p></li>
+<li><p>printf() – CUDA since 2.0 supports printf function</p></li>
+<li><p>cudaGetLastError() – returns cudaSuccess or error code.</p></li>
+<li><p>cudaGetErrorsString() – returns string or error code</p></li>
+</ul>
+<p>__global__ <strong>void</strong> helloCUDA(<strong>float</strong> f)
+{<br />
+printf(<strong>"Hello thread $d, f =$f\n"</strong>, threadIdx.x,
+f);<br />
+}<br />
+<strong>void</strong> main()<br />
+{<br />
+helloCUDA&lt;&lt;&lt;1, 5&gt;&gt;&gt;(1.2345f); /// &lt;&lt;&lt;gridDim,
+blockDim&gt;&gt;&gt;<br />
+// helloCuda&lt;&lt;&lt;dim3(3, 3, 3), dim3(2, 2)&gt;&gt;&gt; for 3D
+organization</p>
+<p><strong>if</strong> (cudaGetLastError() != cudaSuccess)
+printf(<strong>"Error"</strong>);<br />
+<strong>else</strong> printf(<strong>"Kernel finished
+successfully"</strong>);</p>
+<p>cudaDeviceSynchronize();<br />
+}</p>
+      </main>
+    </div>
+
+    <!-- NEW: Add the footer to every note page -->
+    <footer class="main-footer-license">
+      <p>
+        Veškeré materiály na této stránce jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou poskytovány
+        bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <p>
+        Obsah je licencován pod
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer"
+          >Creative Commons Uveďte původ-Neužívejte komerčně-Zachovejte licenci 4.0 Mezinárodní</a
+        >. To znamená, že materiály můžete volně sdílet a upravovat pro nekomerční účely, pokud uvedete původního autora a zachováte stejnou
+        licenci.
+      </p>
+    </footer>
+
+    <!-- PDF Last Page (UPDATED CONTENT) -->
+    <div id="pdf-last-page">
+      <h2>Závěrečné informace</h2>
+      <p class="pdf-purpose-text">
+        Veškeré materiály v tomto dokumentu jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou
+        poskytovány bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+      <p class="license-info">Licencováno pod Creative Commons BY-NC-SA 4.0.</p>
+    </div>
+  </body>
+</html>

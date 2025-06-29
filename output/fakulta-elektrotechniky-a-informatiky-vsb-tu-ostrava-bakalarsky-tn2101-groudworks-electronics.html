@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title> - Studijní poznámky</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="katex-loader.js"></script>
+  </head>
+  <body>
+    <!-- NEW: PDF Title Page (hidden on screen) -->
+    <div id="pdf-title-page">
+      <h1></h1>
+      <p class="group-name">Fakulta elektrotechniky a informatiky VŠB-TU
+Ostrava (bakalářský)</p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="header-content">
+        <a href="index.html" class="back-button">← Zpět</a>
+        <a href="index.html" class="home-link">Univerzitní studium</a>
+        <span class="breadcrumb-item">Fakulta elektrotechniky a
+informatiky VŠB-TU Ostrava (bakalářský)</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-item-active"></span>
+      </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
+    </header>
+
+    <!-- The .page-container is now the main layout wrapper -->
+    <div class="page-container">
+            <nav class="sidebar" id="TOC">
+        <h2>Obsah</h2>
+        <ul>
+        <li><a href="#real-voltage-sources"
+        id="toc-real-voltage-sources">Real Voltage Sources</a>
+        <ul>
+        <li><a href="#linear-voltage-sources"
+        id="toc-linear-voltage-sources">Linear Voltage Sources</a>
+        <ul>
+        <li><a href="#voltage-stabilizer-with-zenor-diode"
+        id="toc-voltage-stabilizer-with-zenor-diode">Voltage Stabilizer
+        with Zenor Diode</a></li>
+        <li><a href="#voltage-stabilizer-with-transistor"
+        id="toc-voltage-stabilizer-with-transistor">Voltage Stabilizer
+        with Transistor</a></li>
+        </ul></li>
+        <li><a href="#sources-using-rectifiers-and-transformes"
+        id="toc-sources-using-rectifiers-and-transformes">Sources using
+        Rectifiers and Transformes</a></li>
+        <li><a href="#switched-power-voltage-sources"
+        id="toc-switched-power-voltage-sources">Switched Power Voltage
+        Sources</a></li>
+        <li><a href="#feedback" id="toc-feedback">Feedback</a></li>
+        </ul></li>
+        <li><a href="#operational-amplifier"
+        id="toc-operational-amplifier">Operational Amplifier</a>
+        <ul>
+        <li><a href="#non-inverting-amplifier"
+        id="toc-non-inverting-amplifier">Non-inverting
+        Amplifier</a></li>
+        <li><a href="#real-operational-amplifier"
+        id="toc-real-operational-amplifier">Real Operational
+        Amplifier</a>
+        <ul>
+        <li><a href="#transfer-voltage-characteristic"
+        id="toc-transfer-voltage-characteristic">Transfer Voltage
+        Characteristic</a></li>
+        </ul></li>
+        </ul></li>
+        </ul>
+      </nav>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title"></h1>
+        </header>
+
+        <!-- NEW: Note page date info -->
+        <div class="page-info">
+          <span>Poslední aktualizace: <strong>26. 12. 2023 v
+9:16:20</strong></span>
+          <span>Verze k: <strong>29. 6. 2025 v 15:18:06</strong></span>
+        </div>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#real-voltage-sources"
+          id="toc-real-voltage-sources">Real Voltage Sources</a>
+          <ul>
+          <li><a href="#linear-voltage-sources"
+          id="toc-linear-voltage-sources">Linear Voltage Sources</a>
+          <ul>
+          <li><a href="#voltage-stabilizer-with-zenor-diode"
+          id="toc-voltage-stabilizer-with-zenor-diode">Voltage
+          Stabilizer with Zenor Diode</a></li>
+          <li><a href="#voltage-stabilizer-with-transistor"
+          id="toc-voltage-stabilizer-with-transistor">Voltage Stabilizer
+          with Transistor</a></li>
+          </ul></li>
+          <li><a href="#sources-using-rectifiers-and-transformes"
+          id="toc-sources-using-rectifiers-and-transformes">Sources
+          using Rectifiers and Transformes</a></li>
+          <li><a href="#switched-power-voltage-sources"
+          id="toc-switched-power-voltage-sources">Switched Power Voltage
+          Sources</a></li>
+          <li><a href="#feedback" id="toc-feedback">Feedback</a></li>
+          </ul></li>
+          <li><a href="#operational-amplifier"
+          id="toc-operational-amplifier">Operational Amplifier</a>
+          <ul>
+          <li><a href="#non-inverting-amplifier"
+          id="toc-non-inverting-amplifier">Non-inverting
+          Amplifier</a></li>
+          <li><a href="#real-operational-amplifier"
+          id="toc-real-operational-amplifier">Real Operational
+          Amplifier</a>
+          <ul>
+          <li><a href="#transfer-voltage-characteristic"
+          id="toc-transfer-voltage-characteristic">Transfer Voltage
+          Characteristic</a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </div>
+         <h1 id="real-voltage-sources">Real Voltage Sources</h1>
+<h2 id="linear-voltage-sources">Linear Voltage Sources</h2>
+<p>Their internal resistance is non-zero, so their voltage depends on
+the load connected to the terminals.</p>
+<p>Figure 1</p>
+<p><span class="math inline">\begin{aligned}
+- U + R_{i} \bullet I_{S} + U_{S} &amp; = 0 \\
+U_{S} &amp; = U - R_{i}I_{S}\  \\
+U_{S} = 0 \Rightarrow I_{S} = I_{KS} &amp; = \frac{U}{R_{i}} \\
+I_{S} = 0 \Rightarrow U_{S} &amp; = U
+\end{aligned}</span></p>
+<p>Plot 1 Load Line</p>
+<p>Figure 2</p>
+<p><span class="math display">U_{n} = U \bullet \frac{R_{2}}{R_{i} +
+R_{1} + R_{2}};R_{n} = \frac{\left( R_{i} + R_{1} \right)R_{2}}{R_{i} +
+R_{1} + R_{2}}</span></p>
+<h3 id="voltage-stabilizer-with-zenor-diode">Voltage Stabilizer with
+Zenor Diode</h3>
+<p>Figure 3</p>
+<p><span class="math display">R = \frac{U - U_{D}}{I_{D}};I_{Dmin} &lt;
+I_{D} &lt; I_{Dmax}</span></p>
+<p>Voltage stabilizer operates from the certain value of voltage up to
+certain value of current.</p>
+<h3 id="voltage-stabilizer-with-transistor">Voltage Stabilizer with
+Transistor</h3>
+<p>Figure 4</p>
+<p><span class="math display">{█(U}_{L}\&amp; = U_{D} - U_{BE}@0.65 &lt;
+U_{BE} &lt; 0.7@\&amp; I_{E} = \left( h_{21E} + 1 \right) \bullet
+I_{B}@I_{R1}\&amp; = I_{D} + I_{B} \approx I_{D}@R_{1}\&amp; = \frac{U -
+U_{D}}{I_{D}}@I_{D}\&amp; \gg I_{B};U_{L} \approx U_{D})</span></p>
+<p><span class="math display">I_{Cmax} &lt; I_{C}</span></p>
+<p><span class="math inline">P_{C} = U_{CE} \bullet I_{C} &lt;
+P_{Cmax}</span> – power deception</p>
+<h2 id="sources-using-rectifiers-and-transformes">Sources using
+Rectifiers and Transformes</h2>
+<ul>
+<li><p><strong>Single Phase Transformer</strong><br />
+Figure 5 – Single Phase Transformer consists of a <u>core</u> (typically
+iron with magnetic features) forming a magnetic circuit; around it we
+can found a <u>primary wiring</u> connected to a input source of sine
+AC, and a <u>secondary wiring</u> where appears output voltage <span
+class="math inline">U_{2}</span> of sine AC.</p>
+<ul>
+<li><p>It galvanically separates the wirings – the DC cannot pass
+through the SPT.</p></li>
+<li><p>It operates on the Faraday Electromagnetic Law –changes of
+magnetic flux in the core induce the output voltage on the secondary
+wiring.</p></li>
+<li><p><span class="math inline">\frac{U_{1}}{U_{2}} = n =
+\frac{N_{1}}{N_{2}} = \frac{I_{2}}{I_{1}}</span>; <span
+class="math inline">P_{1} = P_{2}</span>; <span class="math inline">\eta
+= \frac{P_{2}}{P_{1}};75\% &lt; \eta &lt; 98\%</span></p></li>
+</ul></li>
+<li><p><strong>Half-Wave Rectifier</strong><br />
+Figure 6</p></li>
+<li><p><strong>Bridged Full-Wave Rectifier</strong><br />
+Figure 7</p></li>
+<li><p><strong>Smoothing Capacitor</strong><br />
+Figure 8<br />
+The difference <span class="math inline">\Delta U = U_{1m} - U_{1\min}\
+</span>is called <strong>ripple</strong>.</p></li>
+</ul>
+<h2 id="switched-power-voltage-sources">Switched Power Voltage
+Sources</h2>
+<p>They have much greater efficiency than linear sources, are lighter
+and smaller. They don’t operate continuously, but on switching regimes
+which switch at high frequency, so they seem to be continuous.</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 33%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">Property</th>
+<th style="text-align: center;">Linear Power Sources</th>
+<th style="text-align: center;">Switched Power Sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Efficiency</strong></td>
+<td style="text-align: center;"><span class="math display">\mathbf{\eta
+&lt; 40\%}</span></td>
+<td style="text-align: center;"><span class="math display">\eta &gt;
+75\%</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Size and Weight</strong></td>
+<td style="text-align: center;">heavy</td>
+<td style="text-align: center;">small</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Complexity</strong></td>
+<td style="text-align: center;">not complex</td>
+<td style="text-align: center;">more complex</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Noise and Ripple</strong></td>
+<td style="text-align: center;"><span class="math inline">f = 50\
+Hz</span>, noisy, <span class="math inline">\Delta U</span> can be
+small</td>
+<td style="text-align: center;"><span class="math inline">20\ kHz &lt; f
+&lt; 1\ MHz</span>, quiet,<br />
+<span class="math inline">\Delta U</span> is large</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Reliability</strong></td>
+<td style="text-align: center;">high</td>
+<td style="text-align: center;">worse</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>AC to DC Switched Convertor</strong></p></li>
+<li><p><strong>Buck-Boost Convertor</strong></p></li>
+</ul>
+<h2 id="feedback">Feedback</h2>
+<p>Put part of output back to the input in such manner, that the input
+is increased, we speak about <strong>positive feedback</strong> (leads
+to instability in system, is used in oscillators), in otherwise it’s
+<strong>negative feedback</strong> used to maintain stability in
+amplifiers.</p>
+<h1 id="operational-amplifier">Operational Amplifier</h1>
+<h2 id="non-inverting-amplifier">Non-inverting Amplifier</h2>
+<p>Figure 1</p>
+<p>The polarity of input voltage is the same as the polarity of output
+voltage. It has high input resistance</p>
+<p>Figure 2</p>
+<p><span class="math display">\begin{aligned}
+I_{1} - I_{2} &amp; = 0 \\
+I_{1} &amp; = \frac{U_{R1}}{R_{1}} \\
+I_{2} &amp; = \frac{U_{R1}}{R_{1}}\
+\end{aligned};\begin{aligned}
+- U_{2} + U_{R2} + U_{R1} &amp; = 0 \\
+- U_{2} + U_{R2} + U_{1} &amp; = 0 \\
+U_{R2} &amp; = U_{2} - U_{1}
+\end{aligned};\begin{aligned}
+\frac{U_{1}}{R_{1}} - \frac{U_{2} - U_{1}}{R_{2}} &amp; = 0 \\
+\mathbf{U}_{\mathbf{1}}\mathbf{\bullet}\frac{\mathbf{R}_{\mathbf{1}}\mathbf{+}\mathbf{R}_{\mathbf{2}}}{\mathbf{R}_{\mathbf{1}}}\mathbf{=}\mathbf{U}_{\mathbf{2}}
+\end{aligned}</span></p>
+<p>Amplification factor <span class="math inline">\frac{R_{1} +
+R_{2}}{R_{1}}</span> is greater than one. When we replace resistor <span
+class="math inline">R_{2}</span> by the short, we get the
+<strong>voltage follower</strong> – output voltage is the same as input
+voltage.</p>
+<h2 id="real-operational-amplifier">Real Operational Amplifier</h2>
+<p>Figure 3</p>
+<p><span class="math display">\begin{aligned}
+I_{B} \sim I_{A} &amp; \sim 10\cdots 80\ nA \\
+I_{S} &amp; = I_{A} + I + B \\
+I_{O} &amp; = I_{A} - I_{B} \\
+U_{CM} &amp; = \frac{U_{A} + U_{B}}{2} \\
+U_{2} &amp; = A_{CM} \bullet U_{CM} \\
+H_{CMR} &amp; = 20 \bullet \log\left( \frac{A_{0}}{A_{CM}} \right) \\
+\left\lbrack H_{CMR} \right\rbrack &amp; = 1\ dB
+\end{aligned};\begin{aligned}
+U_{d} = U_{A} - U_{B} &amp; \sim 3\cdots 10\ mV \\
+R_{d} &amp; \sim 1\ M\Omega \\
+R_{CM} &amp; \sim 100\ M\Omega \\
+R_{O} &amp; \sim 50\ \Omega \\
+A_{0} &amp; \sim 10^{4}\cdots 10^{5} \\
+A_{CM}\text{\&amp;} \sim 0.1 \\
+H_{CMR} &amp; \sim 100\ dB
+\end{aligned}</span></p>
+<h3 id="transfer-voltage-characteristic">Transfer Voltage
+Characteristic</h3>
+<p>Figure 4 – non-inverting amplifier</p>
+<p>We supply our amplifier by the symmetrical source<span
+class="math inline">U_{CC}</span> and <span class="math inline">-
+U_{CC}</span> with a common ground.</p>
+<p><span class="math display">\left| U_{2SAT} \right| = \left| U_{CC}
+\right| - 1.5</span></p>
+<p>For the <strong>rail to rail</strong> amplifiers, it holds true:
+<span class="math inline">\left| U_{2SAT} \right| \approx
+|U_{CC}|</span>. In all real cases, the linear amplifier is only about
+<span class="math inline">3\ mV</span>.</p>
+      </main>
+    </div>
+
+    <!-- NEW: Add the footer to every note page -->
+    <footer class="main-footer-license">
+      <p>
+        Veškeré materiály na této stránce jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou poskytovány
+        bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <p>
+        Obsah je licencován pod
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer"
+          >Creative Commons Uveďte původ-Neužívejte komerčně-Zachovejte licenci 4.0 Mezinárodní</a
+        >. To znamená, že materiály můžete volně sdílet a upravovat pro nekomerční účely, pokud uvedete původního autora a zachováte stejnou
+        licenci.
+      </p>
+    </footer>
+
+    <!-- PDF Last Page (UPDATED CONTENT) -->
+    <div id="pdf-last-page">
+      <h2>Závěrečné informace</h2>
+      <p class="pdf-purpose-text">
+        Veškeré materiály v tomto dokumentu jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou
+        poskytovány bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+      <p class="license-info">Licencováno pod Creative Commons BY-NC-SA 4.0.</p>
+    </div>
+  </body>
+</html>

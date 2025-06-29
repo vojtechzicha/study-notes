@@ -361,6 +361,15 @@ blockquote {
     font-size: 9pt;
     font-style: italic;
   }
+  /* NEW: Add this rule to style the new paragraph on the last page */
+  #pdf-last-page .pdf-purpose-text {
+    max-width: 80%;
+    margin-bottom: 3rem;
+    font-size: 10pt;
+    font-style: normal;
+    color: #444;
+    line-height: 1.5;
+  }
 }
 
 /* --- Page Info & License Footer --- */

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Obyčejné diferenciální rovnice - Studijní poznámky</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="katex-loader.js"></script>
+  </head>
+  <body>
+    <!-- NEW: PDF Title Page (hidden on screen) -->
+    <div id="pdf-title-page">
+      <h1>Obyčejné diferenciální rovnice</h1>
+      <p class="group-name">Fakulta elektrotechniky a informatiky VŠB-TU
+Ostrava (bakalářský)</p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="header-content">
+        <a href="index.html" class="back-button">← Zpět</a>
+        <a href="index.html" class="home-link">Univerzitní studium</a>
+        <span class="breadcrumb-item">Fakulta elektrotechniky a
+informatiky VŠB-TU Ostrava (bakalářský)</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-item-active">Obyčejné diferenciální
+rovnice</span>
+      </div>
+      <div class="header-actions">
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.pdf" target="_blank" class="action-button">Zobrazit PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.pdf" download class="action-button">Stáhnout PDF</a>
+        <a href="fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.docx" download class="action-button">Stáhnout DOCX</a>
+      </div>
+    </header>
+
+    <!-- The .page-container is now the main layout wrapper -->
+    <div class="page-container">
+            <nav class="sidebar" id="TOC">
+        <h2>Obsah</h2>
+        <ul>
+        <li><a href="#rovnice-se-separovanými-proměnnými"
+        id="toc-rovnice-se-separovanými-proměnnými">Rovnice se
+        separovanými proměnnými</a></li>
+        </ul>
+      </nav>
+      
+      <main class="content">
+        <header id="title-block-header">
+          <h1 class="title">Obyčejné diferenciální rovnice</h1>
+        </header>
+
+        <!-- NEW: Note page date info -->
+        <div class="page-info">
+          <span>Poslední aktualizace: <strong>26. 12. 2023 v
+9:16:18</strong></span>
+          <span>Verze k: <strong>29. 6. 2025 v 15:18:06</strong></span>
+        </div>
+
+        <!-- This is a new wrapper for the PDF Table of Contents -->
+                <div class="toc-print-only">
+          <h2>Obsah</h2>
+          <ul>
+          <li><a href="#rovnice-se-separovanými-proměnnými"
+          id="toc-rovnice-se-separovanými-proměnnými">Rovnice se
+          separovanými proměnnými</a></li>
+          </ul>
+        </div>
+         <h1 id="rovnice-se-separovanými-proměnnými">Rovnice se
+separovanými proměnnými</h1>
+<p>Obyčejné diferenciální rovnice, kterou lze zapsat v následujícím
+tvaru, budeme nazývat rovnicí se separovanými proměnnými.</p>
+<p><span class="math display">g(y) \cdot y&#39; = h(t)</span></p>
+<p>Předpokládáme <span class="math inline">g \in C(J),h \in C(I)</span>.
+Nechť <span class="math inline">\varphi</span> řeší předchozí rovnici na
+<span class="math inline">I_{1} \subset I</span>. Pak na <span
+class="math inline">I_{1}:g\left( \varphi(t) \right) \cdot
+\varphi&#39;(t) = h(t)</span>. Označme <span class="math inline">H(t) =
+\int_{}^{}{h(t)dt}</span> na <span class="math inline">I</span> a <span
+class="math inline">G(y) = \int_{}^{}{g(y)dy}</span> na <span
+class="math inline">J</span>. Poté na <span
+class="math inline">I_{1}:\exists c\mathbb{\in R:}G\left( \varphi(t)
+\right) = H(t) + c</span>. Obráceně nechť <span
+class="math inline">\exists c\mathbb{\in R \land}\varphi \in C^{2}\left(
+I_{1} \right):\forall t \in I_{1}:G\left( \varphi(t) \right) =
+H(t)</span>. Pak na <span class="math inline">I_{1}:g\left( \varphi(t)
+\right) \cdot \varphi&#39;(t) = h(t)</span>. Tedy <span
+class="math inline">\varphi</span> řeší původní rovnici.</p>
+<p>Řešme Cauchyovu úlohu <span class="math inline">g(y) \cdot y&#39; =
+h(t),y\left( t_{0} \right) = y_{0}</span>. Nechť je jím řešením funkce
+<span class="math inline">\varphi</span>. Tedy <span
+class="math inline">\int_{t_{0}}^{t}{g\left( \varphi(s) \right) \cdot
+\varphi&#39;(s)ds} = \int_{t_{0}}^{t}{h(s)ds},\varphi\left( t_{0}
+\right) = y_{0}</span>. Odtud <span
+class="math inline">\int_{y_{0}}^{\varphi(t)}{g(s)ds} =
+\int_{t_{0}}^{t}{h(s)ds},\varphi\left( t_{0} \right) = y_{0}</span>.</p>
+<p><em>Věta: (existence a unikátnost řešení Cauchyovy úlohy pro
+RSP):</em> Uvažujme <span class="math inline">g(y) \cdot y&#39; =
+h(t),y\left( t_{0} \right) = y_{0}</span>, kde <span
+class="math inline">I \subset \mathbb{R,}J \subset \mathbb{R}</span>
+jsou otevřené intervaly, <span class="math inline">h \in C(I),g \in
+C(J)</span>. Nechť <span class="math inline">t_{0} \in I</span> a <span
+class="math inline">\forall y \in J:g(y) \neq 0</span>. Pak zadaná
+Cauchyova úloha má právě jedno maximální řešení.</p>
+      </main>
+    </div>
+
+    <!-- NEW: Add the footer to every note page -->
+    <footer class="main-footer-license">
+      <p>
+        Veškeré materiály na této stránce jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou poskytovány
+        bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <p>
+        Obsah je licencován pod
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer"
+          >Creative Commons Uveďte původ-Neužívejte komerčně-Zachovejte licenci 4.0 Mezinárodní</a
+        >. To znamená, že materiály můžete volně sdílet a upravovat pro nekomerční účely, pokud uvedete původního autora a zachováte stejnou
+        licenci.
+      </p>
+    </footer>
+
+    <!-- PDF Last Page (UPDATED CONTENT) -->
+    <div id="pdf-last-page">
+      <h2>Závěrečné informace</h2>
+      <p class="pdf-purpose-text">
+        Veškeré materiály v tomto dokumentu jsou osobními poznámkami autora, vytvořenými na základě univerzitních přednášek. Jsou
+        poskytovány bez záruky a slouží výhradně ke studijním účelům.
+      </p>
+      <div class="pdf-page-info">
+        <span>Datum aktualizace originálu: <strong class="update-date"></strong></span>
+        <span>Datum vygenerování PDF: <strong class="generation-date"></strong></span>
+      </div>
+      <p class="license-info">Licencováno pod Creative Commons BY-NC-SA 4.0.</p>
+    </div>
+  </body>
+</html>

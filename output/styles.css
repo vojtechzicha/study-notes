@@ -48,6 +48,13 @@ body {
   vertical-align: middle;
   text-transform: uppercase;
 }
+/* NEW: Badge for direct PDF links */
+.pdf-badge {
+  background-color: #dc3545; /* A shade of red */
+  text-transform: none;
+  font-size: 0.65em;
+  padding: 0.2em 0.5em;
+}
 
 /* --- NOTES PAGE & SHARED HEADER --- */
 .main-header {

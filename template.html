@@ -32,6 +32,10 @@
         <span class="breadcrumb-item-active">$title$</span>
       </div>
       <div class="header-actions">
+        <!-- NEW: Conditional button for source PDF -->
+        $if(source_pdf_path)$
+        <a href="$source_pdf_path$" target="_blank" rel="noopener noreferrer" class="action-button">Zobrazit PDF poznámky</a>
+        $endif$
         <a href="$pdf_path$" target="_blank" class="action-button">Zobrazit PDF</a>
         <a href="$pdf_path$" download class="action-button">Stáhnout PDF</a>
         <a href="$docx_path$" download class="action-button">Stáhnout DOCX</a>

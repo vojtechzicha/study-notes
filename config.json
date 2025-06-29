@@ -23,7 +23,7 @@
     {
       "name": "Fakulta elektrotechniky a informatiky VŠB-TU Ostrava (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University VSB FEI Bachelor",
-      "update": false
+      "update": true
     }
   ],
   "outputDir": "./output"

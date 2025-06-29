@@ -1,10 +1,8 @@
-// convert.js - FINAL VERSION WITH PDF GENERATION
-// This script now builds the site and generates PDFs from the final HTML.
-
+// convert.js - UPDATED TO HANDLE DOCX, PDF, AND COMBINED SOURCES
 const fs = require('fs')
 const path = require('path')
 const { execSync } = require('child_process')
-const puppeteer = require('puppeteer') // Import the new library
+const puppeteer = require('puppeteer')
 
 // --- CONFIGURATION ---
 const CONFIG_PATH = './config.json'
@@ -22,7 +20,6 @@ function getFormattedDate(date) {
 }
 
 // --- PDF GENERATION FUNCTION ---
-// We need to pass update/generation dates to this function for the PDF pages
 async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate) {
   console.log(`   -> Generating PDF for "${path.basename(htmlPath)}"...`)
   let browser
@@ -31,7 +28,6 @@ async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate
     const page = await browser.newPage()
     await page.goto('file://' + path.resolve(htmlPath), { waitUntil: 'networkidle0' })
 
-    // Set the content of our new PDF pages using the passed dates
     await page.evaluate(
       (updateDate, generationDate) => {
         const titleUpdate = document.querySelector('#pdf-title-page .update-date')
@@ -53,9 +49,8 @@ async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate
       format: 'A4',
       printBackground: true,
       margin: { top: '25px', right: '25px', bottom: '25px', left: '25px' },
-      // The displayHeaderFooter option is needed to render our print-only pages correctly
       displayHeaderFooter: true,
-      headerTemplate: '<div></div>', // We are not using margins, but this enables print styles
+      headerTemplate: '<div></div>',
       footerTemplate: '<div></div>',
     })
     console.log(`   -> ✓ PDF successfully created at "${path.basename(pdfPath)}"`)
@@ -68,11 +63,11 @@ async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate
 
 // --- MAIN EXECUTION LOGIC ---
 async function main() {
-  console.log('🚀 Starting Study Hub build process (Final with PDFs)...')
+  console.log('🚀 Starting Study Hub build process (with PDF support)...')
 
-  const generationDate = new Date() // Capture generation time once
+  const generationDate = new Date()
   const formattedGenerationDate = getFormattedDate(generationDate)
-  let latestUpdateTime = 0 // To track the most recent file change
+  let latestUpdateTime = 0
 
   const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'))
   const { sources, outputDir } = config
@@ -94,10 +89,15 @@ async function main() {
 
     if (!source.update) {
       console.log(`\n⏭️  Skipping directory (reading from manifest): "${source.name}"`)
-      for (const htmlName in manifest) {
-        if (htmlName.startsWith(sourceSlug + '-')) {
-          const stats = fs.existsSync(path.join(outputDir, htmlName)) ? fs.statSync(path.join(outputDir, htmlName)) : { mtimeMs: 0 }
-          directoryFiles.files.push({ ...manifest[htmlName], modifiedTime: stats.mtimeMs })
+      for (const manifestKey in manifest) {
+        if (manifest[manifestKey].sourceSlug === sourceSlug) {
+          const entry = manifest[manifestKey]
+          const outputPath = path.join(
+            outputDir,
+            entry.htmlName || entry.sourcePdfName
+          )
+          const stats = fs.existsSync(outputPath) ? fs.statSync(outputPath) : { mtimeMs: 0 }
+          directoryFiles.files.push({ ...entry, modifiedTime: stats.mtimeMs })
         }
       }
       if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
@@ -107,123 +107,156 @@ async function main() {
     console.log(`\n🔄 Processing directory for updates: "${source.name}"`)
     if (!fs.existsSync(source.path)) continue
 
-    const docxFiles = fs.readdirSync(source.path).filter(file => file.toLowerCase().endsWith('.docx'))
-    if (docxFiles.length === 0) continue
+    // --- NEW: File Discovery Logic ---
+    const sourceFiles = fs.readdirSync(source.path)
+    const fileGroups = new Map()
 
-    for (const docxFile of docxFiles) {
-      const originalDocxPath = path.join(source.path, docxFile)
-      const baseName = path.basename(docxFile, '.docx')
-      const slugBase = slugify(baseName)
-      const safeHtmlName = `${sourceSlug}-${slugBase}.html`
-      const safeDocxName = `${sourceSlug}-${slugBase}.docx`
-      const safePdfName = `${sourceSlug}-${slugBase}.pdf`
+    for (const file of sourceFiles) {
+      const ext = path.extname(file).toLowerCase()
+      if (ext !== '.docx' && ext !== '.pdf') continue
 
-      const outputHtmlPath = path.join(outputDir, safeHtmlName)
-      const outputDocxPath = path.join(outputDir, safeDocxName)
-      const outputPdfPath = path.join(outputDir, safePdfName)
-      const tempHtmlPath = outputHtmlPath + '.temp'
-
-      const sourceStats = fs.statSync(originalDocxPath)
-      const updateDate = new Date(sourceStats.mtimeMs)
-      const formattedUpdateDate = getFormattedDate(updateDate)
-
-      // Track the latest update time across all files
-      if (sourceStats.mtimeMs > latestUpdateTime) {
-        latestUpdateTime = sourceStats.mtimeMs
+      const baseName = path.basename(file, ext)
+      if (!fileGroups.has(baseName)) {
+        fileGroups.set(baseName, {})
       }
+      if (ext === '.docx') fileGroups.get(baseName).docx = file
+      if (ext === '.pdf') fileGroups.get(baseName).pdf = file
+    }
+    // --- End of File Discovery ---
 
-      let shouldConvertHtml = !fs.existsSync(outputHtmlPath) || fs.statSync(originalDocxPath).mtimeMs > fs.statSync(outputHtmlPath).mtimeMs
+    if (fileGroups.size === 0) continue
 
-      // NEW: Define the final media directory path for this specific document
-      const mediaDirName = `${sourceSlug}-${slugBase}-media`
-      const finalMediaDir = path.join(outputDir, mediaDirName)
+    for (const [baseName, files] of fileGroups.entries()) {
+      const slugBase = slugify(baseName)
+      const manifestKey = `${sourceSlug}-${slugBase}`
 
-      if (shouldConvertHtml) {
-        // This path is relative to the project root, CWD is still root here.
-        if (fs.existsSync(finalMediaDir)) {
-          console.log(`   -> Removing old media directory: "${mediaDirName}"`)
-          fs.rmSync(finalMediaDir, { recursive: true, force: true })
-        }
+      let fileType = ''
+      if (files.docx && files.pdf) fileType = 'docx_and_pdf'
+      else if (files.docx) fileType = 'docx'
+      else if (files.pdf) fileType = 'pdf'
+      else continue // Should not happen
 
-        // Store original CWD to revert back to it
-        const originalCwd = process.cwd()
+      console.log(`\n-> Processing "${baseName}" (Type: ${fileType})`)
 
-        try {
-          console.log(`   -> Converting "${baseName}"...`)
+      const originalDocxPath = files.docx ? path.join(source.path, files.docx) : null
+      const originalPdfPath = files.pdf ? path.join(source.path, files.pdf) : null
+      const docxStats = originalDocxPath ? fs.statSync(originalDocxPath) : null
+      const pdfStats = originalPdfPath ? fs.statSync(originalPdfPath) : null
 
-          // =================================================================
-          // === KEY CHANGE: Change into the output directory ===
-          process.chdir(outputDir)
-          // =================================================================
+      // Determine the most recent update time for this item
+      const updateTime = Math.max(docxStats?.mtimeMs || 0, pdfStats?.mtimeMs || 0)
+      const updateDate = new Date(updateTime)
+      const formattedUpdateDate = getFormattedDate(updateDate)
+      if (updateTime > latestUpdateTime) latestUpdateTime = updateTime
 
-          // Now, define paths for the Pandoc command relative to the NEW CWD (`output`)
-          const pandocSourcePath = path.relative(process.cwd(), path.resolve(originalCwd, originalDocxPath))
-          const pandocTempHtmlPath = path.basename(tempHtmlPath) // e.g., "file.html.temp"
-          const pandocLuaFilterPath = path.relative(process.cwd(), path.resolve(originalCwd, LUA_FILTER_PATH))
-          const pandocTemplatePath = path.relative(process.cwd(), path.resolve(originalCwd, MASTER_TEMPLATE_PATH))
-          const pandocMediaDir = mediaDirName // e.g., "file-media" (no "output/" prefix)
+      const manifestEntry = {
+        key: manifestKey,
+        type: fileType,
+        originalName: baseName,
+        sourceSlug: sourceSlug,
+        modifiedTime: updateTime
+      }
+      
+      // --- Scenario 1 & 3: DOCX is present ---
+      if (fileType.startsWith('docx')) {
+        const safeHtmlName = `${sourceSlug}-${slugBase}.html`
+        const safeDocxName = `${sourceSlug}-${slugBase}.docx`
+        const safeGeneratedPdfName = `${sourceSlug}-${slugBase}.pdf` // PDF from HTML
+        const safeSourcePdfName = files.pdf ? `${sourceSlug}-${slugBase}.source.pdf` : null // Original PDF
 
-          const pandocCommand = [
-            'pandoc',
-            `"${pandocSourcePath}"`,
-            '-t',
-            'html',
-            '-s',
-            '-o',
-            `"${pandocTempHtmlPath}"`,
-            '--katex',
-            '--toc',
-            `--lua-filter="${pandocLuaFilterPath}"`,
-            `--template="${pandocTemplatePath}"`,
-            `--metadata=group-name:"${source.name}"`,
-            `--metadata=docx_path:"${safeDocxName}"`,
-            `--metadata=pdf_path:"${safePdfName}"`,
-            `--metadata=generation_date:"${formattedGenerationDate}"`,
-            `--metadata=update_date:"${formattedUpdateDate}"`,
-            // This now correctly points to a directory inside the CWD (`output`).
-            // Pandoc will generate a src relative to this, e.g., "file-media/media/image.png"
-            `--extract-media="${pandocMediaDir}"`,
-          ].join(' ')
+        const outputHtmlPath = path.join(outputDir, safeHtmlName)
+        const outputDocxPath = path.join(outputDir, safeDocxName)
+        const outputGeneratedPdfPath = path.join(outputDir, safeGeneratedPdfName)
+        const outputSourcePdfPath = safeSourcePdfName ? path.join(outputDir, safeSourcePdfName) : null
+        
+        Object.assign(manifestEntry, {
+          htmlName: safeHtmlName,
+          docxName: safeDocxName,
+          generatedPdfName: safeGeneratedPdfName,
+          sourcePdfName: safeSourcePdfName
+        });
 
-          execSync(pandocCommand, { stdio: 'pipe', encoding: 'utf-8' })
+        // Update check: check against docx AND original pdf if it exists
+        const htmlExists = fs.existsSync(outputHtmlPath);
+        const htmlMtime = htmlExists ? fs.statSync(outputHtmlPath).mtimeMs : 0;
+        let shouldConvertHtml = !htmlExists || docxStats.mtimeMs > htmlMtime || (pdfStats && pdfStats.mtimeMs > htmlMtime)
 
-          // Success! Revert CWD before doing more file operations.
-          process.chdir(originalCwd)
+        const mediaDirName = `${sourceSlug}-${slugBase}-media`
+        const finalMediaDir = path.join(outputDir, mediaDirName)
 
-          // Now use the original paths (relative to root) for file operations
-          fs.renameSync(tempHtmlPath, outputHtmlPath)
-          fs.copyFileSync(originalDocxPath, outputDocxPath)
-          console.log(`   -> ✨ Successfully created "${safeHtmlName}" and extracted media.`)
-        } catch (error) {
-          // IMPORTANT: Make sure we change back, even on error
-          process.chdir(originalCwd)
-
-          console.error(`\n❌ FATAL ERROR during conversion of "${docxFile}". Aborting.`)
-          console.error(error.stderr || error.message)
-
-          // Cleanup temp files using original paths
-          if (fs.existsSync(tempHtmlPath)) fs.unlinkSync(tempHtmlPath)
+        if (shouldConvertHtml) {
           if (fs.existsSync(finalMediaDir)) {
-            console.error(`   -> Cleaning up failed media extraction at "${mediaDirName}"...`)
+            console.log(`   -> Removing old media directory: "${mediaDirName}"`)
             fs.rmSync(finalMediaDir, { recursive: true, force: true })
           }
+          const originalCwd = process.cwd()
+          try {
+            console.log(`   -> Converting "${baseName}"...`)
+            process.chdir(outputDir)
+            
+            const pandocSourcePath = path.relative(process.cwd(), path.resolve(originalCwd, originalDocxPath))
+            const pandocTempHtmlPath = path.basename(outputHtmlPath) + '.temp'
+            const pandocLuaFilterPath = path.relative(process.cwd(), path.resolve(originalCwd, LUA_FILTER_PATH))
+            const pandocTemplatePath = path.relative(process.cwd(), path.resolve(originalCwd, MASTER_TEMPLATE_PATH))
+            
+            const pandocCommand = [
+              'pandoc', `"${pandocSourcePath}"`, '-t', 'html', '-s',
+              '-o', `"${pandocTempHtmlPath}"`,
+              '--katex', '--toc',
+              `--lua-filter="${pandocLuaFilterPath}"`,
+              `--template="${pandocTemplatePath}"`,
+              `--metadata=group-name:"${source.name}"`,
+              `--metadata=docx_path:"${safeDocxName}"`,
+              `--metadata=pdf_path:"${safeGeneratedPdfName}"`, // Link to the generated PDF
+              `--metadata=generation_date:"${formattedGenerationDate}"`,
+              `--metadata=update_date:"${formattedUpdateDate}"`,
+              `--extract-media="${mediaDirName}"`,
+              // NEW: Conditionally add path to original PDF
+              safeSourcePdfName ? `--metadata=source_pdf_path:"${safeSourcePdfName}"` : ""
+            ].filter(Boolean).join(' ')
 
-          process.exit(1)
+            execSync(pandocCommand, { stdio: 'pipe', encoding: 'utf-8' })
+            process.chdir(originalCwd)
+
+            fs.renameSync(path.join(outputDir, pandocTempHtmlPath), outputHtmlPath)
+            fs.copyFileSync(originalDocxPath, outputDocxPath)
+            if (safeSourcePdfName) fs.copyFileSync(originalPdfPath, outputSourcePdfPath) // Copy original PDF
+            console.log(`   -> ✨ Successfully created "${safeHtmlName}" and supporting files.`)
+          } catch (error) {
+            process.chdir(originalCwd)
+            console.error(`\n❌ FATAL ERROR during conversion of "${files.docx}". Aborting.`, error.stderr || error.message)
+            if (fs.existsSync(path.join(outputDir, outputHtmlPath + '.temp'))) fs.unlinkSync(path.join(outputDir, outputHtmlPath + '.temp'))
+            if (fs.existsSync(finalMediaDir)) fs.rmSync(finalMediaDir, { recursive: true, force: true })
+            process.exit(1)
+          }
+        } else {
+          console.log(`   -> Skipping HTML build for "${baseName}" (no changes).`)
         }
-      } else {
-        console.log(`   -> Skipping HTML build for "${baseName}" (no changes).`)
-      }
 
-      // Always generate PDF if the HTML is newer than the PDF
-      let shouldGeneratePdf = !fs.existsSync(outputPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputPdfPath).mtimeMs
-      if (shouldGeneratePdf) {
-        await generatePdfFromHtml(outputHtmlPath, outputPdfPath, formattedUpdateDate, formattedGenerationDate)
-      } else {
-        console.log(`   -> Skipping PDF build for "${baseName}" (no changes).`)
-      }
+        let shouldGeneratePdf = !fs.existsSync(outputGeneratedPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputGeneratedPdfPath).mtimeMs
+        if (shouldGeneratePdf) {
+          await generatePdfFromHtml(outputHtmlPath, outputGeneratedPdfPath, formattedUpdateDate, formattedGenerationDate)
+        } else {
+          console.log(`   -> Skipping Generated PDF build for "${baseName}" (no changes).`)
+        }
+      } 
+      // --- Scenario 2: PDF only ---
+      else if (fileType === 'pdf') {
+        const safeSourcePdfName = `${sourceSlug}-${slugBase}.pdf`;
+        const outputPdfPath = path.join(outputDir, safeSourcePdfName);
+        Object.assign(manifestEntry, { sourcePdfName: safeSourcePdfName });
 
-      manifest[safeHtmlName] = { originalName: baseName, htmlName: safeHtmlName }
-      directoryFiles.files.push({ ...manifest[safeHtmlName], modifiedTime: sourceStats.mtimeMs })
+        let shouldCopyPdf = !fs.existsSync(outputPdfPath) || pdfStats.mtimeMs > fs.statSync(outputPdfPath).mtimeMs;
+        if(shouldCopyPdf) {
+            console.log(`   -> Copying source PDF "${files.pdf}"...`);
+            fs.copyFileSync(originalPdfPath, outputPdfPath);
+        } else {
+            console.log(`   -> Skipping PDF copy for "${baseName}" (no changes).`);
+        }
+      }
+      
+      manifest[manifestKey] = manifestEntry;
+      directoryFiles.files.push(manifestEntry);
     }
     if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
   }
@@ -236,18 +269,10 @@ async function main() {
   console.log('\n✅ All done! Your Study Hub is complete.')
 }
 
-// --- HELPER FUNCTIONS (generateIndexHtml and slugify are slightly updated) ---
+// --- HELPER FUNCTIONS ---
 
 function slugify(text) {
-  return text
-    .toString()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w.-]+/g, '')
-    .replace(/--+/g, '-')
+  return text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w.-]+/g, '').replace(/--+/g, '-')
 }
 
 function generateIndexHtml(structure, generationDate, latestUpdateDate) {
@@ -257,11 +282,7 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
   const activeThreshold = 210 * 24 * 60 * 60 * 1000
 
   let allFiles = []
-  structure.forEach(dir => {
-    dir.files.forEach(file => {
-      allFiles.push({ ...file, directoryName: dir.directoryName })
-    })
-  })
+  structure.forEach(dir => { dir.files.forEach(file => { allFiles.push({ ...file, directoryName: dir.directoryName }) }) })
 
   const activeFiles = allFiles.filter(file => now - file.modifiedTime < activeThreshold).sort((a, b) => b.modifiedTime - a.modifiedTime)
 
@@ -269,12 +290,14 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
   if (activeFiles.length > 0) {
     activeFilesHtml += `<div class="active-files-group" data-directory-name="nedávno aktualizované"><h2>Nedávno aktualizované</h2><ul>`
     activeFiles.forEach(file => {
+      const link = file.type === 'pdf'
+        ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
+        : `<a href="./${file.htmlName}">${file.originalName}</a>`
+      
       activeFilesHtml += `
             <li data-file-name="${file.originalName.toLowerCase()}" data-directory-name="${file.directoryName.toLowerCase()}">
-                <a href="./${file.htmlName}">
-                    ${file.originalName}
-                    <span class="file-group-name">(${file.directoryName})</span>
-                </a>
+                ${link}
+                <span class="file-group-name">(${file.directoryName})</span>
             </li>`
     })
     activeFilesHtml += `</ul></div>`
@@ -283,15 +306,15 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
   let fileListHtml = ''
   for (const dir of structure) {
     dir.files.sort((a, b) => a.originalName.localeCompare(b.originalName))
-    fileListHtml += `<div class="directory-group" data-directory-name="${dir.directoryName.toLowerCase()}"><h2>${
-      dir.directoryName
-    }</h2><ul>`
+    fileListHtml += `<div class="directory-group" data-directory-name="${dir.directoryName.toLowerCase()}"><h2>${dir.directoryName}</h2><ul>`
     for (const file of dir.files) {
       const isRecent = now - file.modifiedTime < recentThreshold
-      const badge = isRecent ? ' <span class="badge">NOVÉ</span>' : ''
-      fileListHtml += `<li data-file-name="${file.originalName.toLowerCase()}"><a href="./${file.htmlName}">${
-        file.originalName
-      }</a>${badge}</li>`
+      const newBadge = isRecent ? ' <span class="badge">NOVÉ</span>' : ''
+      const link = file.type === 'pdf'
+        ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
+        : `<a href="./${file.htmlName}">${file.originalName}</a>`
+      
+      fileListHtml += `<li data-file-name="${file.originalName.toLowerCase()}">${link}${newBadge}</li>`
     }
     fileListHtml += `</ul></div>`
   }

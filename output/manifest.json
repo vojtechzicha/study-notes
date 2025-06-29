@@ -1,230 +1,685 @@
 {
-  "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.html": {
+  "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi": {
+    "key": "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi",
+    "type": "docx",
     "originalName": "AIB AI v podnikání a praxi",
-    "htmlName": "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1744365554071.1594,
+    "htmlName": "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.html",
+    "docxName": "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.docx",
+    "generatedPdfName": "newton-university-bakalarsky-aib-ai-v-podnikani-a-praxi.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.html": {
+  "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem": {
+    "key": "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem",
+    "type": "docx",
     "originalName": "CSR Společenská odpovědnost firem",
-    "htmlName": "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1739861565238.808,
+    "htmlName": "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.html",
+    "docxName": "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.docx",
+    "generatedPdfName": "newton-university-bakalarsky-csr-spolecenska-odpovednost-firem.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-fil-filozofie-pro-manazery.html": {
+  "newton-university-bakalarsky-fil-filozofie-pro-manazery": {
+    "key": "newton-university-bakalarsky-fil-filozofie-pro-manazery",
+    "type": "docx",
     "originalName": "FIL Filozofie pro manažery",
-    "htmlName": "newton-university-bakalarsky-fil-filozofie-pro-manazery.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1731076255617.7146,
+    "htmlName": "newton-university-bakalarsky-fil-filozofie-pro-manazery.html",
+    "docxName": "newton-university-bakalarsky-fil-filozofie-pro-manazery.docx",
+    "generatedPdfName": "newton-university-bakalarsky-fil-filozofie-pro-manazery.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-frp-financni-rizeni-podniku.html": {
+  "newton-university-bakalarsky-frp-financni-rizeni-podniku": {
+    "key": "newton-university-bakalarsky-frp-financni-rizeni-podniku",
+    "type": "docx",
     "originalName": "FRP Finanční řízení podniku",
-    "htmlName": "newton-university-bakalarsky-frp-financni-rizeni-podniku.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1744610036620.8413,
+    "htmlName": "newton-university-bakalarsky-frp-financni-rizeni-podniku.html",
+    "docxName": "newton-university-bakalarsky-frp-financni-rizeni-podniku.docx",
+    "generatedPdfName": "newton-university-bakalarsky-frp-financni-rizeni-podniku.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-mar-marketing.html": {
+  "newton-university-bakalarsky-mar-marketing": {
+    "key": "newton-university-bakalarsky-mar-marketing",
+    "type": "docx",
     "originalName": "MAR Marketing",
-    "htmlName": "newton-university-bakalarsky-mar-marketing.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1705243617000,
+    "htmlName": "newton-university-bakalarsky-mar-marketing.html",
+    "docxName": "newton-university-bakalarsky-mar-marketing.docx",
+    "generatedPdfName": "newton-university-bakalarsky-mar-marketing.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-mng-management.html": {
+  "newton-university-bakalarsky-mng-management": {
+    "key": "newton-university-bakalarsky-mng-management",
+    "type": "docx",
     "originalName": "MNG Management",
-    "htmlName": "newton-university-bakalarsky-mng-management.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1705245425000,
+    "htmlName": "newton-university-bakalarsky-mng-management.html",
+    "docxName": "newton-university-bakalarsky-mng-management.docx",
+    "generatedPdfName": "newton-university-bakalarsky-mng-management.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.html": {
+  "newton-university-bakalarsky-pek1-podnikova-ekonomika-1": {
+    "key": "newton-university-bakalarsky-pek1-podnikova-ekonomika-1",
+    "type": "docx",
     "originalName": "PEK1 Podniková ekonomika 1",
-    "htmlName": "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1742134518582.2988,
+    "htmlName": "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.html",
+    "docxName": "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.docx",
+    "generatedPdfName": "newton-university-bakalarsky-pek1-podnikova-ekonomika-1.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.html": {
+  "newton-university-bakalarsky-pek2-podnikova-ekonomika-2": {
+    "key": "newton-university-bakalarsky-pek2-podnikova-ekonomika-2",
+    "type": "docx",
     "originalName": "PEK2 Podniková ekonomika 2",
-    "htmlName": "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1705246792000,
+    "htmlName": "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.html",
+    "docxName": "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.docx",
+    "generatedPdfName": "newton-university-bakalarsky-pek2-podnikova-ekonomika-2.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.html": {
+  "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani": {
+    "key": "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani",
+    "type": "docx",
     "originalName": "PKAP Politické a kulturní aspekty globálního podnikání",
-    "htmlName": "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1708326595000,
+    "htmlName": "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.html",
+    "docxName": "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.docx",
+    "generatedPdfName": "newton-university-bakalarsky-pkap-politicke-a-kulturni-aspekty-globalniho-podnikani.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-prm-projektovy-management.html": {
+  "newton-university-bakalarsky-prm-projektovy-management": {
+    "key": "newton-university-bakalarsky-prm-projektovy-management",
+    "type": "docx",
     "originalName": "PRM Projektový management",
-    "htmlName": "newton-university-bakalarsky-prm-projektovy-management.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1705247014000,
+    "htmlName": "newton-university-bakalarsky-prm-projektovy-management.html",
+    "docxName": "newton-university-bakalarsky-prm-projektovy-management.docx",
+    "generatedPdfName": "newton-university-bakalarsky-prm-projektovy-management.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-bakalarsky-sma-strategicky-management.html": {
+  "newton-university-bakalarsky-sma-strategicky-management": {
+    "key": "newton-university-bakalarsky-sma-strategicky-management",
+    "type": "docx",
     "originalName": "SMA Strategický management",
-    "htmlName": "newton-university-bakalarsky-sma-strategicky-management.html"
+    "sourceSlug": "newton-university-bakalarsky",
+    "modifiedTime": 1707577360000,
+    "htmlName": "newton-university-bakalarsky-sma-strategicky-management.html",
+    "docxName": "newton-university-bakalarsky-sma-strategicky-management.docx",
+    "generatedPdfName": "newton-university-bakalarsky-sma-strategicky-management.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-szz-bakalarska-szz-ekonomika.html": {
+  "newton-university-szz-bakalarska-ekonomie-studijni-material": {
+    "key": "newton-university-szz-bakalarska-ekonomie-studijni-material",
+    "type": "pdf",
+    "originalName": "Ekonomie - studijní materiál",
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1734774499025.603,
+    "sourcePdfName": "newton-university-szz-bakalarska-ekonomie-studijni-material.pdf"
+  },
+  "newton-university-szz-bakalarska-management-studijni-material": {
+    "key": "newton-university-szz-bakalarska-management-studijni-material",
+    "type": "pdf",
+    "originalName": "Management - studijní materiál",
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1736686465129.9758,
+    "sourcePdfName": "newton-university-szz-bakalarska-management-studijni-material.pdf"
+  },
+  "newton-university-szz-bakalarska-okruhy-szz-ekonomie-a-podnikova-ekonomika-2025": {
+    "key": "newton-university-szz-bakalarska-okruhy-szz-ekonomie-a-podnikova-ekonomika-2025",
+    "type": "pdf",
+    "originalName": "Okruhy SZZ - Ekonomie a podniková ekonomika (2025)",
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1730799484765.0325,
+    "sourcePdfName": "newton-university-szz-bakalarska-okruhy-szz-ekonomie-a-podnikova-ekonomika-2025.pdf"
+  },
+  "newton-university-szz-bakalarska-okruhy-szz-management-2025": {
+    "key": "newton-university-szz-bakalarska-okruhy-szz-management-2025",
+    "type": "pdf",
+    "originalName": "Okruhy SZZ - Management (2025)",
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1731235603625.257,
+    "sourcePdfName": "newton-university-szz-bakalarska-okruhy-szz-management-2025.pdf"
+  },
+  "newton-university-szz-bakalarska-okruhy-szz-specializace-2025": {
+    "key": "newton-university-szz-bakalarska-okruhy-szz-specializace-2025",
+    "type": "pdf",
+    "originalName": "Okruhy SZZ - Specializace (2025)",
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1731235667038.5557,
+    "sourcePdfName": "newton-university-szz-bakalarska-okruhy-szz-specializace-2025.pdf"
+  },
+  "newton-university-szz-bakalarska-szz-ekonomika": {
+    "key": "newton-university-szz-bakalarska-szz-ekonomika",
+    "type": "docx",
     "originalName": "SZZ Ekonomika",
-    "htmlName": "newton-university-szz-bakalarska-szz-ekonomika.html"
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1739023483000,
+    "htmlName": "newton-university-szz-bakalarska-szz-ekonomika.html",
+    "docxName": "newton-university-szz-bakalarska-szz-ekonomika.docx",
+    "generatedPdfName": "newton-university-szz-bakalarska-szz-ekonomika.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.html": {
+  "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management": {
+    "key": "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management",
+    "type": "docx",
     "originalName": "SZZ Globální podnikání a management",
-    "htmlName": "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.html"
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1744611468000,
+    "htmlName": "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.html",
+    "docxName": "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.docx",
+    "generatedPdfName": "newton-university-szz-bakalarska-szz-globalni-podnikani-a-management.pdf",
+    "sourcePdfName": null
   },
-  "newton-university-szz-bakalarska-szz-management.html": {
+  "newton-university-szz-bakalarska-szz-management": {
+    "key": "newton-university-szz-bakalarska-szz-management",
+    "type": "docx",
     "originalName": "SZZ Management",
-    "htmlName": "newton-university-szz-bakalarska-szz-management.html"
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1738765622000,
+    "htmlName": "newton-university-szz-bakalarska-szz-management.html",
+    "docxName": "newton-university-szz-bakalarska-szz-management.docx",
+    "generatedPdfName": "newton-university-szz-bakalarska-szz-management.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.html": {
+  "newton-university-szz-bakalarska-stitky": {
+    "key": "newton-university-szz-bakalarska-stitky",
+    "type": "pdf",
+    "originalName": "Štítky",
+    "sourceSlug": "newton-university-szz-bakalarska",
+    "modifiedTime": 1739378463000,
+    "sourcePdfName": "newton-university-szz-bakalarska-stitky.pdf"
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i",
+    "type": "docx",
     "originalName": "! IN1 Informatika I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860240909.1958,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in1-informatika-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i",
+    "type": "docx",
     "originalName": "! JA1 Jazyk I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860409794.6165,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja1-jazyk-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii",
+    "type": "docx",
     "originalName": "! JA2 Jazyk II",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860398005.116,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--ja2-jazyk-ii.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i",
+    "type": "docx",
     "originalName": "! KMA1E Matematika I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860184542.6707,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kma1e-matematika-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i",
+    "type": "docx",
     "originalName": "! MI1 Mikroekonomie I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860143882.2703,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--mi1-mikroekonomie-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku",
+    "type": "docx",
     "originalName": "! NP Nauka o podniku",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860317184.463,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--np-nauka-o-podniku.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i",
+    "type": "docx",
     "originalName": "! ZAP1 Základy práva I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860281001.9106,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--zap1-zaklady-prava-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach",
+    "type": "docx",
     "originalName": "EPS Ekonomika a podnikání ve službách",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861509687.7424,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-eps-ekonomika-a-podnikani-ve-sluzbach.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru",
+    "type": "docx",
     "originalName": "EVS Ekonomika služeb veřejného sektoru",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750862309000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-evs-ekonomika-sluzeb-verejneho-sektoru.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane",
+    "type": "docx",
     "originalName": "FPD Finance podniku a daně",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750862688164.4827,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-fpd-finance-podniku-a-dane.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii",
+    "type": "docx",
     "originalName": "IN2 Informatika II",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861271558.687,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-in2-informatika-ii.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii",
+    "type": "docx",
     "originalName": "KMA2E Matematika II",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860738000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-kma2e-matematika-ii.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i",
+    "type": "docx",
     "originalName": "MA1 Makroekonomie I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861237000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ma1-makroekonomie-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing",
+    "type": "docx",
     "originalName": "MK Marketing",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751119608629.1597,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mk-marketing.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb",
+    "type": "docx",
     "originalName": "MS Marketing služeb",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751119598208.4846,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-ms-marketing-sluzeb.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani",
+    "type": "docx",
     "originalName": "MSPO Malé a střední podnikání",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750862880000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mspo-male-a-stredni-podnikani.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management",
+    "type": "docx",
     "originalName": "PM Personální management",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750862944000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pm-personalni-management.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem",
+    "type": "docx",
     "originalName": "POT Práce s odborným textem",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750863241693.0303,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-pot-prace-s-odbornym-textem.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing",
+    "type": "docx",
     "originalName": "SM Strategický marketing",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750862826393.3171,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sm-strategicky-marketing.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i",
+    "type": "docx",
     "originalName": "STA1 Statistika I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861883000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta1-statistika-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii",
+    "type": "docx",
     "originalName": "STA2 Statistika II",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1726551194000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta2-statistika-ii.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i",
+    "type": "docx",
     "originalName": "UC1 Účetnictví I",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861744000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc1-ucetnictvi-i.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii",
+    "type": "docx",
     "originalName": "UC2 Účetnictví II",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861744000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc2-ucetnictvi-ii.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu",
+    "type": "docx",
     "originalName": "UM Úvod do managementu",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861837000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-um-uvod-do-managementu.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby",
+    "type": "docx",
     "originalName": "UVS Účetnictví vybraných subjektů poskytujících služby",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750863143000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uvs-ucetnictvi-vybranych-subjektu-poskytujicich-sluzby.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby",
+    "type": "docx",
     "originalName": "VYS Vybrané finanční služby",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750862359000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-vys-vybrane-financni-sluzby.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.html": {
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii",
+    "type": "docx",
     "originalName": "ZAP2 Základy práva II",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750862793000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zap2-zaklady-prava-ii.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.html": {
+  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-okruhy-szz-podnikova-ekonomika-2025": {
+    "key": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-okruhy-szz-podnikova-ekonomika-2025",
+    "type": "pdf",
+    "originalName": "Okruhy SZZ - Podniková ekonomika (2025)",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-szz-bakalarska",
+    "modifiedTime": 1750849187429.032,
+    "sourcePdfName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-okruhy-szz-podnikova-ekonomika-2025.pdf"
+  },
+  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb": {
+    "key": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb",
+    "type": "docx",
     "originalName": "SZZ Management služeb",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-szz-bakalarska",
+    "modifiedTime": 1750858368000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-management-sluzeb.pdf",
+    "sourcePdfName": null
   },
-  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.html": {
+  "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika": {
+    "key": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika",
+    "type": "docx",
     "originalName": "SZZ Podniková ekonomika",
-    "htmlName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.html"
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-szz-bakalarska",
+    "modifiedTime": 1750858370000,
+    "htmlName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-szz-bakalarska-szz-podnikova-ekonomika.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3",
+    "type": "docx_and_pdf",
     "originalName": "AM2107 Matematická analýza 3",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1751204688147.3145,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.pdf",
+    "sourcePdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2107-matematicka-analyza-3.source.pdf"
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice",
+    "type": "docx_and_pdf",
     "originalName": "AM2108 Obyčejné diferenciální rovnice",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578627000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.pdf",
+    "sourcePdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2108-obycejne-diferencialni-rovnice.source.pdf"
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem",
+    "type": "docx",
     "originalName": "AM2109 Matematická analýza s Maplem",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578579000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2109-matematicka-analyza-s-maplem.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra",
+    "type": "docx",
     "originalName": "AM2202 Linear Algebra",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578581000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2202-linear-algebra.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i",
+    "type": "docx",
     "originalName": "AM2401 Statistika I",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578578000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2401-statistika-i.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1",
+    "type": "docx_and_pdf",
     "originalName": "AM2701 Numerické metody 1",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578634000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.pdf",
+    "sourcePdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-am2701-numericke-metody-1.source.pdf"
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs",
+    "type": "docx",
     "originalName": "CS2005 Introduction to Theoretical CS",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578579000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2005-introduction-to-theoretical-cs.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks",
+    "type": "docx",
     "originalName": "CS2006 Computer Networks",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578577000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2006-computer-networks.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace",
+    "type": "docx",
     "originalName": "CS2018 Programovací jazyky a překladače",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578578000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2018-programovaci-jazyky-a-prekladace.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems",
+    "type": "docx",
     "originalName": "CS2034 Computer Architecture and Parallel Systems",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578580000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-cs2034-computer-architecture-and-parallel-systems.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice",
+    "type": "docx",
     "originalName": "EE2004 Bezpečnost v elektrotechnice",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578580000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-ee2004-bezpecnost-v-elektrotechnice.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i",
+    "type": "docx",
     "originalName": "PI0412 Fyzika I",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578578000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-pi0412-fyzika-i.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics",
+    "type": "docx",
     "originalName": "TN2101 Groudworks Electronics",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578580000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2101-groudworks-electronics.pdf",
+    "sourcePdfName": null
   },
-  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.html": {
+  "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site": {
+    "key": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site",
+    "type": "docx",
     "originalName": "TN2202 Telekomunikační sítě",
-    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.html"
+    "sourceSlug": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky",
+    "modifiedTime": 1703578579000,
+    "htmlName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.html",
+    "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.docx",
+    "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.pdf",
+    "sourcePdfName": null
   }
 }

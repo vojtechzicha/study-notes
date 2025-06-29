@@ -94,7 +94,18 @@ async function main() {
 
       let shouldConvertHtml = !fs.existsSync(outputHtmlPath) || fs.statSync(originalDocxPath).mtimeMs > fs.statSync(outputHtmlPath).mtimeMs
 
+      // NEW: Define the final media directory path for this specific document
+      const mediaDirName = `${sourceSlug}-${slugBase}-media`
+      const finalMediaDir = path.join(outputDir, mediaDirName)
+
       if (shouldConvertHtml) {
+        // NEW: Before converting, remove the old media directory if it exists.
+        // This handles cases where images are removed from the source DOCX.
+        if (fs.existsSync(finalMediaDir)) {
+          console.log(`   -> Removing old media directory: "${mediaDirName}"`)
+          fs.rmSync(finalMediaDir, { recursive: true, force: true })
+        }
+
         try {
           console.log(`   -> Converting "${baseName}"...`)
           const pandocCommand = [
@@ -112,16 +123,28 @@ async function main() {
             `--metadata=group-name:"${source.name}"`,
             `--metadata=docx_path:"${safeDocxName}"`,
             `--metadata=pdf_path:"${safePdfName}"`,
-            `--extract-media=./media`,
+            // UPDATED: Tell pandoc to extract media to the unique final directory.
+            // Pandoc will create this directory and generate correct relative links.
+            `--extract-media="${finalMediaDir}"`,
           ].join(' ')
 
           execSync(pandocCommand, { stdio: 'pipe', encoding: 'utf-8' })
           fs.renameSync(tempHtmlPath, outputHtmlPath)
-          fs.copyFileSync(originalDocxPath, outputDocxPath) // Copy the source DOCX
-          console.log(`   -> ✨ Successfully created "${safeHtmlName}" and copied source DOCX.`)
+          fs.copyFileSync(originalDocxPath, outputDocxPath)
+          console.log(`   -> ✨ Successfully created "${safeHtmlName}" and extracted media.`)
         } catch (error) {
           console.error(`\n❌ FATAL ERROR during conversion of "${docxFile}". Aborting.`)
+          console.error(error.stderr || error.message) // Log the actual Pandoc error
+
+          // Cleanup temp HTML
           if (fs.existsSync(tempHtmlPath)) fs.unlinkSync(tempHtmlPath)
+
+          // NEW: Also clean up the partially created media directory on failure.
+          if (fs.existsSync(finalMediaDir)) {
+            console.error(`   -> Cleaning up failed media extraction at "${mediaDirName}"...`)
+            fs.rmSync(finalMediaDir, { recursive: true, force: true })
+          }
+
           process.exit(1)
         }
       } else {

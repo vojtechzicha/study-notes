@@ -745,5 +745,65 @@
     "docxName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.docx",
     "generatedPdfName": "fakulta-elektrotechniky-a-informatiky-vsb-tu-ostrava-bakalarsky-tn2202-telekomunikacni-site.pdf",
     "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--in-informatika": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--in-informatika",
+    "type": "docx",
+    "originalName": "! IN Informatika",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750860240909.1958,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in-informatika.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in-informatika.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--in-informatika.pdf",
+    "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky--kmae-matematika": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky--kmae-matematika",
+    "type": "docx",
+    "originalName": "! KMAE Matematika",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751261954963.2249,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kmae-matematika.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kmae-matematika.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky--kmae-matematika.pdf",
+    "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sta-statistika": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta-statistika",
+    "type": "docx",
+    "originalName": "STA Statistika",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751354190000,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta-statistika.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta-statistika.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sta-statistika.pdf",
+    "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-uc-ucetnictvi": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc-ucetnictvi",
+    "type": "docx",
+    "originalName": "UC Účetnictví",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751354165000,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc-ucetnictvi.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc-ucetnictvi.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-uc-ucetnictvi.pdf",
+    "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-zpo-zaklady-pojistovnictvi": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-zpo-zaklady-pojistovnictvi",
+    "type": "docx",
+    "originalName": "ZPO Základy pojišťovnictví",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1750861837000,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zpo-zaklady-pojistovnictvi.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zpo-zaklady-pojistovnictvi.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-zpo-zaklady-pojistovnictvi.pdf",
+    "sourcePdfName": null
   }
 }

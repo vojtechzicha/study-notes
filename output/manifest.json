@@ -841,5 +841,53 @@
     "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sp-socialni-podnikani.docx",
     "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sp-socialni-podnikani.pdf",
     "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-hp1-hospodarska-politika-i": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-hp1-hospodarska-politika-i",
+    "type": "docx",
+    "originalName": "HP1 Hospodářská politika I",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751355737799.9146,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-hp1-hospodarska-politika-i.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-hp1-hospodarska-politika-i.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-hp1-hospodarska-politika-i.pdf",
+    "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-mko-marketingova-komunikace": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-mko-marketingova-komunikace",
+    "type": "docx",
+    "originalName": "MKO Marketingová komunikace",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751355385000,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mko-marketingova-komunikace.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mko-marketingova-komunikace.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-mko-marketingova-komunikace.pdf",
+    "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-poma-pojisteni-majetku": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-poma-pojisteni-majetku",
+    "type": "docx",
+    "originalName": "POMA Pojištění majetku",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751355415000,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-poma-pojisteni-majetku.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-poma-pojisteni-majetku.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-poma-pojisteni-majetku.pdf",
+    "sourcePdfName": null
+  },
+  "ekonomicka-fakulta-tu-liberec-bakalarsky-sch-spotrebitelske-chovani": {
+    "key": "ekonomicka-fakulta-tu-liberec-bakalarsky-sch-spotrebitelske-chovani",
+    "type": "docx",
+    "originalName": "SCH Spotřebitelské chování",
+    "sourceSlug": "ekonomicka-fakulta-tu-liberec-bakalarsky",
+    "modifiedTime": 1751354341000,
+    "showUpdatesAfter": "2025-07-01",
+    "htmlName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sch-spotrebitelske-chovani.html",
+    "docxName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sch-spotrebitelske-chovani.docx",
+    "generatedPdfName": "ekonomicka-fakulta-tu-liberec-bakalarsky-sch-spotrebitelske-chovani.pdf",
+    "sourcePdfName": null
   }
 }

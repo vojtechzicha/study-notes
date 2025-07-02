@@ -4,31 +4,36 @@
       "name": "Newton University (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University NU Bachelor",
       "update": true,
-      "showUpdatesAfter": "2025-07-01"
+      "showUpdatesAfter": "2025-07-01",
+      "template": "default"
     },
     {
       "name": "Newton University (SZZ bakalářská)",
       "path": "/Users/vojtechzicha/Documents/University NU Bachelor/Final Exam",
       "update": true,
-      "showUpdatesAfter": "2025-07-01"
+      "showUpdatesAfter": "2025-07-01",
+      "template": "default"
     },
     {
       "name": "Ekonomická fakulta TU Liberec (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University TUL Bachelor",
       "update": true,
-      "showUpdatesAfter": "2025-07-02"
+      "showUpdatesAfter": "2025-07-02",
+      "template": "tul"
     },
     {
       "name": "Ekonomická fakulta TU Liberec (SZZ bakalářská)",
       "path": "/Users/vojtechzicha/Documents/University TUL Bachelor/Státní závěrečná zkouška",
       "update": true,
-      "showUpdatesAfter": "2025-07-01"
+      "showUpdatesAfter": "2025-07-01",
+      "template": "tul"
     },
     {
       "name": "Fakulta elektrotechniky a informatiky VŠB-TU Ostrava (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University VSB FEI Bachelor",
-      "update": false,
-      "showUpdatesAfter": "2025-07-01"
+      "update": true,
+      "showUpdatesAfter": "2025-07-01",
+      "template": "default"
     }
   ],
   "outputDir": "./output"

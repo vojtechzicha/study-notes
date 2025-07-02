@@ -10,6 +10,7 @@ const LUA_FILTER_PATH = './remove-toc.lua'
 const CSS_PATH = './styles.css'
 const JS_LOADER_PATH = './katex-loader.js'
 const MASTER_TEMPLATE_PATH = './template.html'
+const TUL_TEMPLATE_PATH = './template-tul.html' // NEW: Path to the TUL template
 const MANIFEST_NAME = 'manifest.json'
 
 // --- HELPER FUNCTION FOR DATE FORMATTING ---
@@ -65,7 +66,6 @@ async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate
 async function main() {
   console.log('🚀 Starting Study Hub build process...')
 
-  // NEW: Flag to track if any files were actually changed
   let anyFileUpdated = false
 
   const generationDate = new Date()
@@ -80,6 +80,13 @@ async function main() {
   fs.copyFileSync(CSS_PATH, path.join(outputDir, 'styles.css'))
   fs.copyFileSync(JS_LOADER_PATH, path.join(outputDir, 'katex-loader.js'))
   fs.copyFileSync('./favicon.svg', path.join(outputDir, 'favicon.svg'))
+
+  // NEW: Copy local fonts directory if it exists
+  const fontsDir = './fonts'
+  if (fs.existsSync(fontsDir)) {
+    fs.cpSync(fontsDir, path.join(outputDir, 'fonts'), { recursive: true })
+  }
+
   console.log(`🎨 Copied site-wide assets to ${outputDir}`)
 
   const manifestPath = path.join(outputDir, MANIFEST_NAME)
@@ -181,7 +188,7 @@ async function main() {
         const finalMediaDir = path.join(outputDir, mediaDirName)
 
         if (shouldConvertHtml) {
-          anyFileUpdated = true // NEW: A file will be updated
+          anyFileUpdated = true
           if (fs.existsSync(finalMediaDir)) {
             console.log(`   -> Removing old media directory: "${mediaDirName}"`)
             fs.rmSync(finalMediaDir, { recursive: true, force: true })
@@ -191,10 +198,15 @@ async function main() {
             console.log(`   -> Converting "${baseName}"...`)
             process.chdir(outputDir)
 
+            // --- TEMPLATE SELECTION LOGIC ---
+            const templateName = source.template || 'default'
+            const activeTemplatePath = templateName === 'tul' ? TUL_TEMPLATE_PATH : MASTER_TEMPLATE_PATH
+            console.log(`   -> Using template: "${templateName}" (${path.basename(activeTemplatePath)})`)
+
             const pandocSourcePath = path.relative(process.cwd(), path.resolve(originalCwd, originalDocxPath))
             const pandocTempHtmlPath = path.basename(outputHtmlPath) + '.temp'
             const pandocLuaFilterPath = path.relative(process.cwd(), path.resolve(originalCwd, LUA_FILTER_PATH))
-            const pandocTemplatePath = path.relative(process.cwd(), path.resolve(originalCwd, MASTER_TEMPLATE_PATH))
+            const pandocTemplatePath = path.relative(process.cwd(), path.resolve(originalCwd, activeTemplatePath)) // Use the selected template
 
             const pandocCommand = [
               'pandoc',
@@ -240,7 +252,7 @@ async function main() {
         let shouldGeneratePdf =
           !fs.existsSync(outputGeneratedPdfPath) || fs.statSync(outputHtmlPath).mtimeMs > fs.statSync(outputGeneratedPdfPath).mtimeMs
         if (shouldGeneratePdf) {
-          anyFileUpdated = true // NEW: A file will be updated
+          anyFileUpdated = true
           await generatePdfFromHtml(outputHtmlPath, outputGeneratedPdfPath, formattedUpdateDate, formattedGenerationDate)
         } else {
           console.log(`   -> Skipping Generated PDF build for "${baseName}" (no changes).`)
@@ -252,7 +264,7 @@ async function main() {
 
         let shouldCopyPdf = !fs.existsSync(outputPdfPath) || pdfStats.mtimeMs > fs.statSync(outputPdfPath).mtimeMs
         if (shouldCopyPdf) {
-          anyFileUpdated = true // NEW: A file will be updated
+          anyFileUpdated = true
           console.log(`   -> Copying source PDF "${files.pdf}"...`)
           fs.copyFileSync(originalPdfPath, outputPdfPath)
         } else {
@@ -266,7 +278,6 @@ async function main() {
     if (directoryFiles.files.length > 0) siteStructure.push(directoryFiles)
   }
 
-  // --- NEW: Conditional generation of manifest and index.html ---
   if (anyFileUpdated) {
     fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
     console.log('\n💾 Manifest saved.')
@@ -281,7 +292,7 @@ async function main() {
 }
 
 // --- HELPER FUNCTIONS (generateIndexHtml and slugify are unchanged) ---
-
+// ... (the rest of the file is identical to your original)
 function slugify(text) {
   return text
     .toString()

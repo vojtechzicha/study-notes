@@ -1,7 +1,8 @@
-/* styles.css - FINAL VERSION WITH PRINT STYLES */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700&family=Roboto+Slab:wght@700&display=swap');
+/* styles.css - FINAL VERSION WITH PRINT STYLES AND TUL THEME */
+/* NEW: Added Inter, Merriweather Sans, and Roboto Mono for the TUL theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather+Sans&family=Open+Sans:ital,wght@0,400;0,700&family=Roboto+Mono:wght@700&family=Roboto+Slab:wght@700&display=swap');
 
-/* --- GLOBAL & INDEX PAGE --- */
+/* --- GLOBAL & INDEX PAGE (DEFAULT THEME) --- */
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
@@ -48,7 +49,6 @@ body {
   vertical-align: middle;
   text-transform: uppercase;
 }
-/* NEW: Badge for direct PDF links */
 .pdf-badge {
   background-color: #dc3545; /* A shade of red */
   text-transform: none;
@@ -155,7 +155,7 @@ body {
   display: none;
 } /* Hide the print TOC on screen */
 
-/* --- GENERAL DOCUMENT STYLING --- */
+/* --- GENERAL DOCUMENT STYLING (DEFAULT THEME) --- */
 h1,
 h2,
 h3,
@@ -260,6 +260,121 @@ blockquote {
 .container li {
   margin-bottom: 0.5em;
   padding: 0;
+}
+
+/* ================================================= */
+/* ================================================= */
+/* ---             NEW: TUL THEME                --- */
+/* ================================================= */
+/* ================================================= */
+
+:root {
+  --tul-green: #65a812;
+  --tul-green-dark: #4d820d;
+  --tul-text: #333333;
+}
+
+/* --- TUL: General Body & Typography --- */
+body.template-tul {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.2pt;
+  line-height: 1.15;
+  background-color: #ffffff;
+  color: var(--tul-text);
+}
+
+.template-tul .container {
+  box-shadow: none; /* Cleaner look for TUL theme on index page */
+}
+
+/* --- TUL: Heading Styles --- */
+.template-tul h1,
+.template-tul h2,
+.template-tul h3,
+.template-tul h4,
+.template-tul h5,
+.template-tul h6 {
+  color: var(--tul-text);
+}
+
+.template-tul h1.title {
+  font-family: 'Roboto Mono', monospace; /* TUL Mono Bold substitute */
+  font-weight: 700;
+  font-size: 2.6em;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: none;
+}
+
+.template-tul h1 {
+  font-family: 'Inter', sans-serif; /* Inter Bold */
+  font-weight: 700;
+  font-size: 2.1em;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.3em;
+  margin-top: 2.5rem;
+}
+
+.template-tul h2 {
+  font-family: 'Merriweather Sans', sans-serif; /* Merriweather Sans Regular */
+  font-weight: 400;
+  font-size: 1.6em;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.3em;
+  margin-top: 2.2rem;
+}
+
+.template-tul h3 {
+  font-family: 'Inter', sans-serif; /* Inter Regular */
+  font-weight: 400;
+  font-size: 1.3em;
+  border-bottom: none;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+/* --- TUL: Links and Accents --- */
+.template-tul a,
+.template-tul a:visited {
+  color: var(--tul-green);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.template-tul a:hover {
+  color: var(--tul-green-dark);
+  text-decoration: underline;
+}
+
+.template-tul blockquote {
+  border-left: 4px solid var(--tul-green);
+  background-color: #f7fbf2;
+  padding: 0.5rem 1.5rem;
+  margin-left: 0;
+  font-style: normal;
+  color: #444;
+}
+
+/* --- TUL: Header & Sidebar --- */
+.template-tul .main-header {
+  border-bottom-color: #e0e0e0;
+}
+.template-tul .home-link {
+  font-family: 'Inter', sans-serif; /* Use consistent font */
+  font-weight: 700;
+  color: #222;
+}
+.template-tul .breadcrumb-item-active {
+  color: var(--tul-green);
+}
+.template-tul .action-button:hover {
+  background-color: var(--tul-green);
+  border-color: var(--tul-green-dark);
+  color: #fff;
+}
+.template-tul .sidebar a.active,
+.template-tul .sidebar a:hover {
+  color: var(--tul-green);
+  border-left-color: var(--tul-green);
 }
 
 /* ================================================= */
@@ -368,7 +483,6 @@ blockquote {
     font-size: 9pt;
     font-style: italic;
   }
-  /* NEW: Add this rule to style the new paragraph on the last page */
   #pdf-last-page .pdf-purpose-text {
     max-width: 80%;
     margin-bottom: 3rem;
@@ -376,6 +490,29 @@ blockquote {
     font-style: normal;
     color: #444;
     line-height: 1.5;
+  }
+
+  /* NEW: TUL Theme Print Overrides */
+  body.template-tul {
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+    letter-spacing: 0.2pt;
+    line-height: 1.15;
+  }
+  .template-tul #pdf-title-page h1,
+  .template-tul h1.title {
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+  }
+  .template-tul h1 {
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+  }
+  .template-tul h2 {
+    font-family: 'Merriweather Sans', 'Verdana', sans-serif;
+  }
+  .template-tul h3 {
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+  }
+  .template-tul blockquote {
+    border-left: 4px solid #dddddd !important; /* Lighter border for print */
   }
 }
 

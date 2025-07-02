@@ -49,7 +49,7 @@ async function generatePdfFromHtml(htmlPath, pdfPath, updateDate, generationDate
       path: pdfPath,
       format: 'A4',
       printBackground: true,
-      margin: { top: '25px', right: '25px', bottom: '25px', left: '25px' },
+      margin: { top: '2cm', right: '2cm', bottom: '2cm', left: '2cm' },
       displayHeaderFooter: true,
       headerTemplate: '<div></div>',
       footerTemplate: '<div></div>',
@@ -94,7 +94,7 @@ async function main() {
   const siteStructure = []
 
   for (const source of sources) {
-    const directoryFiles = { directoryName: source.name, files: [] }
+    const directoryFiles = { directoryName: source.name, files: [], template: source.template } // Pass template info
     const sourceSlug = slugify(source.name)
 
     if (!source.update) {
@@ -160,6 +160,7 @@ async function main() {
         sourceSlug: sourceSlug,
         modifiedTime: updateTime,
         showUpdatesAfter: source.showUpdatesAfter,
+        template: source.template, // Store template info in manifest
       }
 
       if (fileType.startsWith('docx')) {
@@ -292,7 +293,6 @@ async function main() {
 }
 
 // --- HELPER FUNCTIONS (generateIndexHtml and slugify are unchanged) ---
-// ... (the rest of the file is identical to your original)
 function slugify(text) {
   return text
     .toString()
@@ -311,10 +311,14 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
   const recentThreshold = 90 * 24 * 60 * 60 * 1000
   const activeThreshold = 210 * 24 * 60 * 60 * 1000
 
-  let allFiles = []
+  // --- NEW: SVG Icons for cards (cleaner versions) ---
+  const pageIconSvg = `<svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`
+  const pdfIconSvg = `<svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M10.29 13.71a2.43 2.43 0 0 1-2.43-2.43 2.43 2.43 0 0 1 2.43-2.43H12V13h-.29a2.43 2.43 0 0 1-1.42.42zM15 9h-1v4h1v-2a1 1 0 0 0-1-1h0a1 1 0 0 0-1 1v2h-1v-4h1v1h1a2 2 0 0 1 2 2v1h-1z"></path></svg>`
+
+  const allFiles = []
   structure.forEach(dir => {
     dir.files.forEach(file => {
-      allFiles.push({ ...file, directoryName: dir.directoryName })
+      allFiles.push({ ...file, directoryName: dir.directoryName, template: dir.template })
     })
   })
 
@@ -326,41 +330,64 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
     })
     .sort((a, b) => b.modifiedTime - a.modifiedTime)
 
+  const createCardHtml = (file, isRecentlyUpdated = false) => {
+    const isPdf = file.type === 'pdf'
+    const link = isPdf ? `./${file.sourcePdfName}` : `./${file.htmlName}`
+    const target = isPdf ? `target="_blank" rel="noopener noreferrer"` : ''
+    const icon = isPdf ? pdfIconSvg : pageIconSvg
+    const newBadge = now - file.modifiedTime < recentThreshold ? `<span class="badge card-badge">NOVÉ</span>` : ''
+    const pdfBadge = isPdf ? `<span class="badge pdf-badge card-badge">PDF</span>` : ''
+    const subtitleClass = isRecentlyUpdated ? 'card-subtitle-active' : 'card-subtitle'
+    const templateClass = file.template === 'tul' ? 'template-tul-card' : ''
+
+    return `
+      <a href="${link}" ${target} class="file-card ${templateClass}" data-file-name="${file.originalName.toLowerCase()}" data-directory-name="${file.directoryName.toLowerCase()}">
+        ${icon}
+        <div class="card-content">
+          <h3 class="card-title">${file.originalName}</h3>
+          <p class="${subtitleClass}">${file.directoryName}</p>
+        </div>
+        ${newBadge || pdfBadge}
+      </a>
+    `
+  }
+
   let activeFilesHtml = ''
   if (activeFiles.length > 0) {
-    activeFilesHtml += `<div class="active-files-group" data-directory-name="nedávno aktualizované"><h2>Nedávno aktualizované</h2><ul>`
+    activeFilesHtml += `<div class="active-files-group directory-group" data-directory-name="nedávno aktualizované">
+      <h2>Nedávno aktualizované</h2>
+      <div class="card-grid">`
     activeFiles.forEach(file => {
-      const link =
-        file.type === 'pdf'
-          ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
-          : `<a href="./${file.htmlName}">${file.originalName}</a>`
-
-      activeFilesHtml += `
-            <li data-file-name="${file.originalName.toLowerCase()}" data-directory-name="${file.directoryName.toLowerCase()}">
-                ${link}
-                <span class="file-group-name">(${file.directoryName})</span>
-            </li>`
+      activeFilesHtml += createCardHtml(file, true)
     })
-    activeFilesHtml += `</ul></div>`
+    activeFilesHtml += `</div></div>`
   }
 
   let fileListHtml = ''
   for (const dir of structure) {
     dir.files.sort((a, b) => a.originalName.localeCompare(b.originalName))
-    fileListHtml += `<div class="directory-group" data-directory-name="${dir.directoryName.toLowerCase()}"><h2>${
-      dir.directoryName
-    }</h2><ul>`
-    for (const file of dir.files) {
-      const isRecent = now - file.modifiedTime < recentThreshold
-      const newBadge = isRecent ? ' <span class="badge">NOVÉ</span>' : ''
-      const link =
-        file.type === 'pdf'
-          ? `<a href="./${file.sourcePdfName}" target="_blank" rel="noopener noreferrer">${file.originalName} <span class="badge pdf-badge">PDF</span></a>`
-          : `<a href="./${file.htmlName}">${file.originalName}</a>`
+    fileListHtml += `<div class="directory-group" data-directory-name="${dir.directoryName.toLowerCase()}">
+      <h2>${dir.directoryName}</h2>`
 
-      fileListHtml += `<li data-file-name="${file.originalName.toLowerCase()}">${link}${newBadge}</li>`
+    const needsButton = dir.files.length > 2
+    if (needsButton) {
+      fileListHtml += `<div class="card-grid-container">`
     }
-    fileListHtml += `</ul></div>`
+
+    fileListHtml += `<div class="card-grid ${needsButton ? 'collapsed' : ''}">`
+    for (const file of dir.files) {
+      // THIS IS THE FIX: Create an object with the full context before passing it to the function.
+      const fileWithContext = { ...file, directoryName: dir.directoryName, template: dir.template }
+      fileListHtml += createCardHtml(fileWithContext, false)
+    }
+    fileListHtml += `</div>` // close .card-grid
+
+    if (needsButton) {
+      fileListHtml += `<button class="toggle-visibility-button">Zobrazit všech ${dir.files.length}</button>`
+      fileListHtml += `</div>` // close .card-grid-container
+    }
+
+    fileListHtml += `</div>` // close .directory-group
   }
 
   return `
@@ -374,14 +401,20 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <div class="container">
-        <h1>Univerzitní studium - materiály a přednášky</h1>
+    <div class="container index-container">
+        <h1>Univerzitní studium</h1>
+        <p class="index-subtitle">Osobní materiály a poznámky z přednášek</p>
         <div class="page-info">
-            <span>Poslední sestavení webu: <strong>${generationDate}</strong></span>
-            <span>Poslední aktualizace poznámek: <strong>${latestUpdateDate}</strong></span>
+            <span>Poslední sestavení: <strong>${generationDate}</strong></span>
+            <span>Poslední aktualizace: <strong>${latestUpdateDate}</strong></span>
         </div>
-        <input type="text" id="searchInput" placeholder="Hledat v poznámkách...">
+        <div class="search-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="search-icon" fill="currentColor"><path d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-5.03-1.62a6 6 0 1 0 8.5-8.5 6 6 0 0 0-8.5 8.5zM21 22.41l-6.36-6.36 1.41-1.41L22.41 21 21 22.41z"/></svg>
+          <input type="text" id="searchInput" placeholder="Hledat v poznámkách a předmětech...">
+        </div>
+        
         ${activeFilesHtml}
+        
         <div id="file-list">${fileListHtml}</div>
     </div>
     <footer class="main-footer-license">
@@ -391,39 +424,50 @@ function generateIndexHtml(structure, generationDate, latestUpdateDate) {
         </p>
         <p>
             Obsah je licencován pod <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Uveďte původ-Neužívejte komerčně-Zachovejte licenci 4.0 Mezinárodní</a>.
-            To znamená, že materiály můžete volně sdílet a upravovat pro nekomerční účely, pokud uvedete původního autora a zachováte stejnou licenci.
         </p>
     </footer>
     <script>
-        const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            document.querySelectorAll('.directory-group, .active-files-group').forEach(group => {
-                const groupName = group.dataset.directoryName || '';
-                const files = group.querySelectorAll('li');
-                let hasVisibleFile = false;
-                
-                if (group.classList.contains('active-files-group')) {
-                    files.forEach(file => {
-                        const fileName = file.dataset.fileName;
-                        const dirName = file.dataset.directoryName;
-                        const isVisible = fileName.includes(searchTerm) || dirName.includes(searchTerm);
-                        file.style.display = isVisible ? '' : 'none';
-                        if (isVisible) hasVisibleFile = true;
-                    });
-                } else {
-                    files.forEach(file => {
-                        const fileName = file.dataset.fileName;
-                        const isVisible = fileName.includes(searchTerm) || groupName.includes(searchTerm);
-                        file.style.display = isVisible ? '' : 'none';
-                        if (isVisible) hasVisibleFile = true;
-                    });
-                }
+      // Search functionality
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('input', (e) => {
+          const searchTerm = e.target.value.toLowerCase().trim();
+          
+          document.querySelectorAll('.directory-group').forEach(group => {
+              const groupName = group.dataset.directoryName.toLowerCase();
+              let hasVisibleCard = false;
 
-                const isGroupVisible = groupName.includes(searchTerm) || hasVisibleFile;
-                group.style.display = isGroupVisible ? '' : 'none';
-            });
+              group.querySelectorAll('.file-card').forEach(card => {
+                  const fileName = card.dataset.fileName.toLowerCase();
+                  const dirName = card.dataset.directoryName.toLowerCase();
+                  const searchCorpus = fileName + ' ' + dirName;
+                  
+                  const isVisible = searchCorpus.includes(searchTerm);
+                  card.style.display = isVisible ? 'flex' : 'none';
+                  if (isVisible) hasVisibleCard = true;
+              });
+
+              // A group is visible if its name matches or it has at least one visible card.
+              const isGroupVisible = groupName.includes(searchTerm) || hasVisibleCard;
+              group.style.display = isGroupVisible ? 'block' : 'none';
+          });
+      });
+
+      // NEW: Expand/Collapse functionality
+      document.querySelectorAll('.toggle-visibility-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const container = button.closest('.card-grid-container');
+          if (!container) return;
+
+          const grid = container.querySelector('.card-grid');
+          const isCollapsed = grid.classList.toggle('collapsed');
+
+          if (isCollapsed) {
+            button.textContent = \`Zobrazit všech \${grid.children.length}\`;
+          } else {
+            button.textContent = 'Skrýt';
+          }
         });
+      });
     </script>
 </body>
 </html>`

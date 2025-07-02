@@ -10,6 +10,184 @@
   font-style: normal;
 }
 
+/* ================================================= */
+/* ---        NEW: INDEX PAGE REDESIGN           --- */
+/* ================================================= */
+
+.index-container {
+  max-width: 1200px;
+}
+
+.index-container h1 {
+  font-size: 2.8em;
+  border-bottom: none;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.index-subtitle {
+  text-align: center;
+  font-size: 1.2em;
+  color: #6c757d;
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.index-container .page-info {
+  justify-content: center;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 2.5rem;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  fill: #888;
+}
+
+#searchInput {
+  font-size: 1.1em;
+  padding: 1rem 1rem 1rem 3.5rem; /* Left padding for icon */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease-in-out;
+}
+#searchInput:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+.template-tul #searchInput:focus {
+  border-color: var(--tul-green);
+  box-shadow: 0 0 0 3px rgba(101, 168, 18, 0.25);
+}
+
+.directory-group h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.8em;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+}
+.template-tul .directory-group h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.file-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.file-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1.25rem;
+  flex-shrink: 0;
+  fill: #007bff; /* Default theme color */
+}
+
+/* NEW: Specific rule for TUL-themed cards */
+.file-card.template-tul-card .card-icon {
+  fill: var(--tul-green); /* TUL theme color */
+}
+
+.card-content {
+  min-width: 0; /* Prevents text overflow issues */
+  padding-right: 2.5rem; /* FIX: Added padding to prevent text from going under the badge */
+}
+
+.card-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #212529;
+  margin: 0 0 0.25rem 0;
+}
+.template-tul .card-title {
+  font-family: 'Inter', sans-serif;
+}
+
+.card-subtitle {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-subtitle-active {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin: 0;
+}
+
+.card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* NEW: Styles for the expandable sections */
+.card-grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-grid.collapsed > a:nth-child(n + 3) {
+  display: none;
+}
+
+.toggle-visibility-button {
+  background-color: #f1f3f5;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-visibility-button:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+
 /* --- GLOBAL & INDEX PAGE (DEFAULT THEME) --- */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -414,6 +592,7 @@ body.template-tul {
     max-width: 100%;
     margin: 0;
     padding: 0;
+    padding-top: 1.5cm; /* NEW: Prevents diacritics from overflowing to previous page */
     box-shadow: none;
   }
 
@@ -440,7 +619,85 @@ body.template-tul {
     display: none !important;
   }
 
-  /* PDF Title Page styles */
+  /* ================================== */
+  /* === PDF TITLE PAGE STYLES (TUL) == */
+  /* ================================== */
+
+  /* General TUL title page container */
+  .template-tul #pdf-title-page {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes header up, footer down */
+    align-items: stretch;
+    text-align: left;
+    height: 95vh; /* Use most of the page */
+    padding: 2cm;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  /* Green top banner */
+  .template-tul .pdf-title-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tul-green);
+    color: #fff;
+    padding: 0.5cm 1cm;
+    /* Negative margin to break out of the parent padding */
+    margin: -2cm -2cm 0 -2cm;
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    font-weight: 700;
+  }
+
+  /* Main content area in the middle */
+  .template-tul .pdf-title-content {
+    padding-top: 4cm; /* Push content down from the header */
+  }
+
+  /* The main document title */
+  .template-tul #pdf-title-page h1 {
+    font-family: 'TUL Mono', 'Roboto Mono', monospace;
+    font-size: 32pt !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    color: var(--tul-text) !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  /* The group/subject name */
+  .template-tul #pdf-title-page .group-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14pt !important;
+    font-style: normal !important;
+    color: #555 !important;
+    margin: 0 !important;
+  }
+
+  /* Footer block for author and dates */
+  .template-tul .pdf-title-footer .author-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14pt;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 0.5cm 0;
+  }
+
+  /* Date info at the very bottom */
+  .template-tul #pdf-title-page .pdf-page-info {
+    margin: 0 !important;
+    text-align: left !important;
+    font-size: 9pt !important;
+    color: #666 !important;
+  }
+  .template-tul #pdf-title-page .pdf-page-info span {
+    margin-bottom: 0.2em !important;
+  }
+
+  /* --- Styles for the DEFAULT theme title page (unchanged) --- */
   #pdf-title-page {
     display: flex !important;
     flex-direction: column;

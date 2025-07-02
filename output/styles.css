@@ -2,6 +2,14 @@
 /* NEW: Added Inter, Merriweather Sans, and Roboto Mono for the TUL theme */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather+Sans&family=Open+Sans:ital,wght@0,400;0,700&family=Roboto+Mono:wght@700&family=Roboto+Slab:wght@700&display=swap');
 
+/* NEW: Define the local TUL Mono font */
+@font-face {
+  font-family: 'TUL Mono';
+  src: url('./fonts/TULMono-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* --- GLOBAL & INDEX PAGE (DEFAULT THEME) --- */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -298,7 +306,7 @@ body.template-tul {
 }
 
 .template-tul h1.title {
-  font-family: 'Roboto Mono', monospace; /* TUL Mono Bold substitute */
+  font-family: 'TUL Mono', 'Roboto Mono', monospace; /* Use local font first */
   font-weight: 700;
   font-size: 2.6em;
   margin-top: 0;
@@ -388,7 +396,8 @@ body.template-tul {
 
   /* Hide all interactive elements */
   .main-header,
-  .sidebar {
+  .sidebar,
+  .main-footer-license {
     display: none !important;
   }
 
@@ -500,7 +509,7 @@ body.template-tul {
   }
   .template-tul #pdf-title-page h1,
   .template-tul h1.title {
-    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-family: 'TUL Mono', 'Roboto Mono', 'Courier New', monospace;
   }
   .template-tul h1 {
     font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;

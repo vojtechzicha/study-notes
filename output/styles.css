@@ -563,6 +563,81 @@ body.template-tul {
   border-left-color: var(--tul-green);
 }
 
+/* --- FIX v5: The "Single Unbroken Line" approach --- */
+
+/* -- SETUP (List, Counters, Paragraphs) -- */
+/* 1. Reset the list and setup our custom counter */
+.template-tul .content ol:has(li > blockquote) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: blockquote-counter;
+}
+/* 2. Basic setup for the list item (it's just a container now) */
+.template-tul .content ol:has(li > blockquote) > li {
+  padding: 0;
+  margin: 0;
+}
+/* 3. Reset the paragraph tag to prevent unwanted vertical space */
+.template-tul .content blockquote p {
+  margin: 0;
+}
+
+/* -- CORE LAYOUT LOGIC -- */
+/* 4. Turn the intro blockquote and the entire list into positioning containers */
+.template-tul .content > blockquote,
+.template-tul .content ol:has(li > blockquote) {
+  position: relative; /* This is the anchor for the green line */
+  /* Create space on the left for the line AND the numbers */
+  padding-left: 3em;
+}
+
+/* 5. Draw the continuous green line on both containers using ::before */
+.template-tul .content > blockquote::before,
+.template-tul .content ol:has(li > blockquote)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* The thick green line */
+  background-color: var(--tul-green);
+}
+
+/* 6. Style the text boxes (the blockquotes themselves) */
+.template-tul .content > blockquote,
+.template-tul .content li > blockquote {
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+  background-color: #f7fbf2;
+  border: 1px solid var(--tul-green);
+  border-left: none; /* The line is now handled by the ::before pseudo-element */
+}
+
+/* 7. Position the numbers for the list items */
+.template-tul .content ol:has(li > blockquote) > li {
+  position: relative; /* Anchor for the number */
+}
+.template-tul .content ol:has(li > blockquote) > li::before {
+  counter-increment: blockquote-counter;
+  content: counter(blockquote-counter) '.';
+  position: absolute;
+  /* Position it in the space we created with padding-left */
+  left: 1em;
+  top: 0.5rem;
+  color: var(--tul-text);
+}
+
+/* 8. Merge the horizontal borders for a seamless look */
+/* Pull the entire list up to overlap the intro block's bottom border */
+.template-tul .content > blockquote + ol {
+  margin-top: -1px;
+}
+/* Pull up each list item (except the first) to overlap the one above it */
+.template-tul .content ol > li + li {
+  margin-top: -1px;
+}
+
 /* ================================================= */
 /* --- PRINT STYLES FOR HIGH-FIDELITY PDF OUTPUT --- */
 /* ================================================= */

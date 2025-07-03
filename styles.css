@@ -563,6 +563,58 @@ body.template-tul {
   border-left-color: var(--tul-green);
 }
 
+/* --- FIX v4: Robust blockquote list styling with CSS Counters --- */
+
+/* 1. Setup the list container (ol) to use a custom counter */
+.template-tul .content ol:has(li > blockquote) {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Turn off default browser numbering */
+  counter-reset: blockquote-counter; /* Initialize our custom counter */
+}
+
+/* 2. Style the list item (li) as a positioning container */
+.template-tul .content ol:has(li > blockquote) > li {
+  padding: 0;
+  margin: 0;
+  position: relative; /* Make it a positioning context for the number */
+  padding-left: 2.5em; /* Create space on the left for the number */
+}
+
+/* 3. Generate and absolutely position the number using ::before */
+.template-tul .content ol:has(li > blockquote) > li::before {
+  counter-increment: blockquote-counter; /* Increment the counter for each item */
+  content: counter(blockquote-counter) '.'; /* Display as "1.", "2.", etc. */
+
+  /* Precise Positioning */
+  position: absolute;
+  left: 0;
+  top: 0.5rem; /* Align with the top padding of the blockquote */
+
+  /* Typography to match the desired look */
+  font-weight: normal;
+  color: var(--tul-text);
+  font-family: 'Inter', sans-serif;
+  text-align: right;
+  width: 1.8em; /* Ensure consistent alignment for single/double digits */
+}
+
+/* 4. Style the blockquote to create the visual box and the gap */
+.template-tul .content li > blockquote {
+  margin: 0; /* The blockquote itself adds no side margin */
+  margin-bottom: 0.75rem; /* THIS creates the vertical gap between items */
+}
+
+/* 5. Reset the paragraph inside the blockquote to remove extra vertical space */
+.template-tul .content blockquote p {
+  margin: 0;
+}
+
+/* 6. Style the initial, standalone blockquote to match */
+.template-tul .content > blockquote {
+  margin-bottom: 0.75rem;
+}
+
 /* ================================================= */
 /* --- PRINT STYLES FOR HIGH-FIDELITY PDF OUTPUT --- */
 /* ================================================= */

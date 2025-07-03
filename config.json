@@ -3,14 +3,14 @@
     {
       "name": "Newton University (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University NU Bachelor",
-      "update": true,
+      "update": false,
       "showUpdatesAfter": "2025-07-03",
       "template": "default"
     },
     {
       "name": "Newton University (SZZ bakalářská)",
       "path": "/Users/vojtechzicha/Documents/University NU Bachelor/Final Exam",
-      "update": true,
+      "update": false,
       "showUpdatesAfter": "2025-07-03",
       "template": "default"
     },
@@ -31,7 +31,7 @@
     {
       "name": "Fakulta elektrotechniky a informatiky VŠB-TU Ostrava (bakalářský)",
       "path": "/Users/vojtechzicha/Documents/University VSB FEI Bachelor",
-      "update": true,
+      "update": false,
       "showUpdatesAfter": "2025-07-03",
       "template": "default"
     }

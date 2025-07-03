@@ -563,79 +563,56 @@ body.template-tul {
   border-left-color: var(--tul-green);
 }
 
-/* --- FIX v5: The "Single Unbroken Line" approach --- */
+/* --- FIX v4: Robust blockquote list styling with CSS Counters --- */
 
-/* -- SETUP (List, Counters, Paragraphs) -- */
-/* 1. Reset the list and setup our custom counter */
+/* 1. Setup the list container (ol) to use a custom counter */
 .template-tul .content ol:has(li > blockquote) {
   margin: 0;
   padding: 0;
-  list-style: none;
-  counter-reset: blockquote-counter;
+  list-style: none; /* Turn off default browser numbering */
+  counter-reset: blockquote-counter; /* Initialize our custom counter */
 }
-/* 2. Basic setup for the list item (it's just a container now) */
+
+/* 2. Style the list item (li) as a positioning container */
 .template-tul .content ol:has(li > blockquote) > li {
   padding: 0;
   margin: 0;
+  position: relative; /* Make it a positioning context for the number */
+  padding-left: 2.5em; /* Create space on the left for the number */
 }
-/* 3. Reset the paragraph tag to prevent unwanted vertical space */
+
+/* 3. Generate and absolutely position the number using ::before */
+.template-tul .content ol:has(li > blockquote) > li::before {
+  counter-increment: blockquote-counter; /* Increment the counter for each item */
+  content: counter(blockquote-counter) '.'; /* Display as "1.", "2.", etc. */
+
+  /* Precise Positioning */
+  position: absolute;
+  left: 0;
+  top: 0.5rem; /* Align with the top padding of the blockquote */
+
+  /* Typography to match the desired look */
+  font-weight: normal;
+  color: var(--tul-text);
+  font-family: 'Inter', sans-serif;
+  text-align: right;
+  width: 1.8em; /* Ensure consistent alignment for single/double digits */
+}
+
+/* 4. Style the blockquote to create the visual box and the gap */
+.template-tul .content li > blockquote {
+  margin: 0; /* The blockquote itself adds no side margin */
+  margin-bottom: 0.75rem; /* THIS creates the vertical gap between items */
+}
+
+/* 5. Reset the paragraph inside the blockquote to remove extra vertical space */
 .template-tul .content blockquote p {
   margin: 0;
 }
 
-/* -- CORE LAYOUT LOGIC -- */
-/* 4. Turn the intro blockquote and the entire list into positioning containers */
-.template-tul .content > blockquote,
-.template-tul .content ol:has(li > blockquote) {
-  position: relative; /* This is the anchor for the green line */
-  /* Create space on the left for the line AND the numbers */
-  padding-left: 3em;
-}
-
-/* 5. Draw the continuous green line on both containers using ::before */
-.template-tul .content > blockquote::before,
-.template-tul .content ol:has(li > blockquote)::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px; /* The thick green line */
-  background-color: var(--tul-green);
-}
-
-/* 6. Style the text boxes (the blockquotes themselves) */
-.template-tul .content > blockquote,
-.template-tul .content li > blockquote {
-  margin: 0;
-  padding: 0.5rem 1.5rem;
-  background-color: #f7fbf2;
-  border: 1px solid var(--tul-green);
-  border-left: none; /* The line is now handled by the ::before pseudo-element */
-}
-
-/* 7. Position the numbers for the list items */
-.template-tul .content ol:has(li > blockquote) > li {
-  position: relative; /* Anchor for the number */
-}
-.template-tul .content ol:has(li > blockquote) > li::before {
-  counter-increment: blockquote-counter;
-  content: counter(blockquote-counter) '.';
-  position: absolute;
-  /* Position it in the space we created with padding-left */
-  left: 1em;
-  top: 0.5rem;
-  color: var(--tul-text);
-}
-
-/* 8. Merge the horizontal borders for a seamless look */
-/* Pull the entire list up to overlap the intro block's bottom border */
-.template-tul .content > blockquote + ol {
-  margin-top: -1px;
-}
-/* Pull up each list item (except the first) to overlap the one above it */
-.template-tul .content ol > li + li {
-  margin-top: -1px;
+/* 6. Style the initial, standalone blockquote to match */
+.template-tul .content > blockquote {
+  margin-bottom: 0.75rem;
 }
 
 /* ================================================= */
